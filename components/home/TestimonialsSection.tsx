@@ -1,0 +1,55 @@
+import { MdFormatQuote } from 'react-icons/md'
+import { Motion } from '@/components/ui/motion'
+
+const testimonials = [
+  {
+    quote: 'Olo Kinder has transformed how my child sees learning. She wakes up excited every morning!',
+    name: 'Parent',
+    role: 'Mother of a 4-year-old',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80',
+  },
+  {
+    quote: 'The mascots make learning so engaging. My son talks about Roundy and Squarey all day long.',
+    name: 'Parent',
+    role: 'Father of a 5-year-old',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80',
+  },
+  {
+    quote: "The holistic approach here is unlike anything I've seen. My daughter has grown so much in confidence.",
+    name: 'Parent',
+    role: 'Mother of a 3-year-old',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80',
+  },
+]
+
+export function TestimonialsSection() {
+  return (
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <Motion variant="up">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">What Parents Say</h2>
+            <p className="text-base sm:text-lg text-foreground/80">Hear from the families who have experienced the Olo Kinder difference.</p>
+          </div>
+        </Motion>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {testimonials.map((t, i) => (
+            <Motion key={i} variant="up" delay={i * 100}>
+              <div className="bg-[#FFFDF8] rounded-2xl p-6 sm:p-8 border border-border h-full flex flex-col">
+                <MdFormatQuote size={40} className="text-primary mb-4 shrink-0" />
+                <p className="text-foreground/80 leading-relaxed mb-6 italic flex-1">{t.quote}</p>
+                <div className="flex items-center gap-3">
+                  <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover shrink-0" />
+                  <div>
+                    <p className="font-semibold text-foreground text-sm">{t.name}</p>
+                    <p className="text-xs text-foreground/70">{t.role}</p>
+                  </div>
+                </div>
+              </div>
+            </Motion>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
