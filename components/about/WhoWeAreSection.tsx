@@ -35,7 +35,7 @@ export function WhoWeAreSection() {
           <Motion variant="right">
             <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-4/3 w-full">
               <img
-                src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80"
+                src="/who.png"
                 alt="Children at Olo Kinder"
                 className="w-full h-full object-cover"
               />

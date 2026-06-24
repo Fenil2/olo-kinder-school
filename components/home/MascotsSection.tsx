@@ -27,8 +27,6 @@ export function MascotsSection() {
                 <div className="relative w-full max-w-[200px] sm:max-w-[240px] mx-auto aspect-square mb-4 drop-shadow-lg group-hover:scale-105 transition-transform duration-300">
                   <Image src={m.img} alt={`${m.name} mascot`} fill className="object-contain" />
                 </div>
-                <p className={`font-bold text-base ${m.color}`}>{m.name}</p>
-                <p className="text-sm text-foreground/65">{m.role}</p>
               </div>
             </Motion>
           ))}
