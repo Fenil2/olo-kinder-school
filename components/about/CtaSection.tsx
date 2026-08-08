@@ -13,7 +13,7 @@ export function CtaSection() {
               Explore Curriculum
             </Link>
             <Link href="/admissions" className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white/10 transition-colors font-semibold">
-              Admission Open Soon
+              Admission Open Now
             </Link>
           </div>
         </div>

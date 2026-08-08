@@ -16,3 +16,23 @@
  GET /hair-scan 404 in 5417ms
  GET /scan 404 in 361ms
  GET /client-feedback 404 in 256ms
+ ✓ Compiled in 19.2s (268 modules)
+ ✓ Compiled in 1026ms (268 modules)
+ ✓ Compiled in 30.4s (268 modules)
+ ✓ Compiled in 336ms (268 modules)
+ ✓ Compiled in 448ms (268 modules)
+ ✓ Compiled in 345ms (268 modules)
+ ✓ Compiled in 654ms (268 modules)
+ ✓ Compiled in 268ms (268 modules)
+ ✓ Compiled in 1100ms (268 modules)
+ ✓ Compiled in 719ms (268 modules)
+ ✓ Compiled in 429ms (268 modules)
+ ✓ Compiled in 414ms (268 modules)
+ ✓ Compiled in 188ms (268 modules)
+ ✓ Compiled in 228ms (268 modules)
+ ✓ Compiled in 484ms (268 modules)
+ ✓ Compiled in 576ms (268 modules)
+ ✓ Compiled in 546ms (268 modules)
+ ✓ Compiled in 11.2s (268 modules)
+ ✓ Compiled in 34.6s (268 modules)
+ ✓ Compiled in 10.8s (268 modules)

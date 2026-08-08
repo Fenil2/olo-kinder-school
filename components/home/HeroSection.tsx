@@ -34,7 +34,7 @@ export function HeroSection() {
             <Motion variant="up" delay={300}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
                 <Link href="/admissions" className="bg-accent text-white px-8 py-3.5 rounded-full hover:bg-orange-500 transition-colors font-semibold text-center shadow-sm">
-                  Admission Open Soon
+                  Admission Open Now
                 </Link>
                 <Link href="/about" className="border-2 border-foreground/30 text-foreground px-8 py-3.5 rounded-full hover:border-accent hover:text-accent transition-colors font-semibold text-center">
                   Explore Olo Kinder

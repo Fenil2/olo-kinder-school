@@ -5,7 +5,7 @@ import { Motion } from '@/components/ui/motion'
 interface Difference { title: string; Icon: IconType; desc: string }
 
 const differences: Difference[] = [
-  { title: 'Cartoon-Based Learning',  Icon: MdAnimation,       desc: 'Engaging animated characters and stories make learning irresistible for young minds.' },
+  // { title: 'Cartoon-Based Learning',  Icon: MdAnimation,       desc: 'Engaging animated characters and stories make learning irresistible for young minds.' },
   { title: 'Mascot-Driven Learning',  Icon: MdStars,           desc: 'Roundy, Squarey, Starry, and Hexy guide every learning experience with personality and purpose.' },
   { title: 'Experiential Learning',   Icon: MdNaturePeople,    desc: 'Children learn by doing — touching, exploring, creating, and experiencing the world firsthand.' },
   { title: 'Child-Friendly Modules',  Icon: MdChildFriendly,   desc: 'Every lesson is designed with young children in mind — joyful, simple, and deeply engaging.' },

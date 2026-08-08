@@ -65,7 +65,7 @@ export function Navigation() {
               href="/admissions"
               className="bg-accent text-white px-5 py-2 rounded-full hover:bg-orange-500 transition-colors font-semibold text-sm shadow-sm"
             >
-              Admission Open Soon
+              Admission Open Now
             </Link>
           </div>
 
@@ -116,7 +116,7 @@ export function Navigation() {
                 onClick={() => setIsOpen(false)}
                 className="block w-full bg-accent text-white px-4 py-3 rounded-full text-center font-semibold text-sm hover:bg-orange-500 transition-colors"
               >
-                Admission Open Soon
+                Admission Open Now
               </Link>
             </div>
           </div>
