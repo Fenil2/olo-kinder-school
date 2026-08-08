@@ -10,7 +10,7 @@ export function CtaSection() {
           <p className="text-base sm:text-xl mb-8 opacity-90">Schedule a tour and see our learning environment in action!</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/admissions" className="bg-white text-accent px-8 py-3 rounded-full hover:bg-gray-100 transition-colors font-semibold">
-              Admission Open Now
+              Admissions Open Now
             </Link>
             <Link href="/learning-experiences" className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white/10 transition-colors font-semibold">
               Explore Learning Experiences

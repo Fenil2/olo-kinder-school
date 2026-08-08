@@ -9,7 +9,7 @@ const testimonials = [
     avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80',
   },
   {
-    quote: 'The mascots make learning so engaging. My son talks about Roundy and Squarey all day long.',
+    quote: 'The mascots make learning so engaging. My son talks about Rolly and Squary all day long.',
     name: 'Parent',
     role: 'Father of a 5-year-old',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80',

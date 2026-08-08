@@ -39,7 +39,7 @@ export function AdmissionsCtaSection() {
                 <input type="email" placeholder="Your email address" className="w-full px-4 py-3 rounded-xl border border-border bg-muted/30 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
               </div>
               <button type="submit" className="w-full bg-accent text-white py-3.5 rounded-full font-semibold hover:bg-orange-500 transition-colors mt-2">
-                Admission Open Now
+                Admissions Open Now
               </button>
             </form>
           </div>

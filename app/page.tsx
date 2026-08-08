@@ -7,6 +7,7 @@ import { ExperiencesSection } from '@/components/home/ExperiencesSection'
 import { LearningJourneySection } from '@/components/home/LearningJourneySection'
 import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { AdmissionsCtaSection } from '@/components/home/AdmissionsCtaSection'
+import { MapSection } from '@/components/home/MapSection'
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <LearningJourneySection />
         <TestimonialsSection />
         <AdmissionsCtaSection />
+        <MapSection />
       </main>
       <Footer />
     </>

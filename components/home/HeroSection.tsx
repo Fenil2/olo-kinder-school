@@ -2,8 +2,8 @@ import Link from 'next/link'
 import { Motion } from '@/components/ui/motion'
 
 const mascots = [
-  { name: 'Roundy', role: 'Curious Explorer', color: 'text-mascot-roundy-dark', bg: 'bg-orange-50' },
-  { name: 'Squarey', role: 'Logical Thinker', color: 'text-mascot-squarey-dark', bg: 'bg-sky-50' },
+  { name: 'Rolly', role: 'Curious Explorer', color: 'text-mascot-roundy-dark', bg: 'bg-orange-50' },
+  { name: 'Squary', role: 'Logical Thinker', color: 'text-mascot-squarey-dark', bg: 'bg-sky-50' },
   { name: 'Starry', role: 'Creative Dreamer', color: 'text-mascot-starry-dark', bg: 'bg-yellow-50' },
   { name: 'Hexy', role: 'Problem Solver', color: 'text-mascot-hexy-dark', bg: 'bg-green-50' },
 ]
@@ -28,13 +28,13 @@ export function HeroSection() {
             </Motion>
             <Motion variant="up" delay={200}>
               <p className="text-base sm:text-lg text-foreground/75 leading-relaxed text-pretty max-w-xl mx-auto lg:mx-0">
-                At Olo Kinder, children embark on a joyful learning journey guided by Roundy, Squarey, Starry, and Hexy. Through play, exploration, creativity, and discovery, every child develops the confidence and skills needed for the future.
+                At Olo Kinder, children embark on a joyful learning journey guided by Rolly, Squary, Starry, and Hexy. Through play, exploration, creativity, and discovery, every child develops the confidence and skills needed for the future.
               </p>
             </Motion>
             <Motion variant="up" delay={300}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
                 <Link href="/admissions" className="bg-accent text-white px-8 py-3.5 rounded-full hover:bg-orange-500 transition-colors font-semibold text-center shadow-sm">
-                  Admission Open Now
+                  Admissions Open Now
                 </Link>
                 <Link href="/about" className="border-2 border-foreground/30 text-foreground px-8 py-3.5 rounded-full hover:border-accent hover:text-accent transition-colors font-semibold text-center">
                   Explore Olo Kinder

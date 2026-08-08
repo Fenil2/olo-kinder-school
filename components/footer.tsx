@@ -65,7 +65,7 @@ export function Footer() {
                     href="/admissions"
                     className="inline-block bg-accent text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-orange-500 transition-colors"
                   >
-                    Admission Open Now
+                    Admissions Open Now
                   </Link>
                 </li>
               </ul>

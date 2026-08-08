@@ -16,7 +16,7 @@ export function HeroSection() {
           <span className="inline-block bg-white/20 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Join Us</span>
         </Motion>
         <Motion variant="up" delay={100}>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Admission Open Now</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Admissions Open Now</h1>
         </Motion>
         <Motion variant="up" delay={200}>
           <p className="text-base sm:text-xl leading-relaxed max-w-2xl mx-auto opacity-90">

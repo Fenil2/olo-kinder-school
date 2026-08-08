@@ -2,8 +2,8 @@ import Image from 'next/image'
 import { Motion } from '@/components/ui/motion'
 
 const mascots = [
-  { name: 'Roundy', role: 'Curious Explorer', img: '/cur.png', color: 'text-mascot-roundy' },
-  { name: 'Squarey', role: 'Logical Thinker', img: '/square.png', color: 'text-mascot-squarey' },
+  { name: 'Rolly', role: 'Curious Explorer', img: '/rolly.png', color: 'text-mascot-roundy' },
+  { name: 'Squary', role: 'Logical Thinker', img: '/squary.png', color: 'text-mascot-squarey' },
   { name: 'Starry', role: 'Creative Dreamer', img: '/Hexy.png', color: 'text-mascot-starry' },
   { name: 'Hexy', role: 'Problem Solver', img: '/Starry.png', color: 'text-mascot-hexy' },
 ]
