@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Motion } from '@/components/ui/motion'
 
 export function HeroSection() {
@@ -5,9 +6,9 @@ export function HeroSection() {
     <section className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1600&q=80"
-          alt="Children at Olo Kinder"
-          className="w-full h-full object-cover"
+          src="/images/hero-school-entrance.jpg"
+          alt="Olo Kinder children walking out of the school entrance together"
+          className="w-full h-full object-cover object-[50%_38%]"
         />
         <div className="absolute inset-0 bg-foreground/50" />
       </div>
@@ -22,6 +23,14 @@ export function HeroSection() {
           <p className="text-base sm:text-xl leading-relaxed max-w-2xl mx-auto opacity-90">
             Take the first step towards a joyful, enriching learning journey for your child. We welcome curious, creative, and compassionate young learners.
           </p>
+        </Motion>
+        <Motion variant="up" delay={300}>
+          <Link
+            href="#enquiry"
+            className="inline-block mt-8 bg-accent text-white px-8 py-3.5 rounded-full hover:bg-orange-500 transition-colors font-semibold shadow-sm"
+          >
+            Submit Your Enquiry
+          </Link>
         </Motion>
       </div>
     </section>

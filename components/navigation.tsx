@@ -62,7 +62,7 @@ export function Navigation() {
               <span>{PHONE}</span>
             </a>
             <Link
-              href="/admissions"
+              href="/admissions#enquiry"
               className="bg-accent text-white px-5 py-2 rounded-full hover:bg-orange-500 transition-colors font-semibold text-sm shadow-sm"
             >
               Admissions Open Now
@@ -112,7 +112,7 @@ export function Navigation() {
                 {PHONE}
               </a>
               <Link
-                href="/admissions"
+                href="/admissions#enquiry"
                 onClick={() => setIsOpen(false)}
                 className="block w-full bg-accent text-white px-4 py-3 rounded-full text-center font-semibold text-sm hover:bg-orange-500 transition-colors"
               >

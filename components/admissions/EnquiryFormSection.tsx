@@ -2,7 +2,7 @@ import { Motion } from '@/components/ui/motion'
 
 export function EnquiryFormSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F0EDF5]">
+    <section id="enquiry" className="scroll-mt-20 py-20 px-4 sm:px-6 lg:px-8 bg-[#F0EDF5]">
       <div className="max-w-2xl mx-auto">
         <Motion variant="up">
           <div className="text-center mb-10">

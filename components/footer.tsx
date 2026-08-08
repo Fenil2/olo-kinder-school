@@ -62,7 +62,7 @@ export function Footer() {
                 <li>1470 B, Kathiravan Colony Main Road, Anna Nagar West, Chennai - 600040</li>
                 <li className="pt-2">
                   <Link
-                    href="/admissions"
+                    href="/admissions#enquiry"
                     className="inline-block bg-accent text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-orange-500 transition-colors"
                   >
                     Admissions Open Now

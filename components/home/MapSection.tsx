@@ -28,7 +28,7 @@ export function MapSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           <Motion variant="left" className="lg:col-span-2">
-            <div className="relative rounded-3xl overflow-hidden h-72 sm:h-96 lg:h-full min-h-[18rem] border border-border shadow-sm bg-[#E8F7FB]">
+            <div className="relative rounded-3xl overflow-hidden h-72 sm:h-96 lg:h-full min-h-72 border border-border shadow-sm bg-[#E8F7FB]">
               <iframe
                 src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
                 title="Olo Kinder location map"
@@ -72,7 +72,7 @@ export function MapSection() {
                   Get Directions
                 </a>
                 <Link
-                  href="/contact"
+                  href="/contact#enquiry"
                   className="inline-flex items-center justify-center rounded-full border-2 border-foreground/20 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-accent hover:text-accent"
                 >
                   Contact Us

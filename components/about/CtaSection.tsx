@@ -12,7 +12,7 @@ export function CtaSection() {
             <Link href="/curriculum" className="bg-white text-accent px-8 py-3 rounded-full hover:bg-gray-100 transition-colors font-semibold">
               Explore Curriculum
             </Link>
-            <Link href="/admissions" className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white/10 transition-colors font-semibold">
+            <Link href="/admissions#enquiry" className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white/10 transition-colors font-semibold">
               Admissions Open Now
             </Link>
           </div>
