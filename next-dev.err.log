@@ -1,0 +1,31 @@
+unable to verify the first certificate
+
+Retrying 1/3...
+unable to verify the first certificate
+
+Retrying 1/3...
+unable to verify the first certificate
+
+Retrying 2/3...
+unable to verify the first certificate
+
+Retrying 2/3...
+unable to verify the first certificate
+
+Retrying 3/3...
+unable to verify the first certificate
+
+Retrying 3/3...
+[Error: unable to verify the first certificate] {
+  code: 'UNABLE_TO_VERIFY_LEAF_SIGNATURE'
+}
+ ⨯ Failed to download `Nunito` from Google Fonts. Using fallback font instead.
+
+Failed to fetch `Nunito` from Google Fonts.}
+[Error: unable to verify the first certificate] {
+  code: 'UNABLE_TO_VERIFY_LEAF_SIGNATURE'
+}
+ ⨯ Failed to download `Fredoka` from Google Fonts. Using fallback font instead.
+
+Failed to fetch `Fredoka` from Google Fonts.}
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: EPERM: operation not permitted, rename 'D:\Frelancing\olo-kinder-website-structure\.next\cache\webpack\client-development\4.pack.gz_' -> 'D:\Frelancing\olo-kinder-website-structure\.next\cache\webpack\client-development\4.pack.gz'

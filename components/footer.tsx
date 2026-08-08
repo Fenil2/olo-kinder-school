@@ -58,14 +58,14 @@ export function Footer() {
             <div>
               <h3 className="font-semibold mb-4 text-white/90">Contact</h3>
               <ul className="space-y-2 text-sm text-white/70">
-                <li>hello@olokinder.com</li>
-                <li>+1 (555) 123-4567</li>
+                <li>98406 04197</li>
+                <li>1470 B, Kathiravan Colony Main Road, Anna Nagar West, Chennai - 600040</li>
                 <li className="pt-2">
                   <Link
                     href="/admissions"
                     className="inline-block bg-accent text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-orange-500 transition-colors"
                   >
-                    Admissions Open Soon
+                    Admission Open Soon
                   </Link>
                 </li>
               </ul>

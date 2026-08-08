@@ -1,0 +1,18 @@
+
+> my-project@0.1.0 dev
+> next dev --port 3000
+
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.88.18:3000
+
+ ✓ Starting...
+ ✓ Ready in 3.1s
+ ○ Compiling / ...
+ ✓ Compiled / in 9.8s (691 modules)
+ GET / 200 in 13311ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 4.6s (696 modules)
+ GET /hair-scan 404 in 5417ms
+ GET /scan 404 in 361ms
+ GET /client-feedback 404 in 256ms

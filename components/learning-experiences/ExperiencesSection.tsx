@@ -17,49 +17,49 @@ const experiences: Exp[] = [
     title: 'Circle Time', Icon: MdGroups, iconColor: 'text-[#0e7a94]', tagBg: 'bg-sky-50',
     desc: 'Morning greetings, songs, and conversations that build community and set a joyful tone for the day.',
     skills: ['Language', 'Social connection', 'Listening'],
-    img: 'https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=600&q=80',
+    img: '/images/storytelling-circle.jpg',
   },
   {
     title: 'Play & Learn', Icon: MdExtension, iconColor: 'text-[#F27C5A]', tagBg: 'bg-orange-50',
     desc: 'Child-led exploration through learning stations — art, building, dramatic play, and sensory discovery.',
     skills: ['Creativity', 'Problem-solving', 'Independence'],
-    img: 'https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=600&q=80',
+    img: '/images/building-blocks.jpg',
   },
   {
     title: 'Walk & Talk', Icon: MdDirectionsWalk, iconColor: 'text-[#4a7a1e]', tagBg: 'bg-green-50',
     desc: 'Outdoor explorations connecting learning to the natural world through observation and guided discussion.',
     skills: ['Vocabulary', 'Observation', 'Communication'],
-    img: 'https://images.unsplash.com/photo-1526976668912-1a811878dd37?auto=format&fit=crop&w=600&q=80',
+    img: '/images/campus-walk.jpg',
   },
   {
     title: 'Rhythmic Reading', Icon: MdLibraryBooks, iconColor: 'text-[#8a6a00]', tagBg: 'bg-yellow-50',
     desc: 'Literacy brought to life through rhythm, rhyme, and expressive storytelling with movement.',
     skills: ['Pre-literacy', 'Phonological awareness', 'Love of reading'],
-    img: 'https://images.unsplash.com/photo-1503676260728-1c657d096d18?auto=format&fit=crop&w=600&q=80',
+    img: '/images/reading-corner.jpg',
   },
   {
     title: 'Rhythmic Arithmetic', Icon: MdMusicNote, iconColor: 'text-[#0e7a94]', tagBg: 'bg-sky-50',
     desc: 'Number sense built naturally through rhythmic patterns, clapping, songs, and musical counting.',
     skills: ['Number sense', 'Pattern recognition', 'Memory'],
-    img: 'https://images.unsplash.com/photo-1543730435-cd2a6fa2a72a?auto=format&fit=crop&w=600&q=80',
+    img: '/images/number-mat-movement.jpg',
   },
   {
     title: 'Fact Fun', Icon: MdLightbulb, iconColor: 'text-[#F27C5A]', tagBg: 'bg-orange-50',
     desc: 'Bite-sized fascinating facts spark curiosity about the world and build a love of critical thinking.',
     skills: ['Critical thinking', 'General knowledge', 'Curiosity'],
-    img: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80',
+    img: '/images/show-and-tell.jpg',
   },
   {
     title: 'Connecting with Nature', Icon: MdEco, iconColor: 'text-[#4a7a1e]', tagBg: 'bg-green-50',
     desc: 'Hands-on nature experiences — gardening, bug observation, and outdoor science — build environmental care.',
     skills: ['Environmental awareness', 'Responsibility', 'Scientific thinking'],
-    img: 'https://images.unsplash.com/photo-1484863137850-59afcfe05386?auto=format&fit=crop&w=600&q=80',
+    img: '/images/nature-discovery.jpg',
   },
   {
     title: 'Creative Tasks', Icon: MdBrush, iconColor: 'text-[#8a6a00]', tagBg: 'bg-yellow-50',
     desc: 'Open-ended art and design projects invite children to express ideas and bring imagination to life.',
     skills: ['Creativity', 'Self-expression', 'Fine motor skills'],
-    img: 'https://images.unsplash.com/photo-1541647376583-8934aaf3448a?auto=format&fit=crop&w=600&q=80',
+    img: '/images/art-and-coloring.jpg',
   },
 ]
 
@@ -73,7 +73,7 @@ export function ExperiencesSection() {
               <div className="bg-[#FFFDF8] rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow h-full flex flex-col">
                 {/* Image */}
                 <div className="h-44 overflow-hidden">
-                  <img src={exp.img} alt={exp.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                  <img src={exp.img} alt={exp.title} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
 
                 {/* Content */}

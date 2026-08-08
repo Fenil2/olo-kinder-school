@@ -7,7 +7,7 @@ export function AdmissionsCtaSection() {
         <Motion variant="up">
           <div className="text-center text-white mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Join the Olo Kinder Family?</h2>
-            <p className="text-base sm:text-xl opacity-90">Experience the difference for yourself. Enquire about admissions today.</p>
+            <p className="text-base sm:text-xl opacity-90">Experience the difference for yourself. Admissions will open soon.</p>
           </div>
         </Motion>
         <Motion variant="scale" delay={150}>
@@ -39,7 +39,7 @@ export function AdmissionsCtaSection() {
                 <input type="email" placeholder="Your email address" className="w-full px-4 py-3 rounded-xl border border-border bg-muted/30 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
               </div>
               <button type="submit" className="w-full bg-accent text-white py-3.5 rounded-full font-semibold hover:bg-orange-500 transition-colors mt-2">
-                Submit Enquiry
+                Admission Open Soon
               </button>
             </form>
           </div>

@@ -1,4 +1,4 @@
-import { MdPhone, MdEmail, MdLocationOn } from 'react-icons/md'
+import { MdPhone, MdLocationOn } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
 
 export function HeroSection() {
@@ -25,9 +25,8 @@ export function HeroSection() {
 
           <div className="flex flex-col gap-4">
             {[
-              { icon: MdLocationOn, bg: 'bg-[#E8F7FB]', color: 'text-mascot-squarey-dark', label: 'Address', value: '123 Learning Lane, Education District, City — 000001' },
-              { icon: MdPhone,      bg: 'bg-orange-50',  color: 'text-mascot-roundy-dark',  label: 'Phone',   value: '+1 (555) 123-4567' },
-              { icon: MdEmail,      bg: 'bg-yellow-50',  color: 'text-mascot-starry-dark',  label: 'Email',   value: 'hello@olokinder.com' },
+              { icon: MdLocationOn, bg: 'bg-[#E8F7FB]', color: 'text-mascot-squarey-dark', label: 'Address', value: '1470 B, Kathiravan Colony Main Road, Anna Nagar West, Chennai - 600040' },
+              { icon: MdPhone,      bg: 'bg-orange-50',  color: 'text-mascot-roundy-dark',  label: 'Phone',   value: '98406 04197' },
             ].map((item, i) => (
               <Motion key={item.label} variant="right" delay={i * 100}>
                 <div className="bg-white rounded-2xl p-4 sm:p-5 flex items-center gap-4 shadow-sm border border-border">

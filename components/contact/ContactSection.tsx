@@ -1,10 +1,12 @@
 import { MdMap, MdSend, MdSchedule } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
 
+const address = '1470 B, Kathiravan Colony Main Road, Anna Nagar West, Chennai - 600040'
+const mapQuery = encodeURIComponent(address)
+
 const hours = [
-  { day: 'Monday – Friday', time: '7:30 AM – 6:00 PM' },
-  { day: 'Saturday',        time: '8:00 AM – 1:00 PM' },
-  { day: 'Sunday',          time: 'Closed'             },
+  { day: 'Pre KG & JKG', time: '9:00 AM - 12:00 Noon' },
+  { day: 'SKG',          time: '9:00 AM - 1:00 PM'    },
 ]
 
 export function ContactSection() {
@@ -16,12 +18,27 @@ export function ContactSection() {
           <Motion variant="left">
             <div>
               <h2 className="text-2xl font-bold text-foreground mb-5">Find Us</h2>
-              <div className="bg-[#E8F7FB] rounded-2xl h-56 sm:h-64 flex flex-col items-center justify-center border border-border gap-3">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
-                  <MdMap size={36} className="text-mascot-squarey-dark" />
+              <div className="relative rounded-2xl overflow-hidden h-64 sm:h-80 border border-border shadow-sm bg-[#E8F7FB]">
+                <iframe
+                  src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
+                  title="Olo Kinder location map"
+                  className="absolute inset-0 h-full w-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+                <div className="absolute left-4 right-4 bottom-4 rounded-xl bg-white/95 p-4 shadow-sm backdrop-blur">
+                  <p className="text-foreground font-semibold text-sm">Olo Kinder</p>
+                  <p className="text-foreground/65 text-xs leading-relaxed mt-1">{address}</p>
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-3 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-orange-500"
+                  >
+                    <MdMap size={16} />
+                    Open in Google Maps
+                  </a>
                 </div>
-                <p className="text-foreground font-medium text-sm">Interactive map coming soon</p>
-                <p className="text-foreground/65 text-xs">123 Learning Lane, Education District</p>
               </div>
             </div>
           </Motion>
@@ -29,8 +46,9 @@ export function ContactSection() {
           <Motion variant="left" delay={100}>
             <div className="relative rounded-2xl overflow-hidden h-48 sm:h-52">
               <img
-                src="https://images.unsplash.com/photo-1574279606130-09958dc756f7?auto=format&fit=crop&w=800&q=80"
-                alt="Olo Kinder campus"
+                src="/images/playground-play.jpg"
+                alt="Children playing on the lawn and playground outside the Olo Kinder campus building"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-linear-to-t from-foreground/40 to-transparent" />
@@ -42,13 +60,13 @@ export function ContactSection() {
             <div className="bg-[#F0EDF5] rounded-2xl p-5 sm:p-6">
               <div className="flex items-center gap-2 mb-4">
                 <MdSchedule size={22} className="text-accent" />
-                <h3 className="font-bold text-foreground text-base">Opening Hours</h3>
+                <h3 className="font-bold text-foreground text-base">Class Timings</h3>
               </div>
               <ul className="space-y-3">
                 {hours.map((h) => (
                   <li key={h.day} className="flex justify-between items-center text-sm">
                     <span className="text-foreground/80 font-medium">{h.day}</span>
-                    <span className={`font-semibold ${h.time === 'Closed' ? 'text-accent' : 'text-mascot-hexy-dark'}`}>{h.time}</span>
+                    <span className="font-semibold text-mascot-hexy-dark">{h.time}</span>
                   </li>
                 ))}
               </ul>

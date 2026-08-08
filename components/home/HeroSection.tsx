@@ -34,7 +34,7 @@ export function HeroSection() {
             <Motion variant="up" delay={300}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
                 <Link href="/admissions" className="bg-accent text-white px-8 py-3.5 rounded-full hover:bg-orange-500 transition-colors font-semibold text-center shadow-sm">
-                  Admissions Open Soon
+                  Admission Open Soon
                 </Link>
                 <Link href="/about" className="border-2 border-foreground/30 text-foreground px-8 py-3.5 rounded-full hover:border-accent hover:text-accent transition-colors font-semibold text-center">
                   Explore Olo Kinder
@@ -46,8 +46,8 @@ export function HeroSection() {
           <Motion variant="scale" delay={150} className="w-full">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-4/3 sm:aspect-3/2 lg:aspect-4/3">
               <img
-                src="/playscholban.png"
-                alt="Children learning joyfully at Olo Kinder"
+                src="/images/hero-school-entrance.jpg"
+                alt="Olo Kinder children running happily towards the school entrance"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
