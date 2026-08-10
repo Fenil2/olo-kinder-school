@@ -20,7 +20,7 @@ export function WhoWeAreSection() {
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-foreground">Who We Are</h2>
               <p className="text-base sm:text-lg text-foreground/80 leading-relaxed mb-8">
-                Olo Kinder is a unique early childhood learning initiative designed to nurture curious, confident, creative and compassionate young learners. We believe that the early years are the most critical period of a child&apos;s development, and we are committed to making those years joyful, meaningful, and enriching.
+                Olo Kinder is a unique early childhood learning initiative designed to nurture curious, confident, creative and compassionate young learners. We believe that the early years are the most critical period in a child&apos;s development, and we are committed to making those years joyful, meaningful, and enriching.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {values.map((v) => (

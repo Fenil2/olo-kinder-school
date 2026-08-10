@@ -15,7 +15,7 @@ interface Exp {
 const experiences: Exp[] = [
   {
     title: 'Circle Time', Icon: MdGroups, iconColor: 'text-[#0e7a94]', tagBg: 'bg-sky-50',
-    desc: 'Morning greetings, songs, and conversations that build community and set a joyful tone for the day.',
+    desc: 'An engaging time for greetings songs, conversation,and sharing that develop language, listening skills,and social connections while creating a joyful start of the day.',
     skills: ['Language', 'Social connection', 'Listening'],
     img: '/images/storytelling-circle.jpg',
   },
