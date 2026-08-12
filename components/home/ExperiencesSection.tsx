@@ -21,7 +21,7 @@ export function ExperiencesSection() {
         <Motion variant="up">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Learning Through Experiences</h2>
-            <p className="text-base sm:text-lg text-foreground/80 max-w-xl mx-auto">Every day at Olo Kinder is filled with rich, purposeful experiences designed to inspire and engage.</p>
+            <p className="text-base sm:text-lg text-foreground/80 max-w-xl mx-auto">Olo Kinder is filled with rich, purposeful experiences designed to inspire curiosity, encourage exploration, and engage young learners.</p>
           </div>
         </Motion>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

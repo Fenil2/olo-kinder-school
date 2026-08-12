@@ -11,7 +11,7 @@ export function VisionMissionSection() {
               <MdAutoAwesome size={44} className="text-primary mb-4" />
               <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">Our Vision</h2>
               <p className="text-base sm:text-lg text-foreground/75 leading-relaxed">
-                To create lifelong learners who explore, discover, communicate and grow with confidence.
+                Olo Kinder envisages nurturing a generation of confident, compassionate, and curious learners in a safe, inclusive, and inspiring learning ambience, where the innate potential of every child is celebrated.
               </p>
             </div>
           </Motion>

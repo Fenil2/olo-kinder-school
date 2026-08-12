@@ -12,7 +12,7 @@ export function HeroSection() {
         </Motion>
         <Motion variant="up" delay={200}>
           <p className="text-lg sm:text-xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
-            Every day at Olo Kinder is filled with rich, purposeful experiences designed to inspire, engage, and grow every child.
+           Olo Kinder is filled with rich, purposeful experiences designed to inspire curiosity, encourage exploration, and engage young learners.
           </p>
         </Motion>
       </div>

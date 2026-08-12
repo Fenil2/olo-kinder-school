@@ -12,7 +12,7 @@ export function HeroSection() {
         </Motion>
         <Motion variant="up" delay={200}>
           <p className="text-lg sm:text-xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
-            A comprehensive, research-based framework supporting holistic child development across six essential learning areas.
+            Our curriculum emphasizes Listening, Speaking, Vocabulary, growth and Expressive language. Through interactive read aloud sessions, group conversations, dramatic play and language rich environment.
           </p>
         </Motion>
       </div>

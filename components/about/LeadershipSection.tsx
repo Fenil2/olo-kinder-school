@@ -38,7 +38,7 @@ const leaders: Leader[] = [
     role: 'Co-Founder & Director of Academics',
     name: 'Mrs. Geethanjali Sasikumar',
     heading: "Director's Message",
-    portrait: '/woman1.png',
+    portrait: '/female.jpeg',
     portraitFit: 'object-top scale-[1.35]',
     alt: 'Mrs. Geethanjali Sasikumar, Co-Founder and Director of Academics at Olo Kinder school',
     quote: 'Storytelling is the most powerful way to put ideas into the world today.',
