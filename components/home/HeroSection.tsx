@@ -1,16 +1,9 @@
 import Link from 'next/link'
 import { Motion } from '@/components/ui/motion'
 
-const mascots = [
-  { name: 'Rolly', role: 'Curious Explorer', color: 'text-mascot-roundy-dark', bg: 'bg-orange-50' },
-  { name: 'Squary', role: 'Logical Thinker', color: 'text-mascot-squarey-dark', bg: 'bg-sky-50' },
-  { name: 'Starry', role: 'Creative Dreamer', color: 'text-mascot-starry-dark', bg: 'bg-yellow-50' },
-  { name: 'Hexy', role: 'Problem Solver', color: 'text-mascot-hexy-dark', bg: 'bg-green-50' },
-]
-
 export function HeroSection() {
   return (
-    <section className="min-h-[calc(100vh-5rem)] flex items-center px-4 sm:px-6 lg:px-8 bg-linear-to-br from-[#FFFDF8] via-[#E8F7FB] to-[#EFF8E0] py-16">
+    <section className="min-h-[calc(100vh-5rem)] flex items-center px-4 sm:px-6 lg:px-8 bg-linear-to-br from-background via-surface-sky to-surface-leaf py-16">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
 
@@ -21,7 +14,7 @@ export function HeroSection() {
               </span>
             </Motion>
             <Motion variant="up" delay={100}>
-              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-foreground leading-tight text-pretty">
+              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-heading leading-tight text-pretty">
                 Where Curiosity Begins and{' '}
                 <span className="text-accent">Learning Comes Alive</span>
               </h1>
@@ -33,7 +26,7 @@ export function HeroSection() {
             </Motion>
             <Motion variant="up" delay={300}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
-                <Link href="/admissions#enquiry" className="bg-accent text-white px-8 py-3.5 rounded-full hover:bg-orange-500 transition-colors font-semibold text-center shadow-sm">
+                <Link href="/admissions#enquiry" className="bg-accent text-white px-8 py-3.5 rounded-full hover:bg-accent-hover transition-colors font-semibold text-center shadow-sm">
                   Admissions Open Now
                 </Link>
                 <Link href="/about" className="border-2 border-foreground/30 text-foreground px-8 py-3.5 rounded-full hover:border-accent hover:text-accent transition-colors font-semibold text-center">
@@ -50,14 +43,6 @@ export function HeroSection() {
                 alt="Olo Kinder children running happily towards the school entrance"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 flex gap-2 justify-center flex-wrap">
-                {mascots.map((m) => (
-                  <span key={m.name} className={`${m.bg} ${m.color} text-xs font-bold px-3 py-1 rounded-full shadow-sm`}>
-                    {m.name} · {m.role}
-                  </span>
-                ))}
-              </div>
             </div>
           </Motion>
 

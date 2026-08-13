@@ -22,6 +22,16 @@
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-primary-hover: var(--primary-hover);
+  --color-surface-sky: var(--surface-sky);
+  --color-surface-leaf: var(--surface-leaf);
+  --color-surface-lilac: var(--surface-lilac);
+  --color-surface-sand: var(--surface-sand);
+  --color-surface-blush: var(--surface-blush);
+  --color-surface-mist: var(--surface-mist);
+  --color-heading: var(--heading);
+  --color-surface-dark: var(--surface-dark);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -56,33 +66,55 @@
   --font-heading: 'Fredoka', sans-serif;
   --font-body: 'Nunito', sans-serif;
   color-scheme: light;
-  --background: #FFFDF8;
-  --foreground: #4B355D;
-  --card: #ffffff;
+
+  /* ---- Locked brand darks (do not change) ---- */
+  --foreground: #4B355D;   /* body text */
+  --heading: #11204E;      /* headings */
+  --surface-dark: #11204E; /* footer and dark bands */
+
+  /* ---- Section surfaces ----
+     One per section, so no page repeats a background. Each is light enough
+     that the cream --card lifts off it and #4B355D body text stays AA. */
+  --background: #F2F5FA;     /* neutral  */
+  --surface-sky: #E1EFF8;    /* blue     */
+  --surface-leaf: #E9F3DF;   /* green    */
+  --surface-lilac: #EDE8F7;  /* lilac    */
+  --surface-sand: #FBF3DC;   /* yellow   */
+  --surface-blush: #FBE9E0;  /* peach    */
+  --surface-mist: #E2F1EE;   /* teal     */
+
+  --muted: #E7EDF7;          /* hovers, chips, inputs */
+  --muted-foreground: #5E6A85;
+  --border: #DBE2EF;
+  --input: #F1F4FA;
+
+  /* ---- Cards: warm cream, so they lift off every cool section above ---- */
+  --card: #FFFDF8;
   --card-foreground: #4B355D;
-  --popover: #ffffff;
+  --popover: #FFFDF8;
   --popover-foreground: #4B355D;
+
+  /* ---- Mascot-derived brand colours (unchanged) ---- */
   --primary: #9ED8E8;
   --primary-foreground: #4B355D;
   --secondary: #B7D77A;
   --secondary-foreground: #4B355D;
-  --muted: #F0EDF5;
-  --muted-foreground: #7a6a8a;
   --accent: #F27C5A;
   --accent-foreground: #ffffff;
   --highlight: #F4D46A;
+  --accent-hover: #E06644;
+  --primary-hover: #7FC9DD;
+
   --destructive: #ef4444;
-  --border: #e5dff0;
-  --input: #f5f0fa;
   --ring: #9ED8E8;
   --radius: 0.75rem;
-  --sidebar: #FFFDF8;
+  --sidebar: #F6F8FC;
   --sidebar-foreground: #4B355D;
   --sidebar-primary: #9ED8E8;
   --sidebar-primary-foreground: #4B355D;
   --sidebar-accent: #F27C5A;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #e5dff0;
+  --sidebar-border: #DBE2EF;
   --sidebar-ring: #9ED8E8;
 
   /* Mascot identity colors */

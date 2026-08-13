@@ -9,10 +9,10 @@ const approachItems = [
 
 export function ApproachSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-surface-sand">
       <div className="max-w-6xl mx-auto">
         <Motion variant="up">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center text-foreground">Our Approach</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center text-heading">Our Approach</h2>
         </Motion>
         <Motion variant="scale" delay={100}>
           <div className="bg-linear-to-r from-primary/10 to-secondary/10 rounded-3xl p-8 sm:p-10 md:p-14 mb-12">
@@ -25,7 +25,7 @@ export function ApproachSection() {
           {approachItems.map((item, i) => (
             <Motion key={i} variant="up" delay={i * 80}>
               <div className="border-l-4 border-primary pl-6 h-full">
-                <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground">{item.title}</h3>
+                <h3 className="text-lg sm:text-xl font-bold mb-2 text-heading">{item.title}</h3>
                 <p className="text-foreground/80 leading-relaxed text-sm sm:text-base">{item.desc}</p>
               </div>
             </Motion>

@@ -3,13 +3,28 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
-import { MdMenu, MdClose, MdPhone } from 'react-icons/md'
+import { useEffect, useRef, useState } from 'react'
+import { MdMenu, MdClose, MdPhone, MdExpandMore } from 'react-icons/md'
 
-const navLinks = [
+interface NavLink {
+  href: string
+  label: string
+  children?: { href: string; label: string }[]
+}
+
+const navLinks: NavLink[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/curriculum', label: 'Curriculum' },
+  {
+    href: '/curriculum',
+    label: 'Curriculum',
+    children: [
+      { href: '/curriculum', label: 'Overview' },
+      { href: '/curriculum/pre-school', label: 'Pre-School' },
+      { href: '/curriculum/junior-kindergarten', label: 'Junior Kindergarten' },
+      { href: '/curriculum/senior-kindergarten', label: 'Senior Kindergarten' },
+    ],
+  },
   { href: '/learning-experiences', label: 'Learning Experiences' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -19,10 +34,35 @@ const PHONE_HREF = 'tel:+919840604197'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const pathname = usePathname()
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Close the desktop dropdown on outside click or Escape
+  useEffect(() => {
+    if (!openDropdown) return
+    const onPointerDown = (e: PointerEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) setOpenDropdown(null)
+    }
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpenDropdown(null)
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown)
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [openDropdown])
+
+  // Collapse menus when navigating
+  useEffect(() => {
+    setIsOpen(false)
+    setOpenDropdown(null)
+  }, [pathname])
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -33,9 +73,65 @@ export function Navigation() {
           </Link>
 
           {/* Desktop nav links */}
-          <div className="hidden lg:flex items-center gap-0.5">
+          <div ref={dropdownRef} className="hidden lg:flex items-center gap-0.5">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href
+              const isActive = link.children
+                ? pathname.startsWith(link.href)
+                : pathname === link.href
+
+              if (link.children) {
+                const isDropdownOpen = openDropdown === link.href
+                return (
+                  <div
+                    key={link.href}
+                    className="relative"
+                    onMouseEnter={() => setOpenDropdown(link.href)}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                  >
+                    <button
+                      onClick={() => setOpenDropdown(isDropdownOpen ? null : link.href)}
+                      aria-expanded={isDropdownOpen}
+                      aria-haspopup="true"
+                      className={`flex items-center gap-1 px-4 py-2 rounded-full text-base font-medium transition-all duration-150 cursor-pointer ${
+                        isActive
+                          ? 'text-accent bg-accent/10'
+                          : 'text-foreground/75 hover:text-foreground hover:bg-muted'
+                      }`}
+                    >
+                      {link.label}
+                      <MdExpandMore
+                        size={18}
+                        className={`transition-transform duration-150 ${isDropdownOpen ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+
+                    {isDropdownOpen && (
+                      <div className="absolute left-0 top-full pt-2 w-60">
+                        <div className="bg-card rounded-2xl border border-border shadow-lg p-2">
+                          {link.children.map((child) => {
+                            const isChildActive = pathname === child.href
+                            return (
+                              <Link
+                                key={child.href}
+                                href={child.href}
+                                onClick={() => setOpenDropdown(null)}
+                                className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
+                                  isChildActive
+                                    ? 'bg-accent/10 text-accent'
+                                    : 'text-foreground/75 hover:bg-muted hover:text-foreground'
+                                }`}
+                              >
+                                {child.label}
+                              </Link>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )
+              }
+
               return (
                 <Link
                   key={link.href}
@@ -63,7 +159,7 @@ export function Navigation() {
             </a>
             <Link
               href="/admissions#enquiry"
-              className="bg-accent text-white px-5 py-2 rounded-full hover:bg-orange-500 transition-colors font-semibold text-sm shadow-sm"
+              className="bg-accent text-white px-5 py-2 rounded-full hover:bg-accent-hover transition-colors font-semibold text-sm shadow-sm"
             >
               Admissions Open Now
             </Link>
@@ -82,10 +178,39 @@ export function Navigation() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="lg:hidden border-t border-border bg-white">
+        <div className="lg:hidden border-t border-border bg-card">
           <div className="max-w-7xl mx-auto px-4 py-3 space-y-0.5">
             {navLinks.map((link) => {
               const isActive = pathname === link.href
+
+              if (link.children) {
+                return (
+                  <div key={link.href} className="space-y-0.5">
+                    <div className="px-4 pt-2 pb-1 text-xs font-bold uppercase tracking-wide text-foreground/50">
+                      {link.label}
+                    </div>
+                    {link.children.map((child) => {
+                      const isChildActive = pathname === child.href
+                      return (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          onClick={() => setIsOpen(false)}
+                          className={`flex items-center justify-between pl-6 pr-4 py-2.5 rounded-xl font-medium text-sm transition-colors ${
+                            isChildActive
+                              ? 'bg-accent/10 text-accent'
+                              : 'text-foreground hover:bg-muted'
+                          }`}
+                        >
+                          <span>{child.label}</span>
+                          {isChildActive && <span className="w-1.5 h-1.5 rounded-full bg-accent" />}
+                        </Link>
+                      )
+                    })}
+                  </div>
+                )
+              }
+
               return (
                 <Link
                   key={link.href}
@@ -114,7 +239,7 @@ export function Navigation() {
               <Link
                 href="/admissions#enquiry"
                 onClick={() => setIsOpen(false)}
-                className="block w-full bg-accent text-white px-4 py-3 rounded-full text-center font-semibold text-sm hover:bg-orange-500 transition-colors"
+                className="block w-full bg-accent text-white px-4 py-3 rounded-full text-center font-semibold text-sm hover:bg-accent-hover transition-colors"
               >
                 Admissions Open Now
               </Link>

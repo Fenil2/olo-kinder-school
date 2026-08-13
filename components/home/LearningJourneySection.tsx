@@ -11,11 +11,11 @@ const journey = [
 
 export function LearningJourneySection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#E8F7FB]">
+    <section className="bg-surface-sky py-20 px-4 sm:px-6 lg:px-8 bg-surface-sky">
       <div className="max-w-5xl mx-auto">
         <Motion variant="up">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Our Learning Journey</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Our Learning Journey</h2>
             <p className="text-base sm:text-lg text-foreground/80">Six purposeful stages that guide every child from curiosity to confidence.</p>
           </div>
         </Motion>
@@ -26,7 +26,7 @@ export function LearningJourneySection() {
                 <div className={`${j.color} w-14 h-14 rounded-full flex items-center justify-center ${j.textColor} font-bold text-xl mb-3 shadow-sm`}>
                   {j.step}
                 </div>
-                <h3 className="font-bold text-foreground text-sm sm:text-base mb-1">{j.word}</h3>
+                <h3 className="font-bold text-heading text-sm sm:text-base mb-1">{j.word}</h3>
                 <p className="text-xs text-foreground/75 leading-snug">{j.desc}</p>
               </div>
             </Motion>

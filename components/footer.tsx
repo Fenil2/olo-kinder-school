@@ -4,7 +4,7 @@ import { Motion } from '@/components/ui/motion'
 
 export function Footer() {
   return (
-    <footer className="bg-foreground text-white py-14">
+    <footer className="bg-surface-dark text-white py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Motion variant="up">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-10">
@@ -63,7 +63,7 @@ export function Footer() {
                 <li className="pt-2">
                   <Link
                     href="/admissions#enquiry"
-                    className="inline-block bg-accent text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-orange-500 transition-colors"
+                    className="inline-block bg-accent text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-accent-hover transition-colors"
                   >
                     Admissions Open Now
                   </Link>

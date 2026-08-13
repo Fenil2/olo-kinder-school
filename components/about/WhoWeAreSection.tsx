@@ -5,20 +5,20 @@ import { Motion } from '@/components/ui/motion'
 interface Value { label: string; Icon: IconType; color: string; bg: string }
 
 const values: Value[] = [
-  { label: 'Curious',        Icon: MdSearch,            color: 'text-mascot-squarey-dark', bg: 'bg-[#E8F7FB]' },
-  { label: 'Confident',      Icon: MdEmojiEvents,       color: 'text-mascot-roundy-dark',  bg: 'bg-orange-50' },
-  { label: 'Creative',       Icon: MdPalette,           color: 'text-mascot-starry-dark',  bg: 'bg-yellow-50' },
-  { label: 'Compassionate',  Icon: MdVolunteerActivism, color: 'text-mascot-hexy-dark',    bg: 'bg-green-50'  },
+  { label: 'Curious',        Icon: MdSearch,            color: 'text-mascot-squarey-dark', bg: 'bg-surface-sky' },
+  { label: 'Confident',      Icon: MdEmojiEvents,       color: 'text-mascot-roundy-dark',  bg: 'bg-mascot-roundy/15' },
+  { label: 'Creative',       Icon: MdPalette,           color: 'text-mascot-starry-dark',  bg: 'bg-mascot-starry/15' },
+  { label: 'Compassionate',  Icon: MdVolunteerActivism, color: 'text-mascot-hexy-dark',    bg: 'bg-mascot-hexy/15'  },
 ]
 
 export function WhoWeAreSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-surface-mist">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
           <Motion variant="left">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-foreground">Who We Are</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-heading">Who We Are</h2>
               <p className="text-base sm:text-lg text-foreground/80 leading-relaxed mb-8">
                 Olo Kinder is a unique early childhood learning initiative designed to nurture curious, confident, creative and compassionate young learners. We believe that the early years are the most critical period in a child&apos;s development, and we are committed to making those years joyful, meaningful, and enriching.
               </p>

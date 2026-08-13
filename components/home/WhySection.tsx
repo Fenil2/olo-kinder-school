@@ -15,20 +15,20 @@ const whyCards: WhyCard[] = [
 
 export function WhySection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F0EDF5]">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-surface-sand">
       <div className="max-w-7xl mx-auto">
         <Motion variant="up">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Why Olo Kinder</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Why Olo Kinder</h2>
             <p className="text-base sm:text-lg text-foreground/80 max-w-xl mx-auto">A thoughtfully designed approach that sets the foundation for lifelong learning.</p>
           </div>
         </Motion>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {whyCards.map((card, i) => (
             <Motion key={i} variant="up" delay={i * 80}>
-              <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow h-full">
+              <div className="bg-card rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow h-full">
                 <card.Icon size={40} className="text-accent mb-4" />
-                <h3 className="text-lg sm:text-xl font-bold mb-3 text-foreground">{card.title}</h3>
+                <h3 className="text-lg sm:text-xl font-bold mb-3 text-heading">{card.title}</h3>
                 <p className="text-foreground/80 leading-relaxed text-sm sm:text-base">{card.desc}</p>
               </div>
             </Motion>

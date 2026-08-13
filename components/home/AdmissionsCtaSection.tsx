@@ -11,8 +11,8 @@ export function AdmissionsCtaSection() {
           </div>
         </Motion>
         <Motion variant="scale" delay={150}>
-          <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-12 shadow-lg max-w-2xl mx-auto">
-            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-6 text-center">Enquiry Form</h3>
+          <div className="bg-card rounded-3xl p-6 sm:p-8 md:p-12 shadow-lg max-w-2xl mx-auto">
+            <h3 className="text-xl sm:text-2xl font-bold text-heading mb-6 text-center">Enquiry Form</h3>
             <form className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
@@ -38,7 +38,7 @@ export function AdmissionsCtaSection() {
                 <label className="block text-sm font-medium text-foreground mb-1">Email Address</label>
                 <input type="email" placeholder="Your email address" className="w-full px-4 py-3 rounded-xl border border-border bg-muted/30 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
               </div>
-              <button type="submit" className="w-full bg-accent text-white py-3.5 rounded-full font-semibold hover:bg-orange-500 transition-colors mt-2">
+              <button type="submit" className="w-full bg-accent text-white py-3.5 rounded-full font-semibold hover:bg-accent-hover transition-colors mt-2">
                 Admissions Open Now
               </button>
             </form>
