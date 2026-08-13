@@ -6,7 +6,7 @@ import { Motion } from '@/components/ui/motion'
 interface Experience { title: string; Icon: IconType; desc: string }
 
 const experiences: Experience[] = [
-  { title: 'Circle Time', Icon: MdGroups, desc: 'Morning greetings, songs, and meaningful conversations that set a joyful tone for the day.' },
+  { title: 'Circle Time', Icon: MdGroups, desc: 'An engaging time for greetings songs, conversation,and sharing that develop language, listening skills,and social connections while creating a joyful start of the day.' },
   { title: 'Play & Learn', Icon: MdExtension, desc: 'Child-led exploration through varied learning stations that invite creativity and discovery.' },
   { title: 'Walk & Talk', Icon: MdDirectionsWalk, desc: 'Outdoor explorations where children observe, discuss, and connect learning to the natural world.' },
   { title: 'Rhythmic Reading', Icon: MdLibraryBooks, desc: 'Language and literacy brought to life through rhythm, rhyme, and expressive storytelling.' },
@@ -16,7 +16,7 @@ const experiences: Experience[] = [
 
 export function ExperiencesSection() {
   return (
-    <section className="bg-surface-leaf py-20 px-4 sm:px-6 lg:px-8 bg-surface-leaf">
+    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <Motion variant="up">
           <div className="text-center mb-14">

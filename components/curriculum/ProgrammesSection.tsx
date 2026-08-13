@@ -10,7 +10,7 @@ const palette = [
 
 export function ProgrammesSection() {
   return (
-    <section className="bg-surface-leaf py-20 px-4 sm:px-6 lg:px-8 bg-surface-leaf">
+    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <Motion variant="up">
           <h2 className="text-3xl sm:text-4xl font-bold mb-14 text-center text-heading">Thematic Learning Modules</h2>
@@ -23,9 +23,9 @@ export function ProgrammesSection() {
               <Motion key={programme.slug} variant="scale" delay={i * 80}>
                 <Link
                   href={`/curriculum/${programme.slug}`}
-                  className={`bg-card rounded-2xl border border-border border-t-4 ${colors.accent} overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col`}
+                  className={`${colors.bg} rounded-2xl border-t-4 ${colors.accent} overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col`}
                 >
-                  <div className={`${colors.bg} p-6 h-64 flex items-center justify-center`}>
+                  <div className={"bg-white/70 p-6 h-64 flex items-center justify-center"}>
                     <img
                       src={programme.modules[0].image}
                       alt={programme.modules[0].imageAlt}

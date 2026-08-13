@@ -1,21 +1,15 @@
-import { Motion } from '@/components/ui/motion'
+import { PageHero } from '@/components/ui/page-hero'
 
 export function HeroSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-background via-surface-sky to-surface-leaf flex items-center justify-center">
-      <div className="max-w-4xl mx-auto text-center">
-        <Motion variant="down">
-          <span className="inline-block bg-highlight/30 text-foreground text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Learning Experiences</span>
-        </Motion>
-        <Motion variant="up" delay={100}>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-heading">Learning Through Experiences</h1>
-        </Motion>
-        <Motion variant="up" delay={200}>
-          <p className="text-lg sm:text-xl text-foreground/75 leading-relaxed max-w-2xl mx-auto">
-           Olo Kinder is filled with rich, purposeful experiences designed to inspire curiosity, encourage exploration, and engage young learners.
-          </p>
-        </Motion>
-      </div>
-    </section>
+    <PageHero
+      eyebrow="Learning Experiences"
+      title="Learning Through"
+      titleAccent="Experiences"
+      subtitle="Olo Kinder is filled with rich, purposeful experiences designed to inspire curiosity, encourage exploration, and engage young learners."
+      image="/images/art-and-coloring.jpg"
+      imageAlt="Children painting and colouring together during an Olo Kinder art session"
+      focus="50% 45%"
+    />
   )
 }

@@ -2,7 +2,7 @@ import { Motion } from '@/components/ui/motion'
 
 export function EnquiryFormSection() {
   return (
-    <section id="enquiry" className="scroll-mt-20 py-20 px-4 sm:px-6 lg:px-8 bg-surface-mist">
+    <section id="enquiry" className="scroll-mt-20 py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-2xl mx-auto">
         <Motion variant="up">
           <div className="text-center mb-10">
@@ -11,7 +11,7 @@ export function EnquiryFormSection() {
           </div>
         </Motion>
         <Motion variant="scale" delay={100}>
-          <div className="bg-card rounded-3xl p-6 sm:p-8 md:p-12 shadow-sm">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-12 shadow-sm">
             <form className="space-y-5">
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-1.5">Parent Name <span className="text-accent">*</span></label>

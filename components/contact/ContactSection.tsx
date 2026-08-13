@@ -11,7 +11,7 @@ const hours = [
 
 export function ContactSection() {
   return (
-    <section id="enquiry" className="scroll-mt-20 py-20 px-4 sm:px-6 lg:px-8 bg-surface-sky">
+    <section id="enquiry" className="scroll-mt-20 py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
 
         <div className="space-y-8">
@@ -80,7 +80,7 @@ export function ContactSection() {
             <p className="text-foreground/80 mb-6 text-sm leading-relaxed">
               Fill in the form below and our admissions team will respond within 24 hours.
             </p>
-            <div className="bg-card rounded-3xl p-6 sm:p-8 border border-border">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-border">
               <form className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>

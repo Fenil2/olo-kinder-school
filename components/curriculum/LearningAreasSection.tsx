@@ -71,7 +71,7 @@ const areas: Area[] = [
 
 export function LearningAreasSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-surface-lilac">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         <Motion variant="up">
           <div className="text-center mb-14">
@@ -83,9 +83,9 @@ export function LearningAreasSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {areas.map((area, i) => (
             <Motion key={i} variant="scale" delay={i * 80}>
-              <div className={`bg-card rounded-2xl border-t-4 ${area.accent} p-6 hover:shadow-lg transition-shadow h-full flex flex-col gap-4`}>
+              <div className={`${area.iconBg} rounded-2xl border-t-4 ${area.accent} p-6 hover:shadow-lg transition-shadow h-full flex flex-col gap-4`}>
                 <div className="flex items-center gap-3">
-                  <div className={`${area.iconBg} w-12 h-12 rounded-xl flex items-center justify-center shrink-0`}>
+                  <div className={`bg-white w-12 h-12 rounded-xl flex items-center justify-center shrink-0`}>
                     <area.Icon size={26} className={area.iconColor} />
                   </div>
                   <h3 className="text-lg font-bold text-heading leading-tight">{area.title}</h3>
@@ -93,7 +93,7 @@ export function LearningAreasSection() {
 
                 <div className="flex flex-wrap gap-2">
                   {area.topics.map((topic) => (
-                    <span key={topic} className={`${area.iconBg} text-foreground/75 text-xs font-semibold px-3 py-1 rounded-full`}>
+                    <span key={topic} className={`bg-white text-foreground/75 text-xs font-semibold px-3 py-1 rounded-full`}>
                       {topic}
                     </span>
                   ))}

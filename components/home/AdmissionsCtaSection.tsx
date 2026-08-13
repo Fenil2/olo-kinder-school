@@ -11,7 +11,7 @@ export function AdmissionsCtaSection() {
           </div>
         </Motion>
         <Motion variant="scale" delay={150}>
-          <div className="bg-card rounded-3xl p-6 sm:p-8 md:p-12 shadow-lg max-w-2xl mx-auto">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-12 shadow-lg max-w-2xl mx-auto">
             <h3 className="text-xl sm:text-2xl font-bold text-heading mb-6 text-center">Enquiry Form</h3>
             <form className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

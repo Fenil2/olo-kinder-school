@@ -15,7 +15,7 @@ const details = [
 
 export function MapSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-surface-mist">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <Motion variant="up">
           <div className="text-center mb-12">
@@ -40,7 +40,7 @@ export function MapSection() {
           </Motion>
 
           <Motion variant="right" delay={150}>
-            <div className="bg-card rounded-3xl p-6 sm:p-8 border border-border h-full flex flex-col">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-border h-full flex flex-col">
               <h3 className="text-xl font-bold text-heading mb-6">Olo Kinder</h3>
               <ul className="space-y-5 flex-1">
                 {details.map((d) => (

@@ -107,7 +107,7 @@ export function Navigation() {
 
                     {isDropdownOpen && (
                       <div className="absolute left-0 top-full pt-2 w-60">
-                        <div className="bg-card rounded-2xl border border-border shadow-lg p-2">
+                        <div className="bg-white rounded-2xl border border-border shadow-lg p-2">
                           {link.children.map((child) => {
                             const isChildActive = pathname === child.href
                             return (
@@ -178,7 +178,7 @@ export function Navigation() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="lg:hidden border-t border-border bg-card">
+        <div className="lg:hidden border-t border-border bg-white">
           <div className="max-w-7xl mx-auto px-4 py-3 space-y-0.5">
             {navLinks.map((link) => {
               const isActive = pathname === link.href

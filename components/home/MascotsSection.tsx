@@ -10,7 +10,7 @@ const mascots = [
 
 export function MascotsSection() {
   return (
-    <section className="bg-surface-lilac py-20 px-4 sm:px-6 lg:px-8 bg-surface-lilac">
+    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <Motion variant="up">
           <div className="text-center mb-14">

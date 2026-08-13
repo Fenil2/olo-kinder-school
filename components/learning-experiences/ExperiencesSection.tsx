@@ -71,12 +71,12 @@ const experiences: Exp[] = [
 
 export function ExperiencesSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-surface-leaf">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {experiences.map((exp, i) => (
             <Motion key={i} variant="up" delay={i * 60}>
-              <div className="bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow h-full flex flex-col">
+              <div className={`${exp.tagBg} rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow h-full flex flex-col`}>
                 <div className="h-44 overflow-hidden">
                   <img src={exp.img} alt={exp.title} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
@@ -89,7 +89,7 @@ export function ExperiencesSection() {
                   <p className="text-sm text-foreground/75 leading-relaxed">{exp.desc}</p>
                   <div className="flex flex-wrap gap-1.5 mt-auto pt-1">
                     {exp.skills.map((skill) => (
-                      <span key={skill} className={`${exp.tagBg} text-foreground/75 text-xs font-medium px-2.5 py-1 rounded-full`}>
+                      <span key={skill} className={`bg-white text-foreground/75 text-xs font-medium px-2.5 py-1 rounded-full`}>
                         {skill}
                       </span>
                     ))}

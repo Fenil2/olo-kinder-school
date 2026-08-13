@@ -33,13 +33,13 @@ const pillars = [
 
 export function LearningPillarsSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-surface-blush">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {notes.map((note, i) => (
             <Motion key={i} variant="up" delay={i * 100}>
-              <div className="bg-card rounded-3xl border border-border p-6 sm:p-8 h-full flex gap-5">
-                <div className={`${note.iconBg} w-14 h-14 rounded-2xl flex items-center justify-center shrink-0`}>
+              <div className={`${note.iconBg} rounded-3xl p-6 sm:p-8 h-full flex gap-5`}>
+                <div className={`bg-white w-14 h-14 rounded-2xl flex items-center justify-center shrink-0`}>
                   <note.Icon size={28} className={note.iconColor} />
                 </div>
                 <p className="text-foreground/80 leading-relaxed text-base sm:text-lg">{note.text}</p>

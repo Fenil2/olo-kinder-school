@@ -10,7 +10,7 @@ export function HeroSection() {
           alt="Olo Kinder children walking out of the school entrance together"
           className="w-full h-full object-cover object-[50%_38%]"
         />
-        <div className="absolute inset-0 bg-surface-dark/50" />
+        <div className="absolute inset-0 bg-surface-dark/65" />
       </div>
       <div className="max-w-4xl mx-auto text-center text-white relative z-10 py-16">
         <Motion variant="down">

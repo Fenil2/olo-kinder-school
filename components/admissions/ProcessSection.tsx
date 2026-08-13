@@ -13,7 +13,7 @@ const steps: Step[] = [
 
 export function ProcessSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-surface-blush">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-5xl mx-auto">
         <Motion variant="up">
           <div className="text-center mb-14">
@@ -25,7 +25,7 @@ export function ProcessSection() {
           {steps.map((s, i) => (
             <Motion key={s.step} variant="up" delay={i * 100}>
               <div className={`${s.color} rounded-2xl p-6 sm:p-8 text-center hover:shadow-md transition-shadow h-full`}>
-                <div className="w-14 h-14 rounded-full bg-card flex items-center justify-center mx-auto mb-4 shadow-sm">
+                <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mx-auto mb-4 shadow-sm">
                   <s.Icon size={30} className={s.iconColor} />
                 </div>
                 <div className="text-xs font-bold text-foreground/65 uppercase tracking-wide mb-1">Step {s.step}</div>

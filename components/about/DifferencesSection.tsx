@@ -15,7 +15,7 @@ const differences: Difference[] = [
 
 export function DifferencesSection() {
   return (
-    <section className="bg-surface-leaf py-20 px-4 sm:px-6 lg:px-8 bg-surface-leaf">
+    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <Motion variant="up">
           <div className="text-center mb-14">

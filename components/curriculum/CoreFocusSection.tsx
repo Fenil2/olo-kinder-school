@@ -29,7 +29,7 @@ const points: Point[] = [
 
 export function CoreFocusSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-surface-mist">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-5xl mx-auto">
         <Motion variant="down">
           <div className="text-center">
@@ -48,8 +48,8 @@ export function CoreFocusSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {points.map((point, i) => (
             <Motion key={i} variant="up" delay={i * 100}>
-              <div className={`bg-card rounded-3xl border border-border border-t-4 ${point.accent} p-6 sm:p-8 h-full`}>
-                <div className={`${point.iconBg} w-14 h-14 rounded-2xl flex items-center justify-center mb-5`}>
+              <div className={`${point.iconBg} rounded-3xl border-t-4 ${point.accent} p-6 sm:p-8 h-full`}>
+                <div className={`bg-white w-14 h-14 rounded-2xl flex items-center justify-center mb-5`}>
                   <point.Icon size={28} className={point.iconColor} />
                 </div>
                 <p className="text-foreground/80 leading-relaxed text-base sm:text-lg">{point.text}</p>

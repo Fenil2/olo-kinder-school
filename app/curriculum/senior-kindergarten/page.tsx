@@ -3,7 +3,6 @@ import { Footer } from '@/components/footer'
 import { HeroSection } from '@/components/programme/HeroSection'
 import { ProgrammeNav } from '@/components/programme/ProgrammeNav'
 import { ModulesSection } from '@/components/programme/ModulesSection'
-import { IntegratedStructureSection } from '@/components/programme/IntegratedStructureSection'
 import { CtaSection } from '@/components/programme/CtaSection'
 import { seniorKindergarten } from '@/lib/programmes'
 
@@ -12,10 +11,9 @@ export default function SeniorKindergarten() {
     <>
       <Navigation />
       <main className="pt-20">
-        <HeroSection title={seniorKindergarten.title} />
+        <HeroSection title={seniorKindergarten.title} image={seniorKindergarten.heroImage} imageAlt={seniorKindergarten.heroImageAlt} />
         <ProgrammeNav current={seniorKindergarten.slug} />
         <ModulesSection modules={seniorKindergarten.modules} />
-        <IntegratedStructureSection structure={seniorKindergarten.structure} />
         <CtaSection />
       </main>
       <Footer />

@@ -11,10 +11,10 @@ const palette = [
 
 export function ModulesSection({ modules }: { modules: Module[] }) {
   return (
-    <section className="bg-surface-lilac py-20 px-4 sm:px-6 lg:px-8 bg-surface-lilac">
+    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <Motion variant="up">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-14 sm:mb-20 text-center text-heading">Thematic Learning Modules</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-14 sm:mb-20 text-center text-heading">Thematic Learning Modules</h2>
         </Motion>
 
         <div className="space-y-16 sm:space-y-24">
@@ -40,21 +40,21 @@ export function ModulesSection({ modules }: { modules: Module[] }) {
                   <div>
                     <div className="flex items-center gap-3 mb-3">
                       <span className={`h-1 w-8 rounded-full ${colors.ring}`} />
-                      <span className={`text-sm font-bold uppercase tracking-wide ${colors.text}`}>{module.label}</span>
+                      <span className={`text-base font-bold uppercase tracking-wide ${colors.text}`}>{module.label}</span>
                     </div>
 
-                    <h3 className="text-2xl sm:text-3xl font-bold text-heading mb-4 leading-tight">{module.name}</h3>
-                    <p className="text-foreground/80 leading-relaxed text-base sm:text-lg">{module.desc}</p>
+                    <h3 className="text-3xl sm:text-4xl font-bold text-heading mb-4 leading-tight">{module.name}</h3>
+                    <p className="text-foreground/80 leading-relaxed text-lg sm:text-xl">{module.desc}</p>
 
                     {module.storybook && (
                       <div className={`${colors.bg} rounded-2xl p-5 mt-6`}>
                         <div className="flex items-center gap-2 mb-1.5">
                           <MdAutoStories size={20} className={`shrink-0 ${colors.text}`} />
-                          <span className="text-xs font-bold uppercase tracking-wide text-foreground/60">Storybook</span>
+                          <span className="text-sm font-bold uppercase tracking-wide text-foreground/60">Storybook</span>
                         </div>
-                        <p className="font-bold text-foreground text-base sm:text-lg">{module.storybook.name}</p>
+                        <p className="font-bold text-foreground text-lg sm:text-xl">{module.storybook.name}</p>
                         {module.storybook.desc && (
-                          <p className="text-foreground/75 text-sm sm:text-base leading-relaxed mt-1.5">{module.storybook.desc}</p>
+                          <p className="text-foreground/75 text-base sm:text-lg leading-relaxed mt-1.5">{module.storybook.desc}</p>
                         )}
                       </div>
                     )}

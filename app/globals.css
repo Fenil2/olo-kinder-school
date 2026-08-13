@@ -72,27 +72,25 @@
   --heading: #11204E;      /* headings */
   --surface-dark: #11204E; /* footer and dark bands */
 
-  /* ---- Section surfaces ----
-     One per section, so no page repeats a background. Each is light enough
-     that the cream --card lifts off it and #4B355D body text stays AA. */
-  --background: #F2F5FA;     /* neutral  */
-  --surface-sky: #E1EFF8;    /* blue     */
-  --surface-leaf: #E9F3DF;   /* green    */
-  --surface-lilac: #EDE8F7;  /* lilac    */
-  --surface-sand: #FBF3DC;   /* yellow   */
-  --surface-blush: #FBE9E0;  /* peach    */
-  --surface-mist: #E2F1EE;   /* teal     */
-
-  --muted: #E7EDF7;          /* hovers, chips, inputs */
-  --muted-foreground: #5E6A85;
-  --border: #DBE2EF;
-  --input: #F1F4FA;
-
-  /* ---- Cards: warm cream, so they lift off every cool section above ---- */
-  --card: #FFFDF8;
+  /* ---- Pages are white; colour comes from photos, cards, icons and accents ---- */
+  --background: #FFFFFF;
+  --card: #FFFFFF;
   --card-foreground: #4B355D;
-  --popover: #FFFDF8;
+  --popover: #FFFFFF;
   --popover-foreground: #4B355D;
+
+  /* Faint tints kept for hero gradients, chips, hovers and inputs */
+  --surface-sky: #EAF6FB;
+  --surface-leaf: #F1F8E8;
+  --surface-lilac: #F3EFFB;
+  --surface-sand: #FDF7E6;
+  --surface-blush: #FDF1EB;
+  --surface-mist: #EBF6F3;
+
+  --muted: #F2F4F9;          /* hovers, chips */
+  --muted-foreground: #5E6A85;
+  --border: #E3E8F0;
+  --input: #F7F9FC;
 
   /* ---- Mascot-derived brand colours (unchanged) ---- */
   --primary: #9ED8E8;

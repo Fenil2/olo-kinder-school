@@ -15,61 +15,21 @@ export interface Module {
   storybook?: Storybook
 }
 
-export interface ContentItem {
-  label?: string
-  text: string
-}
-
-export interface Domain {
-  title: string
-  text: string
-}
-
-export interface IntegratedStructure {
-  heading: string
-  content: ContentItem[]
-  objectives: string[]
-  domains: Domain[]
-}
-
 export interface Programme {
   slug: string
   navLabel: string
   title: string
+  heroImage: string
+  heroImageAlt: string
   modules: Module[]
-  structure: IntegratedStructure
 }
-
-const sharedObjectives = [
-  'To enable children to learn and talk about classroom objects and their purpose',
-  'To help students learn the letter names, sounds, and words starting with them',
-  'To apply the pre-numerical concepts with real objects and compare',
-  'Number recognition and counting',
-]
-
-const sharedContent: ContentItem[] = [
-  { label: 'Foundational Literacy', text: 'Alphabet – A to Z, Speaking in sentences, Plural forms' },
-  { label: 'Foundational Numeracy', text: 'Pre-numerical concepts – Big & small, more & less, Numbers 1 to 20' },
-  { label: 'EVS', text: 'Classroom objects, Opposites' },
-]
-
-const sharedDomains: Domain[] = [
-  {
-    title: 'Language Development',
-    text: 'Describing objects with their purpose and comparison, speaking in sentences using pre-numerical concepts, Letter sounds & words',
-  },
-  { title: 'Cognitive development', text: 'Matching, sorting & comparing' },
-  { title: 'Creativity & Imagination', text: 'Through stories' },
-  {
-    title: 'Fine & Gross Motor Development',
-    text: 'Outdoor exploration, hopscotch game, cutting and pasting, painting',
-  },
-]
 
 export const preSchool: Programme = {
   slug: 'pre-school',
   navLabel: 'Pre-School',
   title: 'Pre-School',
+  heroImage: '/images/pretend-play-market.jpg',
+  heroImageAlt: 'Pre-school children playing at a pretend market corner',
   modules: [
     {
       label: 'Module 1',
@@ -101,30 +61,14 @@ export const preSchool: Programme = {
       desc: 'This book combines learning about the seasons and days with fun activities, helping children explore and enjoy the information about the change in weather conditions and the different choices of clothes during different seasons.',
     },
   ],
-  structure: {
-    heading: 'Integrated Structure and Goals of Module 1 - Off to the super town market',
-    content: [{ text: 'Colours' }, { text: 'Recognizing the names of fruits & vegetables' }],
-    objectives: [
-      'To explore super town market',
-      'To integrate colours and vegetables',
-      'To apply the pre-numerical concepts with real objects and compare',
-      'Number recognition and counting',
-    ],
-    domains: [
-      {
-        title: 'Language Development',
-        text: 'Learn new words like names of fruits, colours, actions & emotions',
-      },
-      { title: 'Cognitive development', text: 'Matching colours, recognizing names' },
-      { title: 'Socio-emotional development', text: 'Supporting a sad friend, making them happy' },
-    ],
-  },
 }
 
 export const juniorKindergarten: Programme = {
   slug: 'junior-kindergarten',
   navLabel: 'Junior Kindergarten',
   title: 'Junior Kindergarten',
+  heroImage: '/images/classroom-colorful-wide.jpg',
+  heroImageAlt: 'A colourful Olo Kinder junior kindergarten classroom',
   modules: [
     {
       label: 'Module 1',
@@ -178,18 +122,14 @@ export const juniorKindergarten: Programme = {
       desc: 'Nature is around us and plays a vital role in our lives; when we take care of it, nature takes care of us. This wonderful module connects the kids to nature’s valuable gifts like fruits, vegetables, and flowers. Let’s meet Govind Gardener and learn to respect our green friends!',
     },
   ],
-  structure: {
-    heading: 'Integrated Structure and Goals of Module 1 - Off to the town of colours',
-    content: sharedContent,
-    objectives: sharedObjectives,
-    domains: sharedDomains,
-  },
 }
 
 export const seniorKindergarten: Programme = {
   slug: 'senior-kindergarten',
   navLabel: 'Senior Kindergarten',
   title: 'Senior Kindergarten',
+  heroImage: '/images/classroom-writing-wide.jpg',
+  heroImageAlt: 'Senior kindergarten children practising writing at their desks',
   modules: [
     {
       label: 'Module 1',
@@ -243,12 +183,6 @@ export const seniorKindergarten: Programme = {
       },
     },
   ],
-  structure: {
-    heading: 'Integrated Structure and Goals of Module 1 - Off to the school',
-    content: sharedContent,
-    objectives: sharedObjectives,
-    domains: sharedDomains,
-  },
 }
 
 export const programmes: Programme[] = [preSchool, juniorKindergarten, seniorKindergarten]

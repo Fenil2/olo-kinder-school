@@ -11,7 +11,7 @@ const journey = [
 
 export function LearningJourneySection() {
   return (
-    <section className="bg-surface-sky py-20 px-4 sm:px-6 lg:px-8 bg-surface-sky">
+    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <Motion variant="up">
           <div className="text-center mb-14">

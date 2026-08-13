@@ -24,7 +24,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-surface-blush">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         <Motion variant="up">
           <div className="text-center mb-14">
@@ -35,7 +35,7 @@ export function TestimonialsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <Motion key={i} variant="up" delay={i * 100}>
-              <div className="bg-card rounded-2xl p-6 sm:p-8 border border-border h-full flex flex-col">
+              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-border h-full flex flex-col">
                 <MdFormatQuote size={40} className="text-primary mb-4 shrink-0" />
                 <p className="text-foreground/80 leading-relaxed mb-6 italic flex-1">{t.quote}</p>
                 <div className="flex items-center gap-3">
