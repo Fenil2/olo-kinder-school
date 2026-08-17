@@ -1,6 +1,7 @@
 import { MdBuild, MdExtension, MdGroups, MdLibraryBooks, MdMusicNote, MdPalette } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Doodle } from '@/components/ui/doodle'
 
 interface Exp {
   title: string
@@ -71,8 +72,10 @@ const experiences: Exp[] = [
 
 export function ExperiencesSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <Doodle name="cloud" className="top-8 right-10 w-28" opacity={70} />
+      <Doodle name="fox" className="bottom-6 left-8 w-20" opacity={85} flip />
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {experiences.map((exp, i) => (
             <Motion key={i} variant="up" delay={i * 60}>

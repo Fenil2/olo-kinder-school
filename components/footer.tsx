@@ -63,7 +63,7 @@ export function Footer() {
                 <li className="pt-2">
                   <Link
                     href="/admissions#enquiry"
-                    className="inline-block bg-accent text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-accent-hover transition-colors"
+                    className="inline-block bg-accent text-accent-foreground px-5 py-2 rounded-full text-sm font-semibold hover:bg-accent-hover transition-colors"
                   >
                     Admissions Open Now
                   </Link>

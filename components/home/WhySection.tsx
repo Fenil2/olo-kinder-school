@@ -1,6 +1,7 @@
 import { MdSearch, MdAutoAwesome, MdNature, MdFavorite, MdMenuBook, MdCalculate } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Doodle } from '@/components/ui/doodle'
 
 interface WhyCard { title: string; Icon: IconType; desc: string }
 
@@ -15,8 +16,9 @@ const whyCards: WhyCard[] = [
 
 export function WhySection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <Doodle name="fox" className="bottom-6 right-8 w-20" opacity={85} />
+      <div className="max-w-7xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Why Olo Kinder</h2>
@@ -27,7 +29,7 @@ export function WhySection() {
           {whyCards.map((card, i) => (
             <Motion key={i} variant="up" delay={i * 80}>
               <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow h-full">
-                <card.Icon size={40} className="text-accent mb-4" />
+                <card.Icon size={40} className="text-primary mb-4" />
                 <h3 className="text-lg sm:text-xl font-bold mb-3 text-heading">{card.title}</h3>
                 <p className="text-foreground/80 leading-relaxed text-sm sm:text-base">{card.desc}</p>
               </div>

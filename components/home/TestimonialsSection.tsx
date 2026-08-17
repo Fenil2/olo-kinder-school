@@ -1,5 +1,6 @@
 import { MdFormatQuote } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
+import { Doodle } from '@/components/ui/doodle'
 
 const testimonials = [
   {
@@ -24,8 +25,9 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <Doodle name="snail" className="bottom-8 right-10 w-28" opacity={60} />
+      <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">What Parents Say</h2>

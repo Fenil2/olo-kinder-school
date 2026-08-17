@@ -1,6 +1,7 @@
 import { MdSearch, MdEmojiEvents, MdPalette, MdVolunteerActivism } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Doodle } from '@/components/ui/doodle'
 
 interface Value { label: string; Icon: IconType; color: string; bg: string }
 
@@ -13,8 +14,9 @@ const values: Value[] = [
 
 export function WhoWeAreSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <Doodle name="butterfly" className="top-12 right-10 w-16" opacity={80} flip />
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
           <Motion variant="left">
             <div>

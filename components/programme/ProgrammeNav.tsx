@@ -14,8 +14,8 @@ export function ProgrammeNav({ current }: { current: string }) {
               aria-current={isActive ? 'page' : undefined}
               className={`px-5 py-2 rounded-full text-base sm:text-lg font-semibold transition-colors ${
                 isActive
-                  ? 'bg-accent text-white'
-                  : 'border border-border text-foreground/75 hover:border-accent hover:text-accent'
+                  ? 'bg-accent text-accent-foreground'
+                  : 'border border-border text-foreground/75 hover:border-primary hover:text-primary'
               }`}
             >
               {programme.navLabel}

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { MdMap, MdLocationOn, MdPhone, MdSchedule } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
+import { Doodle } from '@/components/ui/doodle'
 
 const address = '1470 B, Kathiravan Colony Main Road, Anna Nagar West, Chennai - 600040'
 const mapQuery = encodeURIComponent(address)
@@ -15,8 +16,9 @@ const details = [
 
 export function MapSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <Doodle name="leaf1" className="top-10 right-10 w-14" rotate={-15} opacity={70} />
+      <div className="max-w-7xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Visit Our Campus</h2>
@@ -51,7 +53,7 @@ export function MapSection() {
                     <div>
                       <p className="text-sm font-semibold text-foreground">{d.label}</p>
                       {d.href ? (
-                        <a href={d.href} className="text-sm text-foreground/75 leading-relaxed hover:text-accent transition-colors">
+                        <a href={d.href} className="text-sm text-foreground/75 leading-relaxed hover:text-primary transition-colors">
                           {d.value}
                         </a>
                       ) : (
@@ -66,14 +68,14 @@ export function MapSection() {
                   href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent-hover"
                 >
                   <MdMap size={18} />
                   Get Directions
                 </a>
                 <Link
                   href="/contact#enquiry"
-                  className="inline-flex items-center justify-center rounded-full border-2 border-foreground/20 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-accent hover:text-accent"
+                  className="inline-flex items-center justify-center rounded-full border-2 border-foreground/20 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
                 >
                   Contact Us
                 </Link>

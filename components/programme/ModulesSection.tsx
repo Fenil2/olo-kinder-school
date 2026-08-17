@@ -1,6 +1,7 @@
 import { MdAutoStories } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
 import type { Module } from '@/lib/programmes'
+import { Doodle } from '@/components/ui/doodle'
 
 const palette = [
   { text: 'text-mascot-roundy-dark', bg: 'bg-mascot-roundy/15', ring: 'bg-mascot-roundy' },
@@ -11,8 +12,11 @@ const palette = [
 
 export function ModulesSection({ modules }: { modules: Module[] }) {
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <Doodle name="cloud" className="top-12 left-8 w-28" opacity={60} />
+      <Doodle name="butterfly" className="top-10 right-10 w-16" opacity={80} flip />
+      <Doodle name="fox" className="bottom-6 right-8 w-20" opacity={80} />
+      <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
           <h2 className="text-4xl sm:text-5xl font-bold mb-14 sm:mb-20 text-center text-heading">Thematic Learning Modules</h2>
         </Motion>

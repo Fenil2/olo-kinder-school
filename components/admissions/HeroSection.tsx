@@ -27,7 +27,7 @@ export function HeroSection() {
         <Motion variant="up" delay={300}>
           <Link
             href="#enquiry"
-            className="inline-block mt-8 bg-accent text-white px-8 py-3.5 rounded-full hover:bg-accent-hover transition-colors font-semibold shadow-sm"
+            className="inline-block mt-8 bg-accent text-accent-foreground px-8 py-3.5 rounded-full hover:bg-accent-hover transition-colors font-semibold shadow-sm"
           >
             Submit Your Enquiry
           </Link>

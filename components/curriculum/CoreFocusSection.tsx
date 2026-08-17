@@ -1,6 +1,7 @@
 import { MdForum, MdMenuBook } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Doodle } from '@/components/ui/doodle'
 
 interface Point {
   Icon: IconType
@@ -29,11 +30,13 @@ const points: Point[] = [
 
 export function CoreFocusSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-5xl mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <Doodle name="butterfly" className="top-10 left-8 w-16" opacity={80} />
+      <Doodle name="leaf2" className="bottom-8 right-10 w-14" rotate={-20} opacity={70} />
+      <div className="max-w-5xl mx-auto relative z-10">
         <Motion variant="down">
           <div className="text-center">
-            <span className="inline-block bg-accent text-white text-xs sm:text-sm font-bold uppercase tracking-wide px-5 py-2 rounded-full mb-5">
+            <span className="inline-block bg-accent text-accent-foreground text-xs sm:text-sm font-bold uppercase tracking-wide px-5 py-2 rounded-full mb-5">
               Our Central Approach (Core Focus)
             </span>
           </div>

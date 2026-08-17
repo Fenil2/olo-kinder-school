@@ -18,10 +18,10 @@ export function CtaSection() {
       />
 
       <Motion variant="up">
-        <div className="relative max-w-4xl mx-auto text-center text-white">
+        <div className="relative max-w-4xl mx-auto text-center text-accent-foreground">
           <h2 className="text-4xl sm:text-5xl font-bold mb-8">Join the Olo Kinder Family Today</h2>
           <div className="flex justify-center">
-            <Link href="/admissions#enquiry" className="bg-white text-accent px-10 py-4 rounded-full text-lg hover:bg-muted transition-colors font-semibold shadow-sm">
+            <Link href="/admissions#enquiry" className="bg-white text-primary px-10 py-4 rounded-full text-lg hover:bg-muted transition-colors font-semibold shadow-sm">
               Enroll
             </Link>
           </div>

@@ -5,7 +5,7 @@ export function AdmissionsCtaSection() {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-accent">
       <div className="max-w-4xl mx-auto">
         <Motion variant="up">
-          <div className="text-center text-white mb-12">
+          <div className="text-center text-accent-foreground mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Join the Olo Kinder Family?</h2>
             <p className="text-base sm:text-xl opacity-90">Experience the difference for yourself. Admissions are open now.</p>
           </div>
@@ -38,7 +38,7 @@ export function AdmissionsCtaSection() {
                 <label className="block text-sm font-medium text-foreground mb-1">Email Address</label>
                 <input type="email" placeholder="Your email address" className="w-full px-4 py-3 rounded-xl border border-border bg-muted/30 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
               </div>
-              <button type="submit" className="w-full bg-accent text-white py-3.5 rounded-full font-semibold hover:bg-accent-hover transition-colors mt-2">
+              <button type="submit" className="w-full bg-accent text-accent-foreground py-3.5 rounded-full font-semibold hover:bg-accent-hover transition-colors mt-2">
                 Admissions Open Now
               </button>
             </form>

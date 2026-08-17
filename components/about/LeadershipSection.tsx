@@ -1,5 +1,6 @@
 import { MdFormatQuote } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
+import { Doodle } from '@/components/ui/doodle'
 
 interface Leader {
   role: string
@@ -28,7 +29,7 @@ const leaders: Leader[] = [
     alt: 'Shri. M.V.M. Sasikumar, Founder and Chairman of Olo Kinder school',
     quote: 'If the path is beautiful, ask where it leads to. But if the destination is beautiful, never mind about the path, keep walking!',
     quoteColor: 'text-mascot-roundy-dark',
-    quoteMark: 'text-mascot-roundy/40',
+    quoteMark: 'text-mascot-roundy-dark/40',
     message: [
       'The school always recognizes the innate talents of individual students and provides them with a platform to accomplish, enhance and explore their dreams confidently.',
       'As always, may this new academic year be filled with laurels and may the Olo Kinder kids march forward with all happiness and positivity.',
@@ -44,7 +45,7 @@ const leaders: Leader[] = [
     quote: 'Storytelling is the most powerful way to put ideas into the world today.',
     attribution: '— Robert McKee',
     quoteColor: 'text-mascot-hexy-dark',
-    quoteMark: 'text-mascot-hexy/40',
+    quoteMark: 'text-mascot-hexy-dark/40',
     message: [
       'Every child deserves the freedom to speak, to express themselves, and to be heard as a vital part of their early learning journey. Our Olo Kinder program champions communication as a core art of human connection, nurtured from the very start of childhood.',
       'We commit to creating welcoming spaces where every voice is valued, respected, and encouraged to grow. We look forward to extending this inclusive, expressive approach as we expand to new areas and audiences.',
@@ -55,8 +56,9 @@ const leaders: Leader[] = [
 
 export function LeadershipSection() {
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto space-y-20">
+    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <Doodle name="treeOrange" className="bottom-0 right-6 w-24" opacity={70} />
+      <div className="max-w-6xl mx-auto space-y-20 relative z-10">
         {leaders.map((l) => (
           <div
             key={l.name}
@@ -85,7 +87,7 @@ export function LeadershipSection() {
               <div className="text-center md:text-left">
                 <p className="text-sm font-semibold tracking-wide text-foreground/60 uppercase">{l.role}</p>
                 <p className="text-xl sm:text-2xl font-semibold text-foreground mt-1">{l.name}</p>
-                <h2 className="text-3xl sm:text-4xl font-bold text-accent uppercase leading-tight mt-5">
+                <h2 className="text-3xl sm:text-4xl font-bold text-primary uppercase leading-tight mt-5">
                   {l.heading}
                 </h2>
 

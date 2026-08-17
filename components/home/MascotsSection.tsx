@@ -1,17 +1,20 @@
 import Image from 'next/image'
 import { Motion } from '@/components/ui/motion'
+import { Doodle } from '@/components/ui/doodle'
 
 const mascots = [
-  { name: 'Rolly', role: 'Curious Explorer', img: '/rolly.png', color: 'text-mascot-roundy' },
-  { name: 'Squary', role: 'Logical Thinker', img: '/squary.png', color: 'text-mascot-squarey' },
-  { name: 'Starry', role: 'Creative Dreamer', img: '/Hexy.png', color: 'text-mascot-starry' },
-  { name: 'Hexy', role: 'Problem Solver', img: '/Starry.png', color: 'text-mascot-hexy' },
+  { name: 'Rolly', role: 'Curious Explorer', img: '/rolly.png', color: 'text-mascot-roundy-dark' },
+  { name: 'Squary', role: 'Logical Thinker', img: '/squary.png', color: 'text-mascot-squarey-dark' },
+  { name: 'Starry', role: 'Creative Dreamer', img: '/Hexy.png', color: 'text-mascot-starry-dark' },
+  { name: 'Hexy', role: 'Problem Solver', img: '/Starry.png', color: 'text-mascot-hexy-dark' },
 ]
 
 export function MascotsSection() {
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <Doodle name="cloud" className="top-10 right-8 w-28" opacity={70} />
+      <Doodle name="butterfly" className="top-16 left-10 w-16" opacity={80} />
+      <div className="max-w-7xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Meet Your Child&apos;s First Learning Friends</h2>

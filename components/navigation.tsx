@@ -94,7 +94,7 @@ export function Navigation() {
                       aria-haspopup="true"
                       className={`flex items-center gap-1 px-4 py-2 rounded-full text-base font-medium transition-all duration-150 cursor-pointer ${
                         isActive
-                          ? 'text-accent bg-accent/10'
+                          ? 'text-primary bg-primary/10'
                           : 'text-foreground/75 hover:text-foreground hover:bg-muted'
                       }`}
                     >
@@ -117,7 +117,7 @@ export function Navigation() {
                                 onClick={() => setOpenDropdown(null)}
                                 className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                                   isChildActive
-                                    ? 'bg-accent/10 text-accent'
+                                    ? 'bg-primary/10 text-primary'
                                     : 'text-foreground/75 hover:bg-muted hover:text-foreground'
                                 }`}
                               >
@@ -138,7 +138,7 @@ export function Navigation() {
                   href={link.href}
                   className={`px-4 py-2 rounded-full text-base font-medium transition-all duration-150 ${
                     isActive
-                      ? 'text-accent bg-accent/10'
+                      ? 'text-primary bg-primary/10'
                       : 'text-foreground/75 hover:text-foreground hover:bg-muted'
                   }`}
                 >
@@ -152,14 +152,14 @@ export function Navigation() {
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <a
               href={PHONE_HREF}
-              className="flex items-center gap-2 border border-border text-foreground px-4 py-2 rounded-full hover:border-accent hover:text-accent transition-colors font-medium text-sm"
+              className="flex items-center gap-2 border border-border text-foreground px-4 py-2 rounded-full hover:border-primary hover:text-primary transition-colors font-medium text-sm"
             >
               <MdPhone size={16} />
               <span>{PHONE}</span>
             </a>
             <Link
               href="/admissions#enquiry"
-              className="bg-accent text-white px-5 py-2 rounded-full hover:bg-accent-hover transition-colors font-semibold text-sm shadow-sm"
+              className="bg-accent text-accent-foreground px-5 py-2 rounded-full hover:bg-accent-hover transition-colors font-semibold text-sm shadow-sm"
             >
               Admissions Open Now
             </Link>
@@ -198,12 +198,12 @@ export function Navigation() {
                           onClick={() => setIsOpen(false)}
                           className={`flex items-center justify-between pl-6 pr-4 py-2.5 rounded-xl font-medium text-sm transition-colors ${
                             isChildActive
-                              ? 'bg-accent/10 text-accent'
+                              ? 'bg-primary/10 text-primary'
                               : 'text-foreground hover:bg-muted'
                           }`}
                         >
                           <span>{child.label}</span>
-                          {isChildActive && <span className="w-1.5 h-1.5 rounded-full bg-accent" />}
+                          {isChildActive && <span className="w-1.5 h-1.5 rounded-full bg-primary" />}
                         </Link>
                       )
                     })}
@@ -218,12 +218,12 @@ export function Navigation() {
                   onClick={() => setIsOpen(false)}
                   className={`flex items-center justify-between px-4 py-2.5 rounded-xl font-medium text-sm transition-colors ${
                     isActive
-                      ? 'bg-accent/10 text-accent'
+                      ? 'bg-primary/10 text-primary'
                       : 'text-foreground hover:bg-muted'
                   }`}
                 >
                   <span>{link.label}</span>
-                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-accent" />}
+                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-primary" />}
                 </Link>
               )
             })}
@@ -231,7 +231,7 @@ export function Navigation() {
               <a
                 href={PHONE_HREF}
                 onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center gap-2 w-full border border-border text-foreground px-4 py-2.5 rounded-full font-medium text-sm hover:border-accent hover:text-accent transition-colors"
+                className="flex items-center justify-center gap-2 w-full border border-border text-foreground px-4 py-2.5 rounded-full font-medium text-sm hover:border-primary hover:text-primary transition-colors"
               >
                 <MdPhone size={16} />
                 {PHONE}
@@ -239,7 +239,7 @@ export function Navigation() {
               <Link
                 href="/admissions#enquiry"
                 onClick={() => setIsOpen(false)}
-                className="block w-full bg-accent text-white px-4 py-3 rounded-full text-center font-semibold text-sm hover:bg-accent-hover transition-colors"
+                className="block w-full bg-accent text-accent-foreground px-4 py-3 rounded-full text-center font-semibold text-sm hover:bg-accent-hover transition-colors"
               >
                 Admissions Open Now
               </Link>

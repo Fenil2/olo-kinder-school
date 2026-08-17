@@ -1,5 +1,6 @@
 import { MdMap, MdSend, MdSchedule } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
+import { Doodle } from '@/components/ui/doodle'
 
 const address = '1470 B, Kathiravan Colony Main Road, Anna Nagar West, Chennai - 600040'
 const mapQuery = encodeURIComponent(address)
@@ -11,8 +12,10 @@ const hours = [
 
 export function ContactSection() {
   return (
-    <section id="enquiry" className="scroll-mt-20 py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <section id="enquiry" className="scroll-mt-20 py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <Doodle name="cloud" className="top-8 right-10 w-28" opacity={70} />
+      <Doodle name="snail" className="bottom-8 left-10 w-28" opacity={60} flip />
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
 
         <div className="space-y-8">
           <Motion variant="left">
@@ -33,7 +36,7 @@ export function ContactSection() {
                     href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-3 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-accent-hover"
+                    className="mt-3 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground transition-colors hover:bg-accent-hover"
                   >
                     <MdMap size={16} />
                     Open in Google Maps
@@ -59,7 +62,7 @@ export function ContactSection() {
           <Motion variant="left" delay={200}>
             <div className="bg-muted rounded-2xl p-5 sm:p-6">
               <div className="flex items-center gap-2 mb-4">
-                <MdSchedule size={22} className="text-accent" />
+                <MdSchedule size={22} className="text-primary" />
                 <h3 className="font-bold text-heading text-base">Class Timings</h3>
               </div>
               <ul className="space-y-3">
@@ -84,26 +87,26 @@ export function ContactSection() {
               <form className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-foreground mb-1.5">Parent Name <span className="text-accent">*</span></label>
+                    <label className="block text-sm font-semibold text-foreground mb-1.5">Parent Name <span className="text-primary">*</span></label>
                     <input type="text" placeholder="Your full name" className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-foreground mb-1.5">Child Name <span className="text-accent">*</span></label>
+                    <label className="block text-sm font-semibold text-foreground mb-1.5">Child Name <span className="text-primary">*</span></label>
                     <input type="text" placeholder="Child's full name" className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-foreground mb-1.5">Child&apos;s Age <span className="text-accent">*</span></label>
+                    <label className="block text-sm font-semibold text-foreground mb-1.5">Child&apos;s Age <span className="text-primary">*</span></label>
                     <input type="number" placeholder="Age in years" min="1" max="10" className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-foreground mb-1.5">Phone <span className="text-accent">*</span></label>
+                    <label className="block text-sm font-semibold text-foreground mb-1.5">Phone <span className="text-primary">*</span></label>
                     <input type="tel" placeholder="Your phone number" className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-foreground mb-1.5">Email <span className="text-accent">*</span></label>
+                  <label className="block text-sm font-semibold text-foreground mb-1.5">Email <span className="text-primary">*</span></label>
                   <input type="email" placeholder="Your email address" className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
                 </div>
                 <div>
@@ -121,7 +124,7 @@ export function ContactSection() {
                   <label className="block text-sm font-semibold text-foreground mb-1.5">Message</label>
                   <textarea placeholder="Tell us a bit about your child and what you'd like to know..." rows={4} className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition resize-none" />
                 </div>
-                <button type="submit" className="w-full bg-accent text-white py-3.5 rounded-full font-semibold hover:bg-accent-hover transition-colors text-base flex items-center justify-center gap-2">
+                <button type="submit" className="w-full bg-accent text-accent-foreground py-3.5 rounded-full font-semibold hover:bg-accent-hover transition-colors text-base flex items-center justify-center gap-2">
                   <MdSend size={18} />
                   Send Message
                 </button>

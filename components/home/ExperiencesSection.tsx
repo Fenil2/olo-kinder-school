@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { MdGroups, MdExtension, MdDirectionsWalk, MdLibraryBooks, MdMusicNote, MdEco } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Doodle } from '@/components/ui/doodle'
 
 interface Experience { title: string; Icon: IconType; desc: string }
 
@@ -16,8 +17,9 @@ const experiences: Experience[] = [
 
 export function ExperiencesSection() {
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <Doodle name="treeGreen" className="bottom-0 left-6 w-24" opacity={70} />
+      <div className="max-w-7xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Learning Through Experiences</h2>
@@ -39,7 +41,7 @@ export function ExperiencesSection() {
         </div>
         <Motion variant="up" delay={200}>
           <div className="text-center mt-10">
-            <Link href="/learning-experiences" className="inline-block bg-primary text-foreground px-8 py-3 rounded-full hover:bg-primary-hover transition-colors font-semibold">
+            <Link href="/learning-experiences" className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-full hover:bg-primary-hover transition-colors font-semibold">
               Explore All Experiences
             </Link>
           </div>

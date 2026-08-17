@@ -1,6 +1,7 @@
 import { MdAssignment, MdHandshake, MdSchool, MdCelebration } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Doodle } from '@/components/ui/doodle'
 
 interface Step { step: number; title: string; Icon: IconType; desc: string; color: string; iconColor: string }
 
@@ -13,8 +14,9 @@ const steps: Step[] = [
 
 export function ProcessSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-5xl mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      <Doodle name="butterfly" className="top-12 right-12 w-16" opacity={80} flip />
+      <div className="max-w-5xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Simple Admissions Process</h2>

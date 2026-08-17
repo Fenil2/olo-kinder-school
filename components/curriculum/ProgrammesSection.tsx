@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Motion } from '@/components/ui/motion'
 import { programmes } from '@/lib/programmes'
+import { Doodle } from '@/components/ui/doodle'
 
 const palette = [
   { text: 'text-mascot-roundy-dark', bg: 'bg-mascot-roundy/15', accent: 'border-t-mascot-roundy' },
@@ -10,8 +11,9 @@ const palette = [
 
 export function ProgrammesSection() {
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <Doodle name="treeGreen" className="bottom-0 left-6 w-24" opacity={70} />
+      <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
           <h2 className="text-3xl sm:text-4xl font-bold mb-14 text-center text-heading">Thematic Learning Modules</h2>
         </Motion>
