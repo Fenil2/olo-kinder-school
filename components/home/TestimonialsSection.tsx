@@ -25,19 +25,21 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 band-teal relative overflow-hidden">
       <Doodle name="snail" className="bottom-8 right-10 w-28" opacity={60} />
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">What Parents Say</h2>
-            <p className="text-base sm:text-lg text-foreground/80">Hear from the families who have experienced the Olo Kinder difference.</p>
+            {/* Full-opacity ink: #2A9D8F is the one palette colour that cannot
+                reach AA for body copy, so don't spend any of it on opacity. */}
+            <p className="text-lg sm:text-xl font-medium text-foreground">Hear from the families who have experienced the Olo Kinder difference.</p>
           </div>
         </Motion>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <Motion key={i} variant="up" delay={i * 100}>
-              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-border h-full flex flex-col">
+              <div className="surface-card rounded-2xl p-6 sm:p-8 border border-border h-full flex flex-col">
                 <MdFormatQuote size={40} className="text-primary mb-4 shrink-0" />
                 <p className="text-foreground/80 leading-relaxed mb-6 italic flex-1">{t.quote}</p>
                 <div className="flex items-center gap-3">

@@ -8,7 +8,7 @@ const photos = [
 
 export function PhotoStrip() {
   return (
-    <section className="bg-white px-4 sm:px-6 lg:px-8 py-6">
+    <section className="band-teal px-4 sm:px-6 lg:px-8 py-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
         {photos.map((photo, i) => (
           <Motion key={photo.src} variant="scale" delay={i * 100}>

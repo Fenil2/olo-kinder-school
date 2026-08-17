@@ -4,12 +4,12 @@ import { Doodle } from '@/components/ui/doodle'
 
 export function VisionMissionSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 band-pale relative overflow-hidden">
       <Doodle name="cloud" className="top-8 left-8 w-28" opacity={70} />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           <Motion variant="left" delay={0}>
-            <div className="bg-white rounded-3xl p-8 sm:p-10 border-t-4 border-primary h-full">
+            <div className="surface-card rounded-3xl p-8 sm:p-10 border-t-4 border-primary h-full">
               <MdAutoAwesome size={44} className="text-primary mb-4" />
               <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-heading">Our Vision</h2>
               <p className="text-base sm:text-lg text-foreground/75 leading-relaxed">
@@ -18,7 +18,7 @@ export function VisionMissionSection() {
             </div>
           </Motion>
           <Motion variant="right" delay={100}>
-            <div className="bg-white rounded-3xl p-8 sm:p-10 border-t-4 border-primary h-full">
+            <div className="surface-card rounded-3xl p-8 sm:p-10 border-t-4 border-primary h-full">
               <MdTrackChanges size={44} className="text-primary mb-4" />
               <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-heading">Our Mission</h2>
               <p className="text-base sm:text-lg text-foreground/75 leading-relaxed">

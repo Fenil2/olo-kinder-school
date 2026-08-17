@@ -16,7 +16,7 @@ const whyCards: WhyCard[] = [
 
 export function WhySection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 band-gold relative overflow-hidden">
       <Doodle name="fox" className="bottom-6 right-8 w-20" opacity={85} />
       <div className="max-w-7xl mx-auto relative z-10">
         <Motion variant="up">
@@ -28,7 +28,7 @@ export function WhySection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {whyCards.map((card, i) => (
             <Motion key={i} variant="up" delay={i * 80}>
-              <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow h-full">
+              <div className="surface-card rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow h-full">
                 <card.Icon size={40} className="text-primary mb-4" />
                 <h3 className="text-lg sm:text-xl font-bold mb-3 text-heading">{card.title}</h3>
                 <p className="text-foreground/80 leading-relaxed text-sm sm:text-base">{card.desc}</p>

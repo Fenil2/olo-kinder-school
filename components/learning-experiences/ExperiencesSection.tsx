@@ -72,7 +72,7 @@ const experiences: Exp[] = [
 
 export function ExperiencesSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 band-gold relative overflow-hidden">
       <Doodle name="cloud" className="top-8 right-10 w-28" opacity={70} />
       <Doodle name="fox" className="bottom-6 left-8 w-20" opacity={85} flip />
       <div className="max-w-6xl mx-auto relative z-10">
@@ -92,7 +92,7 @@ export function ExperiencesSection() {
                   <p className="text-sm text-foreground/75 leading-relaxed">{exp.desc}</p>
                   <div className="flex flex-wrap gap-1.5 mt-auto pt-1">
                     {exp.skills.map((skill) => (
-                      <span key={skill} className={`bg-white text-foreground/75 text-xs font-medium px-2.5 py-1 rounded-full`}>
+                      <span key={skill} className={`surface-card text-foreground/75 text-xs font-medium px-2.5 py-1 rounded-full`}>
                         {skill}
                       </span>
                     ))}

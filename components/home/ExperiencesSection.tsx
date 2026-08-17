@@ -17,7 +17,7 @@ const experiences: Experience[] = [
 
 export function ExperiencesSection() {
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="treeGreen" className="bottom-0 left-6 w-24" opacity={70} />
       <div className="max-w-7xl mx-auto relative z-10">
         <Motion variant="up">

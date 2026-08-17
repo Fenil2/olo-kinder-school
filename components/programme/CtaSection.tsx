@@ -3,7 +3,7 @@ import { Motion } from '@/components/ui/motion'
 
 export function CtaSection() {
   return (
-    <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-accent">
+    <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 band-slate">
       <img
         src="/images/programmes/mascot-hexy.webp"
         alt=""
@@ -18,10 +18,10 @@ export function CtaSection() {
       />
 
       <Motion variant="up">
-        <div className="relative max-w-4xl mx-auto text-center text-accent-foreground">
+        <div className="relative max-w-4xl mx-auto text-center text-foreground">
           <h2 className="text-4xl sm:text-5xl font-bold mb-8">Join the Olo Kinder Family Today</h2>
           <div className="flex justify-center">
-            <Link href="/admissions#enquiry" className="bg-white text-primary px-10 py-4 rounded-full text-lg hover:bg-muted transition-colors font-semibold shadow-sm">
+            <Link href="/admissions#enquiry" className="bg-accent text-accent-foreground px-10 py-4 rounded-full text-lg hover:bg-accent-hover transition-colors font-semibold shadow-sm">
               Enroll
             </Link>
           </div>

@@ -72,7 +72,7 @@ const areas: Area[] = [
 
 export function LearningAreasSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 band-white relative overflow-hidden">
       <Doodle name="snail" className="top-10 right-10 w-28" opacity={60} />
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
@@ -87,7 +87,7 @@ export function LearningAreasSection() {
             <Motion key={i} variant="scale" delay={i * 80}>
               <div className={`${area.iconBg} rounded-2xl border-t-4 ${area.accent} p-6 hover:shadow-lg transition-shadow h-full flex flex-col gap-4`}>
                 <div className="flex items-center gap-3">
-                  <div className={`bg-white w-12 h-12 rounded-xl flex items-center justify-center shrink-0`}>
+                  <div className={`surface-card w-12 h-12 rounded-xl flex items-center justify-center shrink-0`}>
                     <area.Icon size={26} className={area.iconColor} />
                   </div>
                   <h3 className="text-lg font-bold text-heading leading-tight">{area.title}</h3>
@@ -95,7 +95,7 @@ export function LearningAreasSection() {
 
                 <div className="flex flex-wrap gap-2">
                   {area.topics.map((topic) => (
-                    <span key={topic} className={`bg-white text-foreground/75 text-xs font-semibold px-3 py-1 rounded-full`}>
+                    <span key={topic} className={`surface-card text-foreground/75 text-xs font-semibold px-3 py-1 rounded-full`}>
                       {topic}
                     </span>
                   ))}

@@ -56,7 +56,7 @@ const leaders: Leader[] = [
 
 export function LeadershipSection() {
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="treeOrange" className="bottom-0 right-6 w-24" opacity={70} />
       <div className="max-w-6xl mx-auto space-y-20 relative z-10">
         {leaders.map((l) => (
@@ -68,7 +68,7 @@ export function LeadershipSection() {
           >
             <Motion variant={l.reverse ? 'right' : 'left'} className="shrink-0">
               <div className="relative w-56 sm:w-64 lg:w-72">
-                <div className="relative aspect-square rounded-full overflow-hidden bg-white shadow-lg ring-8 ring-mascot-squarey">
+                <div className="relative aspect-square rounded-full overflow-hidden surface-card shadow-lg ring-8 ring-mascot-squarey">
                   <img
                     src={l.portrait}
                     alt={l.alt}
@@ -91,7 +91,7 @@ export function LeadershipSection() {
                   {l.heading}
                 </h2>
 
-                <div className="relative bg-white rounded-3xl border border-border shadow-sm p-6 sm:p-8 mt-6 text-left">
+                <div className="relative surface-card rounded-3xl border border-border shadow-sm p-6 sm:p-8 mt-6 text-left">
                   <MdFormatQuote size={34} className={`${l.quoteMark} mb-2`} />
                   <blockquote className={`text-base sm:text-lg font-medium leading-relaxed text-pretty ${l.quoteColor}`}>
                     {l.quote}

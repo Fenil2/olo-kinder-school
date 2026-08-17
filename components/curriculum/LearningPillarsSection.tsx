@@ -34,14 +34,14 @@ const pillars = [
 
 export function LearningPillarsSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 band-pale relative overflow-hidden">
       <Doodle name="fox" className="bottom-6 right-8 w-20" opacity={85} />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {notes.map((note, i) => (
             <Motion key={i} variant="up" delay={i * 100}>
               <div className={`${note.iconBg} rounded-3xl p-6 sm:p-8 h-full flex gap-5`}>
-                <div className={`bg-white w-14 h-14 rounded-2xl flex items-center justify-center shrink-0`}>
+                <div className={`surface-card w-14 h-14 rounded-2xl flex items-center justify-center shrink-0`}>
                   <note.Icon size={28} className={note.iconColor} />
                 </div>
                 <p className="text-foreground/80 leading-relaxed text-base sm:text-lg">{note.text}</p>

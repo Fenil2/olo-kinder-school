@@ -14,7 +14,7 @@ const steps: Step[] = [
 
 export function ProcessSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 band-white relative overflow-hidden">
       <Doodle name="butterfly" className="top-12 right-12 w-16" opacity={80} flip />
       <div className="max-w-5xl mx-auto relative z-10">
         <Motion variant="up">
@@ -27,7 +27,7 @@ export function ProcessSection() {
           {steps.map((s, i) => (
             <Motion key={s.step} variant="up" delay={i * 100}>
               <div className={`${s.color} rounded-2xl p-6 sm:p-8 text-center hover:shadow-md transition-shadow h-full`}>
-                <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mx-auto mb-4 shadow-sm">
+                <div className="w-14 h-14 rounded-full surface-card flex items-center justify-center mx-auto mb-4 shadow-sm">
                   <s.Icon size={30} className={s.iconColor} />
                 </div>
                 <div className="text-xs font-bold text-foreground/65 uppercase tracking-wide mb-1">Step {s.step}</div>

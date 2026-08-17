@@ -10,7 +10,7 @@ const approachItems = [
 
 export function ApproachSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 band-white relative overflow-hidden">
       <Doodle name="cloud" className="top-8 right-10 w-28" opacity={70} />
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">

@@ -30,7 +30,7 @@ const points: Point[] = [
 
 export function CoreFocusSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 band-gold relative overflow-hidden">
       <Doodle name="butterfly" className="top-10 left-8 w-16" opacity={80} />
       <Doodle name="leaf2" className="bottom-8 right-10 w-14" rotate={-20} opacity={70} />
       <div className="max-w-5xl mx-auto relative z-10">
@@ -52,7 +52,7 @@ export function CoreFocusSection() {
           {points.map((point, i) => (
             <Motion key={i} variant="up" delay={i * 100}>
               <div className={`${point.iconBg} rounded-3xl border-t-4 ${point.accent} p-6 sm:p-8 h-full`}>
-                <div className={`bg-white w-14 h-14 rounded-2xl flex items-center justify-center mb-5`}>
+                <div className={`surface-card w-14 h-14 rounded-2xl flex items-center justify-center mb-5`}>
                   <point.Icon size={28} className={point.iconColor} />
                 </div>
                 <p className="text-foreground/80 leading-relaxed text-base sm:text-lg">{point.text}</p>

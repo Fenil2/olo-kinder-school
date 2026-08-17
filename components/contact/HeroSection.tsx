@@ -20,11 +20,11 @@ export function HeroSection() {
         focus="50% 45%"
       />
 
-      <section className="px-4 sm:px-6 lg:px-8 py-10 bg-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-10 band-white">
         <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5">
           {details.map((item, i) => (
             <Motion key={item.label} variant="up" delay={i * 100}>
-              <div className="bg-white rounded-2xl p-5 sm:p-6 flex items-center gap-4 shadow-sm border border-border h-full">
+              <div className="surface-card rounded-2xl p-5 sm:p-6 flex items-center gap-4 shadow-sm border border-border h-full">
                 <div className={`w-14 h-14 ${item.bg} rounded-xl flex items-center justify-center shrink-0`}>
                   <item.icon size={26} className={item.color} />
                 </div>

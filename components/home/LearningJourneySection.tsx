@@ -14,7 +14,7 @@ const journey = [
 
 export function LearningJourneySection() {
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-pale py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="leaf2" className="top-10 left-10 w-14" rotate={15} opacity={70} />
       <div className="max-w-5xl mx-auto relative z-10">
         <Motion variant="up">

@@ -11,7 +11,7 @@ const mascots = [
 
 export function MascotsSection() {
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="cloud" className="top-10 right-8 w-28" opacity={70} />
       <Doodle name="butterfly" className="top-16 left-10 w-16" opacity={80} />
       <div className="max-w-7xl mx-auto relative z-10">

@@ -67,6 +67,17 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* Nudge the two smallest steps of the type scale up by 1px each, with a
+   little extra leading. Overriding the scale here lifts every `text-xs`
+   and `text-sm` on the site — including the shadcn primitives — instead
+   of touching ~70 call sites. Body sizes (base/lg and up) are unchanged. */
+@theme {
+  --text-xs: 0.8125rem;                      /* 12px → 13px */
+  --text-xs--line-height: calc(1.125 / 0.8125);
+  --text-sm: 0.9375rem;                      /* 14px → 15px */
+  --text-sm--line-height: calc(1.375 / 0.9375);
+}
+
 :root {
   --font-heading: 'Fredoka', sans-serif;
   --font-body: 'Nunito', sans-serif;
@@ -172,6 +183,116 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
   }
+}
+
+/* ================================================================
+   SECTION BANDS
+   One class per palette colour. Each sets its own background AND
+   re-points the theme tokens that sit on top of it, so headings,
+   body copy, cards, borders, icons and buttons inside the band stay
+   legible with no per-component overrides. This works because the
+   tokens are declared in `@theme inline`, so `text-foreground` emits
+   `var(--foreground)` and picks up the band's redefinition.
+
+   Ink is chosen per band: the two light bands (pale, gold) take slate
+   ink and a deep-teal button; the two dark bands (teal, slate) take
+   off-white ink and a light button. `--accent` is re-pointed on every
+   band so a button never fills with the same colour it sits on.
+   ================================================================ */
+
+.band-white {
+  background-color: var(--brand-white);
+}
+
+.band-pale {
+  background-color: var(--brand-pale);
+  --card: #FFFFFF;
+  --card-foreground: #264653;
+  --border: rgba(38, 70, 83, 0.30);
+  --muted: rgba(38, 70, 83, 0.07);
+  --muted-foreground: #4A6570;
+  --input: #FFFFFF;
+  --primary: #175E55;
+  --primary-foreground: #FFF6A9;
+  --primary-hover: #0F443D;
+  --accent: #175E55;          /* gold would vanish on pale yellow */
+  --accent-foreground: #FFF6A9;
+  --accent-hover: #0F443D;
+}
+
+.band-gold {
+  background-color: var(--brand-gold);
+  --card: #FFFFFF;
+  --card-foreground: #264653;
+  --border: rgba(38, 70, 83, 0.32);
+  --muted: rgba(38, 70, 83, 0.08);
+  --muted-foreground: #3E5A64;
+  --input: #FFFFFF;
+  --primary: #175E55;
+  --primary-foreground: #FFD166;
+  --primary-hover: #0F443D;
+  --accent: #175E55;          /* gold on gold would be invisible */
+  --accent-foreground: #FFD166;
+  --accent-hover: #0F443D;
+}
+
+.band-teal {
+  background-color: var(--brand-teal);
+  --foreground: #FFFFFF;
+  --heading: #FFFFFF;
+  --card: #FFFFFF;
+  --card-foreground: #264653;
+  --border: rgba(255, 255, 255, 0.35);
+  --muted: rgba(255, 255, 255, 0.15);
+  --muted-foreground: #EAF6F4;
+  --input: #FFFFFF;
+  --primary: #FFFFFF;
+  --primary-foreground: #1F7B6F;
+  --primary-hover: #F8FAFC;
+  --accent: #FFF6A9;
+  --accent-foreground: #264653;
+  --accent-hover: #FFFFFF;
+}
+
+.band-slate {
+  background-color: var(--brand-slate);
+  --foreground: #F8FAFC;
+  --heading: #FFFFFF;
+  --card: #FFFFFF;
+  --card-foreground: #264653;
+  --border: rgba(255, 255, 255, 0.22);
+  --muted: rgba(255, 255, 255, 0.10);
+  --muted-foreground: #C3D2D7;
+  --input: #FFFFFF;
+  --primary: #FFD166;
+  --primary-foreground: #264653;
+  --primary-hover: #FFF6A9;
+  --accent: #FFD166;
+  --accent-foreground: #264653;
+  --accent-hover: #FFF6A9;
+}
+
+/* A card sits ON a band but is not OF it: it paints its own white
+   surface, so it must reset the ink tokens the band re-pointed.
+   Without this, a card on .band-teal / .band-slate inherits white
+   --foreground and renders white text on a white card. */
+.surface-card {
+  background-color: #FFFFFF;
+  --foreground: #264653;
+  --heading: #264653;
+  --card: #FFFFFF;
+  --card-foreground: #264653;
+  --muted: #EDF3F3;
+  --muted-foreground: #56737A;
+  --border: #DAE6E5;
+  --input: #F4F8F8;
+  --primary: #1F7B6F;
+  --primary-foreground: #F8FAFC;
+  --primary-hover: #175E55;
+  --accent: #FFD166;
+  --accent-foreground: #264653;
+  --accent-hover: #F5BE43;
+  color: var(--foreground);
 }
 
 /* ── Cinematic animation keyframes ── */

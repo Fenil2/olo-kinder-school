@@ -11,7 +11,7 @@ const palette = [
 
 export function ProgrammesSection() {
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="treeGreen" className="bottom-0 left-6 w-24" opacity={70} />
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
@@ -27,7 +27,7 @@ export function ProgrammesSection() {
                   href={`/curriculum/${programme.slug}`}
                   className={`${colors.bg} rounded-2xl border-t-4 ${colors.accent} overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col`}
                 >
-                  <div className={"bg-white/70 p-6 h-64 flex items-center justify-center"}>
+                  <div className={"bg-card/70 p-6 h-64 flex items-center justify-center"}>
                     <img
                       src={programme.modules[0].image}
                       alt={programme.modules[0].imageAlt}

@@ -3,7 +3,7 @@ import { programmes } from '@/lib/programmes'
 
 export function ProgrammeNav({ current }: { current: string }) {
   return (
-    <section className="bg-white px-4 sm:px-6 lg:px-8 py-6 border-b border-border">
+    <section className="band-white px-4 sm:px-6 lg:px-8 py-6 border-b border-border">
       <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-3">
         {programmes.map((programme) => {
           const isActive = programme.slug === current

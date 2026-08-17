@@ -2,16 +2,16 @@ import { Motion } from '@/components/ui/motion'
 
 export function AdmissionsCtaSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-accent">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 band-slate">
       <div className="max-w-4xl mx-auto">
         <Motion variant="up">
-          <div className="text-center text-accent-foreground mb-12">
+          <div className="text-center text-foreground mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Join the Olo Kinder Family?</h2>
             <p className="text-base sm:text-xl opacity-90">Experience the difference for yourself. Admissions are open now.</p>
           </div>
         </Motion>
         <Motion variant="scale" delay={150}>
-          <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-12 shadow-lg max-w-2xl mx-auto">
+          <div className="surface-card rounded-3xl p-6 sm:p-8 md:p-12 shadow-lg max-w-2xl mx-auto">
             <h3 className="text-xl sm:text-2xl font-bold text-heading mb-6 text-center">Enquiry Form</h3>
             <form className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
