@@ -91,18 +91,16 @@ export function GalleryGrid() {
               <button
                 onClick={() => setOpenIndex(i)}
                 aria-label={`View photo: ${photo.caption}`}
-                className="group relative block w-full rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-shadow cursor-pointer"
+                className="group block w-full rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-shadow cursor-pointer"
               >
+                {/* No caption over the tile: the photos speak for themselves, and
+                    the caption still reads under the photo in the lightbox. */}
                 <img
                   src={photo.src}
                   alt={photo.alt}
                   loading="lazy"
                   className="w-full h-auto align-bottom group-hover:scale-105 transition-transform duration-500"
                 />
-                {/* Caption reveal — always legible on touch, where hover never fires */}
-                <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/75 to-transparent px-3 pt-8 pb-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-white text-xs sm:text-sm font-semibold leading-snug text-left">{photo.caption}</p>
-                </div>
               </button>
             </Motion>
           ))}
