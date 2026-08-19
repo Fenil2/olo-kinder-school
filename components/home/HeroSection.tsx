@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Motion } from '@/components/ui/motion'
+import { Photo } from '@/components/ui/photo'
 
 export function HeroSection() {
   return (
@@ -37,13 +38,12 @@ export function HeroSection() {
           </div>
 
           <Motion variant="scale" delay={150} className="w-full">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-4/3 sm:aspect-3/2 lg:aspect-4/3">
-              <img
-                src="/images/hero-school-entrance.jpg"
-                alt="Olo Kinder children running happily towards the school entrance"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <Photo
+              src="/images/hero-school-entrance.jpg"
+              alt="Olo Kinder children building with blocks together in the activity room"
+              className="rounded-3xl shadow-2xl aspect-4/3 sm:aspect-3/2 lg:aspect-4/3"
+              priority
+            />
           </Motion>
 
         </div>

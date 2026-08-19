@@ -1,10 +1,12 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Fredoka, Nunito } from 'next/font/google'
+import { Baloo_2, Quicksand } from 'next/font/google'
 import './globals.css'
 
-const fredoka = Fredoka({ variable: '--font-heading', subsets: ['latin'] })
-const nunito = Nunito({ variable: '--font-body', subsets: ['latin'] })
+/* Baloo 2 is the chunky, rounded storybook face the headings ride on; Quicksand
+   is its calmer round-terminal cousin, legible enough to carry body copy. */
+const baloo = Baloo_2({ variable: '--font-heading', subsets: ['latin'], weight: ['500', '600', '700', '800'] })
+const quicksand = Quicksand({ variable: '--font-body', subsets: ['latin'], weight: ['400', '500', '600', '700'] })
 
 export const metadata: Metadata = {
   title: 'Olo Kinder - Where Curiosity Begins and Learning Comes Alive',
@@ -13,7 +15,6 @@ export const metadata: Metadata = {
     icon: [
       { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
       { url: '/icon-dark-32x32.png', media: '(prefers-color-scheme: dark)' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
     ],
     apple: '/apple-icon.png',
   },
@@ -31,7 +32,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${fredoka.variable} ${nunito.variable} bg-background`}>
+    <html lang="en" className={`${baloo.variable} ${quicksand.variable} bg-background`}>
       <body className="antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

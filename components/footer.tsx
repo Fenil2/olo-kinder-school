@@ -11,7 +11,7 @@ export function Footer() {
             {/* Brand */}
             <div className="md:col-span-1">
               <Link href="/">
-                <Image src="/olo-logo-removebg-preview.png" alt="Olo Kinder" width={100} height={90} className="h-20 w-auto object-contain mb-3" />
+                <Image src="/olo-logo.png" alt="Olo Kinder" width={178} height={90} className="h-20 w-auto object-contain mb-3" />
               </Link>
               <p className="text-sm text-white/70 leading-relaxed">
                 Nurturing curious, confident, creative and compassionate young learners.
@@ -42,6 +42,7 @@ export function Footer() {
               <ul className="space-y-2 text-sm text-white/70">
                 {[
                   { href: '/learning-experiences', label: 'Learning Experiences' },
+                  { href: '/gallery', label: 'Gallery' },
                   { href: '/admissions', label: 'Admissions' },
                   { href: '/contact', label: 'Contact Us' },
                 ].map((link) => (

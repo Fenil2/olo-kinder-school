@@ -1,6 +1,7 @@
 import { MdFactCheck, MdSchool } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Photo } from '@/components/ui/photo'
 import { Doodle } from '@/components/ui/doodle'
 
 interface Note {
@@ -54,9 +55,7 @@ export function LearningPillarsSection() {
           {pillars.map((pillar, i) => (
             <Motion key={pillar.label} variant="scale" delay={i * 80}>
               <div className="rounded-2xl overflow-hidden border border-border shadow-sm h-full">
-                <div className="aspect-4/3 overflow-hidden">
-                  <img src={pillar.img} alt={pillar.alt} loading="lazy" className="w-full h-full object-cover" />
-                </div>
+                <Photo src={pillar.img} alt={pillar.alt} className="aspect-4/3" />
                 <div className={`${pillar.bar} text-white text-center text-sm font-bold uppercase tracking-wide py-2.5`}>
                   {pillar.label}
                 </div>

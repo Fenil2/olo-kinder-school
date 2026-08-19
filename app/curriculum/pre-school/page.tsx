@@ -11,7 +11,7 @@ export default function PreSchool() {
     <>
       <Navigation />
       <main className="pt-20">
-        <HeroSection title={preSchool.title} image={preSchool.heroImage} imageAlt={preSchool.heroImageAlt} />
+        <HeroSection title={preSchool.title} />
         <ProgrammeNav current={preSchool.slug} />
         <ModulesSection modules={preSchool.modules} />
         <CtaSection />

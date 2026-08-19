@@ -1,6 +1,7 @@
 import { MdSearch, MdEmojiEvents, MdPalette, MdVolunteerActivism } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Photo } from '@/components/ui/photo'
 import { Doodle } from '@/components/ui/doodle'
 
 interface Value { label: string; Icon: IconType; color: string; bg: string }
@@ -35,13 +36,11 @@ export function WhoWeAreSection() {
             </div>
           </Motion>
           <Motion variant="right">
-            <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-4/3 w-full">
-              <img
-                src="/images/group-photo.jpg"
-                alt="Olo Kinder students and teachers together outside the school"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <Photo
+              src="/images/group-photo.jpg"
+              alt="Olo Kinder students and teachers together outside the school"
+              className="rounded-3xl shadow-xl aspect-4/3 w-full"
+            />
           </Motion>
         </div>
       </div>

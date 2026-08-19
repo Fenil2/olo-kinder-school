@@ -8,7 +8,7 @@ interface Leader {
   heading: string
   /** Square portrait on a white background — it is masked to a circle. */
   portrait: string
-  /** Per-photo framing, since the two shots are cropped differently. */
+  /** Per-photo framing; both shots are already cropped square around the face. */
   portraitFit: string
   alt: string
   quote: string
@@ -24,8 +24,8 @@ const leaders: Leader[] = [
     role: 'Founder & Chairman',
     name: 'Shri. M.V.M. Sasikumar',
     heading: "Founder's Message",
-    portrait: '/man1.png',
-    portraitFit: 'object-top scale-105',
+    portrait: '/leader-sasikumar.png',
+    portraitFit: 'object-center',
     alt: 'Shri. M.V.M. Sasikumar, Founder and Chairman of Olo Kinder school',
     quote: 'If the path is beautiful, ask where it leads to. But if the destination is beautiful, never mind about the path, keep walking!',
     quoteColor: 'text-mascot-roundy-dark',
@@ -39,8 +39,8 @@ const leaders: Leader[] = [
     role: 'Co-Founder & Director of Academics',
     name: 'Mrs. Geethanjali Sasikumar',
     heading: "Director's Message",
-    portrait: '/female.jpeg',
-    portraitFit: 'object-top scale-[1.35]',
+    portrait: '/leader-geethanjali.png',
+    portraitFit: 'object-center',
     alt: 'Mrs. Geethanjali Sasikumar, Co-Founder and Director of Academics at Olo Kinder school',
     quote: 'Storytelling is the most powerful way to put ideas into the world today.',
     attribution: '— Robert McKee',
@@ -73,7 +73,7 @@ export function LeadershipSection() {
                     src={l.portrait}
                     alt={l.alt}
                     loading="lazy"
-                    className={`w-full h-full object-cover origin-top ${l.portraitFit}`}
+                    className={`w-full h-full object-contain origin-top ${l.portraitFit}`}
                   />
                 </div>
                 {/* Confetti dots, echoing the brochure artwork */}

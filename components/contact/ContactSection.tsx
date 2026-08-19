@@ -1,5 +1,6 @@
 import { MdMap, MdSend, MdSchedule } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
+import { Photo } from '@/components/ui/photo'
 import { Doodle } from '@/components/ui/doodle'
 
 const address = '1470 B, Kathiravan Colony Main Road, Anna Nagar West, Chennai - 600040'
@@ -48,11 +49,10 @@ export function ContactSection() {
 
           <Motion variant="left" delay={100}>
             <div className="relative rounded-2xl overflow-hidden h-48 sm:h-52">
-              <img
+              <Photo
                 src="/images/playground-play.jpg"
                 alt="Children playing on the lawn and playground outside the Olo Kinder campus building"
-                loading="lazy"
-                className="w-full h-full object-cover"
+                className="w-full h-full"
               />
               <div className="absolute inset-0 bg-linear-to-t from-foreground/40 to-transparent" />
               <p className="absolute bottom-4 left-4 text-white font-semibold text-sm">Olo Kinder Campus</p>

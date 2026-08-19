@@ -67,20 +67,33 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Nudge the two smallest steps of the type scale up by 1px each, with a
-   little extra leading. Overriding the scale here lifts every `text-xs`
-   and `text-sm` on the site — including the shadcn primitives — instead
-   of touching ~70 call sites. Body sizes (base/lg and up) are unchanged. */
+/* Lift the bottom of the type scale. Parents read this site on a phone,
+   often one-handed, so nothing here is allowed to be genuinely small: the
+   two "small" steps land at 14px and 16px, and body copy moves up with
+   them so the steps stay distinct. Overriding the scale here reaches every
+   `text-xs` / `text-sm` on the site — including the shadcn primitives —
+   instead of touching ~70 call sites. Headings (`text-xl` and up) keep
+   their Tailwind defaults so no section layout shifts. */
 @theme {
-  --text-xs: 0.8125rem;                      /* 12px → 13px */
-  --text-xs--line-height: calc(1.125 / 0.8125);
-  --text-sm: 0.9375rem;                      /* 14px → 15px */
-  --text-sm--line-height: calc(1.375 / 0.9375);
+  --text-xs: 0.9375rem;                      /* 12px → 15px */
+  --text-xs--line-height: calc(1.375 / 0.9375);
+  --text-sm: 1.0625rem;                      /* 14px → 17px */
+  --text-sm--line-height: calc(1.625 / 1.0625);
+  --text-base: 1.125rem;                     /* 16px → 18px */
+  --text-base--line-height: calc(1.75 / 1.125);
+  --text-lg: 1.25rem;                        /* 18px → 20px */
+  --text-lg--line-height: calc(1.875 / 1.25);
+
+  /* Nav chrome deliberately sits OUTSIDE the scale above. Six links plus two
+     buttons have to fit one row before the hamburger takes over, so growing
+     these with body copy just makes "Learning Experiences" wrap. */
+  --text-nav: 1rem;
+  --text-nav--line-height: calc(1.5 / 1);
 }
 
 :root {
-  --font-heading: 'Fredoka', sans-serif;
-  --font-body: 'Nunito', sans-serif;
+  --font-heading: 'Baloo 2', 'Fredoka', sans-serif;
+  --font-body: 'Quicksand', 'Nunito', sans-serif;
   color-scheme: light;
 
   /* ================================================================

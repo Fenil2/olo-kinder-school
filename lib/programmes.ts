@@ -19,8 +19,6 @@ export interface Programme {
   slug: string
   navLabel: string
   title: string
-  heroImage: string
-  heroImageAlt: string
   modules: Module[]
 }
 
@@ -28,8 +26,6 @@ export const preSchool: Programme = {
   slug: 'pre-school',
   navLabel: 'Pre-School',
   title: 'Pre-School',
-  heroImage: '/images/pretend-play-market.jpg',
-  heroImageAlt: 'Pre-school children playing at a pretend market corner',
   modules: [
     {
       label: 'Module 1',
@@ -67,8 +63,6 @@ export const juniorKindergarten: Programme = {
   slug: 'junior-kindergarten',
   navLabel: 'Junior Kindergarten',
   title: 'Junior Kindergarten',
-  heroImage: '/images/classroom-colorful-wide.jpg',
-  heroImageAlt: 'A colourful Olo Kinder junior kindergarten classroom',
   modules: [
     {
       label: 'Module 1',
@@ -128,8 +122,6 @@ export const seniorKindergarten: Programme = {
   slug: 'senior-kindergarten',
   navLabel: 'Senior Kindergarten',
   title: 'Senior Kindergarten',
-  heroImage: '/images/classroom-writing-wide.jpg',
-  heroImageAlt: 'Senior kindergarten children practising writing at their desks',
   modules: [
     {
       label: 'Module 1',

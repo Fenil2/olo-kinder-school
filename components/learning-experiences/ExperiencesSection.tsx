@@ -1,6 +1,7 @@
 import { MdBuild, MdExtension, MdGroups, MdLibraryBooks, MdMusicNote, MdPalette } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Photo } from '@/components/ui/photo'
 import { Doodle } from '@/components/ui/doodle'
 
 interface Exp {
@@ -57,7 +58,7 @@ const experiences: Exp[] = [
     tagBg: 'bg-mascot-starry/15',
     desc: 'Songs, rhythm, movement, and dance activities support coordination, joyful expression, listening, and a natural sense of beat.',
     skills: ['Rhythm', 'Coordination', 'Expression'],
-    img: '/images/music-and-movement.jpg',
+    img: '/images/moments/action-song.jpeg',
   },
   {
     title: 'Group Activities & Social Skills',
@@ -80,9 +81,12 @@ export function ExperiencesSection() {
           {experiences.map((exp, i) => (
             <Motion key={i} variant="up" delay={i * 60}>
               <div className={`${exp.tagBg} rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow h-full flex flex-col`}>
-                <div className="h-44 overflow-hidden">
-                  <img src={exp.img} alt={exp.title} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                </div>
+                <Photo
+                  src={exp.img}
+                  alt={exp.title}
+                  className="h-56"
+                  imgClassName="hover:scale-105 transition-transform duration-500"
+                />
 
                 <div className="p-5 flex flex-col gap-3 flex-1">
                   <div className="flex items-center gap-2">

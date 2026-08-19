@@ -15,9 +15,6 @@ export function HeroSection() {
         title="We'd Love to"
         titleAccent="Hear From You"
         subtitle="Reach out to learn more about Olo Kinder, our curriculum, or to schedule a campus visit. Our team is happy to help."
-        image="/images/campus-walk.jpg"
-        imageAlt="The Olo Kinder campus walkway leading to the school entrance"
-        focus="50% 45%"
       />
 
       <section className="px-4 sm:px-6 lg:px-8 py-10 band-white">

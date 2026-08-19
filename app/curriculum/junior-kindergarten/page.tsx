@@ -11,7 +11,7 @@ export default function JuniorKindergarten() {
     <>
       <Navigation />
       <main className="pt-20">
-        <HeroSection title={juniorKindergarten.title} image={juniorKindergarten.heroImage} imageAlt={juniorKindergarten.heroImageAlt} />
+        <HeroSection title={juniorKindergarten.title} />
         <ProgrammeNav current={juniorKindergarten.slug} />
         <ModulesSection modules={juniorKindergarten.modules} />
         <CtaSection />

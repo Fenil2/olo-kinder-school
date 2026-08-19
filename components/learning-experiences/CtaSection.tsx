@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Motion } from '@/components/ui/motion'
 
 export function CtaSection() {
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 band-slate">
       <Motion variant="up">
@@ -14,9 +15,11 @@ export function CtaSection() {
             </Link>
             <Link href="/contact#enquiry" className="border-2 border-foreground/60 text-foreground px-8 py-3 rounded-full hover:bg-foreground/10 transition-colors font-semibold">
               Contact Us
+
             </Link>
           </div>
         </div>
+        
       </Motion>
     </section>
   )

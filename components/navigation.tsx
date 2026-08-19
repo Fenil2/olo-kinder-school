@@ -26,6 +26,7 @@ const navLinks: NavLink[] = [
     ],
   },
   { href: '/learning-experiences', label: 'Learning Experiences' },
+  { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -69,11 +70,11 @@ export function Navigation() {
 
           {/* Logo */}
           <Link href="/" className="shrink-0">
-            <Image src="/olo-logo-removebg-preview.png" alt="Olo Kinder" width={80} height={72} className="h-16 w-auto object-contain" />
+            <Image src="/olo-logo.png" alt="Olo Kinder" width={142} height={72} className="h-16 w-auto object-contain" />
           </Link>
 
           {/* Desktop nav links */}
-          <div ref={dropdownRef} className="hidden lg:flex items-center gap-0.5">
+          <div ref={dropdownRef} className="hidden xl:flex items-center gap-0.5">
             {navLinks.map((link) => {
               const isActive = link.children
                 ? pathname.startsWith(link.href)
@@ -92,7 +93,7 @@ export function Navigation() {
                       onClick={() => setOpenDropdown(isDropdownOpen ? null : link.href)}
                       aria-expanded={isDropdownOpen}
                       aria-haspopup="true"
-                      className={`flex items-center gap-1 px-4 py-2 rounded-full text-base font-medium transition-all duration-150 cursor-pointer ${
+                      className={`flex items-center gap-1 px-3 py-2 rounded-full text-nav font-medium whitespace-nowrap transition-all duration-150 cursor-pointer ${
                         isActive
                           ? 'text-primary bg-primary/10'
                           : 'text-foreground/75 hover:text-foreground hover:bg-muted'
@@ -136,7 +137,7 @@ export function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-4 py-2 rounded-full text-base font-medium transition-all duration-150 ${
+                  className={`px-3 py-2 rounded-full text-nav font-medium whitespace-nowrap transition-all duration-150 ${
                     isActive
                       ? 'text-primary bg-primary/10'
                       : 'text-foreground/75 hover:text-foreground hover:bg-muted'
@@ -149,7 +150,7 @@ export function Navigation() {
           </div>
 
           {/* Desktop CTAs */}
-          <div className="hidden lg:flex items-center gap-3 shrink-0">
+          <div className="hidden xl:flex items-center gap-3 shrink-0">
             <a
               href={PHONE_HREF}
               className="flex items-center gap-2 border border-border text-foreground px-4 py-2 rounded-full hover:border-primary hover:text-primary transition-colors font-medium text-sm"
@@ -168,7 +169,7 @@ export function Navigation() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-foreground p-2 rounded-lg hover:bg-muted transition-colors"
+            className="xl:hidden text-foreground p-2 rounded-lg hover:bg-muted transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <MdClose size={22} /> : <MdMenu size={22} />}
@@ -178,7 +179,7 @@ export function Navigation() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="lg:hidden border-t border-border surface-card">
+        <div className="xl:hidden border-t border-border surface-card">
           <div className="max-w-7xl mx-auto px-4 py-3 space-y-0.5">
             {navLinks.map((link) => {
               const isActive = pathname === link.href
