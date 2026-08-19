@@ -2,6 +2,7 @@ import { MdSearch, MdAutoAwesome, MdNature, MdFavorite, MdMenuBook, MdCalculate 
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
 import { Doodle } from '@/components/ui/doodle'
+import { Wave } from '@/components/ui/wave'
 
 interface WhyCard { title: string; Icon: IconType; desc: string }
 
@@ -16,13 +17,13 @@ const whyCards: WhyCard[] = [
 
 export function WhySection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-gold relative overflow-hidden">
+    <section className="pt-12 sm:pt-16 pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8 band-sun relative overflow-hidden">
       <Doodle name="fox" className="bottom-6 right-8 w-20" opacity={85} />
       <div className="max-w-7xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Why Olo Kinder</h2>
-            <p className="text-base sm:text-lg text-foreground/80 max-w-xl mx-auto">A thoughtfully designed approach that sets the foundation for lifelong learning.</p>
+            <p className="text-base sm:text-lg text-foreground/90 max-w-xl mx-auto">A thoughtfully designed approach that sets the foundation for lifelong learning.</p>
           </div>
         </Motion>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -31,12 +32,14 @@ export function WhySection() {
               <div className="surface-card rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow h-full">
                 <card.Icon size={40} className="text-primary mb-4" />
                 <h3 className="text-lg sm:text-xl font-bold mb-3 text-heading">{card.title}</h3>
-                <p className="text-foreground/80 leading-relaxed text-sm sm:text-base">{card.desc}</p>
+                <p className="text-foreground/90 leading-relaxed text-sm sm:text-base">{card.desc}</p>
               </div>
             </Motion>
           ))}
         </div>
       </div>
+
+      <Wave variant="scallop" className="text-background" />
     </section>
   )
 }

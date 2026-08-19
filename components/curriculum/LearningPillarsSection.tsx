@@ -35,7 +35,7 @@ const pillars = [
 
 export function LearningPillarsSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-pale relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-sky relative overflow-hidden">
       <Doodle name="fox" className="bottom-6 right-8 w-20" opacity={85} />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -45,7 +45,7 @@ export function LearningPillarsSection() {
                 <div className={`surface-card w-14 h-14 rounded-2xl flex items-center justify-center shrink-0`}>
                   <note.Icon size={28} className={note.iconColor} />
                 </div>
-                <p className="text-foreground/80 leading-relaxed text-base sm:text-lg">{note.text}</p>
+                <p className="text-foreground/90 leading-relaxed text-base sm:text-lg">{note.text}</p>
               </div>
             </Motion>
           ))}
@@ -54,11 +54,16 @@ export function LearningPillarsSection() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {pillars.map((pillar, i) => (
             <Motion key={pillar.label} variant="scale" delay={i * 80}>
-              <div className="rounded-2xl overflow-hidden border border-border shadow-sm h-full">
-                <Photo src={pillar.img} alt={pillar.alt} className="aspect-4/3" />
-                <div className={`${pillar.bar} text-white text-center text-sm font-bold uppercase tracking-wide py-2.5`}>
+              {/* Blob photo over a floating pill label — reference 03's
+                  feature bubbles. A bordered box around a blob just reads
+                  as a rectangle with a hole in it, so the frame is gone. */}
+              <div className="h-full text-center">
+                <Photo src={pillar.img} alt={pillar.alt} className="blob-soft aspect-4/3 shadow-md" />
+                <span
+                  className={`${pillar.bar} text-white inline-block -mt-4 relative z-10 rounded-full px-5 py-1.5 text-sm font-bold uppercase tracking-wide shadow-sm`}
+                >
                   {pillar.label}
-                </div>
+                </span>
               </div>
             </Motion>
           ))}

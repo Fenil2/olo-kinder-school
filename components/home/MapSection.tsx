@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { MdMap, MdLocationOn, MdPhone, MdSchedule } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
 import { Doodle } from '@/components/ui/doodle'
+import { Wave } from '@/components/ui/wave'
 
 const address = '1470 B, Kathiravan Colony Main Road, Anna Nagar West, Chennai - 600040'
 const mapQuery = encodeURIComponent(address)
@@ -16,13 +17,13 @@ const details = [
 
 export function MapSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-white relative overflow-hidden">
+    <section className="pt-12 sm:pt-16 pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8 band-cream relative overflow-hidden">
       <Doodle name="leaf1" className="top-10 right-10 w-14" rotate={-15} opacity={70} />
       <div className="max-w-7xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Visit Our Campus</h2>
-            <p className="text-base sm:text-lg text-foreground/75 max-w-2xl mx-auto text-pretty">
+            <p className="text-base sm:text-lg text-foreground/90 max-w-2xl mx-auto text-pretty">
               We are right in the heart of Anna Nagar West, Chennai. Drop by for a campus tour and see the Olo Kinder experience for yourself.
             </p>
           </div>
@@ -53,11 +54,11 @@ export function MapSection() {
                     <div>
                       <p className="text-sm font-semibold text-foreground">{d.label}</p>
                       {d.href ? (
-                        <a href={d.href} className="text-sm text-foreground/75 leading-relaxed hover:text-primary transition-colors">
+                        <a href={d.href} className="text-sm text-foreground/90 leading-relaxed hover:text-primary transition-colors">
                           {d.value}
                         </a>
                       ) : (
-                        <p className="text-sm text-foreground/75 leading-relaxed">{d.value}</p>
+                        <p className="text-sm text-foreground/90 leading-relaxed">{d.value}</p>
                       )}
                     </div>
                   </li>
@@ -84,6 +85,8 @@ export function MapSection() {
           </Motion>
         </div>
       </div>
+
+      <Wave variant="hill" className="text-surface-dark" />
     </section>
   )
 }

@@ -14,13 +14,13 @@ const steps: Step[] = [
 
 export function ProcessSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-white relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-cream relative overflow-hidden">
       <Doodle name="butterfly" className="top-12 right-12 w-16" opacity={80} flip />
       <div className="max-w-5xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Simple Admissions Process</h2>
-            <p className="text-base sm:text-lg text-foreground/80">Four easy steps to join the Olo Kinder family.</p>
+            <p className="text-base sm:text-lg text-foreground/90">Four easy steps to join the Olo Kinder family.</p>
           </div>
         </Motion>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -30,9 +30,9 @@ export function ProcessSection() {
                 <div className="w-14 h-14 rounded-full surface-card flex items-center justify-center mx-auto mb-4 shadow-sm">
                   <s.Icon size={30} className={s.iconColor} />
                 </div>
-                <div className="text-xs font-bold text-foreground/65 uppercase tracking-wide mb-1">Step {s.step}</div>
+                <div className="text-xs font-bold text-foreground/85 uppercase tracking-wide mb-1">Step {s.step}</div>
                 <h3 className="text-base sm:text-lg font-bold text-heading mb-2">{s.title}</h3>
-                <p className="text-sm text-foreground/80 leading-relaxed">{s.desc}</p>
+                <p className="text-sm text-foreground/90 leading-relaxed">{s.desc}</p>
               </div>
             </Motion>
           ))}

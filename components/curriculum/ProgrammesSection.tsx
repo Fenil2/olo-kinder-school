@@ -11,7 +11,7 @@ const palette = [
 
 export function ProgrammesSection() {
   return (
-    <section className="band-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-cream py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="treeGreen" className="bottom-0 left-6 w-24" opacity={70} />
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
@@ -40,7 +40,7 @@ export function ProgrammesSection() {
                     <h3 className="text-xl font-bold text-heading leading-tight">{programme.title}</h3>
                     <ul className="space-y-1.5">
                       {programme.modules.map((module) => (
-                        <li key={module.label} className="text-sm text-foreground/75 leading-relaxed">
+                        <li key={module.label} className="text-sm text-foreground/90 leading-relaxed">
                           <span className={`font-semibold ${colors.text}`}>{module.label}:</span> {module.name}
                         </li>
                       ))}

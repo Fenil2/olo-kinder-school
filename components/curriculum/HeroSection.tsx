@@ -6,7 +6,7 @@ export function HeroSection() {
       eyebrow="Our Curriculum"
       title="The Olo Kinder"
       titleAccent="Learning Framework"
-      subtitle="Our curriculum emphasizes Listening, Speaking, Vocabulary, growth and Expressive language. Through interactive read aloud sessions, group conversations, dramatic play and language rich environment."
+      subtitle="Our curriculum emphasizes Listening, Speaking, Vocabulary, development and Expressive language. Through interactive read aloud sessions, group conversations, dramatic play and language rich environment."
     />
   )
 }

@@ -44,7 +44,7 @@ export function GalleryGrid() {
   const open = openIndex === null ? null : photos[openIndex]
 
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-pale relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-sky relative overflow-hidden">
       <Doodle name="cloud" className="top-10 left-8 w-28" opacity={60} />
       <Doodle name="butterfly" className="top-12 right-12 w-16" opacity={75} flip />
       <Doodle name="snail" className="bottom-8 left-10 w-20" opacity={70} />
@@ -71,7 +71,7 @@ export function GalleryGrid() {
                   className={`px-4 sm:px-5 py-2 rounded-full text-sm sm:text-base font-semibold transition-colors cursor-pointer border ${
                     isActive
                       ? 'bg-primary text-primary-foreground border-transparent shadow-sm'
-                      : 'surface-card text-foreground/75 border-border hover:text-foreground hover:border-primary'
+                      : 'surface-card text-foreground/90 border-border hover:text-foreground hover:border-primary'
                   }`}
                 >
                   {filter.label}
@@ -101,7 +101,7 @@ export function GalleryGrid() {
                 />
                 {/* Caption reveal — always legible on touch, where hover never fires */}
                 <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/75 to-transparent px-3 pt-8 pb-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-white text-xs sm:text-sm font-medium leading-snug text-left">{photo.caption}</p>
+                  <p className="text-white text-xs sm:text-sm font-semibold leading-snug text-left">{photo.caption}</p>
                 </div>
               </button>
             </Motion>
@@ -160,7 +160,7 @@ export function GalleryGrid() {
               alt={open.alt}
               className="max-h-[75vh] w-auto max-w-full object-contain rounded-2xl shadow-2xl"
             />
-            <figcaption className="text-center text-white/90 text-sm sm:text-base font-medium px-4">
+            <figcaption className="text-center text-white/90 text-sm sm:text-base font-semibold px-4">
               {open.caption}
               <span className="block text-white/50 text-xs mt-1">
                 {(openIndex ?? 0) + 1} of {photos.length}

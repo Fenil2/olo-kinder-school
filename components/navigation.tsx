@@ -93,10 +93,10 @@ export function Navigation() {
                       onClick={() => setOpenDropdown(isDropdownOpen ? null : link.href)}
                       aria-expanded={isDropdownOpen}
                       aria-haspopup="true"
-                      className={`flex items-center gap-1 px-3 py-2 rounded-full text-nav font-medium whitespace-nowrap transition-all duration-150 cursor-pointer ${
+                      className={`flex items-center gap-1 px-3 py-2 rounded-full text-nav font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer ${
                         isActive
                           ? 'text-primary bg-primary/10'
-                          : 'text-foreground/75 hover:text-foreground hover:bg-muted'
+                          : 'text-foreground/90 hover:text-foreground hover:bg-muted'
                       }`}
                     >
                       {link.label}
@@ -116,10 +116,10 @@ export function Navigation() {
                                 key={child.href}
                                 href={child.href}
                                 onClick={() => setOpenDropdown(null)}
-                                className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
+                                className={`block px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
                                   isChildActive
                                     ? 'bg-primary/10 text-primary'
-                                    : 'text-foreground/75 hover:bg-muted hover:text-foreground'
+                                    : 'text-foreground/90 hover:bg-muted hover:text-foreground'
                                 }`}
                               >
                                 {child.label}
@@ -137,10 +137,10 @@ export function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-3 py-2 rounded-full text-nav font-medium whitespace-nowrap transition-all duration-150 ${
+                  className={`px-3 py-2 rounded-full text-nav font-semibold whitespace-nowrap transition-all duration-150 ${
                     isActive
                       ? 'text-primary bg-primary/10'
-                      : 'text-foreground/75 hover:text-foreground hover:bg-muted'
+                      : 'text-foreground/90 hover:text-foreground hover:bg-muted'
                   }`}
                 >
                   {link.label}
@@ -153,7 +153,7 @@ export function Navigation() {
           <div className="hidden xl:flex items-center gap-3 shrink-0">
             <a
               href={PHONE_HREF}
-              className="flex items-center gap-2 border border-border text-foreground px-4 py-2 rounded-full hover:border-primary hover:text-primary transition-colors font-medium text-sm"
+              className="flex items-center gap-2 border border-border text-foreground px-4 py-2 rounded-full hover:border-primary hover:text-primary transition-colors font-semibold text-sm"
             >
               <MdPhone size={16} />
               <span>{PHONE}</span>
@@ -187,7 +187,7 @@ export function Navigation() {
               if (link.children) {
                 return (
                   <div key={link.href} className="space-y-0.5">
-                    <div className="px-4 pt-2 pb-1 text-xs font-bold uppercase tracking-wide text-foreground/50">
+                    <div className="px-4 pt-2 pb-1 text-xs font-bold uppercase tracking-wide text-foreground/70">
                       {link.label}
                     </div>
                     {link.children.map((child) => {
@@ -197,7 +197,7 @@ export function Navigation() {
                           key={child.href}
                           href={child.href}
                           onClick={() => setIsOpen(false)}
-                          className={`flex items-center justify-between pl-6 pr-4 py-2.5 rounded-xl font-medium text-sm transition-colors ${
+                          className={`flex items-center justify-between pl-6 pr-4 py-2.5 rounded-xl font-semibold text-sm transition-colors ${
                             isChildActive
                               ? 'bg-primary/10 text-primary'
                               : 'text-foreground hover:bg-muted'
@@ -217,7 +217,7 @@ export function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`flex items-center justify-between px-4 py-2.5 rounded-xl font-medium text-sm transition-colors ${
+                  className={`flex items-center justify-between px-4 py-2.5 rounded-xl font-semibold text-sm transition-colors ${
                     isActive
                       ? 'bg-primary/10 text-primary'
                       : 'text-foreground hover:bg-muted'
@@ -232,7 +232,7 @@ export function Navigation() {
               <a
                 href={PHONE_HREF}
                 onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center gap-2 w-full border border-border text-foreground px-4 py-2.5 rounded-full font-medium text-sm hover:border-primary hover:text-primary transition-colors"
+                className="flex items-center justify-center gap-2 w-full border border-border text-foreground px-4 py-2.5 rounded-full font-semibold text-sm hover:border-primary hover:text-primary transition-colors"
               >
                 <MdPhone size={16} />
                 {PHONE}

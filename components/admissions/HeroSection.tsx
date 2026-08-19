@@ -14,7 +14,7 @@ export function HeroSection() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-heading">Admissions <span className="text-primary">Open Now</span></h1>
         </Motion>
         <Motion variant="up" delay={200}>
-          <p className="text-base sm:text-xl leading-relaxed max-w-2xl mx-auto text-foreground/75">
+          <p className="text-base sm:text-xl leading-relaxed max-w-2xl mx-auto text-foreground/90">
             Take the first step towards a joyful, enriching learning journey for your child. We welcome curious, creative, and compassionate young learners.
           </p>
         </Motion>

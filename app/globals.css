@@ -45,11 +45,12 @@
   --color-foreground: var(--foreground);
   --color-background: var(--background);
   --color-highlight: var(--highlight);
-  --color-brand-pale: var(--brand-pale);
-  --color-brand-gold: var(--brand-gold);
-  --color-brand-teal: var(--brand-teal);
-  --color-brand-slate: var(--brand-slate);
-  --color-brand-white: var(--brand-white);
+  --color-brand-coral: var(--brand-coral);
+  --color-brand-sky: var(--brand-sky);
+  --color-brand-green: var(--brand-green);
+  --color-brand-sun: var(--brand-sun);
+  --color-brand-plum: var(--brand-plum);
+  --color-brand-cream: var(--brand-cream);
   --color-mascot-roundy: var(--mascot-roundy);
   --color-mascot-squarey: var(--mascot-squarey);
   --color-mascot-starry: var(--mascot-starry);
@@ -97,84 +98,87 @@
   color-scheme: light;
 
   /* ================================================================
-     BRAND PALETTE — the only five colours in the system
-       #FFF6A9  pale yellow
-       #FFD166  golden yellow
-       #2A9D8F  teal
-       #264653  deep slate teal
-       #F8FAFC  off white
-     Everything below is one of those five, or a tint/shade of one.
+     BRAND PALETTE — sampled directly from the Olo Kinder logo artwork,
+     so the site and the mascot cast are literally the same colours:
+       #E4674B  coral      — the logo's second O, and Roundy
+       #7FC9DE  sky blue   — the logo's L, and Hexy
+       #A8C462  leaf green — the logo's first O, and Squary
+       #F2C94C  sun yellow — the star, and Starry
+       #4A3D56  plum       — the "kinder" wordmark: ink and dark bands
+       #FDF8EE  cream      — the paper everything sits on
+     Everything below is one of those six, or a tint/shade of one.
      ================================================================ */
-  --brand-pale: #FFF6A9;
-  --brand-gold: #FFD166;
-  --brand-teal: #2A9D8F;
-  --brand-slate: #264653;
-  --brand-white: #F8FAFC;
+  --brand-coral: #E4674B;
+  --brand-sky: #7FC9DE;
+  --brand-green: #A8C462;
+  --brand-sun: #F2C94C;
+  --brand-plum: #4A3D56;
+  --brand-cream: #FDF8EE;
 
   /* ---- Darks: text, headings, footer bands ---- */
-  --foreground: #264653;   /* body text */
-  --heading: #264653;      /* headings */
-  --surface-dark: #264653; /* footer and dark bands */
+  --foreground: #4A3D56;   /* body text — 9.5:1 on cream */
+  --heading: #4A3D56;      /* headings */
+  --surface-dark: #4A3D56; /* footer and dark bands */
 
-  /* ---- Pages are off-white; colour comes from photos, cards, icons and accents ---- */
-  --background: #F8FAFC;
+  /* ---- Pages are warm cream; colour comes from photos, mascots, waves ---- */
+  --background: #FDF8EE;
   --card: #FFFFFF;
-  --card-foreground: #264653;
+  --card-foreground: #4A3D56;
   --popover: #FFFFFF;
-  --popover-foreground: #264653;
+  --popover-foreground: #4A3D56;
 
-  /* Faint tints of the palette, for hero gradients, chips, hovers and inputs */
-  --surface-sky: #E7F4F2;    /* teal, 10% */
-  --surface-leaf: #DCEFEC;   /* teal, 16% */
-  --surface-lilac: #F1F8F7;  /* teal, 5%  */
-  --surface-sand: #FFF3D6;   /* gold, 22% */
-  --surface-blush: #FFFBE2;  /* pale yellow, 45% */
-  --surface-mist: #EEF5F4;   /* teal, 8%  */
+  /* Soft washes of each brand hue, for bands, chips, hovers and inputs */
+  --surface-sky: #E4F3F9;    /* sky, 22%   */
+  --surface-leaf: #EDF4DC;   /* green, 28% */
+  --surface-lilac: #F3EEF7;  /* plum, 8%   */
+  --surface-sand: #FCEFCD;   /* sun, 30%   */
+  --surface-blush: #FCE9E3;  /* coral, 20% */
+  --surface-mist: #F4F1EA;   /* cream, shaded */
 
-  --muted: #EDF3F3;          /* hovers, chips */
-  --muted-foreground: #56737A;
-  --border: #DAE6E5;
-  --input: #F4F8F8;
+  --muted: #F2EDE3;          /* hovers, chips */
+  --muted-foreground: #6E6379;
+  --border: #E6DDCF;
+  --input: #FBF7F0;
 
   /* ---- Brand roles ----
-     Note on contrast: #2A9D8F at full strength only reaches ~3.2:1 against
-     both white and #264653, so it cannot legibly carry body text either as
-     ink or as a fill. --primary is therefore a deeper shade of the same
-     teal (4.9:1 both ways). The pure swatch lives on in --brand-teal, the
-     surface tints, and the mascot colours, where it never sits under text. */
-  --primary: #1F7B6F;          /* deep teal — links, icons, solid buttons */
-  --primary-foreground: #F8FAFC;
-  --secondary: #FFF6A9;
-  --secondary-foreground: #264653;
-  --accent: #FFD166;           /* gold — a FILL only; pair with #264653 ink */
-  --accent-foreground: #264653;
-  --highlight: #FFF6A9;
-  --accent-hover: #F5BE43;
-  --primary-hover: #175E55;
+     Note on contrast: the raw brand hues are pastels drawn for a cartoon
+     cast, and none of them can legibly carry text — coral is 3.1:1 on
+     cream, green 1.9:1, sky 1.8:1, sun 1.5:1. So each hue has a deepened
+     "ink" twin used whenever it must sit under type, while the raw swatch
+     stays for fills, waves, mascots and tints where no text lands on it. */
+  --primary: #C1462B;          /* coral ink — links, icons, solid buttons (4.8:1) */
+  --primary-foreground: #FFFFFF;
+  --secondary: #E4F3F9;
+  --secondary-foreground: #4A3D56;
+  --accent: #F2C94C;           /* sun — a FILL only; pair with plum ink (6.3:1) */
+  --accent-foreground: #4A3D56;
+  --highlight: #F2C94C;
+  --accent-hover: #E0B22F;
+  --primary-hover: #A93B22;
 
-  --destructive: #ef4444;    /* form-error state only, outside the brand palette */
-  --ring: #1F7B6F;
+  --destructive: #DC2626;    /* form-error state only, outside the brand palette */
+  --ring: #C1462B;
   --radius: 0.75rem;
-  --sidebar: #F1F8F7;
-  --sidebar-foreground: #264653;
-  --sidebar-primary: #1F7B6F;
-  --sidebar-primary-foreground: #F8FAFC;
-  --sidebar-accent: #FFD166;
-  --sidebar-accent-foreground: #264653;
-  --sidebar-border: #DAE6E5;
-  --sidebar-ring: #1F7B6F;
+  --sidebar: #F3EEF7;
+  --sidebar-foreground: #4A3D56;
+  --sidebar-primary: #C1462B;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F2C94C;
+  --sidebar-accent-foreground: #4A3D56;
+  --sidebar-border: #E6DDCF;
+  --sidebar-ring: #C1462B;
 
-  /* Mascot identity colors — one per palette hue */
-  --mascot-roundy: #FFD166;
-  --mascot-squarey: #2A9D8F;
-  --mascot-starry: #FFF6A9;
-  --mascot-hexy: #264653;
+  /* Mascot identity colours — matched to the actual mascot artwork */
+  --mascot-roundy: #E4674B;   /* coral  */
+  --mascot-squarey: #A8C462;  /* green  */
+  --mascot-starry: #F2C94C;   /* sun    */
+  --mascot-hexy: #7FC9DE;     /* sky    */
 
-  /* Darker mascot colors for text on light/white backgrounds */
-  --mascot-roundy-dark: #8A6410;
-  --mascot-squarey-dark: #1E7669;
-  --mascot-starry-dark: #6F6413;
-  --mascot-hexy-dark: #264653;
+  /* Ink twins: the same identity, deepened until it can carry text on cream */
+  --mascot-roundy-dark: #C1462B;   /* 4.8:1 */
+  --mascot-squarey-dark: #5C761F;  /* 4.9:1 */
+  --mascot-starry-dark: #8A6410;   /* 5.1:1 */
+  --mascot-hexy-dark: #1F6A80;     /* 5.8:1 */
 }
 
 @layer base {
@@ -192,9 +196,15 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    /* Quicksand at 400 reads thin and washed-out on cream at these sizes —
+       parents scanning on a phone described the copy as "dull". The whole
+       site therefore sits one step up the scale: body copy is 500, and the
+       `font-semibold` labels and chips stay a visible step above it. */
+    font-weight: 500;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
+    font-weight: 700;
   }
 }
 
@@ -207,105 +217,125 @@
    tokens are declared in `@theme inline`, so `text-foreground` emits
    `var(--foreground)` and picks up the band's redefinition.
 
-   Ink is chosen per band: the two light bands (pale, gold) take slate
-   ink and a deep-teal button; the two dark bands (teal, slate) take
-   off-white ink and a light button. `--accent` is re-pointed on every
-   band so a button never fills with the same colour it sits on.
+   The four light bands are soft washes of a brand hue and all take plum
+   ink; only the plum band flips to white ink. Saturated colour is spent
+   on the wave dividers, the mascots and the photos instead of on whole
+   sections — which is what keeps the cream paper reading as paper.
    ================================================================ */
 
-.band-white {
-  background-color: var(--brand-white);
+.band-cream {
+  background-color: var(--brand-cream);
 }
 
-.band-pale {
-  background-color: var(--brand-pale);
+.band-sky {
+  background-color: var(--surface-sky);
   --card: #FFFFFF;
-  --card-foreground: #264653;
-  --border: rgba(38, 70, 83, 0.30);
-  --muted: rgba(38, 70, 83, 0.07);
-  --muted-foreground: #4A6570;
+  --border: rgba(74, 61, 86, 0.16);
+  --muted: rgba(74, 61, 86, 0.06);
+  --muted-foreground: #5E6E77;
   --input: #FFFFFF;
-  --primary: #175E55;
-  --primary-foreground: #FFF6A9;
-  --primary-hover: #0F443D;
-  --accent: #175E55;          /* gold would vanish on pale yellow */
-  --accent-foreground: #FFF6A9;
-  --accent-hover: #0F443D;
 }
 
-.band-gold {
-  background-color: var(--brand-gold);
+.band-sun {
+  background-color: var(--surface-sand);
   --card: #FFFFFF;
-  --card-foreground: #264653;
-  --border: rgba(38, 70, 83, 0.32);
-  --muted: rgba(38, 70, 83, 0.08);
-  --muted-foreground: #3E5A64;
+  --border: rgba(74, 61, 86, 0.18);
+  --muted: rgba(74, 61, 86, 0.07);
+  --muted-foreground: #6B6046;
   --input: #FFFFFF;
-  --primary: #175E55;
-  --primary-foreground: #FFD166;
-  --primary-hover: #0F443D;
-  --accent: #175E55;          /* gold on gold would be invisible */
-  --accent-foreground: #FFD166;
-  --accent-hover: #0F443D;
 }
 
-.band-teal {
-  background-color: var(--brand-teal);
-  --foreground: #FFFFFF;
+.band-green {
+  background-color: var(--surface-leaf);
+  --card: #FFFFFF;
+  --border: rgba(74, 61, 86, 0.16);
+  --muted: rgba(74, 61, 86, 0.06);
+  --muted-foreground: #5F6B4E;
+  --input: #FFFFFF;
+}
+
+.band-plum {
+  background-color: var(--brand-plum);
+  --foreground: #FDF8EE;
   --heading: #FFFFFF;
   --card: #FFFFFF;
-  --card-foreground: #264653;
-  --border: rgba(255, 255, 255, 0.35);
-  --muted: rgba(255, 255, 255, 0.15);
-  --muted-foreground: #EAF6F4;
-  --input: #FFFFFF;
-  --primary: #FFFFFF;
-  --primary-foreground: #1F7B6F;
-  --primary-hover: #F8FAFC;
-  --accent: #FFF6A9;
-  --accent-foreground: #264653;
-  --accent-hover: #FFFFFF;
-}
-
-.band-slate {
-  background-color: var(--brand-slate);
-  --foreground: #F8FAFC;
-  --heading: #FFFFFF;
-  --card: #FFFFFF;
-  --card-foreground: #264653;
+  --card-foreground: #4A3D56;
   --border: rgba(255, 255, 255, 0.22);
   --muted: rgba(255, 255, 255, 0.10);
-  --muted-foreground: #C3D2D7;
+  --muted-foreground: #CFC6D6;
   --input: #FFFFFF;
-  --primary: #FFD166;
-  --primary-foreground: #264653;
-  --primary-hover: #FFF6A9;
-  --accent: #FFD166;
-  --accent-foreground: #264653;
-  --accent-hover: #FFF6A9;
+  --primary: #F2C94C;
+  --primary-foreground: #4A3D56;
+  --primary-hover: #FADE8E;
+  --accent: #F2C94C;
+  --accent-foreground: #4A3D56;
+  --accent-hover: #FADE8E;
 }
 
 /* A card sits ON a band but is not OF it: it paints its own white
    surface, so it must reset the ink tokens the band re-pointed.
-   Without this, a card on .band-teal / .band-slate inherits white
+   Without this, a card on .band-plum inherits that band's near-white
    --foreground and renders white text on a white card. */
 .surface-card {
   background-color: #FFFFFF;
-  --foreground: #264653;
-  --heading: #264653;
+  --foreground: #4A3D56;
+  --heading: #4A3D56;
   --card: #FFFFFF;
-  --card-foreground: #264653;
-  --muted: #EDF3F3;
-  --muted-foreground: #56737A;
-  --border: #DAE6E5;
-  --input: #F4F8F8;
-  --primary: #1F7B6F;
-  --primary-foreground: #F8FAFC;
-  --primary-hover: #175E55;
-  --accent: #FFD166;
-  --accent-foreground: #264653;
-  --accent-hover: #F5BE43;
+  --card-foreground: #4A3D56;
+  --muted: #F2EDE3;
+  --muted-foreground: #6E6379;
+  --border: #E6DDCF;
+  --input: #FBF7F0;
+  --primary: #C1462B;
+  --primary-foreground: #FFFFFF;
+  --primary-hover: #A93B22;
+  --accent: #F2C94C;
+  --accent-foreground: #4A3D56;
+  --accent-hover: #E0B22F;
   color: var(--foreground);
+}
+
+/* ================================================================
+   ORGANIC SHAPES
+   The reference layouts never put a photo in a plain rectangle — every
+   image sits in a hand-drawn blob. These are asymmetric border-radius
+   values rather than SVG clip-paths, so the frame still accepts a
+   border, a ring and a box-shadow, and still crops `object-cover`.
+   Each blob is deliberately lopsided; `-alt` mirrors it so two blobs
+   side by side don't read as the same stamp twice.
+   ================================================================ */
+/* The radii are deliberately far apart. Values clustered near 50% just
+   render an ellipse — the lopsidedness is what reads as hand-drawn. */
+.blob {
+  border-radius: 63% 37% 44% 56% / 38% 58% 42% 62%;
+}
+.blob-alt {
+  border-radius: 37% 63% 56% 44% / 58% 38% 62% 42%;
+}
+/* Gentler: keeps a photo readable at card size while still losing the box */
+.blob-soft {
+  border-radius: 40% 60% 55% 45% / 52% 40% 60% 48%;
+}
+.blob-petal {
+  border-radius: 70% 30% 70% 30% / 35% 65% 35% 65%;
+}
+
+/* Headline ink — the reference sets each phrase of a headline in a
+   different brand colour. These are the ink twins, never the pastels. */
+.ink-coral { color: var(--mascot-roundy-dark); }
+.ink-green { color: var(--mascot-squarey-dark); }
+.ink-sky   { color: var(--mascot-hexy-dark); }
+.ink-sun   { color: var(--mascot-starry-dark); }
+.ink-plum  { color: var(--brand-plum); }
+
+/* A hand-drawn underline that sits under one word of a headline, as in
+   the reference's green scribble beneath "Joyful Learners". */
+.scribble-under {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='10' viewBox='0 0 120 10'%3E%3Cpath d='M2 6.5c22-4 44-4.6 62-2.4C82 6.3 100 7 118 3.2' fill='none' stroke='%23A8C462' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left calc(100% - 0.1em);
+  background-size: 100% 0.42em;
+  padding-bottom: 0.18em;
 }
 
 /* ── Cinematic animation keyframes ── */

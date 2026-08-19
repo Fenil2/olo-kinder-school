@@ -13,7 +13,7 @@ const hours = [
 
 export function ContactSection() {
   return (
-    <section id="enquiry" className="scroll-mt-20 py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-pale relative overflow-hidden">
+    <section id="enquiry" className="scroll-mt-20 py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-sky relative overflow-hidden">
       <Doodle name="cloud" className="top-8 right-10 w-28" opacity={70} />
       <Doodle name="snail" className="bottom-8 left-10 w-28" opacity={60} flip />
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 relative z-10">
@@ -32,7 +32,7 @@ export function ContactSection() {
                 />
                 <div className="absolute left-4 right-4 bottom-4 rounded-xl bg-card/95 p-4 shadow-sm backdrop-blur">
                   <p className="text-foreground font-semibold text-sm">Olo Kinder</p>
-                  <p className="text-foreground/65 text-xs leading-relaxed mt-1">{address}</p>
+                  <p className="text-foreground/85 text-xs leading-relaxed mt-1">{address}</p>
                   <a
                     href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
                     target="_blank"
@@ -68,7 +68,7 @@ export function ContactSection() {
               <ul className="space-y-3">
                 {hours.map((h) => (
                   <li key={h.day} className="flex justify-between items-center text-sm">
-                    <span className="text-foreground/80 font-medium">{h.day}</span>
+                    <span className="text-foreground/90 font-semibold">{h.day}</span>
                     <span className="font-semibold text-mascot-hexy-dark">{h.time}</span>
                   </li>
                 ))}
@@ -80,7 +80,7 @@ export function ContactSection() {
         <Motion variant="right">
           <div>
             <h2 className="text-2xl font-bold text-heading mb-2">Send Us a Message</h2>
-            <p className="text-foreground/80 mb-6 text-sm leading-relaxed">
+            <p className="text-foreground/90 mb-6 text-sm leading-relaxed">
               Fill in the form below and our admissions team will respond within 24 hours.
             </p>
             <div className="surface-card rounded-3xl p-6 sm:p-8 border border-border">
@@ -128,7 +128,7 @@ export function ContactSection() {
                   <MdSend size={18} />
                   Send Message
                 </button>
-                <p className="text-xs text-foreground/60 text-center">We respect your privacy. Your details will only be used to contact you about your enquiry.</p>
+                <p className="text-xs text-foreground/80 text-center">We respect your privacy. Your details will only be used to contact you about your enquiry.</p>
               </form>
             </div>
           </div>

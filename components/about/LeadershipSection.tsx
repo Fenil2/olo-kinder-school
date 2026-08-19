@@ -6,7 +6,7 @@ interface Leader {
   role: string
   name: string
   heading: string
-  /** Square portrait on a white background — it is masked to a circle. */
+  /** Square portrait, pre-cropped around the face — it is masked to a circle. */
   portrait: string
   /** Per-photo framing; both shots are already cropped square around the face. */
   portraitFit: string
@@ -56,7 +56,7 @@ const leaders: Leader[] = [
 
 export function LeadershipSection() {
   return (
-    <section className="band-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-cream py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="treeOrange" className="bottom-0 right-6 w-24" opacity={70} />
       <div className="max-w-6xl mx-auto space-y-14 relative z-10">
         {leaders.map((l) => (
@@ -85,7 +85,7 @@ export function LeadershipSection() {
 
             <Motion variant={l.reverse ? 'left' : 'right'} delay={100} className="min-w-0 flex-1">
               <div className="text-center md:text-left">
-                <p className="text-sm font-semibold tracking-wide text-foreground/60 uppercase">{l.role}</p>
+                <p className="text-sm font-semibold tracking-wide text-foreground/80 uppercase">{l.role}</p>
                 <p className="text-xl sm:text-2xl font-semibold text-foreground mt-1">{l.name}</p>
                 <h2 className="text-3xl sm:text-4xl font-bold text-primary uppercase leading-tight mt-5">
                   {l.heading}
@@ -93,15 +93,15 @@ export function LeadershipSection() {
 
                 <div className="relative surface-card rounded-3xl border border-border shadow-sm p-6 sm:p-8 mt-6 text-left">
                   <MdFormatQuote size={34} className={`${l.quoteMark} mb-2`} />
-                  <blockquote className={`text-base sm:text-lg font-medium leading-relaxed text-pretty ${l.quoteColor}`}>
+                  <blockquote className={`text-base sm:text-lg font-semibold leading-relaxed text-pretty ${l.quoteColor}`}>
                     {l.quote}
                   </blockquote>
                   {l.attribution && (
-                    <cite className="block text-sm text-foreground/60 not-italic mt-3">{l.attribution}</cite>
+                    <cite className="block text-sm text-foreground/80 not-italic mt-3">{l.attribution}</cite>
                   )}
                 </div>
 
-                <div className="space-y-4 mt-6 text-base sm:text-lg text-foreground/80 leading-relaxed text-pretty text-left">
+                <div className="space-y-4 mt-6 text-base sm:text-lg text-foreground/90 leading-relaxed text-pretty text-left">
                   {l.message.map((p) => (
                     <p key={p}>{p}</p>
                   ))}

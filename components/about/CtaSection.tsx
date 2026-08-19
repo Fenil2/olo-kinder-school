@@ -3,7 +3,7 @@ import { Motion } from '@/components/ui/motion'
 
 export function CtaSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-slate">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-plum">
       <Motion variant="up">
         <div className="max-w-4xl mx-auto text-center text-foreground">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Learn More?</h2>

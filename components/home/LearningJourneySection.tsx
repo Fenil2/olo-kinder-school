@@ -1,5 +1,6 @@
 import { Motion } from '@/components/ui/motion'
 import { Doodle } from '@/components/ui/doodle'
+import { Wave } from '@/components/ui/wave'
 
 const journey = [
   // textColor is paired to the fill's luminance: light fills take slate ink,
@@ -14,13 +15,13 @@ const journey = [
 
 export function LearningJourneySection() {
   return (
-    <section className="band-pale py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-sky pt-12 sm:pt-16 pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="leaf2" className="top-10 left-10 w-14" rotate={15} opacity={70} />
       <div className="max-w-5xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Our Learning Journey</h2>
-            <p className="text-base sm:text-lg text-foreground/80">Six purposeful stages that guide every child from curiosity to confidence.</p>
+            <p className="text-base sm:text-lg text-foreground/90">Six purposeful stages that guide every child from curiosity to confidence.</p>
           </div>
         </Motion>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
@@ -31,12 +32,14 @@ export function LearningJourneySection() {
                   {j.step}
                 </div>
                 <h3 className="font-bold text-heading text-sm sm:text-base mb-1">{j.word}</h3>
-                <p className="text-xs text-foreground/75 leading-snug">{j.desc}</p>
+                <p className="text-xs text-foreground/90 leading-snug">{j.desc}</p>
               </div>
             </Motion>
           ))}
         </div>
       </div>
+
+      <Wave variant="hill" className="text-surface-leaf" />
     </section>
   )
 }

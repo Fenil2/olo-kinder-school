@@ -4,8 +4,22 @@ import { Motion } from '@/components/ui/motion'
 
 export function Footer() {
   return (
-    <footer className="bg-surface-dark text-white py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="band-plum bg-surface-dark text-white pt-10 pb-10 relative overflow-hidden">
+      {/* The cast waving the page off, standing on the footer's top edge */}
+      <img
+        src="/images/doodles/mascot-roundy.webp"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -top-1 left-[8%] w-12 opacity-90 hidden lg:block"
+      />
+      <img
+        src="/images/doodles/mascot-hexy.webp"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -top-2 right-[10%] w-14 opacity-90 hidden lg:block"
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Motion variant="up">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-7 mb-7">
             {/* Brand */}

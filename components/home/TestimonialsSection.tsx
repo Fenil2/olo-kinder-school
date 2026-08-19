@@ -1,6 +1,7 @@
 import { MdFormatQuote } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
 import { Doodle } from '@/components/ui/doodle'
+import { Wave } from '@/components/ui/wave'
 
 const testimonials = [
   {
@@ -25,7 +26,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-teal relative overflow-hidden">
+    <section className="pt-12 sm:pt-16 pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8 band-green relative overflow-hidden">
       <Doodle name="snail" className="bottom-8 right-10 w-28" opacity={60} />
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
@@ -33,7 +34,7 @@ export function TestimonialsSection() {
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">What Parents Say</h2>
             {/* Full-opacity ink: #2A9D8F is the one palette colour that cannot
                 reach AA for body copy, so don't spend any of it on opacity. */}
-            <p className="text-lg sm:text-xl font-medium text-foreground">Hear from the families who have experienced the Olo Kinder difference.</p>
+            <p className="text-lg sm:text-xl font-semibold text-foreground">Hear from the families who have experienced the Olo Kinder difference.</p>
           </div>
         </Motion>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -41,12 +42,12 @@ export function TestimonialsSection() {
             <Motion key={i} variant="up" delay={i * 100}>
               <div className="surface-card rounded-2xl p-6 sm:p-8 border border-border h-full flex flex-col">
                 <MdFormatQuote size={40} className="text-primary mb-4 shrink-0" />
-                <p className="text-foreground/80 leading-relaxed mb-6 italic flex-1">{t.quote}</p>
+                <p className="text-foreground/90 leading-relaxed mb-6 italic flex-1">{t.quote}</p>
                 <div className="flex items-center gap-3">
                   <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover shrink-0" />
                   <div>
                     <p className="font-semibold text-foreground text-sm">{t.name}</p>
-                    <p className="text-xs text-foreground/75">{t.role}</p>
+                    <p className="text-xs text-foreground/90">{t.role}</p>
                   </div>
                 </div>
               </div>
@@ -54,6 +55,8 @@ export function TestimonialsSection() {
           ))}
         </div>
       </div>
+
+      <Wave variant="ribbon" className="text-surface-dark" />
     </section>
   )
 }

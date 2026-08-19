@@ -3,6 +3,7 @@ import { MdGroups, MdExtension, MdDirectionsWalk, MdLibraryBooks, MdMusicNote, M
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
 import { Doodle } from '@/components/ui/doodle'
+import { Wave } from '@/components/ui/wave'
 
 interface Experience { title: string; Icon: IconType; desc: string }
 
@@ -17,13 +18,13 @@ const experiences: Experience[] = [
 
 export function ExperiencesSection() {
   return (
-    <section className="band-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-cream pt-12 sm:pt-16 pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="treeGreen" className="bottom-0 left-6 w-24" opacity={70} />
       <div className="max-w-7xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Learning Through Experiences</h2>
-            <p className="text-base sm:text-lg text-foreground/80 max-w-xl mx-auto">Olo Kinder is filled with rich, purposeful experiences designed to inspire curiosity, encourage exploration, and engage young learners.</p>
+            <p className="text-base sm:text-lg text-foreground/90 max-w-xl mx-auto">Olo Kinder is filled with rich, purposeful experiences designed to inspire curiosity, encourage exploration, and engage young learners.</p>
           </div>
         </Motion>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -33,7 +34,7 @@ export function ExperiencesSection() {
                 <exp.Icon size={30} className="text-primary shrink-0 mt-1" />
                 <div>
                   <h3 className="font-bold text-base sm:text-lg text-heading mb-1">{exp.title}</h3>
-                  <p className="text-sm text-foreground/80 leading-relaxed">{exp.desc}</p>
+                  <p className="text-sm text-foreground/90 leading-relaxed">{exp.desc}</p>
                 </div>
               </div>
             </Motion>
@@ -47,6 +48,8 @@ export function ExperiencesSection() {
           </div>
         </Motion>
       </div>
+
+      <Wave variant="cloud" className="text-surface-sky" />
     </section>
   )
 }

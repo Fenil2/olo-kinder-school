@@ -24,7 +24,10 @@ const experiences: Exp[] = [
     tagBg: 'bg-mascot-roundy/15',
     desc: 'Interactive stories, picture talks, and role play help children build imagination, vocabulary, listening skills, and confidence in expression.',
     skills: ['Imagination', 'Vocabulary', 'Listening'],
-    img: '/images/storytelling-circle.jpg',
+    img: '/images/moments/stage-microphone.jpeg',
+    // A 9:16 phone still: the child's face sits about a third of the way down,
+    // so the landscape card has to crop above centre to keep her in frame.
+    focus: 'object-[50%_30%]',
   },
   {
     title: 'Brain Games & Puzzles',
@@ -76,7 +79,7 @@ const experiences: Exp[] = [
 
 export function ExperiencesSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-gold relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-sun relative overflow-hidden">
       <Doodle name="cloud" className="top-8 right-10 w-28" opacity={70} />
       <Doodle name="fox" className="bottom-6 left-8 w-20" opacity={85} flip />
       <div className="max-w-6xl mx-auto relative z-10">
@@ -97,10 +100,10 @@ export function ExperiencesSection() {
                     <exp.Icon size={22} className={exp.iconColor} />
                     <h3 className="font-bold text-base text-heading leading-tight">{exp.title}</h3>
                   </div>
-                  <p className="text-sm text-foreground/75 leading-relaxed">{exp.desc}</p>
+                  <p className="text-sm text-foreground/90 leading-relaxed">{exp.desc}</p>
                   <div className="flex flex-wrap gap-1.5 mt-auto pt-1">
                     {exp.skills.map((skill) => (
-                      <span key={skill} className={`surface-card text-foreground/75 text-xs font-medium px-2.5 py-1 rounded-full`}>
+                      <span key={skill} className={`surface-card text-foreground/90 text-xs font-semibold px-2.5 py-1 rounded-full`}>
                         {skill}
                       </span>
                     ))}

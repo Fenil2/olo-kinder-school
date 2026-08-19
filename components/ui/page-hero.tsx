@@ -26,14 +26,16 @@ export function PageHero({ eyebrow, title, titleAccent, subtitle }: PageHeroProp
           </Motion>
         )}
         <Motion variant="up" delay={100}>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight text-balance text-heading">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.12] text-balance ink-plum">
             {title}
-            {titleAccent && <> <span className="text-primary">{titleAccent}</span></>}
+            {titleAccent && (
+              <> <span className="ink-coral scribble-under">{titleAccent}</span></>
+            )}
           </h1>
         </Motion>
         {subtitle && (
           <Motion variant="up" delay={200}>
-            <p className="text-lg sm:text-2xl leading-relaxed max-w-3xl mx-auto mt-6 text-foreground/75">
+            <p className="text-lg sm:text-2xl leading-relaxed max-w-3xl mx-auto mt-6 text-foreground/90">
               {subtitle}
             </p>
           </Motion>

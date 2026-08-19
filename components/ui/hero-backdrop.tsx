@@ -1,3 +1,5 @@
+import { Wave } from '@/components/ui/wave'
+
 /**
  * The illustrated scene behind every page hero: a sky gradient, a rolling
  * hill, and the brand's cartoon cast scattered across it.
@@ -27,6 +29,12 @@ export function HeroBackdrop() {
       {/* The hill the cast stands on */}
       <div className="absolute -bottom-16 -inset-x-8 h-40 sm:h-48 rounded-[50%] bg-mascot-squarey/20" />
       <div className="absolute -bottom-24 -inset-x-16 h-40 sm:h-52 rounded-[50%] bg-mascot-squarey/25" />
+
+      {/* The scalloped ground line. It is drawn BEFORE the trees and the
+          cast so they stand on top of it rather than behind it, and it is
+          filled with the page background so the hero interlocks with
+          whichever band follows instead of ending on a straight edge. */}
+      <Wave variant="cloud" className="text-background" height="md" />
 
       {/* Trees along the skyline */}
       <img src="/images/doodles/tree-green.svg" alt="" className="absolute bottom-2 left-[2%] w-20 sm:w-28" />

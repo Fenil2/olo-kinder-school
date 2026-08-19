@@ -17,7 +17,7 @@ export function HeroSection() {
         subtitle="Reach out to learn more about Olo Kinder, our curriculum, or to schedule a campus visit. Our team is happy to help."
       />
 
-      <section className="px-4 sm:px-6 lg:px-8 py-8 band-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-8 band-cream">
         <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5">
           {details.map((item, i) => (
             <Motion key={item.label} variant="up" delay={i * 100}>
@@ -26,8 +26,8 @@ export function HeroSection() {
                   <item.icon size={26} className={item.color} />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-foreground/60 uppercase tracking-wide mb-0.5">{item.label}</p>
-                  <p className="text-foreground font-medium text-base">{item.value}</p>
+                  <p className="text-xs font-bold text-foreground/80 uppercase tracking-wide mb-0.5">{item.label}</p>
+                  <p className="text-foreground font-semibold text-base">{item.value}</p>
                 </div>
               </div>
             </Motion>

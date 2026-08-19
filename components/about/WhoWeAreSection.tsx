@@ -15,14 +15,14 @@ const values: Value[] = [
 
 export function WhoWeAreSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-white relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-cream relative overflow-hidden">
       <Doodle name="butterfly" className="top-12 right-10 w-16" opacity={80} flip />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
           <Motion variant="left">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-heading">Who We Are</h2>
-              <p className="text-base sm:text-lg text-foreground/80 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg text-foreground/90 leading-relaxed mb-8">
                 Olo Kinder is a unique early childhood learning initiative designed to nurture curious, confident, creative and compassionate young learners. We believe that the early years are the most critical period in a child&apos;s development, and we are committed to making those years joyful, meaningful, and enriching.
               </p>
               <div className="grid grid-cols-2 gap-4">
@@ -39,7 +39,7 @@ export function WhoWeAreSection() {
             <Photo
               src="/images/group-photo.jpg"
               alt="Olo Kinder students and teachers together outside the school"
-              className="rounded-3xl shadow-xl aspect-4/3 w-full"
+              className="blob shadow-lg aspect-4/3 w-full"
             />
           </Motion>
         </div>
