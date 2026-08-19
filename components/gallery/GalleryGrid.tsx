@@ -44,7 +44,7 @@ export function GalleryGrid() {
   const open = openIndex === null ? null : photos[openIndex]
 
   return (
-    <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 band-pale relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-pale relative overflow-hidden">
       <Doodle name="cloud" className="top-10 left-8 w-28" opacity={60} />
       <Doodle name="butterfly" className="top-12 right-12 w-16" opacity={75} flip />
       <Doodle name="snail" className="bottom-8 left-10 w-20" opacity={70} />
@@ -53,7 +53,7 @@ export function GalleryGrid() {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Category filters */}
         <Motion variant="up">
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-14">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10">
             {filters.map((filter) => {
               const isActive = active === filter.id
               const count =

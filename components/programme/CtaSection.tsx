@@ -3,7 +3,7 @@ import { Motion } from '@/components/ui/motion'
 
 export function CtaSection() {
   return (
-    <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 band-slate">
+    <section className="relative overflow-hidden py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-slate">
       <img
         src="/images/programmes/mascot-hexy.webp"
         alt=""

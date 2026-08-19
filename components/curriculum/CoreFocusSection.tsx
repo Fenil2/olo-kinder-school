@@ -30,7 +30,7 @@ const points: Point[] = [
 
 export function CoreFocusSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 band-gold relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-gold relative overflow-hidden">
       <Doodle name="butterfly" className="top-10 left-8 w-16" opacity={80} />
       <Doodle name="leaf2" className="bottom-8 right-10 w-14" rotate={-20} opacity={70} />
       <div className="max-w-5xl mx-auto relative z-10">
@@ -43,7 +43,7 @@ export function CoreFocusSection() {
         </Motion>
 
         <Motion variant="up" delay={100}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 leading-tight text-heading">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 leading-tight text-heading">
             Every Child is a <span className="text-mascot-squarey-dark">Good Communicator</span>
           </h2>
         </Motion>

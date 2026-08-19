@@ -13,10 +13,10 @@ const hours = [
 
 export function ContactSection() {
   return (
-    <section id="enquiry" className="scroll-mt-20 py-20 px-4 sm:px-6 lg:px-8 band-pale relative overflow-hidden">
+    <section id="enquiry" className="scroll-mt-20 py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-pale relative overflow-hidden">
       <Doodle name="cloud" className="top-8 right-10 w-28" opacity={70} />
       <Doodle name="snail" className="bottom-8 left-10 w-28" opacity={60} flip />
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 relative z-10">
 
         <div className="space-y-8">
           <Motion variant="left">

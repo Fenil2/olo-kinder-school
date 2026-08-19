@@ -14,11 +14,11 @@ const steps: Step[] = [
 
 export function ProcessSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 band-white relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-white relative overflow-hidden">
       <Doodle name="butterfly" className="top-12 right-12 w-16" opacity={80} flip />
       <div className="max-w-5xl mx-auto relative z-10">
         <Motion variant="up">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Simple Admissions Process</h2>
             <p className="text-base sm:text-lg text-foreground/80">Four easy steps to join the Olo Kinder family.</p>
           </div>

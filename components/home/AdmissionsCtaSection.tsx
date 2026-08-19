@@ -2,10 +2,10 @@ import { Motion } from '@/components/ui/motion'
 
 export function AdmissionsCtaSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 band-slate">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-slate">
       <div className="max-w-4xl mx-auto">
         <Motion variant="up">
-          <div className="text-center text-foreground mb-12">
+          <div className="text-center text-foreground mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Join the Olo Kinder Family?</h2>
             <p className="text-base sm:text-xl opacity-90">Experience the difference for yourself. Admissions are open now.</p>
           </div>

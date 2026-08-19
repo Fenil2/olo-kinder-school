@@ -17,11 +17,11 @@ const experiences: Experience[] = [
 
 export function ExperiencesSection() {
   return (
-    <section className="band-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="treeGreen" className="bottom-0 left-6 w-24" opacity={70} />
       <div className="max-w-7xl mx-auto relative z-10">
         <Motion variant="up">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Learning Through Experiences</h2>
             <p className="text-base sm:text-lg text-foreground/80 max-w-xl mx-auto">Olo Kinder is filled with rich, purposeful experiences designed to inspire curiosity, encourage exploration, and engage young learners.</p>
           </div>
@@ -40,7 +40,7 @@ export function ExperiencesSection() {
           ))}
         </div>
         <Motion variant="up" delay={200}>
-          <div className="text-center mt-10">
+          <div className="text-center mt-8">
             <Link href="/learning-experiences" className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-full hover:bg-primary-hover transition-colors font-semibold">
               Explore All Experiences
             </Link>

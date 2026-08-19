@@ -15,10 +15,10 @@ const values: Value[] = [
 
 export function WhoWeAreSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 band-white relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-white relative overflow-hidden">
       <Doodle name="butterfly" className="top-12 right-10 w-16" opacity={80} flip />
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
           <Motion variant="left">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-heading">Who We Are</h2>

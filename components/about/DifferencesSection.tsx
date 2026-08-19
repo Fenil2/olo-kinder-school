@@ -16,11 +16,11 @@ const differences: Difference[] = [
 
 export function DifferencesSection() {
   return (
-    <section className="band-gold py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-gold py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="fox" className="bottom-6 left-8 w-20" opacity={85} flip />
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-heading">What Makes Olo Kinder Different</h2>
             <p className="text-base sm:text-lg text-foreground/80 max-w-xl mx-auto">A one-of-a-kind approach that puts children at the heart of everything we do.</p>
           </div>

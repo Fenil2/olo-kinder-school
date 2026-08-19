@@ -3,7 +3,7 @@ import { Doodle } from '@/components/ui/doodle'
 
 export function EnquiryFormSection() {
   return (
-    <section id="enquiry" className="scroll-mt-20 py-20 px-4 sm:px-6 lg:px-8 band-pale relative overflow-hidden">
+    <section id="enquiry" className="scroll-mt-20 py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-pale relative overflow-hidden">
       <Doodle name="treeGreen" className="bottom-0 left-6 w-24" opacity={70} />
       <div className="max-w-2xl mx-auto relative z-10">
         <Motion variant="up">

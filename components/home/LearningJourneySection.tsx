@@ -14,11 +14,11 @@ const journey = [
 
 export function LearningJourneySection() {
   return (
-    <section className="band-pale py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-pale py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="leaf2" className="top-10 left-10 w-14" rotate={15} opacity={70} />
       <div className="max-w-5xl mx-auto relative z-10">
         <Motion variant="up">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Our Learning Journey</h2>
             <p className="text-base sm:text-lg text-foreground/80">Six purposeful stages that guide every child from curiosity to confidence.</p>
           </div>

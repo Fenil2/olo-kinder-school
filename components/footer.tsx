@@ -4,14 +4,14 @@ import { Motion } from '@/components/ui/motion'
 
 export function Footer() {
   return (
-    <footer className="bg-surface-dark text-white py-14">
+    <footer className="bg-surface-dark text-white py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Motion variant="up">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-7 mb-7">
             {/* Brand */}
             <div className="md:col-span-1">
               <Link href="/">
-                <Image src="/olo-logo.png" alt="Olo Kinder" width={178} height={90} className="h-20 w-auto object-contain mb-3" />
+                <Image src="/olo-logo.png" alt="Olo Kinder" width={178} height={90} className="h-14 w-auto object-contain mb-2" />
               </Link>
               <p className="text-sm text-white/70 leading-relaxed">
                 Nurturing curious, confident, creative and compassionate young learners.
@@ -20,8 +20,8 @@ export function Footer() {
 
             {/* Quick Links */}
             <div>
-              <h3 className="font-semibold mb-4 text-white/90">Quick Links</h3>
-              <ul className="space-y-2 text-sm text-white/70">
+              <h3 className="font-semibold mb-3 text-white/90">Quick Links</h3>
+              <ul className="space-y-1.5 text-sm text-white/70">
                 {[
                   { href: '/', label: 'Home' },
                   { href: '/about', label: 'About Olo Kinder' },
@@ -38,8 +38,8 @@ export function Footer() {
 
             {/* Explore */}
             <div>
-              <h3 className="font-semibold mb-4 text-white/90">Explore</h3>
-              <ul className="space-y-2 text-sm text-white/70">
+              <h3 className="font-semibold mb-3 text-white/90">Explore</h3>
+              <ul className="space-y-1.5 text-sm text-white/70">
                 {[
                   { href: '/learning-experiences', label: 'Learning Experiences' },
                   { href: '/gallery', label: 'Gallery' },
@@ -57,8 +57,8 @@ export function Footer() {
 
             {/* Contact */}
             <div>
-              <h3 className="font-semibold mb-4 text-white/90">Contact</h3>
-              <ul className="space-y-2 text-sm text-white/70">
+              <h3 className="font-semibold mb-3 text-white/90">Contact</h3>
+              <ul className="space-y-1.5 text-sm text-white/70">
                 <li>98406 04197</li>
                 <li>1470 B, Kathiravan Colony Main Road, Anna Nagar West, Chennai - 600040</li>
                 <li className="pt-2">
@@ -74,7 +74,7 @@ export function Footer() {
           </div>
         </Motion>
 
-        <div className="border-t border-white/15 pt-8 text-center text-sm text-white/50">
+        <div className="border-t border-white/15 pt-5 text-center text-sm text-white/50">
           <p>&copy; {new Date().getFullYear()} Olo Kinder. All rights reserved.</p>
         </div>
       </div>

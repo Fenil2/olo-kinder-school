@@ -16,11 +16,11 @@ const whyCards: WhyCard[] = [
 
 export function WhySection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 band-gold relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-gold relative overflow-hidden">
       <Doodle name="fox" className="bottom-6 right-8 w-20" opacity={85} />
       <div className="max-w-7xl mx-auto relative z-10">
         <Motion variant="up">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">Why Olo Kinder</h2>
             <p className="text-base sm:text-lg text-foreground/80 max-w-xl mx-auto">A thoughtfully designed approach that sets the foundation for lifelong learning.</p>
           </div>

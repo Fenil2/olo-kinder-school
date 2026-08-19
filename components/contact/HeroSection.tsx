@@ -17,7 +17,7 @@ export function HeroSection() {
         subtitle="Reach out to learn more about Olo Kinder, our curriculum, or to schedule a campus visit. Our team is happy to help."
       />
 
-      <section className="px-4 sm:px-6 lg:px-8 py-10 band-white">
+      <section className="px-4 sm:px-6 lg:px-8 py-8 band-white">
         <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5">
           {details.map((item, i) => (
             <Motion key={item.label} variant="up" delay={i * 100}>

@@ -11,11 +11,13 @@ interface PageHeroProps {
 
 export function PageHero({ eyebrow, title, titleAccent, subtitle }: PageHeroProps) {
   return (
-    <section className="relative min-h-[56vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative min-h-[42vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       <HeroBackdrop />
 
-      {/* Extra bottom padding keeps the copy clear of the hill and its cast */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center pt-20 pb-36">
+      {/* The bottom padding is set by the cast, not by taste: the tallest
+          figure standing in the middle of the hill reaches ~102px, so the copy
+          needs to clear that much to stay on flat colour. */}
+      <div className="relative z-10 max-w-4xl mx-auto text-center pt-12 pb-28">
         {eyebrow && (
           <Motion variant="down">
             <span className="inline-block bg-white/75 text-primary text-base font-semibold px-5 py-2 rounded-full mb-5 shadow-sm">

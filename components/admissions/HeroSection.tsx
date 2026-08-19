@@ -4,9 +4,9 @@ import { HeroBackdrop } from '@/components/ui/hero-backdrop'
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[50vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative min-h-[40vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       <HeroBackdrop />
-      <div className="max-w-4xl mx-auto text-center relative z-10 pt-16 pb-36">
+      <div className="max-w-4xl mx-auto text-center relative z-10 pt-10 pb-28">
         <Motion variant="down">
           <span className="inline-block bg-white/75 text-primary text-sm font-semibold px-4 py-1.5 rounded-full mb-4 shadow-sm">Join Us</span>
         </Motion>
@@ -21,7 +21,7 @@ export function HeroSection() {
         <Motion variant="up" delay={300}>
           <Link
             href="#enquiry"
-            className="inline-block mt-8 bg-accent text-accent-foreground px-8 py-3.5 rounded-full hover:bg-accent-hover transition-colors font-semibold shadow-sm"
+            className="inline-block mt-6 bg-accent text-accent-foreground px-8 py-3.5 rounded-full hover:bg-accent-hover transition-colors font-semibold shadow-sm"
           >
             Submit Your Enquiry
           </Link>

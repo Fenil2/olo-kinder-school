@@ -56,13 +56,13 @@ const leaders: Leader[] = [
 
 export function LeadershipSection() {
   return (
-    <section className="band-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="treeOrange" className="bottom-0 right-6 w-24" opacity={70} />
-      <div className="max-w-6xl mx-auto space-y-20 relative z-10">
+      <div className="max-w-6xl mx-auto space-y-14 relative z-10">
         {leaders.map((l) => (
           <div
             key={l.name}
-            className={`flex flex-col items-center gap-10 lg:gap-16 md:items-start ${
+            className={`flex flex-col items-center gap-8 lg:gap-12 md:items-start ${
               l.reverse ? 'md:flex-row-reverse' : 'md:flex-row'
             }`}
           >

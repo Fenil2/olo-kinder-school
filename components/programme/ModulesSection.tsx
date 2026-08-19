@@ -12,21 +12,21 @@ const palette = [
 
 export function ModulesSection({ modules }: { modules: Module[] }) {
   return (
-    <section className="band-pale py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-pale py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="cloud" className="top-12 left-8 w-28" opacity={60} />
       <Doodle name="butterfly" className="top-10 right-10 w-16" opacity={80} flip />
       <Doodle name="fox" className="bottom-6 right-8 w-20" opacity={80} />
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-14 sm:mb-20 text-center text-heading">Thematic Learning Modules</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-10 sm:mb-12 text-center text-heading">Thematic Learning Modules</h2>
         </Motion>
 
-        <div className="space-y-16 sm:space-y-24">
+        <div className="space-y-12 sm:space-y-16">
           {modules.map((module, i) => {
             const colors = palette[i % palette.length]
             const flipped = i % 2 === 1
             return (
-              <div key={module.label} className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14 items-center">
+              <div key={module.label} className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 items-center">
                 {/* Cover */}
                 <Motion variant={flipped ? 'right' : 'left'} className={flipped ? 'md:order-2' : ''}>
                   <div className={`${colors.bg} rounded-3xl p-5 sm:p-8 flex items-center justify-center min-h-70 sm:min-h-100`}>

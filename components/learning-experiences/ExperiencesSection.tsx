@@ -12,6 +12,8 @@ interface Exp {
   desc: string
   skills: string[]
   img: string
+  /** Crop anchor, for the sources that are taller than the card. */
+  focus?: string
 }
 
 const experiences: Exp[] = [
@@ -59,6 +61,7 @@ const experiences: Exp[] = [
     desc: 'Songs, rhythm, movement, and dance activities support coordination, joyful expression, listening, and a natural sense of beat.',
     skills: ['Rhythm', 'Coordination', 'Expression'],
     img: '/images/moments/action-song.jpeg',
+    focus: 'object-top',
   },
   {
     title: 'Group Activities & Social Skills',
@@ -73,7 +76,7 @@ const experiences: Exp[] = [
 
 export function ExperiencesSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 band-gold relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-gold relative overflow-hidden">
       <Doodle name="cloud" className="top-8 right-10 w-28" opacity={70} />
       <Doodle name="fox" className="bottom-6 left-8 w-20" opacity={85} flip />
       <div className="max-w-6xl mx-auto relative z-10">
@@ -85,6 +88,7 @@ export function ExperiencesSection() {
                   src={exp.img}
                   alt={exp.title}
                   className="h-56"
+                  focus={exp.focus}
                   imgClassName="hover:scale-105 transition-transform duration-500"
                 />
 

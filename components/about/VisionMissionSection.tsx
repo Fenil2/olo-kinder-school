@@ -4,7 +4,7 @@ import { Doodle } from '@/components/ui/doodle'
 
 export function VisionMissionSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 band-pale relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-pale relative overflow-hidden">
       <Doodle name="cloud" className="top-8 left-8 w-28" opacity={70} />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">

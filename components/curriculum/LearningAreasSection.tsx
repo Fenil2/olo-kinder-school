@@ -72,11 +72,11 @@ const areas: Area[] = [
 
 export function LearningAreasSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 band-white relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-white relative overflow-hidden">
       <Doodle name="snail" className="top-10 right-10 w-28" opacity={60} />
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-heading">Our Learning Experiences</h2>
             <p className="text-base sm:text-lg text-foreground/75 max-w-lg mx-auto">Purposeful activities designed to make every day joyful, creative, and social.</p>
           </div>

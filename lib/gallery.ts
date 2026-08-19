@@ -16,7 +16,6 @@ export const galleryCategories: GalleryCategory[] = [
   { id: 'learning', label: 'Learning & Activities' },
   { id: 'play', label: 'Play & Outdoors' },
   { id: 'events', label: 'Events & Celebrations' },
-  { id: 'books', label: 'Course Books' },
 ]
 
 export const galleryPhotos: GalleryPhoto[] = [
@@ -278,91 +277,5 @@ export const galleryPhotos: GalleryPhoto[] = [
     alt: 'Olo Kinder teachers seated in a circle during a staff training session',
     caption: 'Teacher training and planning',
     category: 'events',
-  },
-
-  /* ── Course Books ─────────────────────────────────────────────── */
-  {
-    src: '/images/programmes/pre-school-module-1.webp',
-    alt: '“Off to the super town market” course book cover',
-    caption: 'Pre-School · Off to the super town market',
-    category: 'books',
-  },
-  {
-    src: '/images/programmes/pre-school-module-2.webp',
-    alt: '“My World of Animals” course book cover',
-    caption: 'Pre-School · My World of Animals',
-    category: 'books',
-  },
-  {
-    src: '/images/programmes/pre-school-module-3.webp',
-    alt: '“My favourites” course book cover',
-    caption: 'Pre-School · My favourites',
-    category: 'books',
-  },
-  {
-    src: '/images/programmes/pre-school-module-4.webp',
-    alt: '“Our good days and good ways” course book cover',
-    caption: 'Pre-School · Our good days and good ways',
-    category: 'books',
-  },
-  {
-    src: '/images/programmes/jkg-module-1.webp',
-    alt: '“Off to the town of colours” course book cover',
-    caption: 'Junior Kindergarten · Off to the town of colours',
-    category: 'books',
-  },
-  {
-    src: '/images/programmes/jkg-module-2.webp',
-    alt: '“Off to the village fair” course book cover',
-    caption: 'Junior Kindergarten · Off to the village fair',
-    category: 'books',
-  },
-  {
-    src: '/images/programmes/jkg-module-3.webp',
-    alt: '“Animals are our Pals” course book cover',
-    caption: 'Junior Kindergarten · Animals are our Pals',
-    category: 'books',
-  },
-  {
-    src: '/images/programmes/jkg-module-4.webp',
-    alt: '“I am Unique” course book cover',
-    caption: 'Junior Kindergarten · I am Unique',
-    category: 'books',
-  },
-  {
-    src: '/images/programmes/jkg-module-5.webp',
-    alt: '“Off to meet our green friends” course book cover',
-    caption: 'Junior Kindergarten · Off to meet our green friends',
-    category: 'books',
-  },
-  {
-    src: '/images/programmes/skg-module-1.webp',
-    alt: '“Off to school” course book cover',
-    caption: 'Senior Kindergarten · Off to school',
-    category: 'books',
-  },
-  {
-    src: '/images/programmes/skg-module-2.webp',
-    alt: '“Animals are our pals” course book cover',
-    caption: 'Senior Kindergarten · Animals are our pals',
-    category: 'books',
-  },
-  {
-    src: '/images/programmes/skg-module-3.webp',
-    alt: '“Shapes on wheels” course book cover',
-    caption: 'Senior Kindergarten · Shapes on wheels',
-    category: 'books',
-  },
-  {
-    src: '/images/programmes/skg-module-4.webp',
-    alt: '“I am Unique” course book cover',
-    caption: 'Senior Kindergarten · I am Unique',
-    category: 'books',
-  },
-  {
-    src: '/images/programmes/skg-module-5.webp',
-    alt: '“Off to meet our green friends” course book cover',
-    caption: 'Senior Kindergarten · Off to meet our green friends',
-    category: 'books',
   },
 ]

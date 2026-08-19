@@ -4,11 +4,11 @@ import { Photo } from '@/components/ui/photo'
 
 export function HeroSection() {
   return (
-    <section className="min-h-[calc(100vh-5rem)] flex items-center px-4 sm:px-6 lg:px-8 bg-linear-to-br from-secondary via-surface-blush to-background py-16">
+    <section className="min-h-[calc(85vh-5rem)] flex items-center px-4 sm:px-6 lg:px-8 bg-linear-to-br from-secondary via-surface-blush to-background py-10 sm:py-14">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-14 items-center">
 
-          <div className="space-y-7 text-center lg:text-left">
+          <div className="space-y-5 text-center lg:text-left">
             <Motion variant="down" delay={0}>
               <span className="inline-block bg-highlight/30 text-foreground text-sm font-semibold px-4 py-1.5 rounded-full">
                 Welcome to Olo Kinder

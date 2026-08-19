@@ -5,35 +5,39 @@ interface PhotoProps {
   className?: string
   /** Extra classes on the photo itself, e.g. a hover zoom. */
   imgClassName?: string
+  /**
+   * Which part of the photo to keep when the frame crops it. Defaults to the
+   * centre; tall portraits usually want `object-top` so faces survive.
+   */
+  focus?: string
   /** Skip lazy-loading for the photo above the fold. */
   priority?: boolean
 }
 
 /**
- * A photo shown in full, never cropped.
+ * A photo that fills its frame edge to edge.
  *
- * The frame keeps whatever fixed aspect its parent asks for, so grids and
- * heroes stay even. Inside it the photo is letterboxed with `object-contain`
- * — nothing is cut off, whatever shape the original is — and a blurred,
- * over-scaled copy of the same photo fills the leftover space, so the
- * letterbox reads as a soft vignette rather than as empty bars.
+ * The library mixes 9:16 phone stills with 4:3 and 16:9 photos, so nothing can
+ * be sized from the source. The frame takes whatever fixed aspect or height its
+ * parent asks for and the photo covers it with `object-cover` — every card in a
+ * grid stays the same size and no letterbox bars appear around the odd shapes.
+ * Pass `focus` to move the crop off centre when the subject sits high or low.
  */
-export function Photo({ src, alt, className = '', imgClassName = '', priority = false }: PhotoProps) {
-  const loading = priority ? 'eager' : 'lazy'
+export function Photo({
+  src,
+  alt,
+  className = '',
+  imgClassName = '',
+  focus = 'object-center',
+  priority = false,
+}: PhotoProps) {
   return (
     <div className={`relative overflow-hidden bg-surface-mist ${className}`}>
       <img
         src={src}
-        alt=""
-        aria-hidden="true"
-        loading={loading}
-        className="absolute inset-0 w-full h-full object-cover scale-150 blur-2xl brightness-90 saturate-75"
-      />
-      <img
-        src={src}
         alt={alt}
-        loading={loading}
-        className={`relative w-full h-full object-contain ${imgClassName}`}
+        loading={priority ? 'eager' : 'lazy'}
+        className={`block w-full h-full object-cover ${focus} ${imgClassName}`}
       />
     </div>
   )

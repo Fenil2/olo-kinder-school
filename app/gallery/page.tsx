@@ -8,7 +8,7 @@ import { CtaSection } from '@/components/gallery/CtaSection'
 export const metadata: Metadata = {
   title: 'Gallery - Olo Kinder',
   description:
-    'Photos from everyday life at Olo Kinder school — classrooms, learning activities, outdoor play, celebrations and our thematic course books.',
+    'Photos from everyday life at Olo Kinder school — classrooms, learning activities, outdoor play and celebrations.',
 }
 
 export default function Gallery() {

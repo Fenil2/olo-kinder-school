@@ -35,10 +35,10 @@ const pillars = [
 
 export function LearningPillarsSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 band-pale relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-pale relative overflow-hidden">
       <Doodle name="fox" className="bottom-6 right-8 w-20" opacity={85} />
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {notes.map((note, i) => (
             <Motion key={i} variant="up" delay={i * 100}>
               <div className={`${note.iconBg} rounded-3xl p-6 sm:p-8 h-full flex gap-5`}>
