@@ -7,8 +7,12 @@ const DOODLES = {
   leaf2: '/images/doodles/leaf-2.svg',
   treeOrange: '/images/doodles/tree-orange.svg',
   treeGreen: '/images/doodles/tree-green.svg',
-  roundy: '/images/doodles/mascot-roundy.webp',
-  hexy: '/images/doodles/mascot-hexy.webp',
+  // The brand cast. Same artwork as `lib/mascots.ts`, reachable by name so a
+  // section can scatter a character without importing the whole registry.
+  rolly: '/images/mascots/rolly.webp',
+  squary: '/images/mascots/squary.webp',
+  starry: '/images/mascots/starry.webp',
+  hexy: '/images/mascots/hexy.webp',
 } as const
 
 export type DoodleName = keyof typeof DOODLES

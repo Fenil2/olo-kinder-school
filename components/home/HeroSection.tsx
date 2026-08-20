@@ -22,7 +22,7 @@ export function HeroSection() {
                 <span className="ink-plum">Where Curiosity</span>{' '}
                 <span className="ink-coral">Begins</span>{' '}
                 <span className="ink-plum">and</span>{' '}
-                <span className="ink-green scribble-under">Learning</span>{' '}
+                <span className="ink-green">Learning</span>{' '}
                 <span className="ink-sky">Comes Alive</span>
               </h1>
             </Motion>
@@ -61,16 +61,28 @@ export function HeroSection() {
 
               {/* The cast stands ON the blob's edge, not floating beside it */}
               <img
-                src="/images/doodles/mascot-roundy.webp"
+                src="/images/mascots/rolly.webp"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none select-none absolute bottom-4 -left-1 sm:left-0 w-14 sm:w-20 drop-shadow-md"
+                className="pointer-events-none select-none absolute bottom-4 -left-1 sm:left-0 w-16 sm:w-24 drop-shadow-md"
               />
               <img
-                src="/images/doodles/mascot-hexy.webp"
+                src="/images/mascots/hexy.webp"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none select-none absolute -bottom-2 right-4 sm:right-8 w-14 sm:w-20 drop-shadow-md"
+                className="pointer-events-none select-none absolute -bottom-2 right-4 sm:right-8 w-16 sm:w-24 drop-shadow-md"
+              />
+              <img
+                src="/images/mascots/starry.webp"
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none select-none absolute -top-3 right-0 sm:-right-2 w-12 sm:w-16 -rotate-12 drop-shadow-md hidden sm:block"
+              />
+              <img
+                src="/images/mascots/squary.webp"
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none select-none absolute top-8 -left-3 w-12 sm:w-16 rotate-6 drop-shadow-md hidden lg:block"
               />
             </div>
           </Motion>
@@ -78,7 +90,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <Wave variant="ribbon" className="text-background" height="lg" />
+      <Wave className="text-background" height="lg" />
     </section>
   )
 }

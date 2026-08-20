@@ -1,6 +1,7 @@
 import { MdBuild, MdExtension, MdGroups, MdLibraryBooks, MdMusicNote, MdPalette } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Wave } from '@/components/ui/wave'
 import { Photo } from '@/components/ui/photo'
 import { Doodle } from '@/components/ui/doodle'
 
@@ -79,9 +80,11 @@ const experiences: Exp[] = [
 
 export function ExperiencesSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-sun relative overflow-hidden">
+    <section className="pt-12 sm:pt-16 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 band-sun relative overflow-hidden">
       <Doodle name="cloud" className="top-8 right-10 w-28" opacity={70} />
       <Doodle name="fox" className="bottom-6 left-8 w-20" opacity={85} flip />
+      <Doodle name="squary" className="top-10 left-8 w-16" rotate={9} />
+      <Doodle name="hexy" className="bottom-8 right-10 w-16" rotate={-9} />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {experiences.map((exp, i) => (
@@ -114,6 +117,8 @@ export function ExperiencesSection() {
           ))}
         </div>
       </div>
+
+      <Wave className="text-surface-dark" />
     </section>
   )
 }

@@ -1,11 +1,13 @@
 import { MdAutoAwesome, MdTrackChanges } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
+import { Wave } from '@/components/ui/wave'
 import { Doodle } from '@/components/ui/doodle'
 
 export function VisionMissionSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-sky relative overflow-hidden">
+    <section className="pt-12 sm:pt-16 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 band-sky relative overflow-hidden">
       <Doodle name="cloud" className="top-8 left-8 w-28" opacity={70} />
+      <Doodle name="hexy" className="bottom-8 right-10 w-16" rotate={9} />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           <Motion variant="left" delay={0}>
@@ -28,6 +30,8 @@ export function VisionMissionSection() {
           </Motion>
         </div>
       </div>
+
+      <Wave className="text-background" />
     </section>
   )
 }

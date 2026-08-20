@@ -1,6 +1,7 @@
 import { MdAssignment, MdHandshake, MdSchool, MdCelebration } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Wave } from '@/components/ui/wave'
 import { Doodle } from '@/components/ui/doodle'
 
 interface Step { step: number; title: string; Icon: IconType; desc: string; color: string; iconColor: string }
@@ -14,8 +15,9 @@ const steps: Step[] = [
 
 export function ProcessSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-cream relative overflow-hidden">
+    <section className="pt-12 sm:pt-16 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 band-cream relative overflow-hidden">
       <Doodle name="butterfly" className="top-12 right-12 w-16" opacity={80} flip />
+      <Doodle name="hexy" className="bottom-8 left-8 w-16" rotate={-8} />
       <div className="max-w-5xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-10">
@@ -38,6 +40,8 @@ export function ProcessSection() {
           ))}
         </div>
       </div>
+
+      <Wave className="text-surface-leaf" />
     </section>
   )
 }

@@ -19,6 +19,7 @@ export function MapSection() {
   return (
     <section className="pt-12 sm:pt-16 pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8 band-cream relative overflow-hidden">
       <Doodle name="leaf1" className="top-10 right-10 w-14" rotate={-15} opacity={70} />
+      <Doodle name="starry" className="top-12 left-10 w-14" rotate={12} />
       <div className="max-w-7xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-8">
@@ -86,7 +87,7 @@ export function MapSection() {
         </div>
       </div>
 
-      <Wave variant="hill" className="text-surface-dark" />
+      <Wave className="text-surface-dark" />
     </section>
   )
 }

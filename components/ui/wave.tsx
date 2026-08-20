@@ -1,63 +1,68 @@
 /**
- * The wavy edge between two sections.
+ * The house divider between two bands.
  *
- * Every reference layout separates its bands with a soft organic edge
- * rather than a straight line — a cloud scallop, a rolling hill, a
- * ribbon. This draws that edge as an SVG sitting at the bottom of a
- * section, filled with the colour of the section BELOW it, so the two
- * bands interlock instead of butting together.
+ * One curve is used site-wide: a row of rounded lobes where the upper band
+ * dips down into the one below, like the edge of a sheet of scalloped paper.
  *
- * Usage: drop it as the last child of a `relative` section, and give it
- * the next section's band colour:
+ * It is drawn as a repeating CSS mask over a block of flat colour rather than
+ * as one stretched SVG path. A `preserveAspectRatio="none"` path has to squash
+ * itself to the viewport, so its lobes come out wide and shallow on a desktop
+ * and tall and narrow on a phone — the shape changes with the window. A
+ * repeating tile keeps every lobe identical at every width, and because
+ * `mask-size: auto 100%` scales the tile by height alone, a lobe is always
+ * exactly twice as wide as the divider is tall.
+ *
+ * Usage: drop it as the last child of a `relative` section and give it the
+ * colour of the section BELOW, so the two bands interlock rather than meeting
+ * on a straight line:
  *
  *   <section className="band-cream relative ...">
  *     …
- *     <Wave variant="hill" className="text-[--surface-leaf]" />
+ *     <Wave className="text-surface-sky" />
  *   </section>
  *
- * `text-*` sets the fill because the paths use `currentColor`, which
- * means a wave can also pick up a band's own token (`text-background`).
+ * `bg-current` takes the fill from `text-*`, so a divider can also pick up a
+ * band's own token (`text-background`).
  */
 
-type WaveVariant = 'hill' | 'cloud' | 'ribbon' | 'scallop'
+/* One lobe, 2:1. The filled half is everything BELOW the curve — that is the
+   lower band — which leaves the hollow above each lobe for the upper band to
+   reach down into. The cubic dips to ~0.75 of the tile height at its centre
+   and returns to the full height at the cusps where two lobes meet. */
+const TILE =
+  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='50' viewBox='0 0 100 50'%3E%3Cpath d='M0 0c25 49 75 49 100 0v50H0z' fill='%23000'/%3E%3C/svg%3E\")"
 
-const PATHS: Record<WaveVariant, string> = {
-  // A single rolling rise — the green hill in reference 03
-  hill: 'M0 96C240 32 480 8 720 30s480 74 720 50v64H0V96z',
-  // Round bumps, like the cloud edge under reference 02's hero
-  cloud:
-    'M0 128V72c60-38 120-38 180 0s120 38 180 0 120-38 180 0 120 38 180 0 120-38 180 0 120 38 180 0 120-38 180 0 120 38 180 0v56H0z',
-  // An off-centre sweep — the pink ribbon under reference 01
-  ribbon: 'M0 128V38c180 60 340 74 520 42S900 8 1120 26s260 46 320 60v42H0z',
-  // Tighter, shallower bumps for narrow dividers
-  scallop:
-    'M0 128V88c48-30 96-30 144 0s96 30 144 0 96-30 144 0 96 30 144 0 96-30 144 0 96 30 144 0 96-30 144 0 96 30 144 0 96-30 144 0v40H0z',
-}
+const MASK = {
+  maskImage: TILE,
+  WebkitMaskImage: TILE,
+  maskRepeat: 'repeat-x',
+  WebkitMaskRepeat: 'repeat-x',
+  /* Height drives the scale, so the lobes never distort. */
+  maskSize: 'auto 100%',
+  WebkitMaskSize: 'auto 100%',
+} as const
 
 interface WaveProps {
-  variant?: WaveVariant
   /** Colour classes for the fill, e.g. `text-background`. Sets `currentColor`. */
   className?: string
   /** Flip vertically, to cap the TOP of a section instead of its bottom. */
   flip?: boolean
-  /** Wave height. Shorter reads calmer between two close-toned bands. */
+  /** Divider height, which also sets the lobe width. Shorter reads calmer. */
   height?: 'sm' | 'md' | 'lg'
 }
 
-const HEIGHTS = { sm: 'h-8 sm:h-12', md: 'h-12 sm:h-20', lg: 'h-16 sm:h-28' }
+/* Lobes are twice the divider's height, so these read as ~48/64/80px lobes on
+   a phone and ~72/104/128px on a desktop. */
+const HEIGHTS = { sm: 'h-6 sm:h-9', md: 'h-8 sm:h-13', lg: 'h-10 sm:h-16' }
 
-export function Wave({ variant = 'hill', className = '', flip = false, height = 'md' }: WaveProps) {
+export function Wave({ className = '', flip = false, height = 'md' }: WaveProps) {
   return (
-    <svg
+    <span
       aria-hidden="true"
-      focusable="false"
-      viewBox="0 0 1440 128"
-      preserveAspectRatio="none"
-      className={`pointer-events-none absolute inset-x-0 z-1 block w-full ${HEIGHTS[height]} ${
+      style={MASK}
+      className={`pointer-events-none absolute inset-x-0 z-1 block w-full bg-current ${HEIGHTS[height]} ${
         flip ? 'top-0 -scale-y-100' : 'bottom-0'
       } ${className}`}
-    >
-      <path d={PATHS[variant]} fill="currentColor" />
-    </svg>
+    />
   )
 }

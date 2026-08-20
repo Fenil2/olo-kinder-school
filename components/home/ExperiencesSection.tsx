@@ -20,6 +20,7 @@ export function ExperiencesSection() {
   return (
     <section className="band-cream pt-12 sm:pt-16 pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="treeGreen" className="bottom-0 left-6 w-24" opacity={70} />
+      <Doodle name="hexy" className="top-10 right-10 w-16" rotate={-8} />
       <div className="max-w-7xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-10">
@@ -49,7 +50,7 @@ export function ExperiencesSection() {
         </Motion>
       </div>
 
-      <Wave variant="cloud" className="text-surface-sky" />
+      <Wave className="text-surface-sky" />
     </section>
   )
 }

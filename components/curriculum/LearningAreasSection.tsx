@@ -1,6 +1,7 @@
 import { MdBuild, MdCheckCircle, MdExtension, MdGroups, MdLibraryBooks, MdMusicNote, MdPalette } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Wave } from '@/components/ui/wave'
 import { Doodle } from '@/components/ui/doodle'
 
 interface Area {
@@ -72,8 +73,9 @@ const areas: Area[] = [
 
 export function LearningAreasSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-cream relative overflow-hidden">
+    <section className="pt-12 sm:pt-16 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 band-cream relative overflow-hidden">
       <Doodle name="snail" className="top-10 right-10 w-28" opacity={60} />
+      <Doodle name="squary" className="bottom-8 left-8 w-16" rotate={-7} />
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-10">
@@ -114,6 +116,8 @@ export function LearningAreasSection() {
           ))}
         </div>
       </div>
+
+      <Wave className="text-surface-dark" />
     </section>
   )
 }

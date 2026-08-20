@@ -1,6 +1,7 @@
 import { MdAnimation, MdStars, MdNaturePeople, MdChildFriendly, MdJoinFull, MdSelfImprovement } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Wave } from '@/components/ui/wave'
 import { Doodle } from '@/components/ui/doodle'
 
 interface Difference { title: string; Icon: IconType; desc: string }
@@ -16,8 +17,9 @@ const differences: Difference[] = [
 
 export function DifferencesSection() {
   return (
-    <section className="band-sun py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-sun pt-12 sm:pt-16 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="fox" className="bottom-6 left-8 w-20" opacity={85} flip />
+      <Doodle name="squary" className="top-10 right-8 w-16" rotate={-8} />
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-10">
@@ -37,6 +39,8 @@ export function DifferencesSection() {
           ))}
         </div>
       </div>
+
+      <Wave className="text-surface-leaf" />
     </section>
   )
 }

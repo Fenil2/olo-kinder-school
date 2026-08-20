@@ -328,16 +328,6 @@
 .ink-sun   { color: var(--mascot-starry-dark); }
 .ink-plum  { color: var(--brand-plum); }
 
-/* A hand-drawn underline that sits under one word of a headline, as in
-   the reference's green scribble beneath "Joyful Learners". */
-.scribble-under {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='10' viewBox='0 0 120 10'%3E%3Cpath d='M2 6.5c22-4 44-4.6 62-2.4C82 6.3 100 7 118 3.2' fill='none' stroke='%23A8C462' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: left calc(100% - 0.1em);
-  background-size: 100% 0.42em;
-  padding-bottom: 0.18em;
-}
-
 /* ── Cinematic animation keyframes ── */
 @keyframes cinema-up {
   from { opacity: 0; transform: translateY(48px); }

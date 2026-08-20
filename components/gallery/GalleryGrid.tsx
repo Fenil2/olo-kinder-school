@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { MdChevronLeft, MdChevronRight, MdClose } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
+import { Wave } from '@/components/ui/wave'
 import { Doodle } from '@/components/ui/doodle'
 import { galleryCategories, galleryPhotos } from '@/lib/gallery'
 
@@ -44,11 +45,13 @@ export function GalleryGrid() {
   const open = openIndex === null ? null : photos[openIndex]
 
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-sky relative overflow-hidden">
+    <section className="pt-12 sm:pt-16 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 band-sky relative overflow-hidden">
       <Doodle name="cloud" className="top-10 left-8 w-28" opacity={60} />
       <Doodle name="butterfly" className="top-12 right-12 w-16" opacity={75} flip />
       <Doodle name="snail" className="bottom-8 left-10 w-20" opacity={70} />
       <Doodle name="treeGreen" className="bottom-6 right-8 w-24" opacity={70} />
+      <Doodle name="rolly" className="top-1/3 left-6 w-14" rotate={-12} />
+      <Doodle name="starry" className="bottom-1/3 right-6 w-14" rotate={10} />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Category filters */}
@@ -167,6 +170,8 @@ export function GalleryGrid() {
           </figure>
         </div>
       )}
+
+      <Wave className="text-surface-dark" />
     </section>
   )
 }

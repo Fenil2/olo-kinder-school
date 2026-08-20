@@ -17,6 +17,7 @@ export function LearningJourneySection() {
   return (
     <section className="band-sky pt-12 sm:pt-16 pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="leaf2" className="top-10 left-10 w-14" rotate={15} opacity={70} />
+      <Doodle name="squary" className="top-12 right-10 w-16" rotate={8} />
       <div className="max-w-5xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-10">
@@ -39,7 +40,7 @@ export function LearningJourneySection() {
         </div>
       </div>
 
-      <Wave variant="hill" className="text-surface-leaf" />
+      <Wave className="text-surface-leaf" />
     </section>
   )
 }

@@ -7,6 +7,7 @@ export function HeroSection() {
       title="Learning Through"
       titleAccent="Experiences"
       subtitle="Olo Kinder is filled with rich, purposeful experiences designed to inspire curiosity, encourage exploration, and engage young learners."
+      nextBand="text-surface-sand"
     />
   )
 }

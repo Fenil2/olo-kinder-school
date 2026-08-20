@@ -1,6 +1,7 @@
 import { MdPhone, MdLocationOn } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
 import { PageHero } from '@/components/ui/page-hero'
+import { Wave } from '@/components/ui/wave'
 
 const details = [
   { icon: MdLocationOn, bg: 'bg-mascot-squarey/15', color: 'text-mascot-squarey-dark', label: 'Address', value: '1470 B, Kathiravan Colony Main Road, Anna Nagar West, Chennai - 600040' },
@@ -17,7 +18,7 @@ export function HeroSection() {
         subtitle="Reach out to learn more about Olo Kinder, our curriculum, or to schedule a campus visit. Our team is happy to help."
       />
 
-      <section className="px-4 sm:px-6 lg:px-8 py-8 band-cream">
+      <section className="px-4 sm:px-6 lg:px-8 pt-8 pb-16 sm:pb-24 band-cream relative overflow-hidden">
         <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5">
           {details.map((item, i) => (
             <Motion key={item.label} variant="up" delay={i * 100}>
@@ -33,6 +34,8 @@ export function HeroSection() {
             </Motion>
           ))}
         </div>
+
+        <Wave className="text-surface-sky" />
       </section>
     </>
   )

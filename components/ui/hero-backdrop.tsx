@@ -9,7 +9,16 @@ import { Wave } from '@/components/ui/wave'
  * the middle always lands on flat colour — and most of it only appears from
  * `sm` up, where there is room for it beside the copy.
  */
-export function HeroBackdrop() {
+interface HeroBackdropProps {
+  /**
+   * Colour of the band directly beneath the hero, as a `text-*` class. The
+   * scalloped ground line is filled with it so the hero interlocks with
+   * whatever follows — most pages open on cream, but a few open on sky or sun.
+   */
+  nextBand?: string
+}
+
+export function HeroBackdrop({ nextBand = 'text-background' }: HeroBackdropProps) {
   return (
     <div aria-hidden="true" className="absolute inset-0 overflow-hidden bg-linear-to-b from-surface-leaf via-surface-blush to-secondary">
       {/* Sun */}
@@ -34,7 +43,7 @@ export function HeroBackdrop() {
           cast so they stand on top of it rather than behind it, and it is
           filled with the page background so the hero interlocks with
           whichever band follows instead of ending on a straight edge. */}
-      <Wave variant="cloud" className="text-background" height="md" />
+      <Wave className={nextBand} height="md" />
 
       {/* Trees along the skyline */}
       <img src="/images/doodles/tree-green.svg" alt="" className="absolute bottom-2 left-[2%] w-20 sm:w-28" />
@@ -45,8 +54,15 @@ export function HeroBackdrop() {
       {/* The cast */}
       <img src="/images/doodles/fox.svg" alt="" className="absolute bottom-3 right-[26%] w-16 sm:w-24 hidden sm:block" />
       <img src="/images/doodles/snail.svg" alt="" className="absolute bottom-4 left-[27%] w-14 sm:w-20 hidden sm:block" />
-      <img src="/images/doodles/mascot-roundy.webp" alt="" className="absolute bottom-5 left-[38%] w-10 sm:w-14 hidden md:block" />
-      <img src="/images/doodles/mascot-hexy.webp" alt="" className="absolute bottom-6 right-[36%] w-12 sm:w-16 hidden lg:block" />
+
+      {/* The four brand characters lined up along the crown of the hill. They
+          are staggered in size and height so the row reads as a crowd rather
+          than a set of evenly spaced icons, and each is small enough to clear
+          the headline's bottom padding. */}
+      <img src="/images/mascots/rolly.webp" alt="" className="absolute bottom-4 left-[36%] w-12 sm:w-16 hidden md:block drop-shadow-sm" />
+      <img src="/images/mascots/starry.webp" alt="" className="absolute bottom-6 left-[45%] w-11 sm:w-14 hidden lg:block drop-shadow-sm" />
+      <img src="/images/mascots/squary.webp" alt="" className="absolute bottom-5 right-[45%] w-10 sm:w-13 hidden lg:block drop-shadow-sm" />
+      <img src="/images/mascots/hexy.webp" alt="" className="absolute bottom-3 right-[35%] w-12 sm:w-16 hidden md:block drop-shadow-sm" />
     </div>
   )
 }

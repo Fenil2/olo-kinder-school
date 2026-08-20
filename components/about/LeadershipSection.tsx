@@ -1,5 +1,6 @@
 import { MdFormatQuote } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
+import { Wave } from '@/components/ui/wave'
 import { Doodle } from '@/components/ui/doodle'
 
 interface Leader {
@@ -56,8 +57,9 @@ const leaders: Leader[] = [
 
 export function LeadershipSection() {
   return (
-    <section className="band-cream py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-cream pt-12 sm:pt-16 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="treeOrange" className="bottom-0 right-6 w-24" opacity={70} />
+      <Doodle name="starry" className="top-10 left-8 w-16" rotate={11} />
       <div className="max-w-6xl mx-auto space-y-14 relative z-10">
         {leaders.map((l) => (
           <div
@@ -111,6 +113,8 @@ export function LeadershipSection() {
           </div>
         ))}
       </div>
+
+      <Wave className="text-surface-sand" />
     </section>
   )
 }

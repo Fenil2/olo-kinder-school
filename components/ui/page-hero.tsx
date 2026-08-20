@@ -7,12 +7,14 @@ interface PageHeroProps {
   /** Rendered after `title` in the deep teal, for a two-tone headline. */
   titleAccent?: string
   subtitle?: string
+  /** Colour of the band beneath the hero, as a `text-*` class. Defaults to cream. */
+  nextBand?: string
 }
 
-export function PageHero({ eyebrow, title, titleAccent, subtitle }: PageHeroProps) {
+export function PageHero({ eyebrow, title, titleAccent, subtitle, nextBand }: PageHeroProps) {
   return (
     <section className="relative min-h-[42vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <HeroBackdrop />
+      <HeroBackdrop nextBand={nextBand} />
 
       {/* The bottom padding is set by the cast, not by taste: the tallest
           figure standing in the middle of the hill reaches ~102px, so the copy
@@ -29,7 +31,7 @@ export function PageHero({ eyebrow, title, titleAccent, subtitle }: PageHeroProp
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.12] text-balance ink-plum">
             {title}
             {titleAccent && (
-              <> <span className="ink-coral scribble-under">{titleAccent}</span></>
+              <> <span className="ink-coral">{titleAccent}</span></>
             )}
           </h1>
         </Motion>

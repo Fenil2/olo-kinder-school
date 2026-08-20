@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import { Motion } from '@/components/ui/motion'
+import { CtaMascots } from '@/components/ui/cta-mascots'
 
 export function CtaSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-plum">
+    <section className="relative overflow-hidden py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-plum">
+      <CtaMascots />
       <Motion variant="up">
-        <div className="max-w-4xl mx-auto text-center text-foreground">
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-foreground">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Experience Our Curriculum?</h2>
           <p className="text-base sm:text-xl mb-8 opacity-90">Schedule a tour and see our learning environment in action!</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

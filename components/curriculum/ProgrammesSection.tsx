@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Motion } from '@/components/ui/motion'
+import { Wave } from '@/components/ui/wave'
 import { programmes } from '@/lib/programmes'
 import { Doodle } from '@/components/ui/doodle'
 
@@ -11,8 +12,9 @@ const palette = [
 
 export function ProgrammesSection() {
   return (
-    <section className="band-cream py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="band-cream pt-12 sm:pt-16 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <Doodle name="treeGreen" className="bottom-0 left-6 w-24" opacity={70} />
+      <Doodle name="rolly" className="top-10 right-10 w-16" rotate={-10} />
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
           <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center text-heading">Thematic Learning Modules</h2>
@@ -52,6 +54,8 @@ export function ProgrammesSection() {
           })}
         </div>
       </div>
+
+      <Wave className="text-surface-sky" />
     </section>
   )
 }

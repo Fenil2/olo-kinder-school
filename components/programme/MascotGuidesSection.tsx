@@ -2,16 +2,11 @@ import Image from 'next/image'
 import { Motion } from '@/components/ui/motion'
 import { Doodle } from '@/components/ui/doodle'
 import { Wave } from '@/components/ui/wave'
+import { MASCOTS } from '@/lib/mascots'
 
 /* The four mascots are the thread that runs through every module — they are
    the characters on each course-book cover, so the page introduces them
    before the modules rather than leaving them as artwork nobody names. */
-const guides = [
-  { img: '/rolly.png',  alt: 'Rolly the Curious Explorer mascot',  ring: 'ring-mascot-roundy' },
-  { img: '/squary.png', alt: 'Squary the Logical Thinker mascot',  ring: 'ring-mascot-squarey' },
-  { img: '/Hexy.png',   alt: 'Hexy the Problem Solver mascot',     ring: 'ring-mascot-hexy' },
-  { img: '/Starry.png', alt: 'Starry the Creative Dreamer mascot', ring: 'ring-mascot-starry' },
-]
 
 export function MascotGuidesSection() {
   return (
@@ -36,19 +31,33 @@ export function MascotGuidesSection() {
         </Motion>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {guides.map((g, i) => (
-            <Motion key={g.img} variant="scale" delay={i * 90}>
+          {MASCOTS.map((m, i) => (
+            <Motion key={m.name} variant="scale" delay={i * 90}>
+              {/* `object-contain` and generous padding, not `cover`: these are
+                  cut-out characters, and filling the tile would slice off the
+                  eyes and the little waving arm that make each one readable. */}
               <div
-                className={`relative aspect-square rounded-3xl overflow-hidden ring-4 ${g.ring} shadow-md hover:scale-105 transition-transform duration-300`}
+                className={`group relative aspect-square rounded-3xl ${m.tint} ring-4 ${m.ring} shadow-md hover:scale-105 transition-transform duration-300`}
               >
-                <Image src={g.img} alt={g.alt} fill sizes="(max-width: 1024px) 45vw, 22vw" className="object-cover" />
+                <Image
+                  src={m.img}
+                  alt={m.alt}
+                  fill
+                  sizes="(max-width: 1024px) 45vw, 22vw"
+                  className="object-contain p-5 sm:p-6 drop-shadow-sm"
+                />
+                <span
+                  className={`absolute bottom-2 inset-x-2 text-center text-sm font-bold ${m.ink}`}
+                >
+                  {m.name}
+                </span>
               </div>
             </Motion>
           ))}
         </div>
       </div>
 
-      <Wave variant="hill" className="text-surface-sky" />
+      <Wave className="text-surface-sky" />
     </section>
   )
 }

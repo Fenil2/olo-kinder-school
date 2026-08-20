@@ -28,6 +28,7 @@ export function TestimonialsSection() {
   return (
     <section className="pt-12 sm:pt-16 pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8 band-green relative overflow-hidden">
       <Doodle name="snail" className="bottom-8 right-10 w-28" opacity={60} />
+      <Doodle name="rolly" className="top-10 left-8 w-16" rotate={10} />
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-10">
@@ -56,7 +57,7 @@ export function TestimonialsSection() {
         </div>
       </div>
 
-      <Wave variant="ribbon" className="text-surface-dark" />
+      <Wave className="text-surface-dark" />
     </section>
   )
 }

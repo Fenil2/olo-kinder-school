@@ -1,4 +1,5 @@
 import { Motion } from '@/components/ui/motion'
+import { Wave } from '@/components/ui/wave'
 import { Doodle } from '@/components/ui/doodle'
 
 const approachItems = [
@@ -10,8 +11,9 @@ const approachItems = [
 
 export function ApproachSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-cream relative overflow-hidden">
+    <section className="pt-12 sm:pt-16 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 band-cream relative overflow-hidden">
       <Doodle name="cloud" className="top-8 right-10 w-28" opacity={70} />
+      <Doodle name="rolly" className="bottom-8 left-8 w-16" rotate={-9} />
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
           <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center text-heading">Our Approach</h2>
@@ -34,6 +36,8 @@ export function ApproachSection() {
           ))}
         </div>
       </div>
+
+      <Wave className="text-surface-sand" />
     </section>
   )
 }

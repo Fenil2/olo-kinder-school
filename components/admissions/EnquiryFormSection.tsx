@@ -1,10 +1,12 @@
 import { Motion } from '@/components/ui/motion'
+import { Wave } from '@/components/ui/wave'
 import { Doodle } from '@/components/ui/doodle'
 
 export function EnquiryFormSection() {
   return (
-    <section id="enquiry" className="scroll-mt-20 py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-sky relative overflow-hidden">
+    <section id="enquiry" className="scroll-mt-20 pt-12 sm:pt-16 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 band-sky relative overflow-hidden">
       <Doodle name="treeGreen" className="bottom-0 left-6 w-24" opacity={70} />
+      <Doodle name="starry" className="top-10 right-10 w-16" rotate={12} />
       <div className="max-w-2xl mx-auto relative z-10">
         <Motion variant="up">
           <div className="text-center mb-10">
@@ -45,6 +47,8 @@ export function EnquiryFormSection() {
           </div>
         </Motion>
       </div>
+
+      <Wave className="text-surface-dark" />
     </section>
   )
 }

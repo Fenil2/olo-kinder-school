@@ -1,5 +1,6 @@
 import { Motion } from '@/components/ui/motion'
 import { Photo } from '@/components/ui/photo'
+import { Wave } from '@/components/ui/wave'
 
 const photos = [
   { src: '/images/montessori-materials.jpg',       alt: 'Children working with hands-on Montessori puzzles and counting materials' },
@@ -7,9 +8,11 @@ const photos = [
   { src: '/images/classroom-whiteboard-wide.jpg',  alt: 'A teacher leading an alphabet lesson at the whiteboard in an Olo Kinder classroom' },
 ]
 
+// Short strip, so it takes the small divider plus enough bottom padding to
+// keep the photos clear of it.
 export function PhotoStrip() {
   return (
-    <section className="band-green px-4 sm:px-6 lg:px-8 py-5">
+    <section className="band-green px-4 sm:px-6 lg:px-8 pt-5 pb-12 sm:pb-14 relative overflow-hidden">
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
         {photos.map((photo, i) => (
           <Motion key={photo.src} variant="scale" delay={i * 100}>
@@ -17,6 +20,8 @@ export function PhotoStrip() {
           </Motion>
         ))}
       </div>
+
+      <Wave className="text-background" height="sm" />
     </section>
   )
 }

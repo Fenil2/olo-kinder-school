@@ -18,6 +18,8 @@ export function ModulesSection({ modules }: { modules: Module[] }) {
       <Doodle name="butterfly" className="top-10 right-10 w-16" opacity={80} flip />
       <Doodle name="treeGreen" className="bottom-28 left-4 w-20" opacity={70} />
       <Doodle name="fox" className="bottom-24 right-8 w-20" opacity={80} />
+      <Doodle name="starry" className="top-1/3 left-6 w-14" rotate={-11} />
+      <Doodle name="rolly" className="bottom-1/2 right-6 w-14" rotate={10} />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">
@@ -98,7 +100,7 @@ export function ModulesSection({ modules }: { modules: Module[] }) {
       </div>
 
       {/* Filled with the CTA band that follows, so the two interlock. */}
-      <Wave variant="cloud" className="text-brand-plum" />
+      <Wave className="text-brand-plum" />
     </section>
   )
 }

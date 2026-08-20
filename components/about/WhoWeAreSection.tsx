@@ -1,6 +1,7 @@
 import { MdSearch, MdEmojiEvents, MdPalette, MdVolunteerActivism } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Wave } from '@/components/ui/wave'
 import { Photo } from '@/components/ui/photo'
 import { Doodle } from '@/components/ui/doodle'
 
@@ -15,8 +16,9 @@ const values: Value[] = [
 
 export function WhoWeAreSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-cream relative overflow-hidden">
+    <section className="pt-12 sm:pt-16 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 band-cream relative overflow-hidden">
       <Doodle name="butterfly" className="top-12 right-10 w-16" opacity={80} flip />
+      <Doodle name="rolly" className="bottom-8 left-8 w-16" rotate={-10} />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
           <Motion variant="left">
@@ -44,6 +46,8 @@ export function WhoWeAreSection() {
           </Motion>
         </div>
       </div>
+
+      <Wave className="text-surface-sky" />
     </section>
   )
 }

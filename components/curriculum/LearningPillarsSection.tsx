@@ -1,6 +1,7 @@
 import { MdFactCheck, MdSchool } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Wave } from '@/components/ui/wave'
 import { Photo } from '@/components/ui/photo'
 import { Doodle } from '@/components/ui/doodle'
 
@@ -35,8 +36,9 @@ const pillars = [
 
 export function LearningPillarsSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-sky relative overflow-hidden">
+    <section className="pt-12 sm:pt-16 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 band-sky relative overflow-hidden">
       <Doodle name="fox" className="bottom-6 right-8 w-20" opacity={85} />
+      <Doodle name="hexy" className="top-10 left-8 w-16" rotate={8} />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {notes.map((note, i) => (
@@ -69,6 +71,8 @@ export function LearningPillarsSection() {
           ))}
         </div>
       </div>
+
+      <Wave className="text-background" />
     </section>
   )
 }

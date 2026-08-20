@@ -3,11 +3,19 @@ import { Motion } from '@/components/ui/motion'
 import { Doodle } from '@/components/ui/doodle'
 import { Wave } from '@/components/ui/wave'
 
-const mascots = [
-  { name: 'Rolly', role: 'Curious Explorer', img: '/rolly.png', color: 'text-mascot-roundy-dark' },
-  { name: 'Squary', role: 'Logical Thinker', img: '/squary.png', color: 'text-mascot-squarey-dark' },
-  { name: 'Starry', role: 'Creative Dreamer', img: '/Hexy.png', color: 'text-mascot-starry-dark' },
-  { name: 'Hexy', role: 'Problem Solver', img: '/Starry.png', color: 'text-mascot-hexy-dark' },
+/**
+ * This section keeps the illustrated character cards, deliberately — it is the
+ * one place on the site that does NOT use `lib/mascots.ts`.
+ *
+ * Each card is a full scene with the character's name and role lettered into
+ * the artwork, so it needs no caption underneath and no tinted disc behind it;
+ * everywhere else uses the cut-out brand mascots, which do.
+ */
+const cards = [
+  { name: 'Rolly',  role: 'Curious Explorer', img: '/rolly.png' },
+  { name: 'Squary', role: 'Logical Thinker',  img: '/squary.png' },
+  { name: 'Starry', role: 'Creative Dreamer', img: '/Starry.png' },
+  { name: 'Hexy',   role: 'Problem Solver',   img: '/Hexy.png' },
 ]
 
 export function MascotsSection() {
@@ -25,11 +33,17 @@ export function MascotsSection() {
           </div>
         </Motion>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {mascots.map((m, i) => (
-            <Motion key={m.name} variant="scale" delay={i * 100}>
+          {cards.map((c, i) => (
+            <Motion key={c.name} variant="scale" delay={i * 100}>
               <div className="flex flex-col items-center text-center group">
-                <div className="relative w-full max-w-[200px] sm:max-w-[240px] mx-auto aspect-square mb-4 drop-shadow-lg group-hover:scale-105 transition-transform duration-300">
-                  <Image src={m.img} alt={`${m.name} mascot`} fill className="object-contain" />
+                <div className="relative w-full max-w-50 sm:max-w-60 mx-auto aspect-square mb-4 drop-shadow-lg group-hover:scale-105 transition-transform duration-300">
+                  <Image
+                    src={c.img}
+                    alt={`${c.name}, the ${c.role} — one of the four Olo Kinder mascots`}
+                    fill
+                    sizes="(max-width: 1024px) 45vw, 240px"
+                    className="object-contain"
+                  />
                 </div>
               </div>
             </Motion>
@@ -37,7 +51,7 @@ export function MascotsSection() {
         </div>
       </div>
 
-      <Wave variant="hill" className="text-surface-sand" />
+      <Wave className="text-surface-sand" />
     </section>
   )
 }

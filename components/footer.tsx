@@ -4,19 +4,33 @@ import { Motion } from '@/components/ui/motion'
 
 export function Footer() {
   return (
-    <footer className="band-plum bg-surface-dark text-white pt-10 pb-10 relative overflow-hidden">
-      {/* The cast waving the page off, standing on the footer's top edge */}
+    <footer className="band-plum bg-surface-dark text-white pt-10 lg:pt-24 pb-10 relative overflow-hidden">
+      {/* The cast waving the page off along the footer's top edge. The
+          offsets are positive: the section clips its overflow, so anything
+          hung above the edge loses its head. */}
       <img
-        src="/images/doodles/mascot-roundy.webp"
+        src="/images/mascots/rolly.webp"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none select-none absolute -top-1 left-[8%] w-12 opacity-90 hidden lg:block"
+        className="pointer-events-none select-none absolute top-2 left-[10%] w-14 hidden lg:block"
       />
       <img
-        src="/images/doodles/mascot-hexy.webp"
+        src="/images/mascots/squary.webp"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none select-none absolute -top-2 right-[10%] w-14 opacity-90 hidden lg:block"
+        className="pointer-events-none select-none absolute top-1 left-[24%] w-12 -rotate-6 hidden xl:block"
+      />
+      <img
+        src="/images/mascots/starry.webp"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute top-1 right-[26%] w-12 rotate-6 hidden xl:block"
+      />
+      <img
+        src="/images/mascots/hexy.webp"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute top-2 right-[10%] w-14 hidden lg:block"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -25,7 +39,7 @@ export function Footer() {
             {/* Brand */}
             <div className="md:col-span-1">
               <Link href="/">
-                <Image src="/olo-logo.png" alt="Olo Kinder" width={178} height={90} className="h-14 w-auto object-contain mb-2" />
+                <Image src="/images/brand/olo-wordmark.webp" alt="Olo Kinder" width={932} height={340} className="h-14 w-auto object-contain mb-3" />
               </Link>
               <p className="text-sm text-white/70 leading-relaxed">
                 Nurturing curious, confident, creative and compassionate young learners.

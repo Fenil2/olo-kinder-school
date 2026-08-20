@@ -1,6 +1,7 @@
 import { MdForum, MdMenuBook } from 'react-icons/md'
 import type { IconType } from 'react-icons'
 import { Motion } from '@/components/ui/motion'
+import { Wave } from '@/components/ui/wave'
 import { Doodle } from '@/components/ui/doodle'
 
 interface Point {
@@ -30,9 +31,10 @@ const points: Point[] = [
 
 export function CoreFocusSection() {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 band-sun relative overflow-hidden">
+    <section className="pt-12 sm:pt-16 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 band-sun relative overflow-hidden">
       <Doodle name="butterfly" className="top-10 left-8 w-16" opacity={80} />
       <Doodle name="leaf2" className="bottom-8 right-10 w-14" rotate={-20} opacity={70} />
+      <Doodle name="starry" className="bottom-8 left-10 w-16" rotate={10} />
       <div className="max-w-5xl mx-auto relative z-10">
         <Motion variant="down">
           <div className="text-center">
@@ -61,6 +63,8 @@ export function CoreFocusSection() {
           ))}
         </div>
       </div>
+
+      <Wave className="text-surface-leaf" />
     </section>
   )
 }
