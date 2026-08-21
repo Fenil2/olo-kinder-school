@@ -5,7 +5,7 @@ import { Wave } from '@/components/ui/wave'
 const photos = [
   { src: '/images/teacher-alphabet-floor.jpg', alt: 'An Olo Kinder teacher leading an alphabet activity on the classroom floor' },
   { src: '/images/pretend-play-market.jpg',    alt: 'Children running a pretend market stall during dramatic play' },
-  { src: '/images/classroom-reading-wide.jpg', alt: 'Children reading picture books at their desks in an Olo Kinder classroom' },
+  { src: '/images/art-and-coloring.jpg',       alt: 'Children colouring at a classroom table and holding up their finished drawings' },
 ]
 
 export function PhotoStrip() {

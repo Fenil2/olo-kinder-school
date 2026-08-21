@@ -39,7 +39,7 @@ export function Footer() {
             {/* Brand */}
             <div className="md:col-span-1">
               <Link href="/">
-                <Image src="/images/brand/olo-wordmark.webp" alt="Olo Kinder" width={932} height={340} className="h-14 w-auto object-contain mb-3" />
+                <Image src="/images/brand/olo-globe.webp" alt="Olo Kinder" width={820} height={900} className="h-20 w-auto object-contain mb-3" />
               </Link>
               <p className="text-sm text-white/70 leading-relaxed">
                 Nurturing curious, confident, creative and compassionate young learners.

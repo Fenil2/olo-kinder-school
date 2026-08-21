@@ -70,7 +70,7 @@ export function Navigation() {
 
           {/* Logo */}
           <Link href="/" className="shrink-0">
-            <Image src="/images/brand/olo-wordmark.webp" alt="Olo Kinder" width={932} height={340} priority className="h-13 sm:h-14 w-auto object-contain" />
+            <Image src="/images/brand/olo-globe.webp" alt="Olo Kinder" width={820} height={900} priority className="h-15 sm:h-16 w-auto object-contain" />
           </Link>
 
           {/* Desktop nav links */}

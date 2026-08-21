@@ -38,10 +38,15 @@ export function WhoWeAreSection() {
             </div>
           </Motion>
           <Motion variant="right">
+            {/* This frame ships with a dark tint baked in — it averages a
+                third darker than the rest of the library — so it is lifted
+                back in line here. 1.28 is as far as it goes before the
+                highlights on the tabletop start to clip. */}
             <Photo
               src="/images/group-photo.jpg"
               alt="Olo Kinder students and teachers together outside the school"
               className="blob shadow-lg aspect-4/3 w-full"
+              imgClassName="brightness-[1.28] saturate-[1.12]"
             />
           </Motion>
         </div>

@@ -12,8 +12,13 @@ interface Exp {
   tagBg: string
   desc: string
   skills: string[]
+  /**
+   * Sources are chosen for a 3:2 window and for having no frame baked into
+   * the file — several images in the library ship with a painted border and
+   * white padding, which can never fill a card.
+   */
   img: string
-  /** Crop anchor, for the sources that are taller than the card. */
+  /** Crop anchor, for the phone stills that are taller than the card. */
   focus?: string
 }
 
@@ -26,8 +31,7 @@ const experiences: Exp[] = [
     desc: 'Interactive stories, picture talks, and role play help children build imagination, vocabulary, listening skills, and confidence in expression.',
     skills: ['Imagination', 'Vocabulary', 'Listening'],
     img: '/images/moments/stage-microphone.jpeg',
-    // A 9:16 phone still: the child's face sits about a third of the way down,
-    // so the landscape card has to crop above centre to keep her in frame.
+    // A 9:16 phone still: her face sits about a third of the way down.
     focus: 'object-[50%_30%]',
   },
   {
@@ -37,7 +41,7 @@ const experiences: Exp[] = [
     tagBg: 'bg-mascot-squarey/15',
     desc: 'Age-appropriate puzzles, matching games, memory tasks, and logic activities strengthen focus, problem-solving, and early thinking skills.',
     skills: ['Focus', 'Problem-solving', 'Memory'],
-    img: '/images/alphabet-puzzles.jpg',
+    img: '/images/montessori-materials.jpg',
   },
   {
     title: 'Art & Craft',
@@ -55,7 +59,7 @@ const experiences: Exp[] = [
     tagBg: 'bg-mascot-hexy/15',
     desc: 'Simple hands-on projects encourage children to plan, build, try ideas, and learn through practical making and discovery.',
     skills: ['Planning', 'Hands-on learning', 'Discovery'],
-    img: '/images/montessori-materials.jpg',
+    img: '/images/moments/block-stacking.jpeg',
   },
   {
     title: 'Dance & Music',
@@ -65,7 +69,8 @@ const experiences: Exp[] = [
     desc: 'Songs, rhythm, movement, and dance activities support coordination, joyful expression, listening, and a natural sense of beat.',
     skills: ['Rhythm', 'Coordination', 'Expression'],
     img: '/images/moments/action-song.jpeg',
-    focus: 'object-top',
+    // Another 9:16 still; this anchor keeps all three dancers' faces in frame.
+    focus: 'object-[50%_32%]',
   },
   {
     title: 'Group Activities & Social Skills',
@@ -74,7 +79,7 @@ const experiences: Exp[] = [
     tagBg: 'bg-mascot-roundy/15',
     desc: 'Collaborative games and shared tasks help children practise teamwork, communication, turn-taking, empathy, and friendship skills.',
     skills: ['Teamwork', 'Communication', 'Empathy'],
-    img: '/images/social-communication.jpg',
+    img: '/images/hero-school-entrance.jpg',
   },
 ]
 
@@ -90,10 +95,13 @@ export function ExperiencesSection() {
           {experiences.map((exp, i) => (
             <Motion key={i} variant="up" delay={i * 60}>
               <div className={`${exp.tagBg} rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow h-full flex flex-col`}>
+                {/* A 3:2 window, which is the shape most of these sources
+                    already are, so the fill costs at most a few percent off
+                    one edge and every card is covered corner to corner. */}
                 <Photo
                   src={exp.img}
                   alt={exp.title}
-                  className="h-56"
+                  className="aspect-3/2"
                   focus={exp.focus}
                   imgClassName="hover:scale-105 transition-transform duration-500"
                 />

@@ -1,5 +1,6 @@
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
+import { BannerSection } from '@/components/home/BannerSection'
 import { HeroSection } from '@/components/home/HeroSection'
 import { MascotsSection } from '@/components/home/MascotsSection'
 import { WhySection } from '@/components/home/WhySection'
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <Navigation />
       <main className="pt-20">
+        <BannerSection />
         <HeroSection />
         <MascotsSection />
         <WhySection />

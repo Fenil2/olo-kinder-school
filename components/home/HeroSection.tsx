@@ -53,8 +53,8 @@ export function HeroSection() {
                 className="blob-alt absolute -top-5 -bottom-1 left-2 -right-3 bg-mascot-starry/45"
               />
               <Photo
-                src="/images/hero-school-entrance.jpg"
-                alt="Olo Kinder children building with blocks together in the activity room"
+                src="/images/hero-curriculum.jpg"
+                alt="An Olo Kinder child painting with a brush and poster colours beside a classmate"
                 className="blob relative shadow-lg aspect-4/3 sm:aspect-3/2 lg:aspect-4/3"
                 priority
               />

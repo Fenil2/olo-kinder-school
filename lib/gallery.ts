@@ -33,12 +33,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     category: 'classrooms',
   },
   {
-    src: '/images/classroom-reading-wide.jpg',
-    alt: 'Children reading picture books at their desks in an Olo Kinder classroom',
-    caption: 'Quiet reading time',
-    category: 'classrooms',
-  },
-  {
     src: '/images/hero-admissions.jpg',
     alt: 'Children sharing a table full of building blocks in the Olo Kinder activity room',
     caption: 'Everything within reach, everything shared',
@@ -46,8 +40,8 @@ export const galleryPhotos: GalleryPhoto[] = [
   },
   {
     src: '/images/classroom-whiteboard-wide.jpg',
-    alt: 'A teacher leading an alphabet lesson at the whiteboard in an Olo Kinder classroom',
-    caption: 'Letters at the whiteboard',
+    alt: 'A child painting with poster colours at a classroom table',
+    caption: 'Poster colours and a steady brush',
     category: 'classrooms',
   },
   {
@@ -70,18 +64,6 @@ export const galleryPhotos: GalleryPhoto[] = [
   },
 
   /* ── Learning & Activities ────────────────────────────────────── */
-  {
-    src: '/images/moments/shapes-with-teacher.jpeg',
-    alt: 'An Olo Kinder teacher holding up a blue triangle for two children at a shape-sorting board',
-    caption: 'Naming shapes, one triangle at a time',
-    category: 'learning',
-  },
-  {
-    src: '/images/teacher-alphabet-floor.jpg',
-    alt: 'An Olo Kinder teacher leading an alphabet activity on the classroom floor',
-    caption: 'Alphabet circle on the floor',
-    category: 'learning',
-  },
   {
     src: '/images/moments/vowel-sounds.jpeg',
     alt: 'A child sounding out vowels at her table in front of a hand-shaped a-e-i-o-u wall chart',
@@ -108,7 +90,7 @@ export const galleryPhotos: GalleryPhoto[] = [
   },
   {
     src: '/images/numeracy-teacher.jpg',
-    alt: 'An Olo Kinder teacher introducing numbers to a small group of children',
+    alt: 'Two Olo Kinder children matching number cards at their classroom table',
     caption: 'Early numbers, one step at a time',
     category: 'learning',
   },
@@ -191,12 +173,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     category: 'learning',
   },
   {
-    src: '/images/social-communication.jpg',
-    alt: 'Children talking and working together during a group activity',
-    caption: 'Talking, listening, taking turns',
-    category: 'learning',
-  },
-  {
     src: '/images/hero-learning.jpg',
     alt: 'Four children decorating painted tree outlines with fresh flowers on the lawn',
     caption: 'Nature collage on the lawn',
@@ -228,12 +204,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     caption: 'A closer look at a leaf',
     category: 'play',
   },
-  {
-    src: '/images/campus-walk.jpg',
-    alt: 'Olo Kinder children in uniform walking together through the school courtyard',
-    caption: 'Walking the campus together',
-    category: 'play',
-  },
 
   /* ── Events & Celebrations ────────────────────────────────────── */
   {
@@ -255,27 +225,9 @@ export const galleryPhotos: GalleryPhoto[] = [
     category: 'events',
   },
   {
-    src: '/images/moments/festival-celebration.jpeg',
-    alt: 'Two children in festival clothes exchanging a wrapped gift beside a decorated tray of flowers and sweets',
-    caption: 'Festival day at Olo Kinder',
-    category: 'events',
-  },
-  {
     src: '/images/moments/aviary-visit.jpeg',
     alt: 'Children feeding parrots from a bowl during a visit to a bird aviary',
     caption: 'Feeding the parrots on a field trip',
-    category: 'events',
-  },
-  {
-    src: '/images/hero-contact.jpg',
-    alt: 'Children and teachers holding a hand-painted “We are going to the field trip” sign in front of the school bus',
-    caption: 'Field trip day',
-    category: 'events',
-  },
-  {
-    src: '/images/hero-about.jpg',
-    alt: 'Olo Kinder teachers seated in a circle during a staff training session',
-    caption: 'Teacher training and planning',
     category: 'events',
   },
 ]
