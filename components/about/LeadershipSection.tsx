@@ -69,7 +69,7 @@ export function LeadershipSection() {
             }`}
           >
             <Motion variant={l.reverse ? 'right' : 'left'} className="shrink-0">
-              <div className="relative w-56 sm:w-64 lg:w-72">
+              <div className="relative w-72 sm:w-80 lg:w-88">
                 <div className="relative aspect-square rounded-full overflow-hidden surface-card shadow-lg ring-8 ring-mascot-squarey">
                   <img
                     src={l.portrait}

@@ -320,6 +320,21 @@
   border-radius: 70% 30% 70% 30% / 35% 65% 35% 65%;
 }
 
+/* Ornamental doodles. The rotation and flip arrive from the component as
+   custom properties so the transform can also carry a scale that changes with
+   the viewport — an inline transform cannot. On a phone they render at two
+   thirds: the artwork is sized for a desktop column, and at full size it
+   crowds the copy on a 390px screen. */
+.doodle {
+  --doodle-scale: 0.66;
+  transform: rotate(var(--doodle-rotate, 0deg))
+             scaleX(var(--doodle-flip, 1))
+             scale(var(--doodle-scale));
+}
+@media (min-width: 768px) {
+  .doodle { --doodle-scale: 1; }
+}
+
 /* Headline ink — the reference sets each phrase of a headline in a
    different brand colour. These are the ink twins, never the pastels. */
 .ink-coral { color: var(--mascot-roundy-dark); }

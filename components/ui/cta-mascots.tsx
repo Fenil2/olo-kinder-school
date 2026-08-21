@@ -1,6 +1,6 @@
 const CAST = [
-  { src: '/images/mascots/hexy.webp',  className: 'left-6 lg:left-20 bottom-0 w-24 lg:w-32 -rotate-6' },
-  { src: '/images/mascots/rolly.webp', className: 'right-6 lg:right-20 bottom-0 w-24 lg:w-32 rotate-6' },
+  { src: '/images/mascots/hexy.webp',  className: 'left-1 sm:left-6 lg:left-20 bottom-0 w-14 sm:w-24 lg:w-32 -rotate-6' },
+  { src: '/images/mascots/rolly.webp', className: 'right-1 sm:right-6 lg:right-20 bottom-0 w-14 sm:w-24 lg:w-32 rotate-6' },
 ]
 
 /**
@@ -11,8 +11,8 @@ const CAST = [
  * purple. Putting the whole cast in both halves reads as a pile-up — this
  * pair frames the buttons, and the footer carries the full line-up below.
  *
- * Purely decorative, and hidden below `md`, where the band is too narrow to
- * hold anything beside the copy.
+ * Purely decorative. On a phone the pair shrinks to a thumb's width and hugs
+ * the very edges, where the band is too narrow to hold much beside the copy.
  *
  * The parent `<section>` must be `relative overflow-hidden`, and its content
  * needs `relative z-10` — these are positioned children, so without it they
@@ -28,7 +28,7 @@ export function CtaMascots() {
           alt=""
           aria-hidden="true"
           loading="lazy"
-          className={`pointer-events-none select-none absolute z-0 hidden md:block drop-shadow-md ${m.className}`}
+          className={`pointer-events-none select-none absolute z-0 drop-shadow-md ${m.className}`}
         />
       ))}
     </>

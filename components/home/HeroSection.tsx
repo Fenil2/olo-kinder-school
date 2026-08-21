@@ -76,13 +76,13 @@ export function HeroSection() {
                 src="/images/mascots/starry.webp"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none select-none absolute -top-3 right-0 sm:-right-2 w-12 sm:w-16 -rotate-12 drop-shadow-md hidden sm:block"
+                className="pointer-events-none select-none absolute -top-3 right-0 sm:-right-2 w-10 sm:w-16 -rotate-12 drop-shadow-md"
               />
               <img
                 src="/images/mascots/squary.webp"
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none select-none absolute top-8 -left-3 w-12 sm:w-16 rotate-6 drop-shadow-md hidden lg:block"
+                className="pointer-events-none select-none absolute top-8 -left-3 w-10 sm:w-16 rotate-6 drop-shadow-md"
               />
             </div>
           </Motion>

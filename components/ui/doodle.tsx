@@ -1,3 +1,5 @@
+import type { CSSProperties } from 'react'
+
 const DOODLES = {
   fox: '/images/doodles/fox.svg',
   snail: '/images/doodles/snail.svg',
@@ -28,20 +30,29 @@ interface DoodleProps {
 }
 
 /**
- * A small decorative cartoon. Purely ornamental: hidden from assistive tech,
- * non-interactive, and hidden below `md` so it never crowds a phone layout.
- * The parent section must be `relative overflow-hidden`.
+ * A small decorative cartoon. Purely ornamental: hidden from assistive tech
+ * and non-interactive. The parent section must be `relative overflow-hidden`.
+ *
+ * Rotation and flip are handed to CSS as custom properties rather than written
+ * into an inline `transform`, because an inline transform cannot vary with the
+ * viewport. The `.doodle` rule in globals.css composes them with a scale that
+ * drops on a phone, where a full-size doodle crowds the copy.
  */
 export function Doodle({ name, className, rotate = 0, opacity = 100, flip = false }: DoodleProps) {
-  const transform = [rotate ? `rotate(${rotate}deg)` : '', flip ? 'scaleX(-1)' : ''].filter(Boolean).join(' ')
   return (
     <img
       src={DOODLES[name]}
       alt=""
       aria-hidden="true"
       loading="lazy"
-      className={`pointer-events-none select-none absolute hidden md:block z-0 ${className}`}
-      style={{ transform: transform || undefined, opacity: opacity / 100 }}
+      className={`doodle pointer-events-none select-none absolute z-0 ${className}`}
+      style={
+        {
+          '--doodle-rotate': `${rotate}deg`,
+          '--doodle-flip': flip ? -1 : 1,
+          opacity: opacity / 100,
+        } as CSSProperties
+      }
     />
   )
 }

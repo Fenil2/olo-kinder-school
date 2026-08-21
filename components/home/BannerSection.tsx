@@ -32,9 +32,11 @@ function Sprig({ className = '' }: { className?: string }) {
  * The banner that opens the home page.
  *
  * A full-bleed photo band scalloped along both edges, with the Olo Kinder
- * globe standing in a white medallion that straddles the lower edge. The
- * medallion is a circle of the page's own white, so it reads as the band
- * below bulging up around the logo rather than as a badge dropped on top.
+ * globe standing in a medallion that straddles the lower edge. The band, the
+ * scallops and the medallion are all the page's own cream — not white — so
+ * the section sits on the same paper as the rest of the site, and the circle
+ * reads as that paper bulging up around the logo rather than as a badge
+ * dropped on top.
  *
  * Everything is sized from `vw` between a floor and a ceiling: the band, the
  * medallion and the sprigs shrink together, which keeps the logo centred in
@@ -42,12 +44,14 @@ function Sprig({ className = '' }: { className?: string }) {
  */
 export function BannerSection() {
   return (
-    <section className="relative bg-card overflow-hidden">
-      {/* Photo band. A fixed 2.4:1 slot rather than the photo's own 16:9, which
-          keeps the banner short enough that the hero below it stays on screen.
-          The trim comes off the ceiling and the front of the table — the
-          children and their towers sit mid-frame and survive it at every
-          width. The scallops sit inside the band, biting into the photo. */}
+    <section className="relative band-cream overflow-hidden">
+      {/* Photo band. From `sm` up it is a 2.4:1 slot rather than the photo's
+          own 16:9, which keeps the banner short enough that the hero below it
+          stays on screen; the trim comes off the ceiling and the front of the
+          table, and the children sit mid-frame and survive it. A phone is too
+          narrow for that — the same ratio leaves a 160px strip — so it opens
+          out to the photo's own shape there, taller and uncropped. The
+          scallops sit inside the band, biting into the photo. */}
       <div className="relative">
         <img
           src="/hero-image.jpg"
@@ -55,10 +59,10 @@ export function BannerSection() {
           loading="eager"
           width={1440}
           height={812}
-          className="block w-full aspect-[2.4/1] object-cover object-center"
+          className="block w-full aspect-video sm:aspect-[2.4/1] object-cover object-center"
         />
-        <Wave flip className="text-card" height="sm" />
-        <Wave className="text-card" height="sm" />
+        <Wave flip className="text-background" height="sm" />
+        <Wave className="text-background" height="sm" />
       </div>
 
       {/* The apron the medallion lands on: white below the band, deep enough
@@ -68,7 +72,7 @@ export function BannerSection() {
       {/* Medallion and sprigs, centred on the band's lower edge. */}
       <div className="absolute inset-x-0 bottom-[clamp(0.5rem,1.5vw,1rem)] z-2 flex justify-center pointer-events-none">
         <Motion variant="scale" className="relative">
-          <div className="relative w-[clamp(7.5rem,18vw,13rem)] aspect-square rounded-full bg-card grid place-items-center">
+          <div className="relative w-[clamp(7.5rem,18vw,13rem)] aspect-square rounded-full bg-background grid place-items-center">
             <img
               src="/images/brand/olo-globe.webp"
               alt="Olo Kinder"

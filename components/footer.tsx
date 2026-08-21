@@ -12,25 +12,25 @@ export function Footer() {
         src="/images/mascots/rolly.webp"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none select-none absolute top-2 left-[10%] w-14 hidden lg:block"
+        className="pointer-events-none select-none absolute top-2 left-[10%] w-10 sm:w-14"
       />
       <img
         src="/images/mascots/squary.webp"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none select-none absolute top-1 left-[24%] w-12 -rotate-6 hidden xl:block"
+        className="pointer-events-none select-none absolute top-1 left-[24%] w-8 sm:w-12 -rotate-6"
       />
       <img
         src="/images/mascots/starry.webp"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none select-none absolute top-1 right-[26%] w-12 rotate-6 hidden xl:block"
+        className="pointer-events-none select-none absolute top-1 right-[26%] w-8 sm:w-12 rotate-6"
       />
       <img
         src="/images/mascots/hexy.webp"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none select-none absolute top-2 right-[10%] w-14 hidden lg:block"
+        className="pointer-events-none select-none absolute top-2 right-[10%] w-10 sm:w-14"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
