@@ -10,6 +10,12 @@ interface PhotoProps {
    * centre; tall portraits usually want `object-top` so faces survive.
    */
   focus?: string
+  /**
+   * How the photo meets its frame. The default covers it, cropping whatever
+   * does not fit; `object-contain` fits the whole photo inside instead, for
+   * the frames where nothing may be cropped away.
+   */
+  fit?: string
   /** Skip lazy-loading for the photo above the fold. */
   priority?: boolean
 }
@@ -29,6 +35,7 @@ export function Photo({
   className = '',
   imgClassName = '',
   focus = 'object-center',
+  fit = 'object-cover',
   priority = false,
 }: PhotoProps) {
   return (
@@ -37,7 +44,7 @@ export function Photo({
         src={src}
         alt={alt}
         loading={priority ? 'eager' : 'lazy'}
-        className={`block w-full h-full object-cover ${focus} ${imgClassName}`}
+        className={`block w-full h-full ${fit} ${focus} ${imgClassName}`}
       />
     </div>
   )

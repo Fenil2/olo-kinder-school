@@ -124,12 +124,12 @@ export const galleryPhotos: GalleryPhoto[] = [
     caption: 'Stacking, balancing, starting again',
     category: 'learning',
   },
-  {
-    src: '/images/show-and-tell.jpg',
-    alt: 'A child presenting a paper flower to her classmates during a show and tell circle',
-    caption: 'Show and tell',
-    category: 'learning',
-  },
+  // {
+  //   src: '/images/show-and-tell.jpg',
+  //   alt: 'A child presenting a paper flower to her classmates during a show and tell circle',
+  //   caption: 'Show and tell',
+  //   category: 'learning',
+  // },
   {
     src: '/images/moments/link-shapes-focus.jpeg',
     alt: 'A child joining green plastic linking shapes together at a table',
