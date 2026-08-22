@@ -26,6 +26,17 @@ const navLinks: NavLink[] = [
     ],
   },
   { href: '/learning-experiences', label: 'Learning Experiences' },
+  {
+    // No index route: the desktop trigger is a button and the mobile trigger is
+    // a heading, so this href is only ever used to mark the group active.
+    href: '/enrichment-programme',
+    label: 'Enrichment',
+    children: [
+      { href: '/enrichment-programme/for-teachers', label: 'For Teachers' },
+      { href: '/enrichment-programme/for-parents', label: 'For Parents' },
+      { href: '/enrichment-programme/for-students', label: 'For Students' },
+    ],
+  },
   { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' },
 ]
