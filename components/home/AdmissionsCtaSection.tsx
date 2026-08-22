@@ -1,5 +1,6 @@
 import { Motion } from '@/components/ui/motion'
 import { Wave } from '@/components/ui/wave'
+import { LeadForm } from '@/components/forms/LeadForm'
 
 export function AdmissionsCtaSection() {
   return (
@@ -41,35 +42,7 @@ export function AdmissionsCtaSection() {
         <Motion variant="scale" delay={150}>
           <div className="surface-card rounded-3xl p-6 sm:p-8 md:p-12 shadow-lg max-w-2xl mx-auto">
             <h3 className="text-xl sm:text-2xl font-bold text-heading mb-6 text-center">Enquiry Form</h3>
-            <form className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-semibold text-foreground mb-1">Parent Name</label>
-                  <input type="text" placeholder="Your full name" className="w-full px-4 py-3 rounded-xl border border-border bg-muted/30 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-foreground mb-1">Child Name</label>
-                  <input type="text" placeholder="Child's name" className="w-full px-4 py-3 rounded-xl border border-border bg-muted/30 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-semibold text-foreground mb-1">Child&apos;s Age</label>
-                  <input type="number" placeholder="Age in years" min="1" max="10" className="w-full px-4 py-3 rounded-xl border border-border bg-muted/30 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-foreground mb-1">Phone Number</label>
-                  <input type="tel" placeholder="Your phone number" className="w-full px-4 py-3 rounded-xl border border-border bg-muted/30 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-foreground mb-1">Email Address</label>
-                <input type="email" placeholder="Your email address" className="w-full px-4 py-3 rounded-xl border border-border bg-muted/30 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
-              </div>
-              <button type="submit" className="w-full bg-accent text-accent-foreground py-3.5 rounded-full font-semibold hover:bg-accent-hover transition-colors mt-2">
-                Admissions Open Now
-              </button>
-            </form>
+            <LeadForm source="HOME" variant="home" submitLabel="Admissions Open Now" />
           </div>
         </Motion>
       </div>

@@ -1,6 +1,7 @@
-import { MdMap, MdSend, MdSchedule } from 'react-icons/md'
+import { MdMap, MdSchedule } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
 import { Wave } from '@/components/ui/wave'
+import { LeadForm } from '@/components/forms/LeadForm'
 import { Photo } from '@/components/ui/photo'
 import { Doodle } from '@/components/ui/doodle'
 
@@ -89,52 +90,14 @@ export function ContactSection() {
               Fill in the form below and our admissions team will respond within 24 hours.
             </p>
             <div className="surface-card rounded-3xl p-6 sm:p-8 border border-border">
-              <form className="space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-semibold text-foreground mb-1.5">Parent Name <span className="text-primary">*</span></label>
-                    <input type="text" placeholder="Your full name" className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-foreground mb-1.5">Child Name <span className="text-primary">*</span></label>
-                    <input type="text" placeholder="Child's full name" className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-semibold text-foreground mb-1.5">Child&apos;s Age <span className="text-primary">*</span></label>
-                    <input type="number" placeholder="Age in years" min="1" max="10" className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-foreground mb-1.5">Phone <span className="text-primary">*</span></label>
-                    <input type="tel" placeholder="Your phone number" className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-foreground mb-1.5">Email <span className="text-primary">*</span></label>
-                  <input type="email" placeholder="Your email address" className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition" />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-foreground mb-1.5">How can we help?</label>
-                  <select className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition">
-                    <option value="">Select a topic</option>
-                    <option value="admissions">Admissions enquiry</option>
-                    <option value="curriculum">Curriculum information</option>
-                    <option value="visit">Schedule a campus visit</option>
-                    <option value="fees">Fees and payment</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-foreground mb-1.5">Message</label>
-                  <textarea placeholder="Tell us a bit about your child and what you'd like to know..." rows={4} className="w-full px-4 py-3 rounded-xl border border-border bg-input text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition resize-none" />
-                </div>
-                <button type="submit" className="w-full bg-accent text-accent-foreground py-3.5 rounded-full font-semibold hover:bg-accent-hover transition-colors text-base flex items-center justify-center gap-2">
-                  <MdSend size={18} />
-                  Send Message
-                </button>
-                <p className="text-xs text-foreground/80 text-center">We respect your privacy. Your details will only be used to contact you about your enquiry.</p>
-              </form>
+              <LeadForm
+                source="CONTACT"
+                variant="contact"
+                markRequired
+                withMessage
+                submitLabel="Send Message"
+                note="We respect your privacy. Your details will only be used to contact you about your enquiry."
+              />
             </div>
           </div>
         </Motion>

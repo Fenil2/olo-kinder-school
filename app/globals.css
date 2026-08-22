@@ -369,6 +369,72 @@
   to   { opacity: 1; }
 }
 
+/* ── Banner carousel: a slow drift across each still ──
+   The Ken Burns move is what makes three photographs read as footage rather
+   than as a slideshow. Each slide gets a different push so the sequence never
+   repeats the same gesture twice, and every one ends wider than it starts, so
+   the crossfade never has to hide a jump in scale.
+
+   `both` holds the final frame: a slide that finishes its drift before the
+   timer moves on must not snap back to where it began. */
+@keyframes ken-in    { from { transform: scale(1.00) translate3d(0, 0, 0);        }
+                       to   { transform: scale(1.12) translate3d(-1.2%, -1%, 0);  } }
+@keyframes ken-left  { from { transform: scale(1.10) translate3d(1.8%, 0.6%, 0);  }
+                       to   { transform: scale(1.02) translate3d(-1.4%, -0.4%, 0);} }
+@keyframes ken-right { from { transform: scale(1.04) translate3d(-1.6%, -0.8%, 0);}
+                       to   { transform: scale(1.14) translate3d(1.2%, 0.8%, 0);  } }
+
+@layer utilities {
+  .ken-0 { animation: ken-in    8s ease-out both; }
+  .ken-1 { animation: ken-left  8s ease-out both; }
+  .ken-2 { animation: ken-right 8s ease-out both; }
+  /* The bar under the active slide, filling in step with the timer. */
+  .ken-progress { animation: ken-fill var(--slide-ms, 6000ms) linear both; }
+}
+
+@keyframes ken-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* ── Banner ambience ──
+   An aurora is two or three wide, soft washes of brand colour drifting behind
+   the glass, on a long enough cycle that it never reads as a loop. Kept at low
+   opacity and screen-blended so it tints the photograph rather than veiling it. */
+@keyframes aurora-drift {
+  0%   { transform: translate3d(-9%, -6%, 0) scale(1.15); }
+  50%  { transform: translate3d(7%,  5%, 0) scale(1.35); }
+  100% { transform: translate3d(-9%, -6%, 0) scale(1.15); }
+}
+/* The cast hovers rather than sits. `--bob-rot` keeps each one's tilt while
+   the keyframe owns the transform. */
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0)     rotate(var(--bob-rot, 0deg)); }
+  50%      { transform: translateY(-11px) rotate(var(--bob-rot, 0deg)); }
+}
+
+/* A ribbon that scrolls forever. The track holds the same run of words twice,
+   so travelling exactly one copy's width lands on an identical frame and the
+   reset is invisible — which is why the distance is -50% and not a pixel value. */
+@keyframes marquee-track {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+@layer utilities {
+  .aurora { animation: aurora-drift 26s ease-in-out infinite; }
+  .bob    { animation: float-bob 5.5s ease-in-out infinite; }
+  .marquee-track { animation: marquee-track var(--marquee-ms, 34s) linear infinite; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora, .bob, .marquee-track { animation: none; }
+}
+
+/* Someone who has asked their system for less motion gets the photographs
+   held still. The carousel's own script also stops advancing on its own. */
+@media (prefers-reduced-motion: reduce) {
+  .ken-0, .ken-1, .ken-2 { animation: none; transform: none; }
+  .ken-progress { animation: none; transform: scaleX(1); }
+}
+
 @layer utilities {
   .motion-up    { animation: cinema-up    0.9s cubic-bezier(0.16,1,0.3,1) both; }
   .motion-down  { animation: cinema-down  0.9s cubic-bezier(0.16,1,0.3,1) both; }

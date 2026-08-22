@@ -7,9 +7,15 @@ __v0_jsx-dev-runtime.ts
 .vercel/
 
 # Environment variables
+# `.env` holds the live Neon credentials and the admin password, so it is
+# ignored outright — the previous pattern only caught `.env*.local`, which
+# would have let `git add .` commit the database password.
+.env
 .env*.local
+!.env.example
 
 # Common ignores
 node_modules
 .next/
 .DS_Store
+/lib/generated/prisma

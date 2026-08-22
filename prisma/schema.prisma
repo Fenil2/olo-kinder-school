@@ -1,0 +1,54 @@
+// Olo Kinder — enquiry capture.
+// The connection strings live in prisma.config.ts, which reads them from .env.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// Where an enquiry was submitted from. Every form on the site writes to the
+/// same table; this is what tells them apart in the dashboard.
+enum LeadSource {
+  HOME
+  ADMISSIONS
+  CONTACT
+}
+
+/// How far the admissions team has got with a lead.
+enum LeadStatus {
+  NEW
+  CONTACTED
+  ENROLLED
+  CLOSED
+}
+
+/// One enquiry from a parent.
+///
+/// Everything past `parentName` is optional because the three forms ask for
+/// different things — the contact form has a message and a subject, the two
+/// enquiry forms do not — and a half-filled enquiry is still a lead worth
+/// keeping rather than an error worth throwing away.
+model Lead {
+  id         String     @id @default(cuid())
+  parentName String
+  childName  String?
+  childAge   Int?
+  phone      String?
+  email      String?
+  subject    String?
+  message    String?
+  source     LeadSource
+  status     LeadStatus @default(NEW)
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+
+  // The dashboard lists newest first and filters by status and source, so
+  // those are the columns worth an index.
+  @@index([createdAt(sort: Desc)])
+  @@index([status])
+  @@index([source])
+}

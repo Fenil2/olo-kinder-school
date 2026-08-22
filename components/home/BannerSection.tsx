@@ -1,5 +1,35 @@
 import { Motion } from '@/components/ui/motion'
 import { Wave } from '@/components/ui/wave'
+import { BannerCarousel, type BannerSlide } from '@/components/home/BannerCarousel'
+import { MarqueeRibbon } from '@/components/home/MarqueeRibbon'
+
+/**
+ * Three moments, chosen to be three different places: inside at play, inside
+ * at work, and outdoors. A carousel of near-identical classroom shots reads as
+ * a loading bug rather than as a tour.
+ *
+ * The `lift` on each is not decoration. These stills were graded dark to sit
+ * behind white headline text, and they average a third below the rest of the
+ * library. Each is lifted to the same mid point, capped at the factor where
+ * its own brightest 0.1% would begin to clip.
+ */
+const SLIDES: BannerSlide[] = [
+  {
+    src: '/images/classroom-colorful-wide.jpg',
+    alt: 'Two Olo Kinder children laughing as they play with hand puppets in the activity room',
+    lift: 'brightness-[1.31] saturate-[1.06]',
+  },
+  {
+    src: '/images/classroom-writing-wide.jpg',
+    alt: 'Two Olo Kinder children writing carefully with coloured pencils at a classroom table',
+    lift: 'brightness-[1.38] saturate-[1.06]',
+  },
+  {
+    src: '/images/hero-learning.jpg',
+    alt: 'Four Olo Kinder children making flower and leaf pictures at a table in the garden',
+    lift: 'brightness-[1.22] saturate-[1.04]',
+  },
+]
 
 /* One sprig of the pair that frames the medallion: a white leaf with a few
    coloured veins, drawn rather than shipped as an image so it stays crisp at
@@ -45,48 +75,45 @@ function Sprig({ className = '' }: { className?: string }) {
 export function BannerSection() {
   return (
     <section className="relative band-cream overflow-hidden">
-      {/* Photo band. From `sm` up it is a 2.4:1 slot rather than the photo's
-          own 16:9, which keeps the banner short enough that the hero below it
-          stays on screen; the trim comes off the ceiling and the front of the
-          table, and the children sit mid-frame and survive it. A phone is too
-          narrow for that — the same ratio leaves a 160px strip — so it opens
-          out to the photo's own shape there, taller and uncropped. The
-          scallops sit inside the band, biting into the photo. */}
+      {/* The medallion is positioned from the bottom of THIS block rather than
+          of the section, so the ribbon can be added underneath without pushing
+          the circle down off the band's edge. */}
       <div className="relative">
-        <img
-          src="/hero-image.jpg"
-          alt="Olo Kinder children building with blocks together in the activity room"
-          loading="eager"
-          width={1440}
-          height={812}
-          className="block w-full aspect-video sm:aspect-[2.4/1] object-cover object-center"
-        />
-        <Wave flip className="text-background" height="sm" />
-        <Wave className="text-background" height="sm" />
+        {/* The band is three stills that cross-dissolve on a timer, each
+            drifting slowly across the frame, under a slow wash of brand-
+            coloured light. It runs edge to edge; the scallops bite into the
+            photo exactly as they did over the single image. */}
+        <div className="relative">
+          <BannerCarousel slides={SLIDES} />
+          <Wave flip className="text-background" height="sm" />
+          <Wave className="text-background" height="sm" />
+        </div>
+
+        {/* The apron the medallion lands on: cream below the band, deep enough
+            to hold the part of the circle that hangs past the photo. */}
+        <div className="h-[clamp(2rem,4.5vw,3.5rem)]" />
+
+        {/* Medallion and sprigs, centred on the band's lower edge. */}
+        <div className="absolute inset-x-0 bottom-[clamp(0.5rem,1.5vw,1rem)] z-2 flex justify-center pointer-events-none">
+          <Motion variant="scale" className="relative">
+            <div className="relative w-[clamp(7.5rem,18vw,13rem)] aspect-square rounded-full bg-background grid place-items-center">
+              <img
+                src="/images/brand/olo-globe.webp"
+                alt="Olo Kinder"
+                width={820}
+                height={900}
+                className="w-[78%] h-auto object-contain"
+              />
+            </div>
+
+            {/* The pair leans away from the circle, tips up and outwards. */}
+            <Sprig className="absolute top-1/2 -translate-y-1/2 right-full mr-[-6%] w-[clamp(2.75rem,6.5vw,4.75rem)] drop-shadow-sm -rotate-12" />
+            <Sprig className="absolute top-1/2 -translate-y-1/2 left-full ml-[-6%] w-[clamp(2.75rem,6.5vw,4.75rem)] drop-shadow-sm rotate-12 -scale-x-100" />
+          </Motion>
+        </div>
       </div>
 
-      {/* The apron the medallion lands on: white below the band, deep enough
-          to hold the part of the circle that hangs past the photo. */}
-      <div className="h-[clamp(2rem,4.5vw,3.5rem)]" />
-
-      {/* Medallion and sprigs, centred on the band's lower edge. */}
-      <div className="absolute inset-x-0 bottom-[clamp(0.5rem,1.5vw,1rem)] z-2 flex justify-center pointer-events-none">
-        <Motion variant="scale" className="relative">
-          <div className="relative w-[clamp(7.5rem,18vw,13rem)] aspect-square rounded-full bg-background grid place-items-center">
-            <img
-              src="/images/brand/olo-globe.webp"
-              alt="Olo Kinder"
-              width={820}
-              height={900}
-              className="w-[78%] h-auto object-contain"
-            />
-          </div>
-
-          {/* The pair leans away from the circle, tips up and outwards. */}
-          <Sprig className="absolute top-1/2 -translate-y-1/2 right-full mr-[-6%] w-[clamp(2.75rem,6.5vw,4.75rem)] drop-shadow-sm -rotate-12" />
-          <Sprig className="absolute top-1/2 -translate-y-1/2 left-full ml-[-6%] w-[clamp(2.75rem,6.5vw,4.75rem)] drop-shadow-sm rotate-12 -scale-x-100" />
-        </Motion>
-      </div>
+      <MarqueeRibbon />
     </section>
   )
 }
