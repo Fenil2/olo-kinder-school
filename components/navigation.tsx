@@ -37,6 +37,7 @@ const navLinks: NavLink[] = [
       { href: '/enrichment-programme/for-students', label: 'For Students' },
     ],
   },
+  { href: '/evaluation', label: 'Evaluation' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -76,16 +77,24 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+      {/* Full width rather than a centred `max-w-7xl` column. The bar spans
+          the window, so the logo sits at the true left edge and the CTAs at
+          the true right, instead of both being pulled inward to meet a
+          content column that nothing else in the bar belongs to. The extra
+          room is also what lets eight links and two CTAs share one row. */}
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-4 lg:gap-6 h-20">
 
-          {/* Logo */}
+          {/* Logo — hard left, and the only fixed point in the row */}
           <Link href="/" className="shrink-0">
             <Image src="/images/brand/olo-globe.webp" alt="Olo Kinder" width={820} height={900} priority className="h-15 sm:h-16 w-auto object-contain" />
           </Link>
 
-          {/* Desktop nav links */}
-          <div ref={dropdownRef} className="hidden xl:flex items-center gap-0.5">
+          {/* Desktop nav links. `flex-1` gives them the whole gap between the
+              logo and the CTAs and centres them inside it, so the row stays
+              balanced at every window width rather than drifting with the
+              length of the link labels. */}
+          <div ref={dropdownRef} className="hidden xl:flex flex-1 items-center justify-center gap-0.5">
             {navLinks.map((link) => {
               const isActive = link.children
                 ? pathname.startsWith(link.href)
@@ -177,10 +186,12 @@ export function Navigation() {
             </Link>
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Mobile hamburger. `ml-auto` because the links and the CTAs that
+              would otherwise fill the row are both hidden at this width —
+              without it the button would sit against the logo. */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="xl:hidden text-foreground p-2 rounded-lg hover:bg-muted transition-colors"
+            className="xl:hidden ml-auto text-foreground p-2 rounded-lg hover:bg-muted transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <MdClose size={22} /> : <MdMenu size={22} />}
@@ -191,7 +202,9 @@ export function Navigation() {
       {/* Mobile menu */}
       {isOpen && (
         <div className="xl:hidden border-t border-border surface-card">
-          <div className="max-w-7xl mx-auto px-4 py-3 space-y-0.5">
+          {/* Same gutters as the bar above, so the panel's links line up with
+              the logo rather than sitting in a narrower column of their own. */}
+          <div className="w-full px-4 sm:px-6 lg:px-8 py-3 space-y-0.5">
             {navLinks.map((link) => {
               const isActive = pathname === link.href
 

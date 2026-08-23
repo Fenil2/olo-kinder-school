@@ -70,6 +70,7 @@ export function Footer() {
               <ul className="space-y-1.5 text-sm text-white/70">
                 {[
                   { href: '/learning-experiences', label: 'Learning Experiences' },
+                  { href: '/evaluation', label: 'Evaluation' },
                   { href: '/gallery', label: 'Gallery' },
                   { href: '/admissions', label: 'Admissions' },
                   { href: '/contact', label: 'Contact Us' },
