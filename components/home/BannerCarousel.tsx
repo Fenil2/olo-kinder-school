@@ -115,9 +115,20 @@ export function BannerCarousel({ slides }: { slides: BannerSlide[] }) {
           />
         </div>
 
-        {/* A scrim at the foot of the frame, so the cream scallop below reads as
-            an edge and the controls keep their contrast over a bright photo. */}
-        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-black/35 via-black/10 to-transparent" />
+        {/* A scrim at the foot of the frame, in two strengths.
+
+            From `sm` the brand lockup stands in white type over the lower left
+            of the photograph, so the scrim has to carry that type over three
+            stills each brightened back up by `lift` — hence the reach, two
+            thirds of the frame, and the weight at the base.
+
+            Below `sm` the lockup is hidden, and that same scrim would only be
+            muddying a photo with nothing written on it. The phone gets the
+            light version: just enough to hold the slide indicators. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-32 sm:h-2/3 bg-linear-to-t from-black/35 via-black/10 to-transparent sm:from-black/60 sm:via-black/25"
+        />
 
         {/* The cast, hovering over the upper corners. */}
         {CAST.map((member) => (
@@ -143,11 +154,12 @@ export function BannerCarousel({ slides }: { slides: BannerSlide[] }) {
           </span>
         </div>
 
-        {/* The indicators sit in the corner the medallion does not occupy, and
-            clear of the scalloped edge below — the divider is 24px tall on a
-            phone and 36px from `sm`, and a control under a scallop looks
-            broken. They double as the way to reach a slide directly. */}
-        <div className="absolute bottom-8 sm:bottom-12 right-3 sm:right-6 z-3 flex items-center gap-1.5 sm:gap-2">
+        {/* The indicators sit in the corner the brand lockup does not occupy.
+            The band's foot is square now rather than scalloped, so they no
+            longer have to be lifted clear of a row of lobes — they sit at the
+            height of the lockup's button across the frame. They double as the
+            way to reach a slide directly. */}
+        <div className="absolute bottom-6 sm:bottom-10 right-3 sm:right-6 z-3 flex items-center gap-1.5 sm:gap-2">
           {slides.map((slide, i) => {
             const active = i === index
             return (

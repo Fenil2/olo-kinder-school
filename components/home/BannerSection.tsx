@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Motion } from '@/components/ui/motion'
 import { Wave } from '@/components/ui/wave'
 import { BannerCarousel, type BannerSlide } from '@/components/home/BannerCarousel'
@@ -31,84 +32,71 @@ const SLIDES: BannerSlide[] = [
   },
 ]
 
-/* One sprig of the pair that frames the medallion: a white leaf with a few
-   coloured veins, drawn rather than shipped as an image so it stays crisp at
-   any size and picks its inks straight from the mascot tokens. It is drawn
-   upright; the pair is tilted apart, and mirrored, in CSS. */
-function Sprig({ className = '' }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 100 168"
-      fill="none"
-      aria-hidden="true"
-      className={`pointer-events-none select-none ${className}`}
-    >
-      {/* Blade: a pointed oval, tip at the top, stem running out of the base. */}
-      <path
-        d="M50 2c34 34 44 82 22 122-6 12-14 24-22 40-8-16-16-28-22-40C6 84 16 36 50 2Z"
-        fill="#fff"
-      />
-      {/* Midrib, then veins fanning off it in the four mascot inks. */}
-      <path d="M50 150V26" stroke="var(--brand-plum)" strokeOpacity=".3" strokeWidth="3" strokeLinecap="round" />
-      <path d="M50 116 33 100" stroke="var(--mascot-hexy)" strokeWidth="5" strokeLinecap="round" />
-      <path d="M50 104 67 88" stroke="var(--mascot-roundy)" strokeWidth="5" strokeLinecap="round" />
-      <path d="M50 86 36 72" stroke="var(--mascot-squarey)" strokeWidth="5" strokeLinecap="round" />
-      <path d="M50 72 63 58" stroke="var(--mascot-starry)" strokeWidth="5" strokeLinecap="round" />
-    </svg>
-  )
-}
-
 /**
  * The banner that opens the home page.
  *
- * A full-bleed photo band scalloped along both edges, with the Olo Kinder
- * globe standing in a medallion that straddles the lower edge. The band, the
- * scallops and the medallion are all the page's own cream — not white — so
- * the section sits on the same paper as the rest of the site, and the circle
- * reads as that paper bulging up around the logo rather than as a badge
- * dropped on top.
+ * A full-bleed photo band scalloped along its top edge only, with the brand
+ * lockup standing INSIDE the photograph rather than on a shape hung off its
+ * edge — logo artwork, one line of welcome, one way in, set low on the left
+ * where the scrim is deepest.
  *
- * Everything is sized from `vw` between a floor and a ceiling: the band, the
- * medallion and the sprigs shrink together, which keeps the logo centred in
- * the same amount of photo on a phone as on a wide desktop.
+ * Two earlier passes put the logo on something: a cream medallion, then a
+ * white plate. Both read as a sticker on a picture, and both spent the band's
+ * whole lower edge on an object that said nothing. Nothing is stuck on now;
+ * the only thing over the photo is the name and an invitation.
+ *
+ * The foot of the band is deliberately bare: no scallop, no cream lip. The
+ * photograph runs straight into the values ribbon so the two read as one
+ * block. A scallop there cut lobes out of the picture and then left a strip
+ * of cream between them, which split the banner into two pieces.
+ *
+ * The lockup is anchored to the same left margin as the admissions badge in
+ * the opposite corner, so the two read as one frame around the picture.
  */
 export function BannerSection() {
   return (
     <section className="relative band-cream overflow-hidden">
-      {/* The medallion is positioned from the bottom of THIS block rather than
-          of the section, so the ribbon can be added underneath without pushing
-          the circle down off the band's edge. */}
+      {/* The band is three stills that cross-dissolve on a timer, each
+          drifting slowly across the frame, under a slow wash of brand-
+          coloured light. It runs edge to edge, and only its top edge is
+          scalloped — the foot meets the ribbon square. */}
       <div className="relative">
-        {/* The band is three stills that cross-dissolve on a timer, each
-            drifting slowly across the frame, under a slow wash of brand-
-            coloured light. It runs edge to edge; the scallops bite into the
-            photo exactly as they did over the single image. */}
-        <div className="relative">
-          <BannerCarousel slides={SLIDES} />
-          <Wave flip className="text-background" height="sm" />
-          <Wave className="text-background" height="sm" />
-        </div>
+        <BannerCarousel slides={SLIDES} />
+        <Wave flip className="text-background" height="sm" />
 
-        {/* The apron the medallion lands on: cream below the band, deep enough
-            to hold the part of the circle that hangs past the photo. */}
-        <div className="h-[clamp(2rem,4.5vw,3.5rem)]" />
+        {/* The lockup, sitting just above the ribbon and stopping short of the
+            indicators in the far corner. `max-w` is capped in `ch` so the line
+            breaks on its own terms rather than running the width of a desktop
+            photo.
 
-        {/* Medallion and sprigs, centred on the band's lower edge. */}
-        <div className="absolute inset-x-0 bottom-[clamp(0.5rem,1.5vw,1rem)] z-2 flex justify-center pointer-events-none">
-          <Motion variant="scale" className="relative">
-            <div className="relative w-[clamp(7.5rem,18vw,13rem)] aspect-square rounded-full bg-background grid place-items-center">
-              <img
-                src="/images/brand/olo-globe.webp"
-                alt="Olo Kinder"
-                width={820}
-                height={900}
-                className="w-[78%] h-auto object-contain"
-              />
-            </div>
-
-            {/* The pair leans away from the circle, tips up and outwards. */}
-            <Sprig className="absolute top-1/2 -translate-y-1/2 right-full mr-[-6%] w-[clamp(2.75rem,6.5vw,4.75rem)] drop-shadow-sm -rotate-12" />
-            <Sprig className="absolute top-1/2 -translate-y-1/2 left-full ml-[-6%] w-[clamp(2.75rem,6.5vw,4.75rem)] drop-shadow-sm rotate-12 -scale-x-100" />
+            Hidden below `sm`. On a phone the band is only ~56vw tall and the
+            logo, tagline and button together fill nearly all of it, leaving a
+            photograph you cannot see under its own caption — and the nav
+            carries the logo directly above anyway. The phone-tier values are
+            kept rather than stripped so the block still lands correctly if the
+            breakpoint is ever lowered. */}
+        <div className="pointer-events-none hidden sm:block absolute z-3 left-3 sm:left-6 lg:left-10 right-3 sm:right-40 bottom-6 sm:bottom-9 lg:bottom-11">
+          <Motion variant="up" delay={120}>
+            <img
+              src="/images/brand/olo-logo.webp"
+              alt="Olo Kinder"
+              width={1200}
+              height={630}
+              className="w-[clamp(10rem,24vw,16rem)] h-auto object-contain drop-shadow-[0_3px_10px_rgba(0,0,0,0.35)]"
+            />
+            <p className="mt-3 sm:mt-4 max-w-[34ch] font-heading text-lg sm:text-2xl lg:text-3xl font-bold leading-snug text-white text-pretty [text-shadow:0_2px_12px_rgba(0,0,0,0.55)]">
+              A joyful first school for curious little minds.
+            </p>
+            <Link
+              href="/contact"
+              /* The lockup's box is transparent and spans most of the band's
+                 lower half; left clickable it would swallow the carousel
+                 indicators sitting under its far corner. Only the button
+                 takes the pointer back. */
+              className="pointer-events-auto mt-4 sm:mt-5 inline-block bg-accent text-accent-foreground px-6 sm:px-7 py-2.5 sm:py-3 rounded-full hover:bg-accent-hover transition-colors font-semibold text-sm sm:text-base shadow-lg"
+            >
+              Book a School Visit
+            </Link>
           </Motion>
         </div>
       </div>

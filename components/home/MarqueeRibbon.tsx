@@ -43,7 +43,11 @@ export function MarqueeRibbon() {
 
   return (
     <div
-      className="relative overflow-hidden border-y border-border bg-surface-sand/60 py-3 sm:py-4"
+      // No top border: the ribbon now butts straight onto the photo band with
+      // no scallop or cream lip between them, and a rule there would redraw
+      // the seam the merge was meant to remove. The photo's own edge is the
+      // boundary; only the underside still needs a line.
+      className="relative overflow-hidden border-b border-border bg-surface-sand/60 py-3 sm:py-4"
       // Edges faded out, so the words arrive and leave rather than being
       // clipped by a hard boundary.
       style={{
