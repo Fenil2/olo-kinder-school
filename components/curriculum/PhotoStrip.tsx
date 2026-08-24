@@ -4,7 +4,7 @@ import { Wave } from '@/components/ui/wave'
 
 const photos = [
   { src: '/images/montessori-materials.jpg',       alt: 'Children working with hands-on Montessori puzzles and counting materials' },
-  { src: '/images/moments/shapes-with-teacher.jpeg', alt: 'An Olo Kinder teacher holding up a blue triangle for two children at a shape-sorting board' },
+  { src: '/images/moments/link-shapes-smiles.jpeg', alt: 'Two Olo Kinder children smiling as they link colourful plastic shapes together at a classroom table' },
   { src: '/images/classroom-whiteboard-wide.jpg',  alt: 'A teacher leading an alphabet lesson at the whiteboard in an Olo Kinder classroom' },
 ]
 
@@ -21,7 +21,7 @@ export function PhotoStrip() {
         {photos.map((photo, i) => (
           <Motion key={photo.src} variant="scale" delay={i * 100}>
             {/* A polaroid: white mat, photo contained inside it. The strip
-                mixes a wide frame, a 9:16 phone still and a 3:2 photo, and
+                mixes a wide frame, a 4:3 photo and a 3:2 photo, and
                 nothing may be cropped — so the mat takes up the difference
                 instead of the picture losing its edges. */}
             <figure

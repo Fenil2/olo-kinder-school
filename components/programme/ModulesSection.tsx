@@ -17,7 +17,7 @@ export function ModulesSection({ modules }: { modules: Module[] }) {
       <Doodle name="cloud" className="top-12 left-8 w-28" opacity={60} />
       <Doodle name="butterfly" className="top-10 right-10 w-16" opacity={80} flip />
       <Doodle name="treeGreen" className="bottom-28 left-4 w-20" opacity={70} />
-      <Doodle name="fox" className="bottom-24 right-8 w-20" opacity={80} />
+      <Doodle name="squary" className="bottom-24 right-8 w-16" opacity={80} rotate={-9} />
       <Doodle name="starry" className="top-1/3 left-6 w-14" rotate={-11} />
       <Doodle name="rolly" className="bottom-1/2 right-6 w-14" rotate={10} />
 

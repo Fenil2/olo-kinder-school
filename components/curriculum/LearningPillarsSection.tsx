@@ -41,7 +41,7 @@ const TILTS = ['-rotate-2', 'rotate-1', '-rotate-1', 'rotate-2']
 export function LearningPillarsSection() {
   return (
     <section className="pt-12 sm:pt-16 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 band-sky relative overflow-hidden">
-      <Doodle name="fox" className="bottom-6 right-8 w-20" opacity={85} />
+      <Doodle name="rolly" className="bottom-6 right-8 w-16" opacity={85} rotate={-8} />
       <Doodle name="hexy" className="top-10 left-8 w-16" rotate={8} />
       {/* The pillars run the full width; the note cards keep the narrower
           measure below, where a long line of body copy gets hard to read. */}

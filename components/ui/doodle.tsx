@@ -1,7 +1,6 @@
 import type { CSSProperties } from 'react'
 
 const DOODLES = {
-  fox: '/images/doodles/fox.svg',
   snail: '/images/doodles/snail.svg',
   butterfly: '/images/doodles/butterfly.svg',
   cloud: '/images/doodles/cloud.svg',

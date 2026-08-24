@@ -18,7 +18,7 @@ const differences: Difference[] = [
 export function DifferencesSection() {
   return (
     <section className="band-sun pt-12 sm:pt-16 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <Doodle name="fox" className="bottom-6 left-8 w-20" opacity={85} flip />
+      <Doodle name="rolly" className="bottom-6 left-8 w-16" opacity={85} rotate={9} />
       <Doodle name="squary" className="top-10 right-8 w-16" rotate={-8} />
       <div className="max-w-6xl mx-auto relative z-10">
         <Motion variant="up">

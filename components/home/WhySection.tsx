@@ -18,7 +18,7 @@ const whyCards: WhyCard[] = [
 export function WhySection() {
   return (
     <section className="pt-12 sm:pt-16 pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8 band-sun relative overflow-hidden">
-      <Doodle name="fox" className="bottom-6 right-8 w-20" opacity={85} />
+      <Doodle name="hexy" className="bottom-6 right-8 w-16" opacity={85} rotate={-8} />
       <Doodle name="starry" className="top-10 left-8 w-16" rotate={-12} />
       <div className="max-w-7xl mx-auto relative z-10">
         <Motion variant="up">

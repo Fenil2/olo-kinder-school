@@ -44,6 +44,26 @@ export interface Photo {
   alt: string
 }
 
+/**
+ * One photograph behind the page's opening band.
+ *
+ * These pages open with the same full-bleed banner the home page uses, and
+ * like it they now carry three stills each, so every file has to be banner
+ * grade: wide, and large enough to cross a desktop without softening. The
+ * programme's own gallery photographs are not — they are 400-600px with a
+ * decorative blob painted into the PNG, which a full-bleed crop cuts through
+ * — so the banners are their own set of untouched originals, filed under
+ * `/images/enrichment/<page>-banner-N.jpg`.
+ *
+ * `lift` is the same correction the home banner applies. These originals were
+ * not graded dark the way the main library's stills were, so the corrections
+ * here are small: a nudge of brightness on the indoor frames and a little
+ * saturation on the flat, overcast ones.
+ */
+export interface Banner extends Photo {
+  lift: string
+}
+
 export interface EnrichmentPage {
   slug: string
   /** Label for the sub-nav pills. */
@@ -51,8 +71,8 @@ export interface EnrichmentPage {
   title: string
   /** Rendered in the accent colour after `title`. */
   titleAccent: string
-  /** The source page's opening paragraph, where it has one. */
-  lead?: string
+  /** The three stills behind the opening band, in the order they cycle. */
+  banners: Banner[]
   /**
    * The portrait beside the programme copy.
    *
@@ -72,6 +92,27 @@ export const forTeachers: EnrichmentPage = {
   navLabel: 'For Teachers',
   title: 'Enrichment Programmes',
   titleAccent: 'For Teachers',
+  // Three sides of a teachers' programme: the session addressed to a full
+  // hall, the small circle it breaks into, and the staff it is run for.
+  banners: [
+    {
+      src: '/images/enrichment/teachers-banner-1.jpg',
+      alt: 'A trainer with a microphone leading a session for a hall of Olo Kinder teachers',
+      lift: 'brightness-[1.06] saturate-[1.03]',
+    },
+    {
+      src: '/images/enrichment/teachers-banner-2.jpg',
+      alt: 'Teachers gathered in a close circle around a facilitator in a classroom',
+      lift: 'brightness-[1.03] saturate-[1.02]',
+    },
+    {
+      // Shot flat under an overcast sky, so this one takes the largest lift
+      // of the three — most of it in saturation, to bring the sarees back.
+      src: '/images/enrichment/teachers-banner-3.jpg',
+      alt: 'The Olo Kinder teaching staff lined up together outside the school',
+      lift: 'brightness-[1.05] saturate-[1.08]',
+    },
+  ],
   portrait: {
     src: '/images/enrichment/teachers-portrait.png',
     alt: 'A trainer addressing a hall of teachers at an Olo Kinder workshop',
@@ -126,7 +167,28 @@ export const forParents: EnrichmentPage = {
   navLabel: 'For Parents',
   title: 'Enrichment Programmes',
   titleAccent: 'For Parents',
-  lead: 'Enrichment programmes for parents provide valuable resources through collaborative conventions to support them actively in their child’s learning and holistic development.',
+  // Grown-ups and children together, which is what these programmes are for:
+  // a whole-family game, a mother and son on stage, and the orientation the
+  // year opens with.
+  banners: [
+    {
+      src: '/images/enrichment/parents-banner-1.jpg',
+      alt: 'Parents and grandparents facing their children across the courtyard in a family game',
+      lift: 'brightness-[1.01] saturate-[1.03]',
+    },
+    {
+      src: '/images/enrichment/parents-banner-2.jpg',
+      alt: 'A mother and her son receiving a prize on stage at the Mom & Kids celebration',
+      lift: 'brightness-[1.02] saturate-[1.02]',
+    },
+    {
+      // The one portrait frame in the set. `object-cover` takes a band from
+      // its middle, which is where the speaker and the notice both sit.
+      src: '/images/enrichment/parents-banner-3.jpg',
+      alt: 'A speaker opening the Olo Kinder parents’ orientation from the stage',
+      lift: 'brightness-[1.06] saturate-[1.04]',
+    },
+  ],
   portrait: {
     src: '/images/enrichment/parents-portrait.png',
     alt: 'A mother and her daughter behind a decorated Mom & Kids photo frame',
@@ -175,6 +237,25 @@ export const forStudents: EnrichmentPage = {
   navLabel: 'For Students',
   title: 'Enrichment Programmes',
   titleAccent: 'For Students',
+  // The three the copy below promises: something made, something found
+  // outdoors, and a whole class learning together.
+  banners: [
+    {
+      src: '/images/enrichment/students-banner-1.jpg',
+      alt: 'Six children holding hand-made weather cut-outs — a flower, a cloud, rain and the sun',
+      lift: 'brightness-[1.02] saturate-[1.03]',
+    },
+    {
+      src: '/images/enrichment/students-banner-2.jpg',
+      alt: 'Four children making flower trees at a garden table in the school grounds',
+      lift: 'brightness-[1.02] saturate-[1.02]',
+    },
+    {
+      src: '/images/enrichment/students-banner-3.jpg',
+      alt: 'A full class seated on the floor for a whole-group session with their teachers',
+      lift: 'brightness-[1.07] saturate-[1.04]',
+    },
+  ],
   portrait: {
     src: '/images/enrichment/students-portrait.png',
     alt: 'A child presenting in front of a hand-painted nature backdrop',

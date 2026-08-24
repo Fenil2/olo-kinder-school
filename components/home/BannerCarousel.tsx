@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react'
+import { useCallback, useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 
 export interface BannerSlide {
   src: string
@@ -25,7 +25,27 @@ const CAST = [
   { src: '/images/mascots/hexy.webp', style: 'right-[3%] top-[11%] w-11 sm:w-14 lg:w-18', rot: '8deg', delay: '1.4s' },
 ]
 
-export function BannerCarousel({ slides }: { slides: BannerSlide[] }) {
+/** The band's own height. Overridable because a band that carries a headline
+ *  instead of the brand lockup needs more room on a phone — see the enrichment
+ *  pages' `HeroSection`. */
+const DEFAULT_HEIGHT = 'h-[clamp(14rem,56.25vw,78vh)] sm:h-[clamp(16rem,47.6vw,78vh)]'
+
+interface BannerCarouselProps {
+  slides: BannerSlide[]
+  /** Text inside the frosted badge in the top-left corner. */
+  badge?: ReactNode
+  /** Describes the band to screen readers. */
+  label?: string
+  /** Tailwind height classes for the band. */
+  heightClass?: string
+}
+
+export function BannerCarousel({
+  slides,
+  badge = 'Admissions open for 2026–27',
+  label = 'Life at Olo Kinder',
+  heightClass = DEFAULT_HEIGHT,
+}: BannerCarouselProps) {
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
   const [reduced, setReduced] = useState(false)
@@ -58,7 +78,7 @@ export function BannerCarousel({ slides }: { slides: BannerSlide[] }) {
       className="relative"
       role="group"
       aria-roledescription="carousel"
-      aria-label="Life at Olo Kinder"
+      aria-label={label}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
@@ -75,7 +95,7 @@ export function BannerCarousel({ slides }: { slides: BannerSlide[] }) {
           and ceilinged at 78vh so a short, wide window still shows the page
           below it. A phone takes 16:9 (100/1.778 = 56.25vw), since 2.1:1 would
           leave a letterbox strip on a 390px screen. */}
-      <div className="relative w-full h-[clamp(14rem,56.25vw,78vh)] sm:h-[clamp(16rem,47.6vw,78vh)] overflow-hidden bg-surface-mist">
+      <div className={`relative w-full overflow-hidden bg-surface-mist ${heightClass}`}>
         {slides.map((slide, i) => {
           const active = i === index
           return (
@@ -150,7 +170,7 @@ export function BannerCarousel({ slides }: { slides: BannerSlide[] }) {
               <span className="absolute h-2.5 w-2.5 rounded-full bg-accent/70 motion-safe:animate-ping" />
               <span className="relative h-2 w-2 rounded-full bg-accent" />
             </span>
-            <span className="text-xs sm:text-sm font-bold tracking-wide">Admissions open for 2026–27</span>
+            <span className="text-xs sm:text-sm font-bold tracking-wide">{badge}</span>
           </span>
         </div>
 
@@ -159,7 +179,12 @@ export function BannerCarousel({ slides }: { slides: BannerSlide[] }) {
             longer have to be lifted clear of a row of lobes — they sit at the
             height of the lockup's button across the frame. They double as the
             way to reach a slide directly. */}
-        <div className="absolute bottom-6 sm:bottom-10 right-3 sm:right-6 z-3 flex items-center gap-1.5 sm:gap-2">
+        <div
+          /* A lone slide has nothing to indicate: one dash that never fills
+             and cannot be clicked anywhere else reads as a broken control. */
+          hidden={slides.length < 2}
+          className="absolute bottom-6 sm:bottom-10 right-3 sm:right-6 z-3 flex items-center gap-1.5 sm:gap-2"
+        >
           {slides.map((slide, i) => {
             const active = i === index
             return (
@@ -192,10 +217,14 @@ export function BannerCarousel({ slides }: { slides: BannerSlide[] }) {
         </div>
       </div>
 
-      {/* Announced to screen readers, which cannot see the photo change. */}
-      <p className="sr-only" aria-live="polite">
-        Photo {index + 1} of {slides.length}: {slides[index].alt}
-      </p>
+      {/* Announced to screen readers, which cannot see the photo change.
+          Nothing changes with a single slide, so there is nothing to announce
+          — and the photo's own `alt` already carries it. */}
+      {slides.length > 1 && (
+        <p className="sr-only" aria-live="polite">
+          Photo {index + 1} of {slides.length}: {slides[index].alt}
+        </p>
+      )}
     </div>
   )
 }

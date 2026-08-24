@@ -17,7 +17,7 @@ export function GallerySection({ page }: { page: EnrichmentPage }) {
   return (
     <section className="band-sun relative overflow-hidden pt-14 sm:pt-20 pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8">
       <Doodle name="snail" className="bottom-10 left-[5%] w-20" opacity={85} />
-      <Doodle name="fox" className="bottom-12 right-[6%] w-20" opacity={85} flip />
+      <Doodle name="rolly" className="bottom-12 right-[6%] w-16" opacity={85} rotate={-8} />
       <Doodle name="hexy" className="top-10 left-[7%] w-14" rotate={-8} />
       <Doodle name="starry" className="top-12 right-[8%] w-14" rotate={10} />
 

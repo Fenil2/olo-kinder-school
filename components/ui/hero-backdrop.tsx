@@ -51,8 +51,8 @@ export function HeroBackdrop({ nextBand = 'text-background' }: HeroBackdropProps
       <img src="/images/doodles/tree-green.svg" alt="" className="absolute bottom-2 right-[3%] w-20 sm:w-32" />
       <img src="/images/doodles/tree-orange.svg" alt="" className="absolute bottom-4 right-[17%] w-14 sm:w-20" />
 
-      {/* The cast */}
-      <img src="/images/doodles/fox.svg" alt="" className="absolute bottom-3 right-[26%] w-16 sm:w-24" />
+      {/* Critters along the ground */}
+      <img src="/images/doodles/butterfly.svg" alt="" className="absolute bottom-8 right-[26%] w-10 sm:w-14 rotate-6" />
       <img src="/images/doodles/snail.svg" alt="" className="absolute bottom-4 left-[27%] w-14 sm:w-20" />
 
       {/* The four brand characters lined up along the crown of the hill. They
