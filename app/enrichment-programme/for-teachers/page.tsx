@@ -4,7 +4,6 @@ import { Footer } from '@/components/footer'
 import { HeroSection } from '@/components/enrichment/HeroSection'
 import { EnrichmentNav } from '@/components/enrichment/EnrichmentNav'
 import { ProgrammeSection } from '@/components/enrichment/ProgrammeSection'
-import { GallerySection } from '@/components/enrichment/GallerySection'
 import { CtaSection } from '@/components/enrichment/CtaSection'
 import { forTeachers } from '@/lib/enrichment'
 
@@ -21,8 +20,9 @@ export default function EnrichmentForTeachers() {
       <main className="pt-20">
         <HeroSection page={forTeachers} />
         <EnrichmentNav current={forTeachers.slug} />
-        <ProgrammeSection page={forTeachers} />
-        <GallerySection page={forTeachers} />
+        {/* No "In Pictures" band here: the portrait beside the programme copy
+            is the one photograph this page needs. */}
+        <ProgrammeSection page={forTeachers} wave="text-surface-dark" />
         <CtaSection />
       </main>
       <Footer />

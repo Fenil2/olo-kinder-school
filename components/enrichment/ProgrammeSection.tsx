@@ -22,8 +22,18 @@ const ACCENT: Record<Accent, { chip: string; ink: string; rail: string }> = {
  * The two columns are deliberately uneven — the portrait is the smaller of
  * the pair and sticks as the list scrolls past it, so the reader keeps the
  * face of the programme in view while working down what it covers.
+ *
+ * `wave` is the colour of whatever band follows. It defaults to the gallery's
+ * sand, since that is what usually comes next; the pages that skip the gallery
+ * and hand straight to the closing call pass that band's colour instead.
  */
-export function ProgrammeSection({ page }: { page: EnrichmentPage }) {
+export function ProgrammeSection({
+  page,
+  wave = 'text-surface-sand',
+}: {
+  page: EnrichmentPage
+  wave?: string
+}) {
   return (
     <section className="band-cream relative pt-14 sm:pt-20 pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8">
       {/* The doodles get their own clipping box rather than the section taking
@@ -107,7 +117,7 @@ export function ProgrammeSection({ page }: { page: EnrichmentPage }) {
         </div>
       </div>
 
-      <Wave className="text-surface-sand" />
+      <Wave className={wave} />
     </section>
   )
 }

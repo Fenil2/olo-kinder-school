@@ -56,6 +56,16 @@ interface BannerCarouselProps {
    * and little else, and a quiet photograph reads better under it.
    */
   still?: boolean
+  /**
+   * Carries the full-strength scrim down to the phone as well.
+   *
+   * By default a phone gets only a light one, because the home band hides its
+   * lockup below `sm` and so has nothing written on the picture at that width.
+   * A band that *does* keep type on the photograph on a phone — the enrichment
+   * pages' `h1` and its button — has to ask for the strong version, or white
+   * headline lands unprotected on whatever the still happens to be.
+   */
+  fullScrim?: boolean
 }
 
 export function BannerCarousel({
@@ -64,6 +74,7 @@ export function BannerCarousel({
   label = 'Life at Olo Kinder',
   heightClass = DEFAULT_HEIGHT,
   still = false,
+  fullScrim = false,
 }: BannerCarouselProps) {
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
@@ -169,10 +180,16 @@ export function BannerCarousel({
 
             Below `sm` the lockup is hidden, and that same scrim would only be
             muddying a photo with nothing written on it. The phone gets the
-            light version: just enough to hold the slide indicators. */}
+            light version: just enough to hold the slide indicators — unless
+            `fullScrim` says this band keeps its type on the photograph at
+            phone width too, in which case the phone takes the strong ramp as
+            well, a shade heavier than the desktop's because the type sits
+            proportionally larger and lower in a much shorter frame. */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-32 sm:h-2/3 bg-linear-to-t from-black/35 via-black/10 to-transparent sm:from-black/60 sm:via-black/25"
+          className={`pointer-events-none absolute inset-x-0 bottom-0 bg-linear-to-t to-transparent sm:h-2/3 sm:from-black/60 sm:via-black/25 ${
+            fullScrim ? 'h-3/4 from-black/70 via-black/35' : 'h-32 from-black/35 via-black/10'
+          }`}
         />
 
         {/* The cast, hovering over the upper corners. Their whole reason for

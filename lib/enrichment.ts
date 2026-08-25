@@ -107,18 +107,11 @@ export const forTeachers: EnrichmentPage = {
   // for. The two older session frames — the full hall and the circle it
   // breaks into — were dropped.
   banners: [
-    {
-      // A two-panel composite, and the widest file in the set at 2.7:1 —
-      // wider than the band itself, so `object-cover` trims the outer edges
-      // rather than the top and bottom. Both panels survive that.
-      src: '/images/enrichment/teachers-banner-orientation.jpg',
-      alt: 'Three Olo Kinder teachers seated beneath the orientation poster, beside a teacher lighting the ceremonial lamp',
-      lift: 'brightness-[1.02] saturate-[1.03]',
-    },
+  
     {
       // Shot flat under an overcast sky, so this one takes a large lift —
       // most of it in saturation, to bring the sarees back.
-      src: '/images/enrichment/teachers-banner-3.jpg',
+      src: '/fortea.png',
       alt: 'The Olo Kinder teaching staff lined up together outside the school',
       lift: 'brightness-[1.05] saturate-[1.08]',
       // A little above centre, so the group sits lower in the band and the
@@ -167,12 +160,9 @@ export const forTeachers: EnrichmentPage = {
       ],
     },
   ],
-  gallery: [
-    {
-      src: '/images/enrichment/teachers-workshop.png',
-      alt: 'Teachers making teaching aids together at a hands-on craft workshop',
-    },
-  ],
+  // No gallery band on this page — the portrait above is the one photograph
+  // it needs, so `for-teachers/page.tsx` leaves `GallerySection` out.
+  gallery: [],
 }
 
 export const forParents: EnrichmentPage = {

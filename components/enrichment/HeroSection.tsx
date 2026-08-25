@@ -34,9 +34,14 @@ import type { EnrichmentPage } from '@/lib/enrichment'
  *  - The headline is not hidden below `sm`. On the home page the lockup is,
  *    because the nav repeats the logo directly above it; here that would
  *    leave the page with no visible title on a phone.
- *  - The band is taller on a phone for the same reason. The home banner's
- *    ~56vw is too short to seat a headline and a button without them
- *    covering the photograph completely.
+ *  - The band is a different shape on a phone for the same reason. It cannot
+ *    be as wide as the desktop's or the copy would cover the picture whole,
+ *    but the nearly-square band it used to take cropped these stills far too
+ *    hard: the widest of them, the parents banner at 2.17:1, lost 53% of its
+ *    width and the crop cut straight through the two people it is a
+ *    photograph of. ~1.4:1 is where the two demands meet — the headline and
+ *    its button still sit on the picture, and about a third of the width is
+ *    cropped rather than a half.
  */
 export function HeroSection({ page }: { page: EnrichmentPage }) {
   return (
@@ -46,8 +51,15 @@ export function HeroSection({ page }: { page: EnrichmentPage }) {
           slides={page.banners}
           badge="Enrichment Programme"
           label={`${page.title} ${page.titleAccent}`}
-          heightClass="h-[clamp(24rem,92vw,78vh)] sm:h-[clamp(20rem,47.6vw,78vh)]"
+          /* 72vw is ~1.4:1 on a phone. The floor keeps a 320px screen from
+             squeezing the copy, and the ceiling stops a large phone held in
+             landscape from turning the band into a full screen of photograph. */
+          heightClass="h-[clamp(16rem,72vw,22rem)] sm:h-[clamp(20rem,47.6vw,78vh)]"
           still
+          /* The headline sits on the photograph at every width here, so the
+             band's foot needs the full scrim on a phone too — the light one
+             the home banner uses left white type on bare picture. */
+          fullScrim
         />
         <Wave flip className="text-background" height="sm" />
 
@@ -62,8 +74,13 @@ export function HeroSection({ page }: { page: EnrichmentPage }) {
           {/* White with the accent in the brand yellow. The page's own
               plum-and-coral pairing is for dark type on cream; over a
               photograph neither holds, and yellow is already the colour of
-              the button below it. */}
-          <h1 className="max-w-[22ch] font-heading text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.12] text-white text-balance [text-shadow:0_2px_14px_rgba(0,0,0,0.6)]">
+              the button below it.
+
+              Two shadows, not one: the wide, soft cast separates the block
+              from a busy photograph, and the tight, dark one under it keeps
+              the individual letter edges from dissolving into a light patch
+              — which is what a single large blur cannot do. */}
+          <h1 className="max-w-[22ch] font-heading text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.12] text-white text-balance [text-shadow:0_2px_16px_rgba(0,0,0,0.75),0_1px_3px_rgba(0,0,0,0.55)]">
             {page.title} <span className="text-accent">{page.titleAccent}</span>
           </h1>
           <Link
