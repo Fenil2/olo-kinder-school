@@ -20,7 +20,7 @@ export default function Curriculum() {
         <PhotoStrip />
         <ProgrammesSection />
         <LearningPillarsSection />
-        <LearningAreasSection />
+        {/* <LearningAreasSection /> */}
         <CtaSection />
       </main>
       <Footer />

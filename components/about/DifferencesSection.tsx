@@ -9,10 +9,10 @@ interface Difference { title: string; Icon: IconType; desc: string }
 const differences: Difference[] = [
   // { title: 'Cartoon-Based Learning',  Icon: MdAnimation,       desc: 'Engaging animated characters and stories make learning irresistible for young minds.' },
   { title: 'Mascot-Driven Learning',  Icon: MdStars,           desc: 'Rolly, Squary, Starry, and Hexy guide every learning experience with personality and purpose.' },
-  { title: 'Experiential Learning',   Icon: MdNaturePeople,    desc: 'Children learn by doing — touching, exploring, creating, and experiencing the world firsthand.' },
-  { title: 'Child-Friendly Modules',  Icon: MdChildFriendly,   desc: 'Every lesson is designed with young children in mind — joyful, simple, and deeply engaging.' },
+  // { title: 'Experiential Learning',   Icon: MdNaturePeople,    desc: 'Children learn by doing — touching, exploring, creating, and experiencing the world firsthand.' },
   { title: 'Integrated Curriculum',   Icon: MdJoinFull,        desc: 'Learning areas are woven together seamlessly so children develop holistically, not in isolation.' },
-  { title: 'Holistic Development',    Icon: MdSelfImprovement, desc: 'We nurture intellectual, social, emotional, creative, and physical growth in equal measure.' },
+  { title: 'Child-Friendly Modules',  Icon: MdChildFriendly,   desc: 'Every lesson is designed with young children in mind — joyful, simple, and deeply engaging.' },
+  // { title: 'Holistic Development',    Icon: MdSelfImprovement, desc: 'We nurture intellectual, social, emotional, creative, and physical growth in equal measure.' },
 ]
 
 export function DifferencesSection() {

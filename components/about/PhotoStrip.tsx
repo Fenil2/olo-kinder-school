@@ -3,7 +3,7 @@ import { Photo } from '@/components/ui/photo'
 import { Wave } from '@/components/ui/wave'
 
 const photos = [
-  { src: '/images/teacher-alphabet-floor.jpg', alt: 'An Olo Kinder teacher leading an alphabet activity on the classroom floor' },
+  { src: '/images/moments/block-stacking.jpeg', alt: 'An Olo Kinder teacher leading an alphabet activity on the classroom floor' },
   { src: '/images/pretend-play-market.jpg',    alt: 'Children running a pretend market stall during dramatic play' },
   { src: '/images/art-and-coloring.jpg',       alt: 'Children colouring at a classroom table and holding up their finished drawings' },
 ]

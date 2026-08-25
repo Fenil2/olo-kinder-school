@@ -111,7 +111,7 @@ export const forTeachers: EnrichmentPage = {
     {
       // Shot flat under an overcast sky, so this one takes a large lift —
       // most of it in saturation, to bring the sarees back.
-      src: '/fortea.png',
+      src: '/Goal-bg.jpg',
       alt: 'The Olo Kinder teaching staff lined up together outside the school',
       lift: 'brightness-[1.05] saturate-[1.08]',
       // A little above centre, so the group sits lower in the band and the
