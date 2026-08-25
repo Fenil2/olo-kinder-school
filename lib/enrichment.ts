@@ -47,13 +47,14 @@ export interface Photo {
 /**
  * One photograph behind the page's opening band.
  *
- * These pages open with the same full-bleed banner the home page uses, and
- * like it they now carry three stills each, so every file has to be banner
- * grade: wide, and large enough to cross a desktop without softening. The
- * programme's own gallery photographs are not — they are 400-600px with a
- * decorative blob painted into the PNG, which a full-bleed crop cuts through
- * — so the banners are their own set of untouched originals, filed under
- * `/images/enrichment/<page>-banner-N.jpg`.
+ * These pages open with the same full-bleed banner the home page uses, so
+ * every file has to be banner grade: wide, and large enough to cross a
+ * desktop without softening. The programme's own gallery photographs are not
+ * — they are 400-600px with a decorative blob painted into the PNG, which a
+ * full-bleed crop cuts through — so the banners are their own set of
+ * untouched originals, filed under `/images/enrichment/<page>-banner-*.jpg`.
+ * The numbered names are the original three per page; anything added since
+ * is named for what it shows, since the numbers no longer track the order.
  *
  * `lift` is the same correction the home banner applies. These originals were
  * not graded dark the way the main library's stills were, so the corrections
@@ -62,6 +63,16 @@ export interface Photo {
  */
 export interface Banner extends Photo {
   lift: string
+  /**
+   * Which part of the still the band's crop keeps, as a Tailwind
+   * `object-position` class. Defaults to `object-center`.
+   *
+   * The band is much wider than these originals are, so `object-cover` throws
+   * away most of their height. Where the subject does not sit in the middle
+   * of the frame, naming a lower percentage moves the crop up the photograph
+   * — which shows the picture sitting further down inside the band.
+   */
+  position?: string
 }
 
 export interface EnrichmentPage {
@@ -71,7 +82,7 @@ export interface EnrichmentPage {
   title: string
   /** Rendered in the accent colour after `title`. */
   titleAccent: string
-  /** The three stills behind the opening band, in the order they cycle. */
+  /** The stills behind the opening band, in the order they cycle. */
   banners: Banner[]
   /**
    * The portrait beside the programme copy.
@@ -92,25 +103,27 @@ export const forTeachers: EnrichmentPage = {
   navLabel: 'For Teachers',
   title: 'Enrichment Programmes',
   titleAccent: 'For Teachers',
-  // Three sides of a teachers' programme: the session addressed to a full
-  // hall, the small circle it breaks into, and the staff it is run for.
+  // The orientation the year opens with, and the staff the programme is run
+  // for. The two older session frames — the full hall and the circle it
+  // breaks into — were dropped.
   banners: [
     {
-      src: '/images/enrichment/teachers-banner-1.jpg',
-      alt: 'A trainer with a microphone leading a session for a hall of Olo Kinder teachers',
-      lift: 'brightness-[1.06] saturate-[1.03]',
+      // A two-panel composite, and the widest file in the set at 2.7:1 —
+      // wider than the band itself, so `object-cover` trims the outer edges
+      // rather than the top and bottom. Both panels survive that.
+      src: '/images/enrichment/teachers-banner-orientation.jpg',
+      alt: 'Three Olo Kinder teachers seated beneath the orientation poster, beside a teacher lighting the ceremonial lamp',
+      lift: 'brightness-[1.02] saturate-[1.03]',
     },
     {
-      src: '/images/enrichment/teachers-banner-2.jpg',
-      alt: 'Teachers gathered in a close circle around a facilitator in a classroom',
-      lift: 'brightness-[1.03] saturate-[1.02]',
-    },
-    {
-      // Shot flat under an overcast sky, so this one takes the largest lift
-      // of the three — most of it in saturation, to bring the sarees back.
+      // Shot flat under an overcast sky, so this one takes a large lift —
+      // most of it in saturation, to bring the sarees back.
       src: '/images/enrichment/teachers-banner-3.jpg',
       alt: 'The Olo Kinder teaching staff lined up together outside the school',
       lift: 'brightness-[1.05] saturate-[1.08]',
+      // A little above centre, so the group sits lower in the band and the
+      // building behind them comes back into the top of the frame.
+      position: 'object-[center_35%]',
     },
   ],
   portrait: {
@@ -167,26 +180,14 @@ export const forParents: EnrichmentPage = {
   navLabel: 'For Parents',
   title: 'Enrichment Programmes',
   titleAccent: 'For Parents',
-  // Grown-ups and children together, which is what these programmes are for:
-  // a whole-family game, a mother and son on stage, and the orientation the
-  // year opens with.
+  // Grown-ups and children together, which is what these programmes are for.
+  // The courtyard game and the orientation frame were both dropped; the one
+  // that stays is a mother and son on stage.
   banners: [
-    {
-      src: '/images/enrichment/parents-banner-1.jpg',
-      alt: 'Parents and grandparents facing their children across the courtyard in a family game',
-      lift: 'brightness-[1.01] saturate-[1.03]',
-    },
     {
       src: '/images/enrichment/parents-banner-2.jpg',
       alt: 'A mother and her son receiving a prize on stage at the Mom & Kids celebration',
       lift: 'brightness-[1.02] saturate-[1.02]',
-    },
-    {
-      // The one portrait frame in the set. `object-cover` takes a band from
-      // its middle, which is where the speaker and the notice both sit.
-      src: '/images/enrichment/parents-banner-3.jpg',
-      alt: 'A speaker opening the Olo Kinder parents’ orientation from the stage',
-      lift: 'brightness-[1.06] saturate-[1.04]',
     },
   ],
   portrait: {
@@ -237,8 +238,8 @@ export const forStudents: EnrichmentPage = {
   navLabel: 'For Students',
   title: 'Enrichment Programmes',
   titleAccent: 'For Students',
-  // The three the copy below promises: something made, something found
-  // outdoors, and a whole class learning together.
+  // Two of the things the copy below promises: something made, and something
+  // made outdoors.
   banners: [
     {
       src: '/images/enrichment/students-banner-1.jpg',
@@ -249,11 +250,6 @@ export const forStudents: EnrichmentPage = {
       src: '/images/enrichment/students-banner-2.jpg',
       alt: 'Four children making flower trees at a garden table in the school grounds',
       lift: 'brightness-[1.02] saturate-[1.02]',
-    },
-    {
-      src: '/images/enrichment/students-banner-3.jpg',
-      alt: 'A full class seated on the floor for a whole-group session with their teachers',
-      lift: 'brightness-[1.07] saturate-[1.04]',
     },
   ],
   portrait: {

@@ -12,6 +12,13 @@ export interface BannerSlide {
    * brightest 0.1% starts to clip.
    */
   lift: string
+  /**
+   * Tailwind `object-position` class for this still, defaulting to
+   * `object-center`. The band's crop is far wider than the originals, so a
+   * still whose subject is not centred vertically can name where the crop
+   * should sit instead.
+   */
+  position?: string
 }
 
 const SLIDE_MS = 6000
@@ -38,6 +45,17 @@ interface BannerCarouselProps {
   label?: string
   /** Tailwind height classes for the band. */
   heightClass?: string
+  /**
+   * Drops everything decorative that moves: the slow drift across each still,
+   * the wash of brand-coloured light, the bobbing mascots, the pulse on the
+   * badge and the filling progress bar. The band still changes photograph on
+   * its own clock and still crossfades between them — that is the carousel
+   * doing its job rather than an effect laid over it.
+   *
+   * The enrichment pages use this: their opening band carries the page's `h1`
+   * and little else, and a quiet photograph reads better under it.
+   */
+  still?: boolean
 }
 
 export function BannerCarousel({
@@ -45,6 +63,7 @@ export function BannerCarousel({
   badge = 'Admissions open for 2026–27',
   label = 'Life at Olo Kinder',
   heightClass = DEFAULT_HEIGHT,
+  still = false,
 }: BannerCarouselProps) {
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
@@ -115,25 +134,31 @@ export function BannerCarousel({
                 /* The drift class is only on the active slide, so leaving and
                    returning removes and re-adds it — which is what makes the
                    animation start over rather than sit at its end. */
-                className={`block w-full h-full object-cover object-center ${slide.lift} ${active ? `ken-${i % 3}` : ''}`}
+                className={`block w-full h-full object-cover ${slide.position ?? 'object-center'} ${slide.lift} ${
+                  active && !still ? `ken-${i % 3}` : ''
+                }`}
               />
             </div>
           )
         })}
 
         {/* Aurora: brand-coloured light moving over the photograph. `screen`
-            lifts rather than veils, so the picture stays legible underneath. */}
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden mix-blend-screen">
-          <span className="aurora absolute -left-1/4 -top-1/3 h-[70%] w-[60%] rounded-full bg-mascot-hexy/35 blur-3xl" />
-          <span
-            className="aurora absolute -right-1/4 top-0 h-[80%] w-[55%] rounded-full bg-mascot-roundy/30 blur-3xl"
-            style={{ animationDelay: '-9s', animationDuration: '31s' }}
-          />
-          <span
-            className="aurora absolute left-1/4 -bottom-1/3 h-[70%] w-[50%] rounded-full bg-mascot-starry/30 blur-3xl"
-            style={{ animationDelay: '-17s', animationDuration: '23s' }}
-          />
-        </div>
+            lifts rather than veils, so the picture stays legible underneath.
+            It exists only to move, so `still` drops it outright rather than
+            leaving three parked colour blobs on the picture. */}
+        {!still && (
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden mix-blend-screen">
+            <span className="aurora absolute -left-1/4 -top-1/3 h-[70%] w-[60%] rounded-full bg-mascot-hexy/35 blur-3xl" />
+            <span
+              className="aurora absolute -right-1/4 top-0 h-[80%] w-[55%] rounded-full bg-mascot-roundy/30 blur-3xl"
+              style={{ animationDelay: '-9s', animationDuration: '31s' }}
+            />
+            <span
+              className="aurora absolute left-1/4 -bottom-1/3 h-[70%] w-[50%] rounded-full bg-mascot-starry/30 blur-3xl"
+              style={{ animationDelay: '-17s', animationDuration: '23s' }}
+            />
+          </div>
+        )}
 
         {/* A scrim at the foot of the frame, in two strengths.
 
@@ -150,8 +175,9 @@ export function BannerCarousel({
           className="pointer-events-none absolute inset-x-0 bottom-0 h-32 sm:h-2/3 bg-linear-to-t from-black/35 via-black/10 to-transparent sm:from-black/60 sm:via-black/25"
         />
 
-        {/* The cast, hovering over the upper corners. */}
-        {CAST.map((member) => (
+        {/* The cast, hovering over the upper corners. Their whole reason for
+            being on the photograph is the bob, so `still` leaves them off. */}
+        {!still && CAST.map((member) => (
           <img
             key={member.src}
             src={member.src}
@@ -167,7 +193,7 @@ export function BannerCarousel({
         <div className="absolute left-3 sm:left-6 lg:left-10 top-4 sm:top-7 z-3">
           <span className="inline-flex items-center gap-2.5 rounded-full border border-white/25 bg-black/25 px-4 py-2 text-white shadow-lg backdrop-blur-md">
             <span className="relative grid place-items-center">
-              <span className="absolute h-2.5 w-2.5 rounded-full bg-accent/70 motion-safe:animate-ping" />
+              {!still && <span className="absolute h-2.5 w-2.5 rounded-full bg-accent/70 motion-safe:animate-ping" />}
               <span className="relative h-2 w-2 rounded-full bg-accent" />
             </span>
             <span className="text-xs sm:text-sm font-bold tracking-wide">{badge}</span>
@@ -205,7 +231,9 @@ export function BannerCarousel({
                     <span
                       // Re-keyed per slide so the fill restarts each time.
                       key={`${index}-${running}`}
-                      className={`block h-full w-full origin-left rounded-full bg-white ${running ? 'ken-progress' : ''}`}
+                      className={`block h-full w-full origin-left rounded-full bg-white ${
+                        running && !still ? 'ken-progress' : ''
+                      }`}
                       style={{ '--slide-ms': `${SLIDE_MS}ms` } as CSSProperties}
                     />
                   )}
