@@ -9,10 +9,30 @@ const mapQuery = encodeURIComponent(address)
 const PHONE = '98406 04197'
 const PHONE_HREF = 'tel:+919840604197'
 
+/**
+ * Every value is a list of lines, not one string.
+ *
+ * Left to run together, these break wherever the card's width happens to run
+ * out — the address split after "Chennai -" and left the pin code alone on a
+ * line, and the two sets of timings ran into each other around a pipe. Naming
+ * the breaks puts them where the reader expects: an address the way it would
+ * be written on an envelope, and one line per class group.
+ *
+ * `address` above stays whole, since that is what the map query is built from.
+ */
 const details = [
-  { Icon: MdLocationOn, bg: 'bg-surface-sky', color: 'text-mascot-squarey-dark', label: 'Address', value: address },
-  { Icon: MdPhone,      bg: 'bg-mascot-roundy/15',  color: 'text-mascot-roundy-dark',  label: 'Phone',   value: PHONE, href: PHONE_HREF },
-  { Icon: MdSchedule,   bg: 'bg-surface-leaf',  color: 'text-mascot-hexy-dark',    label: 'Timings', value: 'Pre KG & JKG: 9:00 AM - 12:00 Noon | SKG: 9:00 AM - 1:00 PM' },
+  {
+    Icon: MdLocationOn, bg: 'bg-surface-sky', color: 'text-mascot-squarey-dark', label: 'Address',
+    value: ['1470 B, Kathiravan Colony Main Road', 'Anna Nagar West', 'Chennai - 600040'],
+  },
+  {
+    Icon: MdPhone, bg: 'bg-mascot-roundy/15', color: 'text-mascot-roundy-dark', label: 'Phone',
+    value: [PHONE], href: PHONE_HREF,
+  },
+  {
+    Icon: MdSchedule, bg: 'bg-surface-leaf', color: 'text-mascot-hexy-dark', label: 'Timings',
+    value: ['Pre KG & JKG: 9:00 AM - 12:00 Noon', 'SKG: 9:00 AM - 1:00 PM'],
+  },
 ]
 
 export function MapSection() {
@@ -30,8 +50,14 @@ export function MapSection() {
           </div>
         </Motion>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-          <Motion variant="left" className="lg:col-span-2">
+        {/* Five columns rather than three, so the split is 60/40 instead of
+            67/33. The map reads fine either way — it is a map, and losing a
+            little width only trims the streets at its edges — while the card
+            beside it carries an address, a phone number and two sets of
+            timings, all of which were wrapping a line earlier than they need
+            to at a third of the row. */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
+          <Motion variant="left" className="lg:col-span-3">
             <div className="relative rounded-3xl overflow-hidden h-72 sm:h-96 lg:h-full min-h-72 border border-border shadow-sm bg-surface-sky">
               <iframe
                 src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
@@ -43,7 +69,7 @@ export function MapSection() {
             </div>
           </Motion>
 
-          <Motion variant="right" delay={150}>
+          <Motion variant="right" delay={150} className="lg:col-span-2">
             <div className="surface-card rounded-3xl p-6 sm:p-8 border border-border h-full flex flex-col">
               <h3 className="text-xl font-bold text-heading mb-6">Olo Kinder</h3>
               <ul className="space-y-5 flex-1">
@@ -55,11 +81,20 @@ export function MapSection() {
                     <div>
                       <p className="text-sm font-semibold text-foreground">{d.label}</p>
                       {d.href ? (
+                        /* The one linked value is a phone number, which is a
+                           single line by definition — nothing to break. */
                         <a href={d.href} className="text-sm text-foreground/90 leading-relaxed hover:text-primary transition-colors">
-                          {d.value}
+                          {d.value.join(' ')}
                         </a>
                       ) : (
-                        <p className="text-sm text-foreground/90 leading-relaxed">{d.value}</p>
+                        <p className="text-sm text-foreground/90 leading-relaxed">
+                          {/* `block` spans rather than `<br>`: the break is a
+                              property of the line, so it survives a change of
+                              order and leaves no stray break at the end. */}
+                          {d.value.map((line) => (
+                            <span key={line} className="block">{line}</span>
+                          ))}
+                        </p>
                       )}
                     </div>
                   </li>
