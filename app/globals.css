@@ -68,28 +68,72 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Lift the bottom of the type scale. Parents read this site on a phone,
-   often one-handed, so nothing here is allowed to be genuinely small: the
-   two "small" steps land at 14px and 16px, and body copy moves up with
-   them so the steps stay distinct. Overriding the scale here reaches every
-   `text-xs` / `text-sm` on the site — including the shadcn primitives —
-   instead of touching ~70 call sites. Headings (`text-xl` and up) keep
-   their Tailwind defaults so no section layout shifts. */
+/* ================================================================
+   THE TYPE SCALE
+   Lifted off Tailwind's defaults, whole. Parents read this site on a
+   phone, often one-handed, and the audience skews older than the
+   children — nothing here is allowed to be genuinely small.
+
+   Redefining the scale reaches every `text-*` on the site in one place,
+   including the shadcn primitives, instead of touching ~300 call sites.
+   Every step is listed even where the change is small, because the steps
+   have to stay distinct from each other: `lg` and `xl` are one step apart
+   in name and were both 20px before this, so raising only one end of the
+   scale collapses the middle of it.
+
+   The bottom of the scale moves furthest — that is where the body copy
+   lives, and where the complaint was. The display sizes move least: on a
+   390px phone a hero headline is already close to the width it has, and
+   another 10% there buys nothing but a fifth line.
+
+   Line heights are ratios rather than the fixed rem values Tailwind ships,
+   so a step that grows keeps its proportions instead of tightening.
+   ================================================================ */
 @theme {
-  --text-xs: 0.9375rem;                      /* 12px → 15px */
-  --text-xs--line-height: calc(1.375 / 0.9375);
-  --text-sm: 1.0625rem;                      /* 14px → 17px */
-  --text-sm--line-height: calc(1.625 / 1.0625);
-  --text-base: 1.125rem;                     /* 16px → 18px */
-  --text-base--line-height: calc(1.75 / 1.125);
-  --text-lg: 1.25rem;                        /* 18px → 20px */
-  --text-lg--line-height: calc(1.875 / 1.25);
+  --text-xs: 1rem;                           /* 12px → 16px */
+  --text-xs--line-height: 1.5;
+  --text-sm: 1.125rem;                       /* 14px → 18px */
+  --text-sm--line-height: 1.5;
+  --text-base: 1.25rem;                      /* 16px → 20px */
+  --text-base--line-height: 1.55;
+  --text-lg: 1.375rem;                       /* 18px → 22px */
+  --text-lg--line-height: 1.5;
+  --text-xl: 1.5rem;                         /* 20px → 24px */
+  --text-xl--line-height: 1.4;
+  --text-2xl: 1.75rem;                       /* 24px → 28px */
+  --text-2xl--line-height: 1.3;
+  --text-3xl: 2.125rem;                      /* 30px → 34px */
+  --text-3xl--line-height: 1.25;
+  --text-4xl: 2.5rem;                        /* 36px → 40px */
+  --text-4xl--line-height: 1.18;
+  --text-5xl: 3.25rem;                       /* 48px → 52px */
+  --text-5xl--line-height: 1.1;
+  --text-6xl: 4rem;                          /* 60px → 64px */
+  --text-6xl--line-height: 1.08;
+  --text-7xl: 4.75rem;                       /* 72px → 76px */
+  --text-7xl--line-height: 1.05;
 
   /* Nav chrome deliberately sits OUTSIDE the scale above. Six links plus two
      buttons have to fit one row before the hamburger takes over, so growing
      these with body copy just makes "Learning Experiences" wrap. */
   --text-nav: 1rem;
   --text-nav--line-height: calc(1.5 / 1);
+
+  /* ---- Weights ----
+     Quicksand at 400 read thin and washed-out on cream, and parents scanning
+     on a phone called the copy "dull". The whole site therefore sits a step
+     up the weight scale as well as the size scale: every name here means one
+     notch heavier than Tailwind's, so `font-semibold` on a chip is a real
+     600→700 and body copy underneath it is 600.
+
+     `bold` stops at 800 because that is the top of Baloo 2, the heading face.
+     Quicksand tops out at 700, so body-font text asking for `font-bold`
+     renders at 700 — the nearest weight loaded — which is why `semibold` and
+     `bold` look the same on body copy and different on a heading. */
+  --font-weight-normal: 500;
+  --font-weight-medium: 600;
+  --font-weight-semibold: 700;
+  --font-weight-bold: 800;
 }
 
 :root {
@@ -196,15 +240,18 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
-    /* Quicksand at 400 reads thin and washed-out on cream at these sizes —
-       parents scanning on a phone described the copy as "dull". The whole
-       site therefore sits one step up the scale: body copy is 500, and the
-       `font-semibold` labels and chips stay a visible step above it. */
-    font-weight: 500;
+    /* Body copy is 600 — see the weight block in `@theme`. The chips and
+       labels that have to sit a visible step above it get there through
+       `font-semibold`, which is 700 here. */
+    font-weight: 600;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    font-weight: 700;
+    /* 800 is the top weight loaded for Baloo 2. Most headings also carry an
+       explicit `font-bold`, and a utility class outranks an element
+       selector — so this only lands on the ones that don't. `font-bold` is
+       redefined to the same 800 to keep the two in step. */
+    font-weight: 800;
   }
 }
 
@@ -433,6 +480,42 @@
 @media (prefers-reduced-motion: reduce) {
   .ken-0, .ken-1, .ken-2 { animation: none; transform: none; }
   .ken-progress { animation: none; transform: scaleX(1); }
+}
+
+/* ================================================================
+   THE GOALS DECK
+   Six sticky cards that pile up as the page scrolls, each parking one
+   spine lower than the last. Two numbers do all the work and they must
+   agree with `PEEK` in GoalsSection.tsx:
+
+     --goal-top   where the first card parks. The nav is fixed and 80px
+                  tall, so anything less than that hides the card under it.
+     --goal-peek  the offset between cards, and the height of the coloured
+                  spine, so the stacked spines land in an even row.
+
+   Six offsets plus a card have to fit one viewport, which is what keeps
+   the peek at 48px and the phone card photo-free.
+   ================================================================ */
+.goal-deck {
+  --goal-top: 5.75rem;
+  --goal-peek: 3rem;
+}
+
+/* The shrink as a card is buried. `--covered` is measured and published by
+   the section's own effect — see the comment there for why it cannot be a
+   pure CSS trigger. Scaling from the top edge keeps the spine where it is
+   and pulls the sides in, so a covered card reads as one sheet under
+   another rather than as a panel that moved. */
+.goal-card {
+  transform: scale(calc(1 - 0.045 * var(--covered, 0)));
+  transform-origin: top center;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* The stacking itself stays — it is layout, not motion — but nothing
+     scales, and the effect that measures it never runs. */
+  .goal-card { transform: none; }
 }
 
 @layer utilities {

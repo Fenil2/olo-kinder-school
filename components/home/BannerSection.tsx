@@ -5,16 +5,23 @@ import { BannerCarousel, type BannerSlide } from '@/components/home/BannerCarous
 import { MarqueeRibbon } from '@/components/home/MarqueeRibbon'
 
 /**
- * Three moments, chosen to be three different places: inside at play, inside
- * at work, and outdoors. A carousel of near-identical classroom shots reads as
- * a loading bug rather than as a tour.
+ * Four moments, chosen to be four different places: block play, puppet play,
+ * inside at work, and outdoors. A carousel of near-identical classroom shots
+ * reads as a loading bug rather than as a tour.
  *
- * The `lift` on each is not decoration. These stills were graded dark to sit
- * behind white headline text, and they average a third below the rest of the
- * library. Each is lifted to the same mid point, capped at the factor where
- * its own brightest 0.1% would begin to clip.
+ * The `lift` on each is not decoration. Most of these stills were graded dark
+ * to sit behind white headline text, and they average a third below the rest
+ * of the library. Each is lifted to the same mid point, capped at the factor
+ * where its own brightest 0.1% would begin to clip.
  */
 const SLIDES: BannerSlide[] = [
+  {
+    // The one still that arrived ungraded — already at the library's mid point
+    // with the white shelving near clipping, so it takes no lift at all.
+    src: '/hero-image.jpg',
+    alt: 'Four Olo Kinder children building towers together from coloured blocks at a table',
+    lift: '',
+  },
   {
     src: '/images/classroom-colorful-wide.jpg',
     alt: 'Two Olo Kinder children laughing as they play with hand puppets in the activity room',
@@ -53,10 +60,11 @@ const SLIDES: BannerSlide[] = [
  * The lockup is anchored to the same left margin as the admissions badge in
  * the opposite corner, so the two read as one frame around the picture.
  */
-export function BannerSection() {
+export function 
+BannerSection() {
   return (
     <section className="relative band-cream overflow-hidden">
-      {/* The band is three stills that cross-dissolve on a timer, each
+      {/* The band is four stills that cross-dissolve on a timer, each
           drifting slowly across the frame, under a slow wash of brand-
           coloured light. It runs edge to edge, and only its top edge is
           scalloped — the foot meets the ribbon square. */}

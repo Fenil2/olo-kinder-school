@@ -12,7 +12,7 @@ export default function SeniorKindergarten() {
     <>
       <Navigation />
       <main className="pt-20">
-        <HeroSection title={seniorKindergarten.title} />
+        <HeroSection programme={seniorKindergarten} />
         <ProgrammeNav current={seniorKindergarten.slug} />
         <MascotGuidesSection />
         <ModulesSection modules={seniorKindergarten.modules} />

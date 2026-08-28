@@ -173,14 +173,18 @@ export function Navigation() {
           <div className="hidden xl:flex items-center gap-3 shrink-0">
             <a
               href={PHONE_HREF}
-              className="flex items-center gap-2 border border-border text-foreground px-4 py-2 rounded-full hover:border-primary hover:text-primary transition-colors font-semibold text-sm"
+              /* `text-nav`, not `text-sm`: these two sit in the same one-row
+                 budget as the links beside them, so they stay out of the body
+                 scale for the same reason the links do. The mobile panel's
+                 copies of them are a stacked column and keep `text-sm`. */
+              className="flex items-center gap-2 border border-border text-foreground px-4 py-2 rounded-full hover:border-primary hover:text-primary transition-colors font-semibold text-nav"
             >
               <MdPhone size={16} />
               <span>{PHONE}</span>
             </a>
             <Link
               href="/admissions#enquiry"
-              className="bg-accent text-accent-foreground px-5 py-2 rounded-full hover:bg-accent-hover transition-colors font-semibold text-sm shadow-sm"
+              className="bg-accent text-accent-foreground px-5 py-2 rounded-full hover:bg-accent-hover transition-colors font-semibold text-nav shadow-sm"
             >
               Admissions Open Now
             </Link>

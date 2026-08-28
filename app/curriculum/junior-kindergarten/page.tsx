@@ -12,7 +12,7 @@ export default function JuniorKindergarten() {
     <>
       <Navigation />
       <main className="pt-20">
-        <HeroSection title={juniorKindergarten.title} />
+        <HeroSection programme={juniorKindergarten} />
         <ProgrammeNav current={juniorKindergarten.slug} />
         <MascotGuidesSection />
         <ModulesSection modules={juniorKindergarten.modules} />

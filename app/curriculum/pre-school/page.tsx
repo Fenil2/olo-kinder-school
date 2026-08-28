@@ -12,7 +12,7 @@ export default function PreSchool() {
     <>
       <Navigation />
       <main className="pt-20">
-        <HeroSection title={preSchool.title} />
+        <HeroSection programme={preSchool} />
         <ProgrammeNav current={preSchool.slug} />
         <MascotGuidesSection />
         <ModulesSection modules={preSchool.modules} />

@@ -15,10 +15,35 @@ export interface Module {
   storybook?: Storybook
 }
 
+/**
+ * One photograph behind a programme page's opening band. The twin of `Banner`
+ * in lib/enrichment.ts — the two pages' heroes are the same band — and it is
+ * spelled out again here rather than imported so this file stays a plain
+ * content file with no cross-section dependency.
+ *
+ * `lift` is the correction the home banner applies. These three stills come
+ * from the library that was graded dark to sit behind white headline text, and
+ * they measure a third below the ungraded frames, so each is lifted back to
+ * that mid point and then held a couple of points under the factor where its
+ * own brightest 0.1% would start to clip.
+ */
+export interface Banner {
+  src: string
+  alt: string
+  lift: string
+  /** Tailwind `object-position` for a still whose subject is off centre. */
+  position?: string
+}
+
 export interface Programme {
   slug: string
   navLabel: string
   title: string
+  /**
+   * The still behind the opening band. One apiece: these pages are read
+   * rather than browsed, so the band names the programme and stays put.
+   */
+  banners: Banner[]
   modules: Module[]
 }
 
@@ -26,6 +51,14 @@ export const preSchool: Programme = {
   slug: 'pre-school',
   navLabel: 'Pre-School',
   title: 'Pre-School',
+  // Puppet play: the youngest room, and the least desk-bound of the three.
+  banners: [
+    {
+      src: '/images/hero-pre-school.jpg',
+      alt: 'Two Olo Kinder children laughing as they play with hand puppets in the activity room',
+      lift: 'brightness-[1.31] saturate-[1.06]',
+    },
+  ],
   modules: [
     {
       label: 'Module 1',
@@ -63,6 +96,15 @@ export const juniorKindergarten: Programme = {
   slug: 'junior-kindergarten',
   navLabel: 'Junior Kindergarten',
   title: 'Junior Kindergarten',
+  // Building together: the year the modules turn to colours, shapes and
+  // patterns, which is what a table of blocks is.
+  banners: [
+    {
+      src: '/images/hero-jkg.jpg',
+      alt: 'Five Olo Kinder children building towers from coloured blocks around a table',
+      lift: 'brightness-[1.28] saturate-[1.05]',
+    },
+  ],
   modules: [
     {
       label: 'Module 1',
@@ -122,6 +164,15 @@ export const seniorKindergarten: Programme = {
   slug: 'senior-kindergarten',
   navLabel: 'Senior Kindergarten',
   title: 'Senior Kindergarten',
+  // Pencils and paper: the oldest room, and the closest of the three to the
+  // school year that follows it.
+  banners: [
+    {
+      src: '/images/hero-skg.jpg',
+      alt: 'Two Olo Kinder children writing carefully with coloured pencils at a classroom table',
+      lift: 'brightness-[1.38] saturate-[1.06]',
+    },
+  ],
   modules: [
     {
       label: 'Module 1',

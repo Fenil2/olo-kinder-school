@@ -4,7 +4,7 @@ import { BannerSection } from '@/components/home/BannerSection'
 import { HeroSection } from '@/components/home/HeroSection'
 import { MascotsSection } from '@/components/home/MascotsSection'
 import { WhySection } from '@/components/home/WhySection'
-import { ExperiencesSection } from '@/components/home/ExperiencesSection'
+import { GoalsSection } from '@/components/home/GoalsSection'
 import { LearningJourneySection } from '@/components/home/LearningJourneySection'
 import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { AdmissionsCtaSection } from '@/components/home/AdmissionsCtaSection'
@@ -19,7 +19,11 @@ export default function Home() {
         <HeroSection />
         <MascotsSection />
         <WhySection />
-        <ExperiencesSection />
+        {/* "Learning Through Experiences" is parked, not deleted — the section
+            still lives at components/home/ExperiencesSection.tsx, and the same
+            six experiences are on /learning-experiences. The goals deck takes
+            its slot in the cream band between "Why" and the journey. */}
+        <GoalsSection />
         <LearningJourneySection />
         <TestimonialsSection />
         <AdmissionsCtaSection />
