@@ -18,7 +18,7 @@ const points: Point[] = [
     iconColor: 'text-mascot-roundy-dark',
     iconBg: 'bg-mascot-roundy/15',
     accent: 'border-t-mascot-roundy',
-    text: 'Our curriculum emphasizes listening, speaking, music, vocabulary growth, and expressive language through interactive read-aloud sessions, group conversations, musical activities, dramatic play, and language-rich environments.',
+    text: 'At Olo Kinder, storytelling is a powerful tool to ignite imagination and convey important lessons. Our carefully curated stories not only entertain but also teach values such as kindness, perseverance, and respect for diversity. Through these narratives, children learn to appreciate different perspectives and cultures, fostering a global mindset from an early age.',
   },
   {
     Icon: MdForum,

@@ -5,7 +5,7 @@ import { MdChevronLeft, MdChevronRight, MdClose } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
 import { Wave } from '@/components/ui/wave'
 import { Doodle } from '@/components/ui/doodle'
-import { galleryCategories, galleryPhotos } from '@/lib/gallery'
+import { galleryCategories, galleryPhotos, type GalleryPhoto } from '@/lib/gallery'
 
 const ALL = 'all'
 
@@ -17,6 +17,37 @@ export function GalleryGrid() {
     () => (active === ALL ? galleryPhotos : galleryPhotos.filter((p) => p.category === active)),
     [active]
   )
+
+  /* Two columns on a phone, three from `md` up — the same breakpoint the old
+     `columns-2 md:columns-3` used. It has to be state rather than a class now
+     that the packing is done here; the server renders the three-column pack
+     and a phone repacks to two on hydration. */
+  const [columnCount, setColumnCount] = useState(3)
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)')
+    const apply = () => setColumnCount(mq.matches ? 3 : 2)
+    apply()
+    mq.addEventListener('change', apply)
+    return () => mq.removeEventListener('change', apply)
+  }, [])
+
+  /* Shortest-column-first packing. Each tile's height, as a multiple of the
+     column width, is `1 / ratio`, so the running totals below are in column
+     widths and no measuring of the DOM is needed. */
+  const columnised = useMemo(() => {
+    const columns: { photo: GalleryPhoto; index: number }[][] = Array.from(
+      { length: columnCount },
+      () => []
+    )
+    const heights = new Array<number>(columnCount).fill(0)
+    photos.forEach((photo, index) => {
+      let shortest = 0
+      for (let c = 1; c < columnCount; c++) if (heights[c] < heights[shortest]) shortest = c
+      columns[shortest].push({ photo, index })
+      heights[shortest] += 1 / photo.ratio
+    })
+    return columns
+  }, [photos, columnCount])
 
   const close = useCallback(() => setOpenIndex(null), [])
   const step = useCallback(
@@ -59,10 +90,6 @@ export function GalleryGrid() {
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10">
             {filters.map((filter) => {
               const isActive = active === filter.id
-              const count =
-                filter.id === ALL
-                  ? galleryPhotos.length
-                  : galleryPhotos.filter((p) => p.category === filter.id).length
               return (
                 <button
                   key={filter.id}
@@ -78,34 +105,52 @@ export function GalleryGrid() {
                   }`}
                 >
                   {filter.label}
-                  <span className={`ml-2 text-xs ${isActive ? 'opacity-70' : 'opacity-55'}`}>{count}</span>
                 </button>
               )
             })}
           </div>
         </Motion>
 
-        {/* Masonry columns. The library mixes 9:16 video stills with 4:3 and
-            16:9 photos, so every tile takes its photo's own height instead of
-            forcing one aspect — nothing is cropped and nothing is letterboxed. */}
-        <div className="columns-2 md:columns-3 gap-3 sm:gap-5">
-          {photos.map((photo, i) => (
-            <Motion key={photo.src} variant="scale" delay={Math.min(i, 8) * 60} className="break-inside-avoid mb-3 sm:mb-5">
-              <button
-                onClick={() => setOpenIndex(i)}
-                aria-label={`View photo: ${photo.caption}`}
-                className="group block w-full rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-lg transition-shadow cursor-pointer"
-              >
-                {/* No caption over the tile: the photos speak for themselves, and
-                    the caption still reads under the photo in the lightbox. */}
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  loading="lazy"
-                  className="w-full h-auto align-bottom group-hover:scale-105 transition-transform duration-500"
-                />
-              </button>
-            </Motion>
+        {/* Masonry, packed by hand rather than by `columns-*`.
+
+            The library mixes 9:16 phone stills with 4:3 and 16:9 photos, so
+            every tile keeps its photo's own height — nothing is cropped and
+            nothing is letterboxed. CSS multi-column can do that, but it decides
+            for itself where a column breaks: a tile that will not fit in what
+            is left of a column jumps to the next one and leaves the hole
+            behind, which is what put the gaps in this grid.
+
+            So the columns are filled here instead. Each photo goes to whichever
+            column is currently shortest, measured in `1 / ratio` — a tile's
+            height as a multiple of the column's width — and each column is then
+            a plain flex stack that cannot break anywhere. No holes, and the
+            columns finish within a tile of each other. */}
+        <div className="flex items-start gap-3 sm:gap-5">
+          {columnised.map((column, c) => (
+            <div key={c} className="flex min-w-0 flex-1 flex-col gap-3 sm:gap-5">
+              {column.map(({ photo, index }) => (
+                <Motion key={photo.src} variant="scale" delay={Math.min(index, 8) * 60}>
+                  <button
+                    onClick={() => setOpenIndex(index)}
+                    aria-label={`View photo: ${photo.caption}`}
+                    className="group block w-full overflow-hidden rounded-2xl border border-border shadow-sm transition-shadow hover:shadow-lg cursor-pointer"
+                  >
+                    {/* No caption over the tile: the photos speak for
+                        themselves, and the caption still reads under the photo
+                        in the lightbox. The aspect ratio comes from the file,
+                        so the tile is the right size before the photo lands
+                        and the grid never reflows around it. */}
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      loading="lazy"
+                      style={{ aspectRatio: photo.ratio }}
+                      className="block w-full align-bottom object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </button>
+                </Motion>
+              ))}
+            </div>
           ))}
         </div>
       </div>

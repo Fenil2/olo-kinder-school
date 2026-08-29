@@ -11,12 +11,10 @@ interface Goal {
    *  next card has slid over it, so it has to name the goal on its own. */
   label: string
   text: string
-  /** Saturated ink twin for the spine; white type sits on it. */
+  /** Light tab tint of the hue; plum type sits on it. */
   spine: string
-  /** Soft wash of the same hue for the card body. */
+  /** Softer wash of the same hue for the card body. */
   body: string
-  /** The same hue again, raw, for the ghost numeral behind the copy. */
-  tint: string
   image: string
   alt: string
   /** Crop for photos whose subject is not centred. */
@@ -26,16 +24,16 @@ interface Goal {
 
 /**
  * Six goals, six colours, drawn from the brand cast in the order the logo
- * reads. The spine takes each hue's ink twin rather than the pastel: white
- * type on raw coral is 3.3:1, on the twin it is 5.3:1.
+ * reads. The spine takes a light tab tint of each hue and carries plum type,
+ * which keeps the row of tabs quiet next to the photos while still clearing
+ * 6:1.
  */
 const GOALS: Goal[] = [
   {
     label: 'A Joyful Community',
     text: 'To cultivate an enthusiastic community of young learners through quality ECE programmes.',
-    spine: 'bg-mascot-roundy-dark',
+    spine: 'bg-spine-coral',
     body: 'bg-surface-blush',
-    tint: 'text-mascot-roundy',
     image: '/images/moments/link-shapes-smiles.jpeg',
     alt: 'An Olo Kinder child beaming at the camera while linking coloured plastic shapes with a friend',
     /* Her face sits in the top third of a 4:3 frame; centred, the wide crop
@@ -46,9 +44,8 @@ const GOALS: Goal[] = [
   {
     label: 'Thematic Learning',
     text: 'To present thematic learning modules that focus on enriching the creative and divergent thinking skills, and collaboration among students.',
-    spine: 'bg-mascot-starry-dark',
+    spine: 'bg-spine-sun',
     body: 'bg-surface-sand',
-    tint: 'text-mascot-starry',
     image: '/images/art-and-coloring.jpg',
     alt: 'Three Olo Kinder children colouring picture worksheets with pencils at a shared table',
     mascot: 'starry',
@@ -56,9 +53,8 @@ const GOALS: Goal[] = [
   {
     label: 'Whole-Child Growth',
     text: 'To enhance cognitive, emotional, social, and physical development through play-based and experiential learning activities.',
-    spine: 'bg-mascot-hexy-dark',
+    spine: 'bg-spine-sky',
     body: 'bg-surface-sky',
-    tint: 'text-mascot-hexy',
     image: '/images/moments/block-stacking.jpeg',
     alt: 'An Olo Kinder child stacking oversized building blocks in front of a painted mural',
     mascot: 'hexy',
@@ -66,9 +62,8 @@ const GOALS: Goal[] = [
   {
     label: 'Families & Community',
     text: 'To work in partnership with families and the community to cultivate a foundation and passion for lifelong learning.',
-    spine: 'bg-brand-plum',
+    spine: 'bg-spine-plum',
     body: 'bg-surface-lilac',
-    tint: 'text-brand-plum',
     image: '/images/enrichment/parents-banner-1.jpg',
     alt: 'Families and grandparents gathered in the school courtyard for a community day',
     mascot: 'squary',
@@ -76,9 +71,8 @@ const GOALS: Goal[] = [
   {
     label: 'Wonder & Nature',
     text: 'To value the wonders of the world around young learners and respect earthy belongings.',
-    spine: 'bg-mascot-squarey-dark',
+    spine: 'bg-spine-green',
     body: 'bg-surface-leaf',
-    tint: 'text-mascot-squarey',
     image: '/images/nature-discovery.jpg',
     alt: 'Two Olo Kinder children leaning in to look closely at a bush of pink flowers',
     mascot: 'squary',
@@ -86,9 +80,8 @@ const GOALS: Goal[] = [
   {
     label: 'Voice & Expression',
     text: 'To support young kids to showcase their conceptual understanding through clarity of thoughts and expressions.',
-    spine: 'bg-mascot-roundy-dark',
+    spine: 'bg-spine-coral',
     body: 'bg-surface-blush',
-    tint: 'text-mascot-roundy',
     image: '/images/moments/stage-microphone.jpeg',
     alt: 'An Olo Kinder child speaking into a microphone on stage, smiling at the audience',
     /* A 9:16 still in a landscape frame: centred, the crop starts just under
@@ -216,11 +209,7 @@ export function GoalsSection() {
               <article className="goal-card overflow-hidden rounded-3xl border-2 border-white shadow-[0_20px_45px_-22px_rgba(74,61,86,0.55)]">
                 {/* The spine. Its height is exactly one peek, so once the deck
                     is stacked the six read as an even row of tabs. */}
-                <div className={`flex h-12 items-center gap-3 px-4 sm:px-6 text-white ${goal.spine}`}>
-                  <span className="font-heading text-lg font-extrabold tabular-nums">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <span className="h-4 w-px bg-white/45" />
+                <div className={`flex h-12 items-center gap-3 px-4 sm:px-6 text-heading ${goal.spine}`}>
                   <h3 className="min-w-0 truncate font-heading text-base sm:text-lg font-bold tracking-wide">
                     {goal.label}
                   </h3>
@@ -234,17 +223,8 @@ export function GoalsSection() {
                 </div>
 
                 <div className={`relative ${goal.body}`}>
-                  {/* The numeral again, huge and faint, so the card still has
-                      something going on behind the copy. */}
-                  <span
-                    aria-hidden="true"
-                    className={`pointer-events-none absolute -bottom-8 -right-3 font-heading text-[9rem] leading-none font-extrabold opacity-15 select-none ${goal.tint}`}
-                  >
-                    {i + 1}
-                  </span>
-
                   <div className="relative grid items-center gap-6 p-5 sm:p-7 md:grid-cols-[1.15fr_1fr]">
-                    <p className="font-heading text-lg sm:text-xl md:text-2xl font-bold leading-snug text-heading text-pretty">
+                    <p className="font-heading text-lg sm:text-xl md:text-2xl font-semibold leading-snug text-foreground/75 text-pretty">
                       {goal.text}
                     </p>
                     {/* The photo is desktop-only. On a phone the whole point is

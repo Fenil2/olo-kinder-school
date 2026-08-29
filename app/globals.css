@@ -30,6 +30,11 @@
   --color-surface-sand: var(--surface-sand);
   --color-surface-blush: var(--surface-blush);
   --color-surface-mist: var(--surface-mist);
+  --color-spine-coral: var(--spine-coral);
+  --color-spine-sun: var(--spine-sun);
+  --color-spine-sky: var(--spine-sky);
+  --color-spine-plum: var(--spine-plum);
+  --color-spine-green: var(--spine-green);
   --color-heading: var(--heading);
   --color-surface-dark: var(--surface-dark);
   --color-muted-foreground: var(--muted-foreground);
@@ -178,6 +183,16 @@
   --surface-sand: #FCEFCD;   /* sun, 30%   */
   --surface-blush: #FCE9E3;  /* coral, 20% */
   --surface-mist: #F4F1EA;   /* cream, shaded */
+
+  /* Tab tints — a step deeper than the washes above, light enough to carry
+     plum type (6:1 and better) rather than white. Opaque, not alpha: the
+     goal-deck cards overlap, so a translucent tab would show the card under
+     it through the stack. */
+  --spine-coral: #F8C9BC;
+  --spine-sun: #F9E7AF;
+  --spine-sky: #CCE9F2;
+  --spine-plum: #DFD5E8;
+  --spine-green: #D8E4B8;
 
   --muted: #F2EDE3;          /* hovers, chips */
   --muted-foreground: #6E6379;
