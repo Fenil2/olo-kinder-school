@@ -39,7 +39,7 @@ interface Audience {
 const audiences: Audience[] = [
   {
     who: 'Children',
-    lead: 'This ensures that children',
+    lead: 'Evaluation ensures that children',
     Icon: MdChildCare,
     ink: 'text-mascot-squarey-dark',
     panel: 'bg-surface-leaf',
