@@ -53,7 +53,7 @@ export function QuoteSection() {
           <div className="mt-10 flex items-center justify-center gap-4" aria-hidden>
             <span className="h-0 w-16 border-t-2 border-dashed border-white/40 sm:w-28" />
             <img
-              src="https://res.cloudinary.com/xscf9i08/image/upload/starry"
+              src="/images/mascots/starry.webp"
               alt=""
               loading="lazy"
               className="bob w-12 shrink-0 drop-shadow sm:w-14"

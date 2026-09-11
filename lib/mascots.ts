@@ -1,7 +1,7 @@
 /**
  * The four Olo Kinder characters, in the order they appear on the logo banner.
  *
- * Artwork is served from Cloudinary, derived from the master PNGs by
+ * Artwork lives in `public/images/mascots/`, derived from the master PNGs by
  * `scripts/build-brand-assets.py`. Every surface that shows a mascot reads it
  * from here, so re-cropping the art or renaming a character is a one-line
  * change rather than a hunt through a dozen components.
@@ -31,7 +31,7 @@ export const MASCOTS: Mascot[] = [
   {
     name: 'Rolly',
     role: 'Curious Explorer',
-    img: 'https://res.cloudinary.com/xscf9i08/image/upload/rolly',
+    img: '/images/mascots/rolly.webp',
     alt: 'Rolly, the round coral Olo Kinder character, grinning with a wide open mouth',
     ink: 'text-mascot-roundy-dark',
     tint: 'bg-mascot-roundy/15',
@@ -40,7 +40,7 @@ export const MASCOTS: Mascot[] = [
   {
     name: 'Squary',
     role: 'Logical Thinker',
-    img: 'https://res.cloudinary.com/xscf9i08/image/upload/squary',
+    img: '/images/mascots/squary.webp',
     alt: 'Squary, the square green Olo Kinder character, smiling with two front teeth',
     ink: 'text-mascot-squarey-dark',
     tint: 'bg-mascot-squarey/15',
@@ -49,7 +49,7 @@ export const MASCOTS: Mascot[] = [
   {
     name: 'Starry',
     role: 'Creative Dreamer',
-    img: 'https://res.cloudinary.com/xscf9i08/image/upload/starry',
+    img: '/images/mascots/starry.webp',
     alt: 'Starry, the yellow star Olo Kinder character, with a happy curved smile',
     ink: 'text-mascot-starry-dark',
     tint: 'bg-mascot-starry/15',
@@ -58,7 +58,7 @@ export const MASCOTS: Mascot[] = [
   {
     name: 'Hexy',
     role: 'Problem Solver',
-    img: 'https://res.cloudinary.com/xscf9i08/image/upload/hexy',
+    img: '/images/mascots/hexy.webp',
     alt: 'Hexy, the blue many-sided Olo Kinder character, smiling with two front teeth',
     ink: 'text-mascot-hexy-dark',
     tint: 'bg-mascot-hexy/15',

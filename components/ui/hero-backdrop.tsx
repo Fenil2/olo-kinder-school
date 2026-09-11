@@ -59,10 +59,10 @@ export function HeroBackdrop({ nextBand = 'text-background' }: HeroBackdropProps
           are staggered in size and height so the row reads as a crowd rather
           than a set of evenly spaced icons, and each is small enough to clear
           the headline's bottom padding. */}
-      <img src="https://res.cloudinary.com/xscf9i08/image/upload/rolly" alt="" className="absolute bottom-4 left-[36%] w-12 sm:w-16 drop-shadow-sm" />
-      <img src="https://res.cloudinary.com/xscf9i08/image/upload/starry" alt="" className="absolute bottom-6 left-[45%] w-11 sm:w-14 hidden sm:block drop-shadow-sm" />
-      <img src="https://res.cloudinary.com/xscf9i08/image/upload/squary" alt="" className="absolute bottom-5 right-[45%] w-10 sm:w-13 hidden sm:block drop-shadow-sm" />
-      <img src="https://res.cloudinary.com/xscf9i08/image/upload/hexy" alt="" className="absolute bottom-3 right-[35%] w-12 sm:w-16 drop-shadow-sm" />
+      <img src="/images/mascots/rolly.webp" alt="" className="absolute bottom-4 left-[36%] w-12 sm:w-16 drop-shadow-sm" />
+      <img src="/images/mascots/starry.webp" alt="" className="absolute bottom-6 left-[45%] w-11 sm:w-14 hidden sm:block drop-shadow-sm" />
+      <img src="/images/mascots/squary.webp" alt="" className="absolute bottom-5 right-[45%] w-10 sm:w-13 hidden sm:block drop-shadow-sm" />
+      <img src="/images/mascots/hexy.webp" alt="" className="absolute bottom-3 right-[35%] w-12 sm:w-16 drop-shadow-sm" />
     </div>
   )
 }

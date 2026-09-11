@@ -10,10 +10,10 @@ const DOODLES = {
   treeGreen: 'https://res.cloudinary.com/xscf9i08/image/upload/tree-green',
   // The brand cast. Same artwork as `lib/mascots.ts`, reachable by name so a
   // section can scatter a character without importing the whole registry.
-  rolly: 'https://res.cloudinary.com/xscf9i08/image/upload/rolly',
-  squary: 'https://res.cloudinary.com/xscf9i08/image/upload/squary',
-  starry: 'https://res.cloudinary.com/xscf9i08/image/upload/starry',
-  hexy: 'https://res.cloudinary.com/xscf9i08/image/upload/hexy',
+  rolly: '/images/mascots/rolly.webp',
+  squary: '/images/mascots/squary.webp',
+  starry: '/images/mascots/starry.webp',
+  hexy: '/images/mascots/hexy.webp',
 } as const
 
 export type DoodleName = keyof typeof DOODLES

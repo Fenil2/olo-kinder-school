@@ -2,10 +2,10 @@ const VALUES = ['Curious', 'Confident', 'Creative', 'Compassionate', 'Playful', 
 
 /* The four characters take it in turns as the separator between words. */
 const DOTS = [
-  'https://res.cloudinary.com/xscf9i08/image/upload/rolly',
-  'https://res.cloudinary.com/xscf9i08/image/upload/squary',
-  'https://res.cloudinary.com/xscf9i08/image/upload/starry',
-  'https://res.cloudinary.com/xscf9i08/image/upload/hexy',
+  '/images/mascots/rolly.webp',
+  '/images/mascots/squary.webp',
+  '/images/mascots/starry.webp',
+  '/images/mascots/hexy.webp',
 ]
 
 /**

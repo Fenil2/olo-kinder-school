@@ -61,25 +61,25 @@ export function HeroSection() {
 
               {/* The cast stands ON the blob's edge, not floating beside it */}
               <img
-                src="https://res.cloudinary.com/xscf9i08/image/upload/rolly"
+                src="/images/mascots/rolly.webp"
                 alt=""
                 aria-hidden="true"
                 className="pointer-events-none select-none absolute bottom-4 -left-1 sm:left-0 w-16 sm:w-24 drop-shadow-md"
               />
               <img
-                src="https://res.cloudinary.com/xscf9i08/image/upload/hexy"
+                src="/images/mascots/hexy.webp"
                 alt=""
                 aria-hidden="true"
                 className="pointer-events-none select-none absolute -bottom-2 right-4 sm:right-8 w-16 sm:w-24 drop-shadow-md"
               />
               <img
-                src="https://res.cloudinary.com/xscf9i08/image/upload/starry"
+                src="/images/mascots/starry.webp"
                 alt=""
                 aria-hidden="true"
                 className="pointer-events-none select-none absolute -top-3 right-0 sm:-right-2 w-10 sm:w-16 -rotate-12 drop-shadow-md"
               />
               <img
-                src="https://res.cloudinary.com/xscf9i08/image/upload/squary"
+                src="/images/mascots/squary.webp"
                 alt=""
                 aria-hidden="true"
                 className="pointer-events-none select-none absolute top-8 -left-3 w-10 sm:w-16 rotate-6 drop-shadow-md"

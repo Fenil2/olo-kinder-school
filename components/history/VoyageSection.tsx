@@ -33,7 +33,7 @@ const STOPS: Stop[] = [
     frame: 'blob-soft w-full h-72 sm:h-80',
     card: 'bg-surface-blush',
     ring: 'ring-mascot-roundy',
-    mascot: 'https://res.cloudinary.com/xscf9i08/image/upload/rolly',
+    mascot: '/images/mascots/rolly.webp',
     tilt: '-rotate-2',
   },
   {
@@ -55,7 +55,7 @@ const STOPS: Stop[] = [
     frame: 'w-full aspect-3/2 rounded-[2rem]',
     card: 'bg-surface-sky',
     ring: 'ring-mascot-hexy',
-    mascot: 'https://res.cloudinary.com/xscf9i08/image/upload/hexy',
+    mascot: '/images/mascots/hexy.webp',
     tilt: 'rotate-0',
   },
   {
@@ -66,7 +66,7 @@ const STOPS: Stop[] = [
     frame: 'blob-alt w-full h-72 sm:h-80',
     card: 'bg-surface-leaf',
     ring: 'ring-mascot-squarey',
-    mascot: 'https://res.cloudinary.com/xscf9i08/image/upload/squary',
+    mascot: '/images/mascots/squary.webp',
     tilt: 'rotate-2',
   },
 ]

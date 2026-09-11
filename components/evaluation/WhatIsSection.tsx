@@ -38,14 +38,14 @@ export function WhatIsSection() {
               fit="object-contain"
             />
             <img
-              src="https://res.cloudinary.com/xscf9i08/image/upload/rolly"
+              src="/images/mascots/rolly.webp"
               alt=""
               aria-hidden="true"
               loading="lazy"
               className="pointer-events-none select-none absolute -bottom-5 left-4 sm:left-10 w-14 sm:w-20 drop-shadow-md"
             />
             <img
-              src="https://res.cloudinary.com/xscf9i08/image/upload/starry"
+              src="/images/mascots/starry.webp"
               alt=""
               aria-hidden="true"
               loading="lazy"

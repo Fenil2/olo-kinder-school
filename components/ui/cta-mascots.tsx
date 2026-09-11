@@ -1,6 +1,6 @@
 const CAST = [
-  { src: 'https://res.cloudinary.com/xscf9i08/image/upload/hexy',  className: 'left-1 sm:left-6 lg:left-20 bottom-0 w-14 sm:w-24 lg:w-32 -rotate-6' },
-  { src: 'https://res.cloudinary.com/xscf9i08/image/upload/rolly', className: 'right-1 sm:right-6 lg:right-20 bottom-0 w-14 sm:w-24 lg:w-32 rotate-6' },
+  { src: '/images/mascots/hexy.webp',  className: 'left-1 sm:left-6 lg:left-20 bottom-0 w-14 sm:w-24 lg:w-32 -rotate-6' },
+  { src: '/images/mascots/rolly.webp', className: 'right-1 sm:right-6 lg:right-20 bottom-0 w-14 sm:w-24 lg:w-32 rotate-6' },
 ]
 
 /**

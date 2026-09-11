@@ -28,8 +28,8 @@ const FADE_MS = 1100
 const CAST = [
   // Starry sits lower than Hexy: the frosted admissions badge is in this
   // corner, and at the same height as its opposite number the star crowded it.
-  { src: 'https://res.cloudinary.com/xscf9i08/image/upload/starry', style: 'left-[3%] top-[16%] w-12 sm:w-16 lg:w-20', rot: '-9deg', delay: '0s' },
-  { src: 'https://res.cloudinary.com/xscf9i08/image/upload/hexy', style: 'right-[3%] top-[11%] w-11 sm:w-14 lg:w-18', rot: '8deg', delay: '1.4s' },
+  { src: '/images/mascots/starry.webp', style: 'left-[3%] top-[16%] w-12 sm:w-16 lg:w-20', rot: '-9deg', delay: '0s' },
+  { src: '/images/mascots/hexy.webp', style: 'right-[3%] top-[11%] w-11 sm:w-14 lg:w-18', rot: '8deg', delay: '1.4s' },
 ]
 
 /** The band's own height. Overridable because a band that carries a headline

@@ -214,7 +214,7 @@ export function GoalsSection() {
                     {goal.label}
                   </h3>
                   <img
-                    src={`https://res.cloudinary.com/xscf9i08/image/upload/${goal.mascot}`}
+                    src={`/images/mascots/${goal.mascot}.webp`}
                     alt=""
                     aria-hidden="true"
                     loading="lazy"

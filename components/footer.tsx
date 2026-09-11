@@ -9,25 +9,25 @@ export function Footer() {
           offsets are positive: the section clips its overflow, so anything
           hung above the edge loses its head. */}
       <img
-        src="https://res.cloudinary.com/xscf9i08/image/upload/rolly"
+        src="/images/mascots/rolly.webp"
         alt=""
         aria-hidden="true"
         className="pointer-events-none select-none absolute top-2 left-[10%] w-10 sm:w-14"
       />
       <img
-        src="https://res.cloudinary.com/xscf9i08/image/upload/squary"
+        src="/images/mascots/squary.webp"
         alt=""
         aria-hidden="true"
         className="pointer-events-none select-none absolute top-1 left-[24%] w-8 sm:w-12 -rotate-6"
       />
       <img
-        src="https://res.cloudinary.com/xscf9i08/image/upload/starry"
+        src="/images/mascots/starry.webp"
         alt=""
         aria-hidden="true"
         className="pointer-events-none select-none absolute top-1 right-[26%] w-8 sm:w-12 rotate-6"
       />
       <img
-        src="https://res.cloudinary.com/xscf9i08/image/upload/hexy"
+        src="/images/mascots/hexy.webp"
         alt=""
         aria-hidden="true"
         className="pointer-events-none select-none absolute top-2 right-[10%] w-10 sm:w-14"
