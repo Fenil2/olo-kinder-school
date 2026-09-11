@@ -1,7 +1,7 @@
 // Content on these pages is taken verbatim from olokinder.com
 // (/enrichment-programme-for-teachers/, -for-parents/, -for-students/).
-// The photographs are the same files the source pages serve, re-hosted under
-// /images/enrichment/.
+// The photographs are the same files the source pages serve, re-hosted on
+// Cloudinary.
 
 import type { IconType } from 'react-icons'
 import {
@@ -52,7 +52,7 @@ export interface Photo {
  * desktop without softening. The programme's own gallery photographs are not
  * — they are 400-600px with a decorative blob painted into the PNG, which a
  * full-bleed crop cuts through — so the banners are their own set of
- * untouched originals, filed under `/images/enrichment/<page>-banner-*.jpg`.
+ * untouched originals, named `<page>-banner-*` on Cloudinary.
  * The numbered names are the original three per page; anything added since
  * is named for what it shows, since the numbers no longer track the order.
  *
@@ -111,7 +111,7 @@ export const forTeachers: EnrichmentPage = {
     {
       // Shot flat under an overcast sky, so this one takes a large lift —
       // most of it in saturation, to bring the sarees back.
-      src: '/Goal-bg.jpg',
+      src: 'https://res.cloudinary.com/xscf9i08/image/upload/Goal-bg',
       alt: 'The Olo Kinder teaching staff lined up together outside the school',
       lift: 'brightness-[1.05] saturate-[1.08]',
       // A little above centre, so the group sits lower in the band and the
@@ -120,7 +120,7 @@ export const forTeachers: EnrichmentPage = {
     },
   ],
   portrait: {
-    src: '/images/enrichment/teachers-portrait.png',
+    src: 'https://res.cloudinary.com/xscf9i08/image/upload/teachers-portrait',
     alt: 'A trainer addressing a hall of teachers at an Olo Kinder workshop',
   },
   groups: [
@@ -175,13 +175,13 @@ export const forParents: EnrichmentPage = {
   // that stays is a mother and son on stage.
   banners: [
     {
-      src: '/images/enrichment/parents-banner-2.jpg',
+      src: 'https://res.cloudinary.com/xscf9i08/image/upload/parents-banner-2',
       alt: 'A mother and her son receiving a prize on stage at the Mom & Kids celebration',
       lift: 'brightness-[1.02] saturate-[1.02]',
     },
   ],
   portrait: {
-    src: '/images/enrichment/parents-portrait.png',
+    src: 'https://res.cloudinary.com/xscf9i08/image/upload/parents-portrait',
     alt: 'A mother and her daughter behind a decorated Mom & Kids photo frame',
   },
   groups: [
@@ -212,14 +212,14 @@ export const forParents: EnrichmentPage = {
     },
   ],
   gallery: [
-    { src: '/images/enrichment/p1.png', alt: 'Parents gathered around a display of craft work in the garden' },
-    { src: '/images/enrichment/p2.png', alt: 'A family cooking together during a healthy-eating session' },
-    { src: '/images/enrichment/p3.png', alt: 'A father walking his child in to school past a decorated table' },
-    { src: '/images/enrichment/p4.png', alt: 'Parents and their child working on a craft project at a table' },
-    { src: '/images/enrichment/p5.png', alt: 'A mother and daughter posing at the flower-decorated Mom & Kids frame' },
-    { src: '/images/enrichment/p6.png', alt: 'A mother and daughter making a flower pattern together in class' },
-    { src: '/images/enrichment/p7.png', alt: 'Families taking part in a group game in the school courtyard' },
-    { src: '/images/enrichment/p8.png', alt: 'A speaker addressing parents at a school gathering' },
+    { src: 'https://res.cloudinary.com/xscf9i08/image/upload/p1', alt: 'Parents gathered around a display of craft work in the garden' },
+    { src: 'https://res.cloudinary.com/xscf9i08/image/upload/p2', alt: 'A family cooking together during a healthy-eating session' },
+    { src: 'https://res.cloudinary.com/xscf9i08/image/upload/p3', alt: 'A father walking his child in to school past a decorated table' },
+    { src: 'https://res.cloudinary.com/xscf9i08/image/upload/p4', alt: 'Parents and their child working on a craft project at a table' },
+    { src: 'https://res.cloudinary.com/xscf9i08/image/upload/p5', alt: 'A mother and daughter posing at the flower-decorated Mom & Kids frame' },
+    { src: 'https://res.cloudinary.com/xscf9i08/image/upload/p6', alt: 'A mother and daughter making a flower pattern together in class' },
+    { src: 'https://res.cloudinary.com/xscf9i08/image/upload/p7', alt: 'Families taking part in a group game in the school courtyard' },
+    { src: 'https://res.cloudinary.com/xscf9i08/image/upload/p8', alt: 'A speaker addressing parents at a school gathering' },
   ],
 }
 
@@ -232,18 +232,18 @@ export const forStudents: EnrichmentPage = {
   // made outdoors.
   banners: [
     {
-      src: '/images/enrichment/students-banner-1.jpg',
+      src: 'https://res.cloudinary.com/xscf9i08/image/upload/students-banner-1',
       alt: 'Six children holding hand-made weather cut-outs — a flower, a cloud, rain and the sun',
       lift: 'brightness-[1.02] saturate-[1.03]',
     },
     {
-      src: '/images/enrichment/students-banner-2.jpg',
+      src: 'https://res.cloudinary.com/xscf9i08/image/upload/students-banner-2',
       alt: 'Four children making flower trees at a garden table in the school grounds',
       lift: 'brightness-[1.02] saturate-[1.02]',
     },
   ],
   portrait: {
-    src: '/images/enrichment/students-portrait.png',
+    src: 'https://res.cloudinary.com/xscf9i08/image/upload/students-portrait',
     alt: 'A child presenting in front of a hand-painted nature backdrop',
   },
   groups: [
@@ -274,11 +274,11 @@ export const forStudents: EnrichmentPage = {
     },
   ],
   gallery: [
-    { src: '/images/enrichment/s3.png', alt: 'Children holding hand-made weather cut-outs — a flower, a cloud, rain and the sun' },
-    { src: '/images/enrichment/s1.png', alt: 'Children examining the leaves of a young tree in the school grounds' },
-    { src: '/images/enrichment/s2.png', alt: 'Children matching picture cards together at a classroom table' },
-    { src: '/images/enrichment/s4.png', alt: 'Two children looking closely at flowering shrubs on a nature walk' },
-    { src: '/images/enrichment/s5.png', alt: 'A full class seated on the floor for a whole-group session with their teachers' },
+    { src: 'https://res.cloudinary.com/xscf9i08/image/upload/s3', alt: 'Children holding hand-made weather cut-outs — a flower, a cloud, rain and the sun' },
+    { src: 'https://res.cloudinary.com/xscf9i08/image/upload/s1', alt: 'Children examining the leaves of a young tree in the school grounds' },
+    { src: 'https://res.cloudinary.com/xscf9i08/image/upload/s2', alt: 'Children matching picture cards together at a classroom table' },
+    { src: 'https://res.cloudinary.com/xscf9i08/image/upload/s4', alt: 'Two children looking closely at flowering shrubs on a nature walk' },
+    { src: 'https://res.cloudinary.com/xscf9i08/image/upload/s5', alt: 'A full class seated on the floor for a whole-group session with their teachers' },
   ],
 }
 

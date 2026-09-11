@@ -28,10 +28,10 @@ const notes: Note[] = [
 ]
 
 const pillars = [
-  { label: 'Explore', bar: 'bg-mascot-roundy-dark',  img: '/images/art-and-coloring.jpg',    alt: 'A child drawing and colouring at an Olo Kinder table' },
-  { label: 'Discover', bar: 'bg-mascot-hexy-dark',   img: '/images/nature-discovery.jpg',    alt: 'A child examining a plant closely during a nature activity' },
-  { label: 'Create', bar: 'bg-mascot-squarey-dark',  img: '/images/music-and-movement.jpg',  alt: 'A child playing a musical instrument during a music session' },
-  { label: 'Grow', bar: 'bg-mascot-starry-dark',     img: '/images/outdoor-sports.jpg',      alt: 'Children playing an outdoor ball game together' },
+  { label: 'Explore', bar: 'bg-mascot-roundy-dark',  img: 'https://res.cloudinary.com/xscf9i08/image/upload/art-and-coloring',    alt: 'A child drawing and colouring at an Olo Kinder table' },
+  { label: 'Discover', bar: 'bg-mascot-hexy-dark',   img: 'https://res.cloudinary.com/xscf9i08/image/upload/nature-discovery',    alt: 'A child examining a plant closely during a nature activity' },
+  { label: 'Create', bar: 'bg-mascot-squarey-dark',  img: 'https://res.cloudinary.com/xscf9i08/image/upload/music-and-movement',  alt: 'A child playing a musical instrument during a music session' },
+  { label: 'Grow', bar: 'bg-mascot-starry-dark',     img: 'https://res.cloudinary.com/xscf9i08/image/upload/outdoor-sports',      alt: 'Children playing an outdoor ball game together' },
 ]
 
 /* Pinned by hand, not stamped: each card leans a different way, and hovering

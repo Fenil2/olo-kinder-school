@@ -3,9 +3,9 @@ import { Photo } from '@/components/ui/photo'
 import { Wave } from '@/components/ui/wave'
 
 const photos = [
-  { src: '/images/moments/block-stacking.jpeg', alt: 'An Olo Kinder teacher leading an alphabet activity on the classroom floor' },
-  { src: '/images/pretend-play-market.jpg',    alt: 'Children running a pretend market stall during dramatic play' },
-  { src: '/images/art-and-coloring.jpg',       alt: 'Children colouring at a classroom table and holding up their finished drawings' },
+  { src: 'https://res.cloudinary.com/xscf9i08/image/upload/block-stacking', alt: 'An Olo Kinder teacher leading an alphabet activity on the classroom floor' },
+  { src: 'https://res.cloudinary.com/xscf9i08/image/upload/pretend-play-market',    alt: 'Children running a pretend market stall during dramatic play' },
+  { src: 'https://res.cloudinary.com/xscf9i08/image/upload/art-and-coloring',       alt: 'Children colouring at a classroom table and holding up their finished drawings' },
 ]
 
 /* Pinned by hand, not stamped: each card leans a different way, and hovering

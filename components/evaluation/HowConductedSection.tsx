@@ -87,7 +87,7 @@ export function HowConductedSection() {
               {/* Natural ratio, so the frame is exactly the shape of the file
                   and `object-cover` has nothing to crop away. */}
               <Photo
-                src="/images/evaluation/evaluation-three.png"
+                src="https://res.cloudinary.com/xscf9i08/image/upload/evaluation-three"
                 alt="Four Olo Kinder children standing at a table, examining handmade dolls and craft materials"
                 className="rounded-3xl shadow-lg w-full aspect-501/374 max-w-xl"
                 fit="object-contain"
@@ -107,7 +107,7 @@ export function HowConductedSection() {
                   Every year, the students also take up the Summative Tasks at the end of every term. The two terminal assessments are planned to evaluate the learning progression of every child based on the concepts integrated in the Thematic Learning Modules.
                 </p>
                 <Photo
-                  src="/images/evaluation/Frame-193.png"
+                  src="https://res.cloudinary.com/xscf9i08/image/upload/Frame-193"
                   alt="Three Olo Kinder children sitting on the library floor, working with wooden puppets"
                   className="rounded-3xl shadow-lg w-full aspect-501/281"
                   fit="object-contain"
@@ -131,7 +131,7 @@ export function HowConductedSection() {
         {/* Hexy and Squary close the section, standing on the wave below. */}
         <Motion variant="scale">
           <img
-            src="/images/evaluation/Group-27.png"
+            src="https://res.cloudinary.com/xscf9i08/image/upload/Group-27"
             alt=""
             aria-hidden="true"
             loading="lazy"

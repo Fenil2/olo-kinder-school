@@ -34,7 +34,7 @@ const GOALS: Goal[] = [
     text: 'To cultivate an enthusiastic community of young learners through quality ECE programmes.',
     spine: 'bg-spine-coral',
     body: 'bg-surface-blush',
-    image: '/images/moments/link-shapes-smiles.jpeg',
+    image: 'https://res.cloudinary.com/xscf9i08/image/upload/link-shapes-smiles',
     alt: 'An Olo Kinder child beaming at the camera while linking coloured plastic shapes with a friend',
     /* Her face sits in the top third of a 4:3 frame; centred, the wide crop
        would take it off the top. */
@@ -46,7 +46,7 @@ const GOALS: Goal[] = [
     text: 'To present thematic learning modules that focus on enriching the creative and divergent thinking skills, and collaboration among students.',
     spine: 'bg-spine-sun',
     body: 'bg-surface-sand',
-    image: '/images/art-and-coloring.jpg',
+    image: 'https://res.cloudinary.com/xscf9i08/image/upload/art-and-coloring',
     alt: 'Three Olo Kinder children colouring picture worksheets with pencils at a shared table',
     mascot: 'starry',
   },
@@ -55,7 +55,7 @@ const GOALS: Goal[] = [
     text: 'To enhance cognitive, emotional, social, and physical development through play-based and experiential learning activities.',
     spine: 'bg-spine-sky',
     body: 'bg-surface-sky',
-    image: '/images/moments/block-stacking.jpeg',
+    image: 'https://res.cloudinary.com/xscf9i08/image/upload/block-stacking',
     alt: 'An Olo Kinder child stacking oversized building blocks in front of a painted mural',
     mascot: 'hexy',
   },
@@ -64,7 +64,7 @@ const GOALS: Goal[] = [
     text: 'To work in partnership with families and the community to cultivate a foundation and passion for lifelong learning.',
     spine: 'bg-spine-plum',
     body: 'bg-surface-lilac',
-    image: '/images/enrichment/parents-banner-1.jpg',
+    image: 'https://res.cloudinary.com/xscf9i08/image/upload/parents-banner-1',
     alt: 'Families and grandparents gathered in the school courtyard for a community day',
     mascot: 'squary',
   },
@@ -73,7 +73,7 @@ const GOALS: Goal[] = [
     text: 'To value the wonders of the world around young learners and respect earthy belongings.',
     spine: 'bg-spine-green',
     body: 'bg-surface-leaf',
-    image: '/images/nature-discovery.jpg',
+    image: 'https://res.cloudinary.com/xscf9i08/image/upload/nature-discovery',
     alt: 'Two Olo Kinder children leaning in to look closely at a bush of pink flowers',
     mascot: 'squary',
   },
@@ -82,7 +82,7 @@ const GOALS: Goal[] = [
     text: 'To support young kids to showcase their conceptual understanding through clarity of thoughts and expressions.',
     spine: 'bg-spine-coral',
     body: 'bg-surface-blush',
-    image: '/images/moments/stage-microphone.jpeg',
+    image: 'https://res.cloudinary.com/xscf9i08/image/upload/stage-microphone',
     alt: 'An Olo Kinder child speaking into a microphone on stage, smiling at the audience',
     /* A 9:16 still in a landscape frame: centred, the crop starts just under
        her chin. Held high so the face survives. */
@@ -214,7 +214,7 @@ export function GoalsSection() {
                     {goal.label}
                   </h3>
                   <img
-                    src={`/images/mascots/${goal.mascot}.webp`}
+                    src={`https://res.cloudinary.com/xscf9i08/image/upload/${goal.mascot}`}
                     alt=""
                     aria-hidden="true"
                     loading="lazy"

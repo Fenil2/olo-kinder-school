@@ -43,7 +43,7 @@ export function WhoWeAreSection() {
                 back in line here. 1.28 is as far as it goes before the
                 highlights on the tabletop start to clip. */}
             <Photo
-              src="/images/group-photo.jpg"
+              src="https://res.cloudinary.com/xscf9i08/image/upload/group-photo"
               alt="Olo Kinder students and teachers together outside the school"
               className="blob shadow-lg aspect-4/3 w-full"
               imgClassName="brightness-[1.28] saturate-[1.12]"

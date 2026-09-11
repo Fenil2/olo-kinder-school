@@ -32,20 +32,20 @@ export function WhatIsSection() {
         <Motion variant="scale" delay={100}>
           <div className="relative mt-10 sm:mt-14">
             <Photo
-              src="/images/evaluation/evaluation-one.png"
+              src="https://res.cloudinary.com/xscf9i08/image/upload/evaluation-one"
               alt="Olo Kinder children running across the school lawn flying kites together"
               className="rounded-[2rem] shadow-lg w-full aspect-1118/548"
               fit="object-contain"
             />
             <img
-              src="/images/mascots/rolly.webp"
+              src="https://res.cloudinary.com/xscf9i08/image/upload/rolly"
               alt=""
               aria-hidden="true"
               loading="lazy"
               className="pointer-events-none select-none absolute -bottom-5 left-4 sm:left-10 w-14 sm:w-20 drop-shadow-md"
             />
             <img
-              src="/images/mascots/starry.webp"
+              src="https://res.cloudinary.com/xscf9i08/image/upload/starry"
               alt=""
               aria-hidden="true"
               loading="lazy"

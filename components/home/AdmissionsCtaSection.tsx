@@ -8,25 +8,25 @@ export function AdmissionsCtaSection() {
       {/* The cast flanks the enquiry card rather than standing along the
           bottom edge, which the scalloped wave already occupies. */}
       <img
-        src="/images/mascots/rolly.webp"
+        src="https://res.cloudinary.com/xscf9i08/image/upload/rolly"
         alt=""
         aria-hidden="true"
         className="pointer-events-none select-none absolute z-0 left-4 xl:left-16 top-1/3 w-12 sm:w-20 xl:w-28 -rotate-6 drop-shadow-md"
       />
       <img
-        src="/images/mascots/squary.webp"
+        src="https://res.cloudinary.com/xscf9i08/image/upload/squary"
         alt=""
         aria-hidden="true"
         className="pointer-events-none select-none absolute z-0 left-8 xl:left-24 bottom-28 w-10 sm:w-16 xl:w-20 rotate-6 drop-shadow-md hidden sm:block"
       />
       <img
-        src="/images/mascots/starry.webp"
+        src="https://res.cloudinary.com/xscf9i08/image/upload/starry"
         alt=""
         aria-hidden="true"
         className="pointer-events-none select-none absolute z-0 right-8 xl:right-24 bottom-28 w-10 sm:w-16 xl:w-20 -rotate-6 drop-shadow-md hidden sm:block"
       />
       <img
-        src="/images/mascots/hexy.webp"
+        src="https://res.cloudinary.com/xscf9i08/image/upload/hexy"
         alt=""
         aria-hidden="true"
         className="pointer-events-none select-none absolute z-0 right-4 xl:right-16 top-1/3 w-12 sm:w-20 xl:w-28 rotate-6 drop-shadow-md"

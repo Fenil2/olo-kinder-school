@@ -12,7 +12,7 @@ export default async function AdminLoginPage() {
     <main className="min-h-screen grid place-items-center px-4 py-16">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <img src="/images/brand/olo-globe.webp" alt="Olo Kinder" className="h-16 w-auto mx-auto object-contain" />
+          <img src="https://res.cloudinary.com/xscf9i08/image/upload/olo-globe" alt="Olo Kinder" className="h-16 w-auto mx-auto object-contain" />
           <h1 className="mt-4 text-2xl font-bold text-heading">Admissions Dashboard</h1>
           <p className="mt-1 text-sm text-foreground/80">Sign in to view enquiries.</p>
         </div>

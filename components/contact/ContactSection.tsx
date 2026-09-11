@@ -55,7 +55,7 @@ export function ContactSection() {
               {/* Lifted a stop: this frame is a third darker than the rest of
                   the library, and the label's gradient sits on top of it. */}
               <Photo
-                src="/images/hero-learning.jpg"
+                src="https://res.cloudinary.com/xscf9i08/image/upload/hero-learning"
                 alt="Olo Kinder children making leaf and flower collages together on the school lawn"
                 className="w-full h-full"
                 imgClassName="brightness-[1.2] saturate-[1.1]"

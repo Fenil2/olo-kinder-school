@@ -25,7 +25,7 @@ interface Stop {
 const STOPS: Stop[] = [
   {
     text: 'Olo Kinder is a package of learning modules that aims to develop the divergent thinking skills of young learners between the age group of 3 to 5 years.',
-    image: '/images/moments/link-shapes-building.jpeg',
+    image: 'https://res.cloudinary.com/xscf9i08/image/upload/link-shapes-building',
     alt: 'An Olo Kinder child concentrating as she links green plastic shapes together at a classroom table',
     /* A 3:4 still: her face sits in the upper third, so a landscape frame has
        to be held high to keep it. */
@@ -33,7 +33,7 @@ const STOPS: Stop[] = [
     frame: 'blob-soft w-full h-72 sm:h-80',
     card: 'bg-surface-blush',
     ring: 'ring-mascot-roundy',
-    mascot: '/images/mascots/rolly.webp',
+    mascot: 'https://res.cloudinary.com/xscf9i08/image/upload/rolly',
     tilt: '-rotate-2',
   },
   {
@@ -47,7 +47,7 @@ const STOPS: Stop[] = [
         students gain the relevant aptitude to read, write and speak fluently.
       </>
     ),
-    image: '/images/about-5.jpg',
+    image: 'https://res.cloudinary.com/xscf9i08/image/upload/about-5',
     alt: 'Pages from Olo Kinder thematic modules — a blended learning station and a storybook spread depicting Indian culture — with the brand cast walking below them',
     /* Module artwork, not a photograph: it takes a plain rounded frame at the
        source file's own 3:2, so the labels printed in it survive. A blob would
@@ -55,18 +55,18 @@ const STOPS: Stop[] = [
     frame: 'w-full aspect-3/2 rounded-[2rem]',
     card: 'bg-surface-sky',
     ring: 'ring-mascot-hexy',
-    mascot: '/images/mascots/hexy.webp',
+    mascot: 'https://res.cloudinary.com/xscf9i08/image/upload/hexy',
     tilt: 'rotate-0',
   },
   {
     text: 'We believe that students will gain rich experiences through Olo Kinder modules that will enable them to construct their knowledge meaningfully and develop a deeper understanding of the world around them.',
-    image: '/images/about-4.jpg',
+    image: 'https://res.cloudinary.com/xscf9i08/image/upload/about-4',
     alt: 'Three Olo Kinder children drawing and colouring their module worksheets with coloured pencils at a classroom table',
     focus: 'object-[55%_50%]',
     frame: 'blob-alt w-full h-72 sm:h-80',
     card: 'bg-surface-leaf',
     ring: 'ring-mascot-squarey',
-    mascot: '/images/mascots/squary.webp',
+    mascot: 'https://res.cloudinary.com/xscf9i08/image/upload/squary',
     tilt: 'rotate-2',
   },
 ]

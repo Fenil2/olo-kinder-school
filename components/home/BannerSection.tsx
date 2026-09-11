@@ -18,22 +18,22 @@ const SLIDES: BannerSlide[] = [
   {
     // The one still that arrived ungraded — already at the library's mid point
     // with the white shelving near clipping, so it takes no lift at all.
-    src: '/hero-image.jpg',
+    src: 'https://res.cloudinary.com/xscf9i08/image/upload/hero-image',
     alt: 'Four Olo Kinder children building towers together from coloured blocks at a table',
     lift: '',
   },
   {
-    src: '/images/classroom-colorful-wide.jpg',
+    src: 'https://res.cloudinary.com/xscf9i08/image/upload/classroom-colorful-wide',
     alt: 'Two Olo Kinder children laughing as they play with hand puppets in the activity room',
     lift: 'brightness-[1.31] saturate-[1.06]',
   },
   {
-    src: '/images/classroom-writing-wide.jpg',
+    src: 'https://res.cloudinary.com/xscf9i08/image/upload/classroom-writing-wide',
     alt: 'Two Olo Kinder children writing carefully with coloured pencils at a classroom table',
     lift: 'brightness-[1.38] saturate-[1.06]',
   },
   {
-    src: '/images/hero-learning.jpg',
+    src: 'https://res.cloudinary.com/xscf9i08/image/upload/hero-learning',
     alt: 'Four Olo Kinder children making flower and leaf pictures at a table in the garden',
     lift: 'brightness-[1.22] saturate-[1.04]',
   },
@@ -86,7 +86,7 @@ BannerSection() {
         <div className="pointer-events-none hidden sm:block absolute z-3 left-3 sm:left-6 lg:left-10 right-3 sm:right-40 bottom-6 sm:bottom-9 lg:bottom-11">
           <Motion variant="up" delay={120}>
             <img
-              src="/images/brand/olo-logo.webp"
+              src="https://res.cloudinary.com/xscf9i08/image/upload/olo-logo"
               alt="Olo Kinder"
               width={1200}
               height={630}

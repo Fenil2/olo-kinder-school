@@ -22,7 +22,7 @@ export function QuoteSection() {
           still is only 741px wide, which the scrim also covers for: whatever
           softness comes of stretching it across the band goes under the plum. */}
       <img
-        src="/images/beadwork-play.jpg"
+        src="https://res.cloudinary.com/xscf9i08/image/upload/beadwork-play"
         alt=""
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover object-center"
@@ -31,7 +31,7 @@ export function QuoteSection() {
 
       {/* The globe, kept as a watermark over the photo. */}
       <img
-        src="/images/brand/olo-globe.webp"
+        src="https://res.cloudinary.com/xscf9i08/image/upload/olo-globe"
         alt=""
         aria-hidden="true"
         loading="lazy"
@@ -53,7 +53,7 @@ export function QuoteSection() {
           <div className="mt-10 flex items-center justify-center gap-4" aria-hidden>
             <span className="h-0 w-16 border-t-2 border-dashed border-white/40 sm:w-28" />
             <img
-              src="/images/mascots/starry.webp"
+              src="https://res.cloudinary.com/xscf9i08/image/upload/starry"
               alt=""
               loading="lazy"
               className="bob w-12 shrink-0 drop-shadow sm:w-14"

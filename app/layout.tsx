@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   description: 'Olo Kinder is a unique early childhood learning initiative designed to nurture curious, confident, creative and compassionate young learners through play, exploration, creativity, and discovery.',
   icons: {
     icon: [
-      { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
-      { url: '/icon-dark-32x32.png', media: '(prefers-color-scheme: dark)' },
+      { url: 'https://res.cloudinary.com/xscf9i08/image/upload/icon-light-32x32', media: '(prefers-color-scheme: light)' },
+      { url: 'https://res.cloudinary.com/xscf9i08/image/upload/icon-dark-32x32', media: '(prefers-color-scheme: dark)' },
     ],
-    apple: '/apple-icon.png',
+    apple: 'https://res.cloudinary.com/xscf9i08/image/upload/apple-icon',
   },
 }
 

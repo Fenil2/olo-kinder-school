@@ -30,7 +30,7 @@ const experiences: Exp[] = [
     tagBg: 'bg-mascot-roundy/15',
     desc: 'Interactive stories, picture talks, and role play help children build imagination, vocabulary, listening skills, and confidence in expression.',
     skills: ['Imagination', 'Vocabulary', 'Listening'],
-    img: '/images/moments/stage-microphone.jpeg',
+    img: 'https://res.cloudinary.com/xscf9i08/image/upload/stage-microphone',
     // A 9:16 phone still: her face sits about a third of the way down.
     focus: 'object-[50%_30%]',
   },
@@ -41,7 +41,7 @@ const experiences: Exp[] = [
     tagBg: 'bg-mascot-squarey/15',
     desc: 'Age-appropriate puzzles, matching games, memory tasks, and logic activities strengthen focus, problem-solving, and early thinking skills.',
     skills: ['Focus', 'Problem-solving', 'Memory'],
-    img: '/images/montessori-materials.jpg',
+    img: 'https://res.cloudinary.com/xscf9i08/image/upload/montessori-materials',
   },
   {
     title: 'Art & Craft',
@@ -50,7 +50,7 @@ const experiences: Exp[] = [
     tagBg: 'bg-mascot-starry/15',
     desc: 'Drawing, colouring, painting, and craft work give children joyful ways to explore colours, textures, creativity, and fine motor control.',
     skills: ['Creativity', 'Fine motor skills', 'Self-expression'],
-    img: '/images/art-and-coloring.jpg',
+    img: 'https://res.cloudinary.com/xscf9i08/image/upload/art-and-coloring',
   },
   {
     title: 'DIY Projects',
@@ -59,7 +59,7 @@ const experiences: Exp[] = [
     tagBg: 'bg-mascot-hexy/15',
     desc: 'Simple hands-on projects encourage children to plan, build, try ideas, and learn through practical making and discovery.',
     skills: ['Planning', 'Hands-on learning', 'Discovery'],
-    img: '/images/moments/block-stacking.jpeg',
+    img: 'https://res.cloudinary.com/xscf9i08/image/upload/block-stacking',
   },
   {
     title: 'Dance & Music',
@@ -68,7 +68,7 @@ const experiences: Exp[] = [
     tagBg: 'bg-mascot-starry/15',
     desc: 'Songs, rhythm, movement, and dance activities support coordination, joyful expression, listening, and a natural sense of beat.',
     skills: ['Rhythm', 'Coordination', 'Expression'],
-    img: '/images/moments/action-song.jpeg',
+    img: 'https://res.cloudinary.com/xscf9i08/image/upload/action-song',
     // Another 9:16 still; this anchor keeps all three dancers' faces in frame.
     focus: 'object-[50%_32%]',
   },
@@ -79,7 +79,7 @@ const experiences: Exp[] = [
     tagBg: 'bg-mascot-roundy/15',
     desc: 'Collaborative games and shared tasks help children practise teamwork, communication, turn-taking, empathy, and friendship skills.',
     skills: ['Teamwork', 'Communication', 'Empathy'],
-    img: '/images/hero-school-entrance.jpg',
+    img: 'https://res.cloudinary.com/xscf9i08/image/upload/hero-school-entrance',
   },
 ]
 

@@ -3,9 +3,9 @@ import { Photo } from '@/components/ui/photo'
 import { Wave } from '@/components/ui/wave'
 
 const photos = [
-  { src: '/images/campus-walk.jpg',      alt: 'Olo Kinder children in uniform walking together through the school courtyard' },
-  { src: '/images/moments/stage-microphone.jpeg', alt: 'A child in festival dress speaking into a microphone on stage in front of her classmates' },
-  { src: '/images/art-and-coloring.jpg', alt: 'Children colouring at a classroom table and holding up their finished drawings' },
+  { src: 'https://res.cloudinary.com/xscf9i08/image/upload/campus-walk',      alt: 'Olo Kinder children in uniform walking together through the school courtyard' },
+  { src: 'https://res.cloudinary.com/xscf9i08/image/upload/stage-microphone', alt: 'A child in festival dress speaking into a microphone on stage in front of her classmates' },
+  { src: 'https://res.cloudinary.com/xscf9i08/image/upload/art-and-coloring', alt: 'Children colouring at a classroom table and holding up their finished drawings' },
 ]
 
 /* Pinned by hand, not stamped: each card leans a different way, and hovering

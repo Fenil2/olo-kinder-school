@@ -1,19 +1,19 @@
 import type { CSSProperties } from 'react'
 
 const DOODLES = {
-  snail: '/images/doodles/snail.svg',
-  butterfly: '/images/doodles/butterfly.svg',
-  cloud: '/images/doodles/cloud.svg',
-  leaf1: '/images/doodles/leaf-1.svg',
-  leaf2: '/images/doodles/leaf-2.svg',
-  treeOrange: '/images/doodles/tree-orange.svg',
-  treeGreen: '/images/doodles/tree-green.svg',
+  snail: 'https://res.cloudinary.com/xscf9i08/image/upload/snail',
+  butterfly: 'https://res.cloudinary.com/xscf9i08/image/upload/butterfly',
+  cloud: 'https://res.cloudinary.com/xscf9i08/image/upload/cloud',
+  leaf1: 'https://res.cloudinary.com/xscf9i08/image/upload/leaf-1',
+  leaf2: 'https://res.cloudinary.com/xscf9i08/image/upload/leaf-2',
+  treeOrange: 'https://res.cloudinary.com/xscf9i08/image/upload/tree-orange',
+  treeGreen: 'https://res.cloudinary.com/xscf9i08/image/upload/tree-green',
   // The brand cast. Same artwork as `lib/mascots.ts`, reachable by name so a
   // section can scatter a character without importing the whole registry.
-  rolly: '/images/mascots/rolly.webp',
-  squary: '/images/mascots/squary.webp',
-  starry: '/images/mascots/starry.webp',
-  hexy: '/images/mascots/hexy.webp',
+  rolly: 'https://res.cloudinary.com/xscf9i08/image/upload/rolly',
+  squary: 'https://res.cloudinary.com/xscf9i08/image/upload/squary',
+  starry: 'https://res.cloudinary.com/xscf9i08/image/upload/starry',
+  hexy: 'https://res.cloudinary.com/xscf9i08/image/upload/hexy',
 } as const
 
 export type DoodleName = keyof typeof DOODLES

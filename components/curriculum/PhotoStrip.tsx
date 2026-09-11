@@ -3,9 +3,9 @@ import { Photo } from '@/components/ui/photo'
 import { Wave } from '@/components/ui/wave'
 
 const photos = [
-  { src: '/images/montessori-materials.jpg',       alt: 'Children working with hands-on Montessori puzzles and counting materials' },
-  { src: '/images/moments/link-shapes-smiles.jpeg', alt: 'Two Olo Kinder children smiling as they link colourful plastic shapes together at a classroom table' },
-  { src: '/images/classroom-whiteboard-wide.jpg',  alt: 'A teacher leading an alphabet lesson at the whiteboard in an Olo Kinder classroom' },
+  { src: 'https://res.cloudinary.com/xscf9i08/image/upload/montessori-materials',       alt: 'Children working with hands-on Montessori puzzles and counting materials' },
+  { src: 'https://res.cloudinary.com/xscf9i08/image/upload/link-shapes-smiles', alt: 'Two Olo Kinder children smiling as they link colourful plastic shapes together at a classroom table' },
+  { src: 'https://res.cloudinary.com/xscf9i08/image/upload/classroom-whiteboard-wide',  alt: 'A teacher leading an alphabet lesson at the whiteboard in an Olo Kinder classroom' },
 ]
 
 // Short strip, so it takes the small divider plus enough bottom padding to

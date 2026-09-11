@@ -5,7 +5,7 @@ import { Wave } from '@/components/ui/wave'
  * The sample rubrics.
  *
  * These ship from the source site as one flat screenshot
- * (`/images/evaluation/report-card.jpg`, still in the repo). Set as real
+ * (`https://res.cloudinary.com/xscf9i08/image/upload/report-card`, still on Cloudinary). Set as real
  * tables instead, they reflow, stay sharp at any zoom, are read correctly by
  * a screen reader, and pick up the brand's own ink — none of which a picture
  * of a table can do. The wording is transcribed from that screenshot exactly.
@@ -106,7 +106,7 @@ export function RubricsSection() {
           <div className="text-center mb-10 sm:mb-12">
             {/* Starry at the mic, announcing the section, as on the source page. */}
             <img
-              src="/images/evaluation/star-with-mic.png"
+              src="https://res.cloudinary.com/xscf9i08/image/upload/star-with-mic"
               alt=""
               aria-hidden="true"
               loading="lazy"

@@ -9,25 +9,25 @@ export function Footer() {
           offsets are positive: the section clips its overflow, so anything
           hung above the edge loses its head. */}
       <img
-        src="/images/mascots/rolly.webp"
+        src="https://res.cloudinary.com/xscf9i08/image/upload/rolly"
         alt=""
         aria-hidden="true"
         className="pointer-events-none select-none absolute top-2 left-[10%] w-10 sm:w-14"
       />
       <img
-        src="/images/mascots/squary.webp"
+        src="https://res.cloudinary.com/xscf9i08/image/upload/squary"
         alt=""
         aria-hidden="true"
         className="pointer-events-none select-none absolute top-1 left-[24%] w-8 sm:w-12 -rotate-6"
       />
       <img
-        src="/images/mascots/starry.webp"
+        src="https://res.cloudinary.com/xscf9i08/image/upload/starry"
         alt=""
         aria-hidden="true"
         className="pointer-events-none select-none absolute top-1 right-[26%] w-8 sm:w-12 rotate-6"
       />
       <img
-        src="/images/mascots/hexy.webp"
+        src="https://res.cloudinary.com/xscf9i08/image/upload/hexy"
         alt=""
         aria-hidden="true"
         className="pointer-events-none select-none absolute top-2 right-[10%] w-10 sm:w-14"
@@ -39,7 +39,7 @@ export function Footer() {
             {/* Brand */}
             <div className="md:col-span-1">
               <Link href="/">
-                <Image src="/images/brand/olo-globe.webp" alt="Olo Kinder" width={820} height={900} className="h-28 sm:h-32 w-auto object-contain mb-3" />
+                <Image src="https://res.cloudinary.com/xscf9i08/image/upload/olo-globe" alt="Olo Kinder" width={820} height={900} className="h-28 sm:h-32 w-auto object-contain mb-3" />
               </Link>
               <p className="text-sm text-white/70 leading-relaxed">
                 Nurturing curious, confident, creative and compassionate young learners.

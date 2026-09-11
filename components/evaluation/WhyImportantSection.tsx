@@ -173,7 +173,7 @@ export function WhyImportantSection() {
               section before the picture of it at every width. */}
           <Motion variant="right" delay={120} className="order-first lg:order-0 lg:relative">
             <Photo
-              src="/images/evaluation/D.png"
+              src="https://res.cloudinary.com/xscf9i08/image/upload/D"
               alt="An Olo Kinder teacher helping two children water a young sapling in the school garden"
               className="h-64 sm:h-80 w-full rounded-[2rem] shadow-lg lg:absolute lg:inset-0 lg:h-full"
               /* The teacher and the two children sit just below the middle of
@@ -193,7 +193,7 @@ export function WhyImportantSection() {
             its own size, which is as far as it goes before that shows. */}
         <Motion variant="scale">
           <Photo
-            src="/images/evaluation/evaluation-two.png"
+            src="https://res.cloudinary.com/xscf9i08/image/upload/evaluation-two"
             alt="An Olo Kinder child dressed as Santa carrying a large wrapped gift at the Christmas celebration"
             className="rounded-[2rem] shadow-lg w-full max-w-7xl mx-auto aspect-1119/417 mt-12 sm:mt-16"
             fit="object-contain"

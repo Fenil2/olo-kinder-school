@@ -94,7 +94,7 @@ export function Navigation() {
 
           {/* Logo — hard left, and the only fixed point in the row */}
           <Link href="/" className="shrink-0">
-            <Image src="/images/brand/olo-globe.webp" alt="Olo Kinder" width={820} height={900} priority className="h-15 sm:h-16 w-auto object-contain" />
+            <Image src="https://res.cloudinary.com/xscf9i08/image/upload/olo-globe" alt="Olo Kinder" width={820} height={900} priority className="h-15 sm:h-16 w-auto object-contain" />
           </Link>
 
           {/* Desktop nav links. `flex-1` gives them the whole gap between the

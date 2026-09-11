@@ -53,7 +53,7 @@ export function HeroSection() {
                 className="blob-alt absolute -top-5 -bottom-1 left-2 -right-3 bg-mascot-starry/45"
               />
               <Photo
-                src="/images/hero-curriculum.jpg"
+                src="https://res.cloudinary.com/xscf9i08/image/upload/hero-curriculum"
                 alt="An Olo Kinder child painting with a brush and poster colours beside a classmate"
                 className="blob relative shadow-lg aspect-4/3 sm:aspect-3/2 lg:aspect-4/3"
                 priority
@@ -61,25 +61,25 @@ export function HeroSection() {
 
               {/* The cast stands ON the blob's edge, not floating beside it */}
               <img
-                src="/images/mascots/rolly.webp"
+                src="https://res.cloudinary.com/xscf9i08/image/upload/rolly"
                 alt=""
                 aria-hidden="true"
                 className="pointer-events-none select-none absolute bottom-4 -left-1 sm:left-0 w-16 sm:w-24 drop-shadow-md"
               />
               <img
-                src="/images/mascots/hexy.webp"
+                src="https://res.cloudinary.com/xscf9i08/image/upload/hexy"
                 alt=""
                 aria-hidden="true"
                 className="pointer-events-none select-none absolute -bottom-2 right-4 sm:right-8 w-16 sm:w-24 drop-shadow-md"
               />
               <img
-                src="/images/mascots/starry.webp"
+                src="https://res.cloudinary.com/xscf9i08/image/upload/starry"
                 alt=""
                 aria-hidden="true"
                 className="pointer-events-none select-none absolute -top-3 right-0 sm:-right-2 w-10 sm:w-16 -rotate-12 drop-shadow-md"
               />
               <img
-                src="/images/mascots/squary.webp"
+                src="https://res.cloudinary.com/xscf9i08/image/upload/squary"
                 alt=""
                 aria-hidden="true"
                 className="pointer-events-none select-none absolute top-8 -left-3 w-10 sm:w-16 rotate-6 drop-shadow-md"

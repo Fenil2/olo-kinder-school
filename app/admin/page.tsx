@@ -80,7 +80,7 @@ export default async function AdminDashboard({ searchParams }: PageProps) {
 
       <header className="flex flex-wrap items-center justify-between gap-4 mb-8">
         <div className="flex items-center gap-3">
-          <img src="/images/brand/olo-globe.webp" alt="" aria-hidden="true" className="h-11 w-auto object-contain" />
+          <img src="https://res.cloudinary.com/xscf9i08/image/upload/olo-globe" alt="" aria-hidden="true" className="h-11 w-auto object-contain" />
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold text-heading leading-tight">Admissions Dashboard</h1>
             <p className="text-sm text-foreground/75">Every enquiry submitted from the website.</p>

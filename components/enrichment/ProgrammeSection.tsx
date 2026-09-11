@@ -104,7 +104,7 @@ export function ProgrammeSection({
               {g === page.groups.length - 1 && (
                 <Motion variant="up" delay={120}>
                   <img
-                    src="/images/enrichment/7.png"
+                    src="https://res.cloudinary.com/xscf9i08/image/upload/7"
                     alt=""
                     aria-hidden="true"
                     loading="lazy"
