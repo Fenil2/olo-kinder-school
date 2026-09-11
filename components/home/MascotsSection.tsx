@@ -12,10 +12,10 @@ import { Wave } from '@/components/ui/wave'
  * everywhere else uses the cut-out brand mascots, which do.
  */
 const cards = [
-  { name: 'Rolly',  role: 'Curious Explorer', img: '/images/mascot-cards/rolly.webp' },
-  { name: 'Squary', role: 'Logical Thinker',  img: '/images/mascot-cards/squary.webp' },
-  { name: 'Starry', role: 'Creative Dreamer', img: '/images/mascot-cards/starry.webp' },
-  { name: 'Hexy',   role: 'Problem Solver',   img: '/images/mascot-cards/hexy.webp' },
+  { name: 'Rolly',  role: 'Curious Explorer', img: 'https://res.cloudinary.com/xscf9i08/image/upload/rolly' },
+  { name: 'Squary', role: 'Logical Thinker',  img: 'https://res.cloudinary.com/xscf9i08/image/upload/squary' },
+  { name: 'Starry', role: 'Creative Dreamer', img: 'https://res.cloudinary.com/xscf9i08/image/upload/starry' },
+  { name: 'Hexy',   role: 'Problem Solver',   img: 'https://res.cloudinary.com/xscf9i08/image/upload/hexy' },
 ]
 
 export function MascotsSection() {
