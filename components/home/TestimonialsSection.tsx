@@ -1,4 +1,4 @@
-import { MdFormatQuote } from 'react-icons/md'
+import { MdFormatQuote, MdPerson } from 'react-icons/md'
 import { Motion } from '@/components/ui/motion'
 import { Doodle } from '@/components/ui/doodle'
 import { Wave } from '@/components/ui/wave'
@@ -8,19 +8,16 @@ const testimonials = [
     quote: 'Olo Kinder has transformed how my child sees learning. She wakes up excited every morning!',
     name: 'Parent',
     role: 'Mother of a 4-year-old',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80',
   },
   {
     quote: 'The mascots make learning so engaging. My son talks about Rolly and Squary all day long.',
     name: 'Parent',
     role: 'Father of a 5-year-old',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80',
   },
   {
     quote: "The holistic approach here is unlike anything I've seen. My daughter has grown so much in confidence.",
     name: 'Parent',
     role: 'Mother of a 3-year-old',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80',
   },
 ]
 
@@ -45,7 +42,9 @@ export function TestimonialsSection() {
                 <MdFormatQuote size={40} className="text-primary mb-4 shrink-0" />
                 <p className="text-foreground/90 leading-relaxed mb-6 italic flex-1">{t.quote}</p>
                 <div className="flex items-center gap-3">
-                  <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover shrink-0" />
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <MdPerson size={24} className="text-primary" />
+                  </div>
                   <div>
                     <p className="font-semibold text-foreground text-sm">{t.name}</p>
                     <p className="text-xs text-foreground/90">{t.role}</p>
